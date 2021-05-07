@@ -1,29 +1,71 @@
-//
-//  CartViewController.swift
-//  shoe_shop2
-//
-//  Created by Nguyen Thanh Phuc on 5/7/21.
-//
-
 import UIKit
 
 class CartViewController: UIViewController {
-
+    //MARK: - Outlet + properties
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalPrice: UILabel!
+    @IBOutlet weak var totalItem: UILabel!
+    @IBOutlet weak var btnCheckOut: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        btnCheckOut.roundedAllSide(with: btnCheckOut.frame.height/2)
+        tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: "CellCustomCartTableViewCell", bundle: nil), forCellReuseIdentifier: "customCartTableCell")
+        initTableView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func initTableView() {
+    
+      
     }
-    */
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}
+//MARK: - Extension TableView Delegate + Datasource
+extension CartViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 15
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCartTableCell", for: indexPath) as! CellCustomCartTableViewCell
+        //set data for cell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 
+    //MARK:- Handle swipe delete item
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .normal, title:  "", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            
+            // Reset state
+            success(true)
+        })
+        let iconImage = UIImage(systemName: "trash")
+        deleteAction.image = iconImage!.withTintColor(UIColor(named: "deleteButtonTint")!, renderingMode: .alwaysOriginal)
+        deleteAction.backgroundColor = UIColor(named: "grayMainBackground")
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    //MARK:- Handle change quantity item
+    
 }

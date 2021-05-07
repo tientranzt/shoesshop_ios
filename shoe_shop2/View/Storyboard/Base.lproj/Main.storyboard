@@ -114,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="1025" y="1100"/>
         </scene>
-        <!--CartPage-->
+        <!--cartPage-->
         <scene sceneID="4z8-Rz-59l">
             <objects>
-                <viewControllerPlaceholder storyboardName="CartPage" id="2DD-6E-ywS" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="CartPage" referencedIdentifier="cartPage" id="2DD-6E-ywS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="mXE-Zr-6Ji"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhD-9K-Gy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
