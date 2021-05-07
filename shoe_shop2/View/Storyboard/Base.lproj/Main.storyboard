@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fcO-jr-f4h">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="-1552" y="650"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--HomePage-->
         <scene sceneID="h64-ve-6Wo">
             <objects>
-                <viewControllerPlaceholder id="zJJ-A2-b4N" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="HomePage" id="zJJ-A2-b4N" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="6Sj-UE-abw"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfC-1E-fao" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -104,30 +104,30 @@
             </objects>
             <point key="canvasLocation" x="1025" y="660"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--AccountPage-->
         <scene sceneID="yt5-rQ-NUq">
             <objects>
-                <viewControllerPlaceholder id="BKI-kI-egK" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="AccountPage" id="BKI-kI-egK" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="jO7-mP-JZE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zud-e8-Z0s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1025" y="1100"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--CartPage-->
         <scene sceneID="4z8-Rz-59l">
             <objects>
-                <viewControllerPlaceholder id="2DD-6E-ywS" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="CartPage" id="2DD-6E-ywS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="mXE-Zr-6Ji"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhD-9K-Gy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="109" y="1100"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Notification-->
         <scene sceneID="8Rp-gB-gK4">
             <objects>
-                <viewControllerPlaceholder id="3on-y0-F3p" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Notification" id="3on-y0-F3p" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="NSz-nx-ILp"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u61-Xr-Xnz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
