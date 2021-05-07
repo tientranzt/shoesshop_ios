@@ -20,5 +20,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         containerView.layer.borderWidth = 1
         containerView.layer.borderColor = UIColor.lightGray.cgColor
     }
+    
+    // a
 
 }

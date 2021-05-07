@@ -18,5 +18,6 @@ class LastestProductCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         containerView.roundedAllSide(with: 8)
     }
+    // a
 
 }

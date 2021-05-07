@@ -36,20 +36,20 @@
                                 <color key="textColor" name="subBlackBackground"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Max 270" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhr-nk-SqC">
-                                <rect key="frame" x="20" y="50.5" width="122.5" height="26.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Max 27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhr-nk-SqC">
+                                <rect key="frame" x="20" y="50.5" width="108.5" height="27"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQY-VW-7qV">
-                                <rect key="frame" x="20" y="77" width="54" height="26.5"/>
+                                <rect key="frame" x="20" y="77.5" width="54" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="shoe2" translatesAutoresizingMaskIntoConstraints="NO" id="io1-kO-vKS">
-                                <rect key="frame" x="0.0" y="113.5" width="240" height="186.5"/>
+                                <rect key="frame" x="0.0" y="114" width="240" height="186"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="shoeBackground4"/>
