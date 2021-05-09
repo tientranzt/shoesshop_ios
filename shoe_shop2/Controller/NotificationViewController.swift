@@ -9,13 +9,16 @@ import UIKit
 
 class NotificationViewController: UITableViewController {
 
+    var colorsName = [ColorTheme.hightlightOrangeBackground, ColorTheme.starBackground, ColorTheme.priceColor]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "ToastMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "toastMessageCell")
         tableView.rowHeight = 90
-        
     }
+    
 }
+
 
 extension NotificationViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -23,12 +26,12 @@ extension NotificationViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return colorsName.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "toastMessageCell", for: indexPath) as! ToastMessageTableViewCell
-        
+        cell.configureColors(colorName: colorsName[indexPath.row])
         return cell
     }
     

@@ -12,10 +12,19 @@ class ToastMessageTableViewCell: UITableViewCell {
     @IBOutlet weak var notificationIconImage: UIImageView!
     @IBOutlet weak var containerView: UIView!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func configureColors(colorName : String)  {
+        seperateView.backgroundColor = UIColor(named: colorName)
+        notificationIconImage.backgroundColor = UIColor(named: colorName)
+    }
+    
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
