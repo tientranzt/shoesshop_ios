@@ -10,9 +10,11 @@ class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnCheckOut.roundedAllSide(with: btnCheckOut.frame.height/2)
+        btnCheckOut.roundedAllSide(with: 8)
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "CellCustomCartTableViewCell", bundle: nil), forCellReuseIdentifier: "customCartTableCell")
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = false
         initTableView()
     }
     
@@ -20,16 +22,7 @@ class CartViewController: UIViewController {
     
       
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
 }
 //MARK: - Extension TableView Delegate + Datasource
@@ -44,6 +37,8 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCartTableCell", for: indexPath) as! CellCustomCartTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+
         //set data for cell
         return cell
     }

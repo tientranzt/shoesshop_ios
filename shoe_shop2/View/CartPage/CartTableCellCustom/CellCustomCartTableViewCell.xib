@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,8 +17,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="311" height="102"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes_demo" translatesAutoresizingMaskIntoConstraints="NO" id="QO8-wu-KH6">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoe2" translatesAutoresizingMaskIntoConstraints="NO" id="QO8-wu-KH6">
                         <rect key="frame" x="5" y="5" width="92" height="92"/>
+                        <color key="backgroundColor" name="shoeBackground2"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="QO8-wu-KH6" secondAttribute="height" multiplier="1:1" id="AUM-6o-kyz"/>
                         </constraints>
@@ -29,13 +30,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Max 250" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZw-Jy-eoj">
                                 <rect key="frame" x="0.0" y="0.0" width="189" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="middleGrayBackground"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$250" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-YA-ffy">
                                 <rect key="frame" x="0.0" y="28.5" width="189" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="mainBlackBackground"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GWC-gm-mTs">
@@ -62,14 +63,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNk-Qg-nem">
-                                        <rect key="frame" x="61" y="-1" width="20" height="20.5"/>
+                                        <rect key="frame" x="61" y="0.0" width="20" height="20"/>
                                         <color key="backgroundColor" name="subGrayBackground"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Nkb-ED-fKw"/>
                                             <constraint firstAttribute="width" secondItem="QNk-Qg-nem" secondAttribute="height" multiplier="1:1" id="Z2m-Tb-eFD"/>
                                         </constraints>
                                         <color key="tintColor" name="mainWhiteBackground"/>
-                                        <state key="normal" title="+" backgroundImage="trash" catalog="system">
+                                        <state key="normal" title="+">
                                             <color key="titleColor" name="mainBlackBackground"/>
                                         </state>
                                     </button>
@@ -107,13 +108,18 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="shoes_demo" width="960" height="640"/>
-        <image name="trash" catalog="system" width="121" height="128"/>
+        <image name="shoe2" width="649" height="385"/>
         <namedColor name="mainBlackBackground">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mainWhiteBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="middleGrayBackground">
+            <color red="0.62699997425079346" green="0.62699997425079346" blue="0.62699997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="shoeBackground2">
+            <color red="0.87099999189376831" green="0.87099999189376831" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="subGrayBackground">
             <color red="0.94099998474121094" green="0.94099998474121094" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

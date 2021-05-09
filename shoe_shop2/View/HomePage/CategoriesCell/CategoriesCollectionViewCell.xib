@@ -12,17 +12,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCell" id="gTV-IL-0wX" customClass="CategoriesCollectionViewCell" customModule="shoe_shop2" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bb-oe-Qpn">
-                        <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nikee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-PW-5iM">
-                                <rect key="frame" x="38.5" y="14.5" width="43" height="21"/>
+                                <rect key="frame" x="38.5" y="12" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="middleGrayBackground"/>
                                 <nil key="highlightedColor"/>
@@ -31,9 +31,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LXm-PW-5iM" firstAttribute="centerY" secondItem="5bb-oe-Qpn" secondAttribute="centerY" id="CAX-YS-1OJ"/>
-                            <constraint firstAttribute="height" constant="50" id="GAa-0q-ZiF"/>
-                            <constraint firstAttribute="width" constant="120" id="Rve-hx-8Tj"/>
+                            <constraint firstAttribute="height" constant="45" id="GAa-0q-ZiF"/>
                             <constraint firstItem="LXm-PW-5iM" firstAttribute="centerX" secondItem="5bb-oe-Qpn" secondAttribute="centerX" id="f6g-br-JwO"/>
+                            <constraint firstAttribute="width" constant="120" id="xXY-8U-k1i"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -47,8 +47,9 @@
             </constraints>
             <connections>
                 <outlet property="containerView" destination="5bb-oe-Qpn" id="AKJ-rC-hZR"/>
+                <outlet property="textLabel" destination="LXm-PW-5iM" id="nk6-12-8Lk"/>
             </connections>
-            <point key="canvasLocation" x="109" y="95"/>
+            <point key="canvasLocation" x="108.69565217391305" y="94.419642857142847"/>
         </collectionViewCell>
     </objects>
     <resources>

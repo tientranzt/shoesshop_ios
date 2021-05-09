@@ -7,23 +7,36 @@
 
 import UIKit
 
-class NotificationViewController: UIViewController {
+class NotificationViewController: UITableViewController {
 
+    var colorsName = [ColorTheme.hightlightOrangeBackground, ColorTheme.starBackground, ColorTheme.priceColor]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.register(UINib(nibName: "ToastMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "toastMessageCell")
+        tableView.rowHeight = 90
     }
     
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension NotificationViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return colorsName.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "toastMessageCell", for: indexPath) as! ToastMessageTableViewCell
+        cell.configureColors(colorName: colorsName[indexPath.row])
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
 }

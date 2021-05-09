@@ -5,7 +5,7 @@ struct ColorTheme {
     static let deleteButtonTint = "deleteButtonTint"
     static let grayMainBackground = "grayMainBackground"
     static let hightlightBackground = "hightlightBackground"
-    static let hightlightOrangeBackground = "hightlightOrangeBackground"
+    static let hightlightOrangeBackground = "hightlightOrangeColor" 
     static let hightlightSizeBackground = "hightlightSizeBackground"
     static let mainBlackBackground = "mainBlackBackground"
     static let mainWhiteBackground = "mainWhiteBackground"
