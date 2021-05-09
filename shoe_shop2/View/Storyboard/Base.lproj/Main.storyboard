@@ -19,7 +19,7 @@
                         <segue destination="zJJ-A2-b4N" kind="relationship" relationship="viewControllers" id="eV1-oL-34N"/>
                         <segue destination="AEq-zb-ojF" kind="relationship" relationship="viewControllers" id="LTd-gR-79y"/>
                         <segue destination="Mbf-kZ-Gxe" kind="relationship" relationship="viewControllers" id="Spg-xP-zgM"/>
-                        <segue destination="wQW-22-nvV" kind="relationship" relationship="viewControllers" id="YXM-zV-Ol1"/>
+                        <segue destination="BKI-kI-egK" kind="relationship" relationship="viewControllers" id="2As-UR-MhC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1D-Lb-5Ow" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -71,32 +71,16 @@
             </objects>
             <point key="canvasLocation" x="109" y="660"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="KR1-Wc-gw3">
-            <objects>
-                <navigationController id="wQW-22-nvV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" selectedImage="person.fill" id="C6G-Lh-7yo"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="REa-L6-OvG">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BKI-kI-egK" kind="relationship" relationship="rootViewController" id="vcD-bU-CkQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9e7-7a-Cqx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1025" y="660"/>
-        </scene>
         <!--AccountPage-->
         <scene sceneID="yt5-rQ-NUq">
             <objects>
                 <viewControllerPlaceholder storyboardName="AccountPage" id="BKI-kI-egK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="4sF-Vy-LbV"/>
                     <navigationItem key="navigationItem" id="jO7-mP-JZE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zud-e8-Z0s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1025" y="1100"/>
+            <point key="canvasLocation" x="983" y="384"/>
         </scene>
         <!--cartPage-->
         <scene sceneID="4z8-Rz-59l">
@@ -124,7 +108,5 @@
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
-        <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
     </resources>
 </document>
