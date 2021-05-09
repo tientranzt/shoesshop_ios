@@ -18,9 +18,9 @@ class CellCustomCartTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageShoes.roundedAllSide(with: imageShoes.frame.height/5)
-        btnPlus.roundedAllSide(with: btnPlus.frame.height/2)
-        btnMinus.roundedAllSide(with: btnMinus.frame.height/2)
+        imageShoes.roundedAllSide(with: 8)
+        btnPlus.roundedAllSide(with: 2)
+        btnMinus.roundedAllSide(with: 2)
         // Initialization code
     }
 

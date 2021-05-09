@@ -10,7 +10,7 @@ class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnCheckOut.roundedAllSide(with: btnCheckOut.frame.height/2)
+        btnCheckOut.roundedAllSide(with: 8)
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "CellCustomCartTableViewCell", bundle: nil), forCellReuseIdentifier: "customCartTableCell")
         initTableView()
