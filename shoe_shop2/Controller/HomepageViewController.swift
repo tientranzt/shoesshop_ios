@@ -9,15 +9,26 @@ import UIKit
 
 class HomepageViewController: UIViewController {
 
+    // MARK: - Properties
     @IBOutlet weak var categoryCollection: UICollectionView!
     @IBOutlet weak var productCollection: UICollectionView!
     @IBOutlet weak var lastestProductCollection: UICollectionView!
-    
     @IBOutlet weak var searchButton: UIButton!
     
+    let categoriesList = ["Nike", "Pandas", "Adias", "Madda", "Chenny", "Jimroki"]
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureCollecions()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        searchButton.roundedAllSide(with: 8)
+    }
+    
+    // MARK: - Helper
+    private func configureCollecions(){
         categoryCollection.delegate = self
         categoryCollection.dataSource = self
         categoryCollection.register(UINib(nibName: "CategoriesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "categoryCell")
@@ -37,12 +48,9 @@ class HomepageViewController: UIViewController {
         lastestProductCollection.showsVerticalScrollIndicator = false
         lastestProductCollection.showsHorizontalScrollIndicator = false
     }
-    
-    override func viewWillLayoutSubviews() {
-        searchButton.roundedAllSide(with: 8)
-    }
 }
 
+// MARK: - UICollectionViewDelegate , UICollectionViewDataSource
 extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -50,24 +58,26 @@ extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return categoriesList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == self.productCollection {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as! ProductCollectionViewCell
+
             return cell
         }
 
         if collectionView == self.lastestProductCollection {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "lastestProductCell", for: indexPath) as! LastestProductCollectionViewCell
+            
             return cell
         }
         
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! CategoriesCollectionViewCell
-        
+    
+    
         return cell
     }
     
@@ -77,7 +87,20 @@ extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDat
             let modifiedVC = UIStoryboard(name: "DetailProduct", bundle: nil).instantiateViewController(identifier: "detailViewController") as! DetailProductViewController
             
             navigationController?.pushViewController(modifiedVC, animated: true)
-            
         }
     }
+    
+}
+
+extension HomepageViewController : UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        if collectionView == self.categoryCollection {
+//            let stringSize =  categoriesList[indexPath.row]
+//            let size = stringSize.size(withAttributes: nil)
+//            print(size)
+//           return size
+//        }
+//        return CGSize(width: 120, height: 45)
+//    }
+    
 }
