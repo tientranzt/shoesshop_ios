@@ -37,6 +37,8 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCartTableCell", for: indexPath) as! CellCustomCartTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+
         //set data for cell
         return cell
     }
