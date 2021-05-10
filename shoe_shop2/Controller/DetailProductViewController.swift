@@ -4,7 +4,7 @@ import FSPagerView
 
 
 class DetailProductViewController: UIViewController {
-
+    
     
     @IBOutlet weak var contentView: UIView!
     //MARK: - Outlet button size
@@ -22,11 +22,7 @@ class DetailProductViewController: UIViewController {
     @IBOutlet weak var addToCardButton: UIButton!
     let viewChoose = UIView()
     
-    fileprivate let sectionTitles = ["Configurations", "Decelaration Distance", "Item Size", "Interitem Spacing", "Number Of Items"]
-    fileprivate let configurationTitles = ["Automatic sliding","Infinite"]
-    fileprivate let decelerationDistanceOptions = ["Automatic", "1", "2"]
-    fileprivate let imageNames = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg"]
-    fileprivate var numberOfItems = 7
+    fileprivate let imageNames = ["shoe2.png","shoe2.png","shoe2.png","shoe2.png","shoe2.png","shoe2.png","shoe2.png"]
     
     //MARK: - Outlet PageView
     @IBOutlet weak var pagerView: FSPagerView!{
@@ -40,7 +36,6 @@ class DetailProductViewController: UIViewController {
         didSet {
             self.pageControl.numberOfPages = self.imageNames.count
             self.pageControl.contentHorizontalAlignment = .center
-            //self.pageControl.contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
     }
     
@@ -51,25 +46,17 @@ class DetailProductViewController: UIViewController {
         addToCardButton.roundedAllSide(with: 16)
         setVisibleSizeButton(show: sizeEightButton, hidden: sizeNineButton, hidden: sizeTenButton)
         setVisibleColorButton(buttonChoose: colorGreenShoeButton)
+        contentView.layer.cornerRadius = 50
+        contentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         //contentView.roundedAllSide(with: 50)
-       
+        
     }
     
-
+    
     override func viewWillLayoutSubviews() {
         viewChoose.layer.masksToBounds = true
         viewChoose.layer.cornerRadius = viewChoose.frame.size.width / 2
     }
-    //MARK: - Set Landscape or Portrait
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        if UIDevice.current.orientation.isLandscape {
-//            print("Landscape")
-//            contentView.roundCorners(corners: [.topLeft, .topRight], radius: 8.0)
-//        } else {
-//            print("Portrait")
-//            contentView.roundCorners(corners: [.topLeft, .topRight], radius: 50.0)
-//        }
-//    }
     
     func customSizeButton() {
         sizeEightButton.roundedAllSide(with: 8)
@@ -91,7 +78,7 @@ class DetailProductViewController: UIViewController {
         
         colorPinkShoeButton.layer.masksToBounds = true
         colorPinkShoeButton.layer.cornerRadius = colorPinkShoeButton.frame.size.width / 2
-       
+        
     }
     
     //MARK: - Action Button Size
@@ -158,51 +145,34 @@ class DetailProductViewController: UIViewController {
 }
 
 extension DetailProductViewController: FSPagerViewDataSource, FSPagerViewDelegate{
-
+    
     //MARK: - PageView Data Source
     public func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return self.numberOfItems
+        return self.imageNames.count
     }
-
+    
     public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell{
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
         cell.imageView?.image = UIImage(named: self.imageNames[index])
-        cell.imageView?.contentMode = .scaleAspectFill
+        cell.imageView?.contentMode = .scaleAspectFit
         cell.imageView?.clipsToBounds = true
-        //cell.textLabel?.text = index.description+index.description
+        
         return cell
     }
-
+    
     // MARK:- FSPagerView Delegate
-
-//    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
-//        pagerView.deselectItem(at: index, animated: true)
-//        pagerView.scrollToItem(at: index, animated: true)
-//    }
-
+    
+    //    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+    //        pagerView.deselectItem(at: index, animated: true)
+    //        pagerView.scrollToItem(at: index, animated: true)
+    //    }
+    
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
         self.pageControl.currentPage = targetIndex
     }
-
+    
     func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
         self.pageControl.currentPage = pagerView.currentIndex
     }
-
-//    @IBAction func sliderValueChanged(_ sender: UISlider) {
-//        switch sender.tag {
-//        case 1:
-//            let newScale = 0.5+CGFloat(sender.value)*0.5 // [0.5 - 1.0]
-//            self.pagerView.itemSize = self.pagerView.frame.size.applying(CGAffineTransform(scaleX: newScale, y: newScale))
-//        case 2:
-//            self.pagerView.interitemSpacing = CGFloat(sender.value) * 20 // [0 - 20]
-//        case 3:
-//            self.numberOfItems = Int(roundf(sender.value*7.0))
-//            self.pageControl.numberOfPages = self.numberOfItems
-//            self.pagerView.reloadData()
-//        default:
-//            break
-//        }
-//    }
-
 }
 
