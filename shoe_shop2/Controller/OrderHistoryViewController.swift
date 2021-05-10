@@ -17,6 +17,7 @@ class OrderHistoryViewController: UITableViewController {
         tableView.rowHeight = 190
         tableView.showsVerticalScrollIndicator = false
         tableView.showsHorizontalScrollIndicator = false
+        tableView.separatorStyle = .none
 
     }
 }
