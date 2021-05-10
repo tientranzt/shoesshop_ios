@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentOnineMethod" customModule="shoe_shop2" customModuleProvider="target">
+            <connections>
+                <outlet property="imageMethod" destination="ic7-Wm-5KJ" id="D6Y-V8-2pB"/>
+                <outlet property="isChecked" destination="GSy-lv-aBq" id="qkn-A1-CqY"/>
+                <outlet property="methodName" destination="ehX-zT-9xy" id="JAW-ID-HmT"/>
+                <outlet property="seriMethod" destination="cRj-n4-MZt" id="0B7-cN-XoZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="hXy-QC-F3g">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9v-xw-VNd">
+                    <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visa" translatesAutoresizingMaskIntoConstraints="NO" id="ic7-Wm-5KJ">
+                            <rect key="frame" x="15" y="22" width="112" height="66"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ic7-Wm-5KJ" secondAttribute="height" multiplier="1.7" id="rUz-5o-0Lj"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BVB-Qa-w2U">
+                            <rect key="frame" x="137" y="22" width="181" height="66"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label seri method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRj-n4-MZt">
+                                    <rect key="frame" x="0.0" y="0.0" width="181" height="28"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="method name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehX-zT-9xy">
+                                    <rect key="frame" x="0.0" y="38" width="181" height="28"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="GSy-lv-aBq">
+                            <rect key="frame" x="328" y="40" width="30" height="30"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="GSy-lv-aBq" firstAttribute="leading" secondItem="BVB-Qa-w2U" secondAttribute="trailing" constant="10" id="14r-2m-brM"/>
+                        <constraint firstItem="GSy-lv-aBq" firstAttribute="centerY" secondItem="p9v-xw-VNd" secondAttribute="centerY" id="3dR-Hc-Q1j"/>
+                        <constraint firstAttribute="trailing" secondItem="GSy-lv-aBq" secondAttribute="trailing" constant="15" id="AxU-4R-Jm6"/>
+                        <constraint firstItem="BVB-Qa-w2U" firstAttribute="leading" secondItem="ic7-Wm-5KJ" secondAttribute="trailing" constant="10" id="CEU-rb-71U"/>
+                        <constraint firstItem="BVB-Qa-w2U" firstAttribute="top" secondItem="ic7-Wm-5KJ" secondAttribute="top" id="CHv-v8-X0c"/>
+                        <constraint firstItem="ic7-Wm-5KJ" firstAttribute="height" secondItem="p9v-xw-VNd" secondAttribute="height" multiplier="0.6" id="GBU-eb-7bO"/>
+                        <constraint firstItem="BVB-Qa-w2U" firstAttribute="height" secondItem="ic7-Wm-5KJ" secondAttribute="height" id="Kd7-Wd-xy1"/>
+                        <constraint firstItem="ic7-Wm-5KJ" firstAttribute="centerY" secondItem="p9v-xw-VNd" secondAttribute="centerY" id="Y1y-Vw-XE7"/>
+                        <constraint firstItem="GSy-lv-aBq" firstAttribute="height" secondItem="p9v-xw-VNd" secondAttribute="height" multiplier="0.272727" id="hLp-Ph-JM2"/>
+                        <constraint firstItem="GSy-lv-aBq" firstAttribute="width" secondItem="p9v-xw-VNd" secondAttribute="width" multiplier="0.080429" id="q4v-Vd-Onj"/>
+                        <constraint firstItem="ic7-Wm-5KJ" firstAttribute="leading" secondItem="p9v-xw-VNd" secondAttribute="leading" constant="15" id="tf8-mq-PZo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="gQN-Ta-AJ1"/>
+            <color key="backgroundColor" red="0.94110435250000002" green="0.94121712449999995" blue="0.94106602669999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="p9v-xw-VNd" firstAttribute="top" secondItem="hXy-QC-F3g" secondAttribute="top" id="6HX-xD-gqX"/>
+                <constraint firstItem="p9v-xw-VNd" firstAttribute="leading" secondItem="gQN-Ta-AJ1" secondAttribute="leading" id="Bsc-Ov-1pH"/>
+                <constraint firstItem="gQN-Ta-AJ1" firstAttribute="trailing" secondItem="p9v-xw-VNd" secondAttribute="trailing" id="HiG-ax-YNw"/>
+                <constraint firstAttribute="bottom" secondItem="p9v-xw-VNd" secondAttribute="bottom" id="a4M-6a-KOo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-263.04347826086956" y="-132.58928571428572"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="checkbox" width="1024" height="1024"/>
+        <image name="visa" width="337" height="150"/>
+    </resources>
+</document>
