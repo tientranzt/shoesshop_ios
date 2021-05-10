@@ -59,6 +59,11 @@
 		FF56975026451DD5003CE928 /* LastestProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF56974E26451DD5003CE928 /* LastestProductCollectionViewCell.xib */; };
 		FF56975326451DE2003CE928 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56975126451DE1003CE928 /* ProductCollectionViewCell.swift */; };
 		FF56975426451DE2003CE928 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF56975226451DE2003CE928 /* ProductCollectionViewCell.xib */; };
+		FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */; };
+		FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */; };
+		FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */; };
+		FFA4FE9C26491FF2005F767F /* ToastMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9A26491FF2005F767F /* ToastMessageTableViewCell.swift */; };
+		FFA4FE9D26491FF2005F767F /* ToastMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA4FE9B26491FF2005F767F /* ToastMessageTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +120,11 @@
 		FF56974E26451DD5003CE928 /* LastestProductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LastestProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		FF56975126451DE1003CE928 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF56975226451DE2003CE928 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserInformationViewController.swift; sourceTree = "<group>"; };
+		FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
+		FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
+		FFA4FE9A26491FF2005F767F /* ToastMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastMessageTableViewCell.swift; sourceTree = "<group>"; };
+		FFA4FE9B26491FF2005F767F /* ToastMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToastMessageTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +254,10 @@
 				E2F61FD126454DDB001CE7E5 /* HomeLoginViewController.swift */,
 				E26B1D652644CFCF0001ABE0 /* CheckoutViewController.swift */,
 				E26B1D682644CFDA0001ABE0 /* DetailProductViewController.swift */,
+				FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */,
 				E26B1D6B2644CFFD0001ABE0 /* AccountViewController.swift */,
+				FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */,
+				FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */,
 				E26B1D6E2644D0080001ABE0 /* NotificationViewController.swift */,
 				E26B1D712644D0130001ABE0 /* CartViewController.swift */,
 				E26B1D742644D01F0001ABE0 /* HomepageViewController.swift */,
@@ -325,6 +338,7 @@
 		E26B1D422644CE780001ABE0 /* NotificationPage */ = {
 			isa = PBXGroup;
 			children = (
+				FFA4FE9926491FF2005F767F /* ToastMessageCell */,
 				E26B1D4D2644CF570001ABE0 /* Notification.storyboard */,
 			);
 			path = NotificationPage;
@@ -415,6 +429,15 @@
 			path = ProductCell;
 			sourceTree = "<group>";
 		};
+		FFA4FE9926491FF2005F767F /* ToastMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				FFA4FE9A26491FF2005F767F /* ToastMessageTableViewCell.swift */,
+				FFA4FE9B26491FF2005F767F /* ToastMessageTableViewCell.xib */,
+			);
+			path = ToastMessageCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -489,6 +512,7 @@
 				E2F61FE226454E51001CE7E5 /* CustomTextField.xib in Resources */,
 				E26B1DC52644DCC70001ABE0 /* 1.jpg in Resources */,
 				E26B1D542644CF6D0001ABE0 /* DetailProduct.storyboard in Resources */,
+				FFA4FE9D26491FF2005F767F /* ToastMessageTableViewCell.xib in Resources */,
 				E26B1DC62644DCC70001ABE0 /* 4.jpg in Resources */,
 				E26B1DC22644DCC70001ABE0 /* 3.jpg in Resources */,
 				E26B1DC32644DCC70001ABE0 /* 5.jpg in Resources */,
@@ -563,6 +587,7 @@
 				E26B1D2A2644CD240001ABE0 /* shoe_shop2.xcdatamodeld in Sources */,
 				FF56974F26451DD5003CE928 /* LastestProductCollectionViewCell.swift in Sources */,
 				FF56974C26451DCC003CE928 /* CategoriesCollectionViewCell.swift in Sources */,
+				FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */,
 				E26B1DB52644DC280001ABE0 /* UIImageView+Extension.swift in Sources */,
 				E26B1D752644D01F0001ABE0 /* HomepageViewController.swift in Sources */,
 				E26B1D722644D0130001ABE0 /* CartViewController.swift in Sources */,
@@ -578,8 +603,11 @@
 				64EB825E26482AE4001B1B05 /* PaymentOnineMethod.swift in Sources */,
 				E26B1D6F2644D0080001ABE0 /* NotificationViewController.swift in Sources */,
 				E2F61FD726454DE9001CE7E5 /* SignUpViewController.swift in Sources */,
+				FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */,
 				E26B1D222644CD240001ABE0 /* SceneDelegate.swift in Sources */,
+				FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */,
 				E2F61FD226454DDB001CE7E5 /* HomeLoginViewController.swift in Sources */,
+				FFA4FE9C26491FF2005F767F /* ToastMessageTableViewCell.swift in Sources */,
 				E26B1D662644CFCF0001ABE0 /* CheckoutViewController.swift in Sources */,
 				FF56975326451DE2003CE928 /* ProductCollectionViewCell.swift in Sources */,
 			);
