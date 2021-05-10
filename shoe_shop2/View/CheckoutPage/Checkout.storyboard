@@ -48,6 +48,9 @@
                                                         <state key="normal" title="Change Adress">
                                                             <color key="titleColor" name="hightlightOrangeColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="changeAddress:" destination="T2M-nu-xHQ" eventType="touchUpInside" id="Is2-Xb-8oE"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" name="mainWhiteBackground"/>
@@ -206,11 +209,104 @@
             </objects>
             <point key="canvasLocation" x="-97.101449275362327" y="179.46428571428569"/>
         </scene>
+        <!--Change Ship Address View Controller-->
+        <scene sceneID="s3p-rS-TYS">
+            <objects>
+                <viewController storyboardIdentifier="ChangeShipAddress" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zgf-p6-VyM" customClass="ChangeShipAddressViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fbt-wR-G3a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVN-xI-7l2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dw-QX-LjP">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="809.5"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1ZB-Fy-FUZ">
+                                                <rect key="frame" x="20.5" y="200" width="373" height="243"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qq2-mR-3v5">
+                                                <rect key="frame" x="20.5" y="543" width="373" height="56.5"/>
+                                                <color key="backgroundColor" name="hightlightBackground"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="Save">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEf-0O-MDD">
+                                                <rect key="frame" x="20.5" y="158" width="383.5" height="32"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Ship Address">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="systemBold" size="26"/>
+                                                            <font key="NSOriginalFont" metaFont="systemBold" size="26"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="yEf-0O-MDD" secondAttribute="trailing" constant="10" id="2VK-r5-EIs"/>
+                                            <constraint firstItem="1ZB-Fy-FUZ" firstAttribute="top" secondItem="3dw-QX-LjP" secondAttribute="top" constant="200" id="7Dc-6c-biW"/>
+                                            <constraint firstItem="qq2-mR-3v5" firstAttribute="width" secondItem="3dw-QX-LjP" secondAttribute="width" multiplier="0.9" id="8vc-He-OIz"/>
+                                            <constraint firstItem="qq2-mR-3v5" firstAttribute="centerX" secondItem="1ZB-Fy-FUZ" secondAttribute="centerX" id="KXx-Dq-Qm9"/>
+                                            <constraint firstItem="1ZB-Fy-FUZ" firstAttribute="height" secondItem="3dw-QX-LjP" secondAttribute="height" multiplier="0.3" id="O8Z-VP-Lno"/>
+                                            <constraint firstItem="1ZB-Fy-FUZ" firstAttribute="centerX" secondItem="3dw-QX-LjP" secondAttribute="centerX" id="ObP-gd-lBp"/>
+                                            <constraint firstItem="1ZB-Fy-FUZ" firstAttribute="width" secondItem="3dw-QX-LjP" secondAttribute="width" multiplier="0.9" id="S5Z-Ys-qxU"/>
+                                            <constraint firstAttribute="bottom" secondItem="qq2-mR-3v5" secondAttribute="bottom" constant="210" id="URb-oH-sLP"/>
+                                            <constraint firstItem="qq2-mR-3v5" firstAttribute="height" secondItem="3dw-QX-LjP" secondAttribute="height" multiplier="0.07" id="WgK-vH-ndB"/>
+                                            <constraint firstItem="yEf-0O-MDD" firstAttribute="leading" secondItem="1ZB-Fy-FUZ" secondAttribute="leading" id="ZRQ-3M-19q"/>
+                                            <constraint firstItem="qq2-mR-3v5" firstAttribute="top" secondItem="1ZB-Fy-FUZ" secondAttribute="bottom" constant="100" id="gN7-uQ-qL3"/>
+                                            <constraint firstItem="1ZB-Fy-FUZ" firstAttribute="top" secondItem="yEf-0O-MDD" secondAttribute="bottom" constant="10" id="qTq-Dl-PQP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3dw-QX-LjP" firstAttribute="centerX" secondItem="wVN-xI-7l2" secondAttribute="centerX" id="6aL-8v-rbf"/>
+                                    <constraint firstItem="3dw-QX-LjP" firstAttribute="centerY" secondItem="wVN-xI-7l2" secondAttribute="centerY" priority="750" id="DLi-Ie-Jgf"/>
+                                    <constraint firstAttribute="trailing" secondItem="3dw-QX-LjP" secondAttribute="trailing" id="GAg-mG-7v2"/>
+                                    <constraint firstItem="3dw-QX-LjP" firstAttribute="top" secondItem="wVN-xI-7l2" secondAttribute="top" id="IWc-UF-Z1A"/>
+                                    <constraint firstAttribute="bottom" secondItem="3dw-QX-LjP" secondAttribute="bottom" id="oOh-e5-ejr"/>
+                                    <constraint firstItem="3dw-QX-LjP" firstAttribute="leading" secondItem="wVN-xI-7l2" secondAttribute="leading" id="qct-yG-svt"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="xxu-IX-y89"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ckz-yn-Lro"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b4g-t5-4ja"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wVN-xI-7l2" firstAttribute="leading" secondItem="b4g-t5-4ja" secondAttribute="leading" id="5eb-tY-rDS"/>
+                            <constraint firstItem="b4g-t5-4ja" firstAttribute="trailing" secondItem="wVN-xI-7l2" secondAttribute="trailing" id="7i8-Uu-Pv3"/>
+                            <constraint firstItem="wVN-xI-7l2" firstAttribute="top" secondItem="b4g-t5-4ja" secondAttribute="top" id="SWF-o4-M1Q"/>
+                            <constraint firstItem="b4g-t5-4ja" firstAttribute="bottom" secondItem="wVN-xI-7l2" secondAttribute="bottom" id="hGb-zU-XGh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSave" destination="qq2-mR-3v5" id="jmI-9y-x5Y"/>
+                        <outlet property="textViewAddress" destination="1ZB-Fy-FUZ" id="6cw-Qc-XAX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2p-HG-joZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.73913043478262" y="178.79464285714286"/>
+        </scene>
     </scenes>
     <resources>
         <image name="location" width="240" height="240"/>
         <namedColor name="backgroundButton">
             <color red="0.23499999940395355" green="0.18400000035762787" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="hightlightBackground">
+            <color red="0.33300000429153442" green="0.28999999165534973" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="hightlightOrangeColor">
             <color red="1" green="0.46700000762939453" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -218,6 +314,9 @@
         <namedColor name="mainWhiteBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

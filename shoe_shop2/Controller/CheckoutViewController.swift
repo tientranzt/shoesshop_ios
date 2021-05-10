@@ -60,5 +60,11 @@ class CheckoutViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    @IBAction func changeAddress(_ sender: Any) {
+        let viewControllerChangeShipAddress = (storyboard?.instantiateViewController(identifier: "ChangeShipAddress"))! as ChangeShipAddressViewController
+        viewControllerChangeShipAddress.modalPresentationStyle = .popover
+        
+        present(viewControllerChangeShipAddress, animated: true)
+    }
     
 }
