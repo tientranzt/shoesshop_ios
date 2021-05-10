@@ -33,8 +33,13 @@ extension OrderHistoryViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseableCellIdentified, for: indexPath)
-        
+        cell.autoresizingMask  = [.flexibleWidth, .flexibleHeight]
+        cell.backgroundColor = UIColor(named: ColorTheme.subGrayBackground)
         return cell
     }
+    
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//
+//    }
 }
 

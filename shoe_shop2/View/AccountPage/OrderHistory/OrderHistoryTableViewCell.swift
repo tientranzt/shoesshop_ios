@@ -26,6 +26,7 @@ class OrderHistoryTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         addressPointView.layer.cornerRadius = addressPointView.frame.height / 2
         destinationPointView.layer.cornerRadius = addressPointView.frame.height / 2
         orderProductImage.layer.cornerRadius = orderProductImage.frame.height / 2
