@@ -7,14 +7,14 @@
 
 import UIKit
 
+
 class IntroPageUIView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
+   
     override func draw(_ rect: CGRect) {
         // Drawing code
+        DrawIntroPage.drawCanvas1(frame: self.bounds, resizing: .center)
+        
     }
-    */
 
 }
