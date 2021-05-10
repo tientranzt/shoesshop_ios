@@ -15,15 +15,12 @@ class CartViewController: UIViewController {
         tableView.register(UINib(nibName: "CellCustomCartTableViewCell", bundle: nil), forCellReuseIdentifier: "customCartTableCell")
         tableView.showsHorizontalScrollIndicator = false
         tableView.showsVerticalScrollIndicator = false
-        initTableView()
     }
     
-    func initTableView() {
-    
-      
+    @IBAction func handleCheckoutButtonClicked(_ sender: UIButton) {
+        let checkoutVC = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(identifier: "checkoutPage") as! CheckoutViewController
+        navigationController?.pushViewController(checkoutVC, animated: true)
     }
-
-    
 }
 //MARK: - Extension TableView Delegate + Datasource
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {
@@ -43,9 +40,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
 
     //MARK:- Handle swipe delete item
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

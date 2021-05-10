@@ -93,14 +93,18 @@ extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDat
 }
 
 extension HomepageViewController : UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if collectionView == self.categoryCollection {
-//            let stringSize =  categoriesList[indexPath.row]
-//            let size = stringSize.size(withAttributes: nil)
-//            print(size)
-//           return size
-//        }
-//        return CGSize(width: 120, height: 45)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if collectionView == self.productCollection {
+            return CGSize(width: 240, height: 300)
+        }
+        
+        if collectionView == self.lastestProductCollection {
+            return CGSize(width: 150, height: 150)
+        }
+        
+        return CGSize(width: 120, height: 45)
+        
+    }
     
 }

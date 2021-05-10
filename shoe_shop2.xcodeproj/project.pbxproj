@@ -64,6 +64,8 @@
 		FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */; };
 		FFA4FE9C26491FF2005F767F /* ToastMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9A26491FF2005F767F /* ToastMessageTableViewCell.swift */; };
 		FFA4FE9D26491FF2005F767F /* ToastMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA4FE9B26491FF2005F767F /* ToastMessageTableViewCell.xib */; };
+		FFA4FEA226492113005F767F /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FEA026492113005F767F /* OrderHistoryTableViewCell.swift */; };
+		FFA4FEA326492113005F767F /* OrderHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA4FEA126492113005F767F /* OrderHistoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +127,8 @@
 		FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9A26491FF2005F767F /* ToastMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastMessageTableViewCell.swift; sourceTree = "<group>"; };
 		FFA4FE9B26491FF2005F767F /* ToastMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToastMessageTableViewCell.xib; sourceTree = "<group>"; };
+		FFA4FEA026492113005F767F /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		FFA4FEA126492113005F767F /* OrderHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderHistoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +351,8 @@
 		E26B1D432644CE840001ABE0 /* AccountPage */ = {
 			isa = PBXGroup;
 			children = (
+				FFA4FE9F26492113005F767F /* OrderHistory */,
+				FFA4FE9E26492113005F767F /* UpdateUserInfo */,
 				E26B1D502644CF630001ABE0 /* AccountPage.storyboard */,
 			);
 			path = AccountPage;
@@ -438,6 +444,22 @@
 			path = ToastMessageCell;
 			sourceTree = "<group>";
 		};
+		FFA4FE9E26492113005F767F /* UpdateUserInfo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UpdateUserInfo;
+			sourceTree = "<group>";
+		};
+		FFA4FE9F26492113005F767F /* OrderHistory */ = {
+			isa = PBXGroup;
+			children = (
+				FFA4FEA026492113005F767F /* OrderHistoryTableViewCell.swift */,
+				FFA4FEA126492113005F767F /* OrderHistoryTableViewCell.xib */,
+			);
+			path = OrderHistory;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -522,6 +544,7 @@
 				FF56974B26451DCC003CE928 /* CategoriesCollectionViewCell.xib in Resources */,
 				E26B1D572644CF740001ABE0 /* Checkout.storyboard in Resources */,
 				FF56975426451DE2003CE928 /* ProductCollectionViewCell.xib in Resources */,
+				FFA4FEA326492113005F767F /* OrderHistoryTableViewCell.xib in Resources */,
 				E26B1D4B2644CF500001ABE0 /* CartPage.storyboard in Resources */,
 				E2F61FDC26454E28001CE7E5 /* HomeLogin.storyboard in Resources */,
 				E26B1DC42644DCC70001ABE0 /* 6.jpg in Resources */,
@@ -594,6 +617,7 @@
 				E26B1D6C2644CFFD0001ABE0 /* AccountViewController.swift in Sources */,
 				E2F61FD626454DE9001CE7E5 /* LoginViewController.swift in Sources */,
 				E26B1D692644CFDA0001ABE0 /* DetailProductViewController.swift in Sources */,
+				FFA4FEA226492113005F767F /* OrderHistoryTableViewCell.swift in Sources */,
 				E26B1DB82644DC5E0001ABE0 /* Constant.swift in Sources */,
 				E26B1DB22644DC170001ABE0 /* UIView+Extension.swift in Sources */,
 				E2F61FE626454E62001CE7E5 /* CustomSwitch.swift in Sources */,

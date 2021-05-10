@@ -53,6 +53,9 @@
                                 <state key="normal" title="Checkout">
                                     <color key="titleColor" name="mainWhiteBackground"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleCheckoutButtonClicked:" destination="Wjr-TW-MUQ" eventType="touchUpInside" id="XDm-vY-jUS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GTy-0h-rxJ"/>
