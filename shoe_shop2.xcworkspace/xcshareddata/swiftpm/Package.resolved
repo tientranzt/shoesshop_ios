@@ -101,6 +101,15 @@
         }
       },
       {
+        "package": "ShimmerSwift",
+        "repositoryURL": "https://github.com/BeauNouvelle/ShimmerSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "f1a4366f74329c313e9528bcbe5286eacc750c05",
+          "version": "2.2.0"
+        }
+      },
+      {
         "package": "SwiftProtobuf",
         "repositoryURL": "https://github.com/apple/swift-protobuf.git",
         "state": {

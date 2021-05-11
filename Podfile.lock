@@ -1,16 +1,20 @@
 PODS:
   - FSPagerView (0.8.3)
+  - IQKeyboardManager (6.5.6)
 
 DEPENDENCIES:
   - FSPagerView
+  - IQKeyboardManager
 
 SPEC REPOS:
   trunk:
     - FSPagerView
+    - IQKeyboardManager
 
 SPEC CHECKSUMS:
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
 
-PODFILE CHECKSUM: 428bcf479a4740b4de37c92c5fc016d80b083656
+PODFILE CHECKSUM: ef0117e803045c69700fdc8e010bdb0a795fdeb8
 
 COCOAPODS: 1.8.4

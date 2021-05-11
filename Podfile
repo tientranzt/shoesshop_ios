@@ -8,5 +8,6 @@ target 'shoe_shop2' do
   # Pods for shoe_shop2
 
 	pod 'FSPagerView'
+	pod 'IQKeyboardManager'
 
 end
