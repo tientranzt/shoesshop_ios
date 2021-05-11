@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E6E5F471A16F0F76B5966AB /* Pods_shoe_shop2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CB90B04F335B545CF44921 /* Pods_shoe_shop2.framework */; };
+		64E0F81B264A3ED600005B0B /* ChangeShipAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0F81A264A3ED600005B0B /* ChangeShipAddressViewController.swift */; };
 		64EB825526482372001B1B05 /* PaymentCashMethod.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64EB825426482372001B1B05 /* PaymentCashMethod.xib */; };
 		64EB82582648239E001B1B05 /* PaymentCashMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB82572648239E001B1B05 /* PaymentCashMethod.swift */; };
 		64EB825B26482ACE001B1B05 /* PaymentOnlineMethod.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64EB825A26482ACE001B1B05 /* PaymentOnlineMethod.xib */; };
@@ -69,6 +70,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64E0F81A264A3ED600005B0B /* ChangeShipAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeShipAddressViewController.swift; sourceTree = "<group>"; };
 		64EB825426482372001B1B05 /* PaymentCashMethod.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCashMethod.xib; sourceTree = "<group>"; };
 		64EB82572648239E001B1B05 /* PaymentCashMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCashMethod.swift; sourceTree = "<group>"; };
 		64EB825A26482ACE001B1B05 /* PaymentOnlineMethod.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentOnlineMethod.xib; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		E26B1D392644CD3C0001ABE0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				64E0F81A264A3ED600005B0B /* ChangeShipAddressViewController.swift */,
 				E2F61FD426454DE8001CE7E5 /* LoginViewController.swift */,
 				E2F61FD526454DE8001CE7E5 /* SignUpViewController.swift */,
 				E2F61FD126454DDB001CE7E5 /* HomeLoginViewController.swift */,
@@ -608,6 +611,7 @@
 			files = (
 				64EB82582648239E001B1B05 /* PaymentCashMethod.swift in Sources */,
 				E26B1D2A2644CD240001ABE0 /* shoe_shop2.xcdatamodeld in Sources */,
+				64E0F81B264A3ED600005B0B /* ChangeShipAddressViewController.swift in Sources */,
 				FF56974F26451DD5003CE928 /* LastestProductCollectionViewCell.swift in Sources */,
 				FF56974C26451DCC003CE928 /* CategoriesCollectionViewCell.swift in Sources */,
 				FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */,
