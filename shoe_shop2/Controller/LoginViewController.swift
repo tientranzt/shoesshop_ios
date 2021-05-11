@@ -11,23 +11,16 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         setUpView()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
     
     func setUpView() {
-        // rgb(60,60,60)
-        customTextFieldEmailAddress.borderView.layer.borderWidth = 1
-        customTextFieldEmailAddress.borderView.layer.borderColor = UIColor.gray.cgColor
-        customTextFieldEmailAddress.borderView.layer.cornerRadius = 8;
+
         customTextFieldEmailAddress.lblTextFieldName.text = " EMAIL ADDRESS "
-        customTextFieldEmailAddress.lblTextFieldName.textColor = UIColor(red: 34/255, green: 34/255, blue: 34/255, alpha: 1)
-        customTextFieldEmailAddress.texField.borderStyle = .none
-        
-        customTextFieldPassword.borderView.layer.borderWidth = 1
-        customTextFieldPassword.borderView.layer.borderColor = UIColor.gray.cgColor
-        customTextFieldPassword.borderView.layer.cornerRadius = 8;
-        customTextFieldPassword.lblTextFieldName.textColor = UIColor(red: 34/255, green: 34/255, blue: 34/255, alpha: 1)
+        customTextFieldEmailAddress.texField.keyboardType = .emailAddress
         customTextFieldPassword.lblTextFieldName.text = " PASSWORD "
-        customTextFieldPassword.texField.borderStyle = .none
-        
+        customTextFieldPassword.isPassword = true
         btnLogin.layer.cornerRadius = 8;
     }
 

@@ -26,28 +26,22 @@ class CheckoutViewController: UIViewController {
         
         // shadown
         // chay sai khi chay iphone 8 , nen cho vao viewDidLayoutSubbiew
-        viewShipAddress.layer.borderColor = UIColor(named: "grayMainBackground")?.cgColor
-        viewShipAddress.layer.borderWidth = 1
-        viewShipAddress.layer.cornerRadius = 8
-        
-        viewShipAddress.layer.shadowColor = UIColor(red: 197/255, green: 197/255, blue: 197/255, alpha: 1).cgColor
-        viewShipAddress.layer.shadowOffset = CGSize.zero
-        viewShipAddress.layer.shadowRadius = 5
-        viewShipAddress.layer.shadowOffset = .zero
-        viewShipAddress.layer.shadowOpacity = 0.2
-        
-        viewPaymentMethod.layer.borderColor = UIColor(named: "grayMainBackground")?.cgColor
-        viewPaymentMethod.layer.borderWidth = 1
-        viewPaymentMethod.layer.cornerRadius = 8
-        
-        viewPaymentMethod.layer.shadowColor = UIColor(red: 197/255, green: 197/255, blue: 197/255, alpha: 1).cgColor
-        viewPaymentMethod.layer.shadowOffset = CGSize.zero
-        viewPaymentMethod.layer.shadowRadius = 5
-        viewPaymentMethod.layer.shadowOffset = .zero
-        viewPaymentMethod.layer.shadowOpacity = 0.2
-        
+        setShadowForVieư(view: viewShipAddress)
+        setShadowForVieư(view: viewPaymentMethod)
         btnOrder.layer.cornerRadius = 8
+    }
+    
+    func setShadowForVieư(view: UIView) {
         
+        view.layer.borderColor = UIColor(named: "grayMainBackground")?.cgColor
+        view.layer.borderWidth = 1
+        view.layer.cornerRadius = 8
+        
+        view.layer.shadowColor = UIColor(red: 197/255, green: 197/255, blue: 197/255, alpha: 1).cgColor
+        view.layer.shadowOffset = CGSize.zero
+        view.layer.shadowRadius = 5
+        view.layer.shadowOffset = .zero
+        view.layer.shadowOpacity = 0.2
         
     }
     

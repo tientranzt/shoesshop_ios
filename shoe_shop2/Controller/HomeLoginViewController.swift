@@ -20,19 +20,23 @@ class HomeLoginViewController: UIViewController {
         setUpView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
     
     func setUpView() {
         btnContinueWithApple.layer.cornerRadius = 8
         btnContinueWithFaceook.layer.cornerRadius = 8
         btnUserEmailOrPhone.layer.cornerRadius = 8
-        btnUserEmailOrPhone.layer.borderColor = UIColor.gray.cgColor
-        btnUserEmailOrPhone.layer.borderWidth = 1
+        btnUserEmailOrPhone.layer.borderColor = UIColor(named: ColorTheme.mainBlackBackground)?.cgColor
+        btnUserEmailOrPhone.layer.borderWidth = 0.5
       
     }
     
     @IBAction func moveToLogin(_ sender: Any) {
     }
 
+    
     /*
     // MARK: - Navigation
 
