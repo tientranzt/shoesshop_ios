@@ -256,11 +256,14 @@
                                                 </state>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyc-vG-6ep" customClass="CustomSwitch" customModule="shoe_shop2" customModuleProvider="target">
-                                                <rect key="frame" x="39" y="444.66666666666663" width="22" height="16.666666666666686"/>
+                                                <rect key="frame" x="39" y="442.33333333333337" width="34.333333333333343" height="21.666666666666686"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="jyc-vG-6ep" secondAttribute="height" multiplier="1.6" id="VxQ-A9-GbW"/>
+                                                </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzk-eW-348">
-                                                <rect key="frame" x="66" y="442.66666666666663" width="99.666666666666686" height="21"/>
+                                                <rect key="frame" x="78.333333333333314" y="442.66666666666663" width="99.666666666666686" height="21"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <color key="textColor" name="middleGrayBackground"/>
                                                 <nil key="highlightedColor"/>
@@ -272,14 +275,13 @@
                                             <constraint firstItem="Wbm-qb-o9M" firstAttribute="top" secondItem="efZ-eL-h2K" secondAttribute="bottom" constant="20" id="5fF-SV-i4r"/>
                                             <constraint firstItem="Ej2-x7-PDz" firstAttribute="height" secondItem="3gB-I0-1Xn" secondAttribute="height" multiplier="0.07" id="65d-s0-XIu"/>
                                             <constraint firstItem="hzk-eW-348" firstAttribute="height" secondItem="Wbm-qb-o9M" secondAttribute="height" multiplier="0.7" id="CZL-37-6v8"/>
-                                            <constraint firstItem="jyc-vG-6ep" firstAttribute="height" secondItem="Wbm-qb-o9M" secondAttribute="height" multiplier="0.55" id="D1C-FX-6Li"/>
                                             <constraint firstItem="cOx-Ia-0S0" firstAttribute="top" secondItem="3gB-I0-1Xn" secondAttribute="top" id="H6l-qa-y5C"/>
                                             <constraint firstItem="efZ-eL-h2K" firstAttribute="width" secondItem="Xef-cK-Oaw" secondAttribute="width" id="IZJ-Gp-eZN"/>
                                             <constraint firstItem="Xef-cK-Oaw" firstAttribute="top" secondItem="m9y-TL-fkQ" secondAttribute="bottom" constant="80" id="IcU-I5-Qxw"/>
                                             <constraint firstItem="m9y-TL-fkQ" firstAttribute="leading" secondItem="3gB-I0-1Xn" secondAttribute="leading" constant="5" id="JFd-0d-nIB"/>
                                             <constraint firstItem="Wbm-qb-o9M" firstAttribute="trailing" secondItem="efZ-eL-h2K" secondAttribute="trailing" id="KNP-0U-Ru6"/>
+                                            <constraint firstItem="jyc-vG-6ep" firstAttribute="height" secondItem="3gB-I0-1Xn" secondAttribute="height" multiplier="0.03" id="RWM-MU-OAx"/>
                                             <constraint firstItem="cOx-Ia-0S0" firstAttribute="width" secondItem="3gB-I0-1Xn" secondAttribute="width" multiplier="0.6" id="VFj-dF-aOa"/>
-                                            <constraint firstItem="jyc-vG-6ep" firstAttribute="width" secondItem="efZ-eL-h2K" secondAttribute="width" multiplier="0.07" id="Wb7-WG-Lbc"/>
                                             <constraint firstItem="Ej2-x7-PDz" firstAttribute="width" secondItem="3gB-I0-1Xn" secondAttribute="width" multiplier="0.8" id="Xtx-Vs-Y4r"/>
                                             <constraint firstItem="hzk-eW-348" firstAttribute="centerY" secondItem="Wbm-qb-o9M" secondAttribute="centerY" id="exO-Lv-qMA"/>
                                             <constraint firstItem="Xef-cK-Oaw" firstAttribute="height" secondItem="3gB-I0-1Xn" secondAttribute="height" multiplier="0.09" id="gHH-AT-vXN"/>
@@ -343,7 +345,7 @@
                                 <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRb-bR-zvV">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="723"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="728.33333333333337"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoe_logo" translatesAutoresizingMaskIntoConstraints="NO" id="oBp-VQ-T9F">
                                                 <rect key="frame" x="78" y="0.0" width="234" height="148"/>
@@ -352,19 +354,19 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ny2-Oe-NBX" customClass="CustomTextField" customModule="shoe_shop2" customModuleProvider="target">
-                                                <rect key="frame" x="39" y="258.66666666666669" width="312" height="65"/>
+                                                <rect key="frame" x="39" y="258.66666666666669" width="312" height="65.666666666666686"/>
                                                 <color key="backgroundColor" name="priceColor"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbs-Xc-ePy" customClass="CustomTextField" customModule="shoe_shop2" customModuleProvider="target">
-                                                <rect key="frame" x="39" y="343.66666666666669" width="312" height="65.333333333333314"/>
+                                                <rect key="frame" x="39" y="344.33333333333331" width="312" height="65.666666666666686"/>
                                                 <color key="backgroundColor" name="shoeBackground4"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWo-gM-Dj4" customClass="CustomTextField" customModule="shoe_shop2" customModuleProvider="target">
-                                                <rect key="frame" x="39" y="429" width="312" height="65"/>
+                                                <rect key="frame" x="39" y="430" width="312" height="65.333333333333314"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rRS-GV-XRb">
-                                                <rect key="frame" x="39" y="592.33333333333337" width="312" height="50.666666666666629"/>
+                                                <rect key="frame" x="39" y="597.33333333333337" width="312" height="51"/>
                                                 <color key="backgroundColor" name="hightlightBackground"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
@@ -382,10 +384,13 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wS4-IL-c3U" customClass="CustomSwitch" customModule="shoe_shop2" customModuleProvider="target">
-                                                <rect key="frame" x="39" y="524" width="21.666666666666671" height="14.666666666666629"/>
+                                                <rect key="frame" x="39" y="525.33333333333337" width="35" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="wS4-IL-c3U" secondAttribute="height" multiplier="1.6" id="XJU-sH-p2F"/>
+                                                </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I accept the policy and terms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APu-59-tES">
-                                                <rect key="frame" x="65.666666666666671" y="522.33333333333337" width="198.66666666666663" height="18"/>
+                                                <rect key="frame" x="78.999999999999986" y="527.33333333333337" width="198.66666666666663" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" name="middleGrayBackground"/>
                                                 <nil key="highlightedColor"/>
@@ -414,8 +419,7 @@
                                             <constraint firstItem="llJ-vr-gAJ" firstAttribute="leading" secondItem="RRb-bR-zvV" secondAttribute="leading" constant="5" id="6NR-ZX-5l8"/>
                                             <constraint firstItem="pWo-gM-Dj4" firstAttribute="width" secondItem="Ny2-Oe-NBX" secondAttribute="width" id="7IO-cs-qpF"/>
                                             <constraint firstItem="APu-59-tES" firstAttribute="leading" secondItem="wS4-IL-c3U" secondAttribute="trailing" constant="5" id="9a3-zL-H0y"/>
-                                            <constraint firstItem="wS4-IL-c3U" firstAttribute="width" secondItem="RRb-bR-zvV" secondAttribute="width" multiplier="0.0555556" id="ATG-Cl-QWZ"/>
-                                            <constraint firstItem="wS4-IL-c3U" firstAttribute="height" secondItem="RRb-bR-zvV" secondAttribute="height" multiplier="0.0202082" id="HMz-ee-yWt"/>
+                                            <constraint firstItem="wS4-IL-c3U" firstAttribute="height" secondItem="RRb-bR-zvV" secondAttribute="height" multiplier="0.03" id="HMz-ee-yWt"/>
                                             <constraint firstItem="wS4-IL-c3U" firstAttribute="leading" secondItem="pWo-gM-Dj4" secondAttribute="leading" id="J6V-Ga-jf4"/>
                                             <constraint firstAttribute="bottom" secondItem="rRS-GV-XRb" secondAttribute="bottom" constant="80" id="Jjd-Qm-he4"/>
                                             <constraint firstAttribute="trailing" secondItem="llJ-vr-gAJ" secondAttribute="trailing" constant="5" id="Rrc-kT-cxl"/>
