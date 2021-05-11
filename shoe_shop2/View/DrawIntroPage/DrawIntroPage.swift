@@ -32,11 +32,11 @@ public class DrawIntroPage : NSObject {
 
         //// Bezier Drawing
         let bezierPath = UIBezierPath()
-        bezierPath.move(to: CGPoint(x: 450, y: 241.5))
-        bezierPath.addLine(to: CGPoint(x: -20, y: 312.5))
-        bezierPath.addLine(to: CGPoint(x: -20, y: 416.5))
-        bezierPath.addLine(to: CGPoint(x: 450, y: 346.5))
-        bezierPath.addLine(to: CGPoint(x: 450, y: 241.5))
+        bezierPath.move(to: CGPoint(x: 1000, y: 241.5))
+        bezierPath.addLine(to: CGPoint(x: -200, y: 312.5))
+        bezierPath.addLine(to: CGPoint(x: -200, y: 416.5))
+        bezierPath.addLine(to: CGPoint(x: 1000, y: 346.5))
+        bezierPath.addLine(to: CGPoint(x: 1000, y: 241.5))
         bezierPath.close()
         UIColor.init(named: ColorTheme.backgroundButton)?.setFill()
         bezierPath.fill()
@@ -44,22 +44,22 @@ public class DrawIntroPage : NSObject {
 
         //// Bezier 2 Drawing
         let bezier2Path = UIBezierPath()
-        bezier2Path.move(to: CGPoint(x: 450, y: 345.5))
-        bezier2Path.addLine(to: CGPoint(x: -20, y: 416.5))
-        bezier2Path.addLine(to: CGPoint(x: -20, y: 520.5))
-        bezier2Path.addLine(to: CGPoint(x: 450, y: 450.5))
-        bezier2Path.addLine(to: CGPoint(x: 450, y: 345.5))
+        bezier2Path.move(to: CGPoint(x: 1000, y: 345.5))
+        bezier2Path.addLine(to: CGPoint(x: -200, y: 416.5))
+        bezier2Path.addLine(to: CGPoint(x: -200, y: 520.5))
+        bezier2Path.addLine(to: CGPoint(x: 1000, y: 450.5))
+        bezier2Path.addLine(to: CGPoint(x: 1000, y: 345.5))
         bezier2Path.close()
         orange.setFill()
         bezier2Path.fill()
 
         //// Bezier 3 Drawing
         let bezier3Path = UIBezierPath()
-        bezier3Path.move(to: CGPoint(x: 450, y: 449.5))
-        bezier3Path.addLine(to: CGPoint(x: -20, y: 520.5))
-        bezier3Path.addLine(to: CGPoint(x: -20, y: 624.5))
-        bezier3Path.addLine(to: CGPoint(x: 450, y: 554.5))
-        bezier3Path.addLine(to: CGPoint(x: 450, y: 449.5))
+        bezier3Path.move(to: CGPoint(x: 1000, y: 449.5))
+        bezier3Path.addLine(to: CGPoint(x: -200, y: 520.5))
+        bezier3Path.addLine(to: CGPoint(x: -200, y: 624.5))
+        bezier3Path.addLine(to: CGPoint(x: 1000, y: 554.5))
+        bezier3Path.addLine(to: CGPoint(x: 1000, y: 449.5))
         bezier3Path.close()
         UIColor.init(named: ColorTheme.shoeBackground4)?.setFill()
         bezier3Path.fill()
@@ -71,7 +71,7 @@ public class DrawIntroPage : NSObject {
         textStyle.alignment = .center
         let textFontAttributes = [
             .font: UIFont.systemFont(ofSize: 40, weight: .bold),
-            .foregroundColor: UIColor.black,
+            .foregroundColor: UIColor(named: ColorTheme.backgroundButton) as Any,
             .paragraphStyle: textStyle,
         ] as [NSAttributedString.Key: Any]
 
