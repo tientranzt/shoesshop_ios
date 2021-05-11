@@ -18,15 +18,7 @@ class IntroPageViewController: UIViewController {
     fileprivate let imageNames = ["shoe1.png","shoe1.png","shoe1.png"]
     
     fileprivate let transformerNames = ["cross fading", "zoom out", "depth", "linear", "overlap", "ferris wheel", "inverted ferris wheel", "coverflow", "cubic"]
-    fileprivate let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
-                                                                      .zoomOut,
-                                                                      .depth,
-                                                                      .linear,
-                                                                      .overlap,
-                                                                      .ferrisWheel,
-                                                                      .invertedFerrisWheel,
-                                                                      .coverFlow,
-                                                                      .cubic]
+    fileprivate let transformerTypes: [FSPagerViewTransformerType] = [.crossFading, .zoomOut, .depth, .linear, .overlap, .ferrisWheel, .invertedFerrisWheel, .coverFlow, .cubic]
     fileprivate var typeIndex = 0 {
         didSet {
             let type = self.transformerTypes[typeIndex]
@@ -113,44 +105,13 @@ extension IntroPageViewController: FSPagerViewDataSource, FSPagerViewDelegate{
         
         cell.isUserInteractionEnabled = false
         cell.backgroundView = drawView
-        switch index {
-        case 0:
-            UIView.transition(with: sloganLabel,
-                              duration: 0.5,
-                           options: .transitionCrossDissolve,
-                        animations: { [weak self] in
-                            self?.sloganLabel.text = "Page1"
-                     }, completion: nil)
-            //sloganLabel.text = "Page 1"
-            goToViewButton.isHidden = true
-            sloganLabel.isHidden = false
-        case 1:
-            UIView.transition(with: sloganLabel,
-                              duration: 0.5,
-                           options: .transitionCrossDissolve,
-                        animations: { [weak self] in
-                            self?.sloganLabel.text = "Page2"
-                     }, completion: nil)
-            //sloganLabel.text = "Page 2"
-            goToViewButton.isHidden = true
-            sloganLabel.isHidden = false
-        case 2:
-            goToViewButton.isHidden = false
-            sloganLabel.isHidden = true
-        default:
-            print("default")
-        }
+        
+        updateUI(index: index)
         
         return cell
     }
     
     // MARK:- FSPagerView Delegate
-    
-    //    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
-    //        pagerView.deselectItem(at: index, animated: true)
-    //        pagerView.scrollToItem(at: index, animated: true)
-    //    }
-    
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
         self.pageControl.currentPage = targetIndex
     }
@@ -159,4 +120,31 @@ extension IntroPageViewController: FSPagerViewDataSource, FSPagerViewDelegate{
         self.pageControl.currentPage = pagerView.currentIndex
     }
     
+    func updateUI (index: Int) {
+        switch index {
+        case 0:
+            UIView.transition(with: sloganLabel,
+                              duration: 0.5,
+                           options: .transitionCrossDissolve,
+                        animations: { [weak self] in
+                            self?.sloganLabel.text = "Go happy go anywhere"
+                     }, completion: nil)
+            goToViewButton.isHidden = true
+            sloganLabel.isHidden = false
+        case 1:
+            UIView.transition(with: sloganLabel,
+                              duration: 0.5,
+                           options: .transitionCrossDissolve,
+                        animations: { [weak self] in
+                            self?.sloganLabel.text = "Bring power to your steps"
+                     }, completion: nil)
+            goToViewButton.isHidden = true
+            sloganLabel.isHidden = false
+        case 2:
+            goToViewButton.isHidden = false
+            sloganLabel.isHidden = true
+        default:
+            print("default")
+        }
+    }
 }

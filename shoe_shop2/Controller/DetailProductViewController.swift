@@ -156,6 +156,7 @@ extension DetailProductViewController: FSPagerViewDataSource, FSPagerViewDelegat
         cell.imageView?.image = UIImage(named: self.imageNames[index])
         cell.imageView?.contentMode = .scaleAspectFit
         cell.imageView?.clipsToBounds = true
+        cell.isUserInteractionEnabled = false
         
         return cell
     }

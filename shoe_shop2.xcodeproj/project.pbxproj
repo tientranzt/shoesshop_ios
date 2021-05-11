@@ -12,6 +12,12 @@
 		64EB82582648239E001B1B05 /* PaymentCashMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB82572648239E001B1B05 /* PaymentCashMethod.swift */; };
 		64EB825B26482ACE001B1B05 /* PaymentOnlineMethod.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64EB825A26482ACE001B1B05 /* PaymentOnlineMethod.xib */; };
 		64EB825E26482AE4001B1B05 /* PaymentOnineMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB825D26482AE4001B1B05 /* PaymentOnineMethod.swift */; };
+		E268849726493228002B352E /* OrderSuccessPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E268849626493228002B352E /* OrderSuccessPage.storyboard */; };
+		E268849B26493237002B352E /* IntroPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E268849A26493237002B352E /* IntroPage.storyboard */; };
+		E26884A026493240002B352E /* DrawIntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268849E26493240002B352E /* DrawIntroPage.swift */; };
+		E26884A126493240002B352E /* IntroPageUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268849F26493240002B352E /* IntroPageUIView.swift */; };
+		E26884A426493259002B352E /* OrderSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26884A326493259002B352E /* OrderSuccessViewController.swift */; };
+		E26884A72649325F002B352E /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26884A62649325F002B352E /* IntroPageViewController.swift */; };
 		E26B1D202644CD240001ABE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B1D1F2644CD240001ABE0 /* AppDelegate.swift */; };
 		E26B1D222644CD240001ABE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B1D212644CD240001ABE0 /* SceneDelegate.swift */; };
 		E26B1D272644CD240001ABE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26B1D252644CD240001ABE0 /* Main.storyboard */; };
@@ -76,6 +82,12 @@
 		B2CB90B04F335B545CF44921 /* Pods_shoe_shop2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shoe_shop2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C953906715561AC4DC177CA8 /* Pods-shoe_shop2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shoe_shop2.release.xcconfig"; path = "Target Support Files/Pods-shoe_shop2/Pods-shoe_shop2.release.xcconfig"; sourceTree = "<group>"; };
 		D8979702779FF1451663FB4A /* Pods-shoe_shop2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shoe_shop2.debug.xcconfig"; path = "Target Support Files/Pods-shoe_shop2/Pods-shoe_shop2.debug.xcconfig"; sourceTree = "<group>"; };
+		E268849626493228002B352E /* OrderSuccessPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrderSuccessPage.storyboard; sourceTree = "<group>"; };
+		E268849A26493237002B352E /* IntroPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IntroPage.storyboard; sourceTree = "<group>"; };
+		E268849E26493240002B352E /* DrawIntroPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawIntroPage.swift; sourceTree = "<group>"; };
+		E268849F26493240002B352E /* IntroPageUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPageUIView.swift; sourceTree = "<group>"; };
+		E26884A326493259002B352E /* OrderSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderSuccessViewController.swift; sourceTree = "<group>"; };
+		E26884A62649325F002B352E /* IntroPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
 		E26B1D1C2644CD240001ABE0 /* shoe_shop2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shoe_shop2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26B1D1F2644CD240001ABE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E26B1D212644CD240001ABE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +202,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E268849526493228002B352E /* OrderSuccessPage */ = {
+			isa = PBXGroup;
+			children = (
+				E268849626493228002B352E /* OrderSuccessPage.storyboard */,
+			);
+			path = OrderSuccessPage;
+			sourceTree = "<group>";
+		};
+		E268849926493237002B352E /* IntroPage */ = {
+			isa = PBXGroup;
+			children = (
+				E268849D26493240002B352E /* DrawIntroPage */,
+				E268849A26493237002B352E /* IntroPage.storyboard */,
+			);
+			path = IntroPage;
+			sourceTree = "<group>";
+		};
+		E268849D26493240002B352E /* DrawIntroPage */ = {
+			isa = PBXGroup;
+			children = (
+				E268849E26493240002B352E /* DrawIntroPage.swift */,
+				E268849F26493240002B352E /* IntroPageUIView.swift */,
+			);
+			name = DrawIntroPage;
+			path = shoe_shop2/View/DrawIntroPage;
+			sourceTree = SOURCE_ROOT;
+		};
 		E26B1D132644CD240001ABE0 = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +274,8 @@
 		E26B1D382644CD380001ABE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E268849926493237002B352E /* IntroPage */,
+				E268849526493228002B352E /* OrderSuccessPage */,
 				64EB8251264822FB001B1B05 /* PaymentMethodViews */,
 				E2F61FE426454E5A001CE7E5 /* CustomSwitch */,
 				E2F61FDE26454E44001CE7E5 /* CustomTextField */,
@@ -253,6 +294,8 @@
 		E26B1D392644CD3C0001ABE0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E26884A62649325F002B352E /* IntroPageViewController.swift */,
+				E26884A326493259002B352E /* OrderSuccessViewController.swift */,
 				E2F61FD426454DE8001CE7E5 /* LoginViewController.swift */,
 				E2F61FD526454DE8001CE7E5 /* SignUpViewController.swift */,
 				E2F61FD126454DDB001CE7E5 /* HomeLoginViewController.swift */,
@@ -535,12 +578,14 @@
 				E26B1DC52644DCC70001ABE0 /* 1.jpg in Resources */,
 				E26B1D542644CF6D0001ABE0 /* DetailProduct.storyboard in Resources */,
 				FFA4FE9D26491FF2005F767F /* ToastMessageTableViewCell.xib in Resources */,
+				E268849726493228002B352E /* OrderSuccessPage.storyboard in Resources */,
 				E26B1DC62644DCC70001ABE0 /* 4.jpg in Resources */,
 				E26B1DC22644DCC70001ABE0 /* 3.jpg in Resources */,
 				E26B1DC32644DCC70001ABE0 /* 5.jpg in Resources */,
 				E26B1DC72644DCC70001ABE0 /* 2.jpg in Resources */,
 				E26B1D7C2644D45D0001ABE0 /* GoogleService-Info.plist in Resources */,
 				64EB825526482372001B1B05 /* PaymentCashMethod.xib in Resources */,
+				E268849B26493237002B352E /* IntroPage.storyboard in Resources */,
 				FF56974B26451DCC003CE928 /* CategoriesCollectionViewCell.xib in Resources */,
 				E26B1D572644CF740001ABE0 /* Checkout.storyboard in Resources */,
 				FF56975426451DE2003CE928 /* ProductCollectionViewCell.xib in Resources */,
@@ -606,12 +651,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26884A72649325F002B352E /* IntroPageViewController.swift in Sources */,
 				64EB82582648239E001B1B05 /* PaymentCashMethod.swift in Sources */,
 				E26B1D2A2644CD240001ABE0 /* shoe_shop2.xcdatamodeld in Sources */,
+				E26884A126493240002B352E /* IntroPageUIView.swift in Sources */,
 				FF56974F26451DD5003CE928 /* LastestProductCollectionViewCell.swift in Sources */,
 				FF56974C26451DCC003CE928 /* CategoriesCollectionViewCell.swift in Sources */,
 				FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */,
 				E26B1DB52644DC280001ABE0 /* UIImageView+Extension.swift in Sources */,
+				E26884A426493259002B352E /* OrderSuccessViewController.swift in Sources */,
 				E26B1D752644D01F0001ABE0 /* HomepageViewController.swift in Sources */,
 				E26B1D722644D0130001ABE0 /* CartViewController.swift in Sources */,
 				E26B1D6C2644CFFD0001ABE0 /* AccountViewController.swift in Sources */,
@@ -634,6 +682,7 @@
 				FFA4FE9C26491FF2005F767F /* ToastMessageTableViewCell.swift in Sources */,
 				E26B1D662644CFCF0001ABE0 /* CheckoutViewController.swift in Sources */,
 				FF56975326451DE2003CE928 /* ProductCollectionViewCell.swift in Sources */,
+				E26884A026493240002B352E /* DrawIntroPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
