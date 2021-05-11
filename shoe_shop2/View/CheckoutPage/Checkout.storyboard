@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T2M-nu-xHQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T2M-nu-xHQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,7 +12,7 @@
         <!--Checkout View Controller-->
         <scene sceneID="C4g-4i-dMf">
             <objects>
-                <viewController id="T2M-nu-xHQ" customClass="CheckoutViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="checkoutPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T2M-nu-xHQ" customClass="CheckoutViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vsy-pg-Do5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,6 +153,9 @@
                                                 <state key="normal" title="Order">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="BoZ-cr-rw6" kind="show" id="WBm-aT-zE0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" name="mainWhiteBackground"/>
@@ -208,6 +211,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3O-wx-8ao" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-97.101449275362327" y="179.46428571428569"/>
+        </scene>
+        <!--OrderSuccessPage-->
+        <scene sceneID="8g6-l4-5L9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OrderSuccessPage" id="BoZ-cr-rw6" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="E7j-Xb-jXk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v3m-65-Wqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46" y="642"/>
         </scene>
         <!--Change Ship Address View Controller-->
         <scene sceneID="s3p-rS-TYS">
@@ -290,6 +303,7 @@
                             <constraint firstItem="b4g-t5-4ja" firstAttribute="bottom" secondItem="wVN-xI-7l2" secondAttribute="bottom" id="hGb-zU-XGh"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="KQB-3W-nF9"/>
                     <connections>
                         <outlet property="btnSave" destination="qq2-mR-3v5" id="jmI-9y-x5Y"/>
                         <outlet property="textViewAddress" destination="1ZB-Fy-FUZ" id="6cw-Qc-XAX"/>
