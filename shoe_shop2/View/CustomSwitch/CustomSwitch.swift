@@ -42,7 +42,10 @@ class CustomSwitch: UIControl {
         if !self.isAnimating {
             //self.layer.cornerRadius = 8
             //self.backgroundColor = self.isOn ? self.onTintColor : self.offTintColor
-            
+            self.crossbar.frame = CGRect(x: 0, y: self.bounds.height/3, width: self.bounds.width, height: self.bounds.height/3)
+            self.crossbar.backgroundColor = UIColor.gray
+            self.crossbar.layer.cornerRadius = self.bounds.height/6
+            self.crossbar.isUserInteractionEnabled = true
             
             // thumb managment
             let thumbSize = self.thumbSize != CGSize.zero ? self.thumbSize : CGSize(width:self.bounds.size.height - 2, height: self.bounds.size.height - 2)
