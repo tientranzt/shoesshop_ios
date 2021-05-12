@@ -12,7 +12,10 @@ class RootTabbarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tabBar.isTranslucent = false
+        tabBar.backgroundColor = UIColor(named: ColorTheme.mainWhiteBackground)
+        
         let navLoginVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "navHomeLogin") as! UINavigationController
         
         if let _ = viewControllers?.last {

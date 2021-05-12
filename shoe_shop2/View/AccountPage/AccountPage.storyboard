@@ -298,7 +298,9 @@
                             <outlet property="delegate" destination="cvU-K8-1I6" id="AMR-Bd-Hdm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="G3A-yj-D5c"/>
+                    <navigationItem key="navigationItem" id="G3A-yj-D5c">
+                        <barButtonItem key="backBarButtonItem" title="aaa" id="aRm-3y-G3f"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1N3-FR-LuI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
