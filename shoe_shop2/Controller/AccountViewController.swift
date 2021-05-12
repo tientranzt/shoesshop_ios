@@ -1,14 +1,9 @@
-//
-//  AccountViewController.swift
-//  shoe_shop2
-//
-//  Created by Nguyen Thanh Phuc on 5/7/21.
-//
-
 import UIKit
+
 
 class AccountViewController: UIViewController {
 
+    // MARK: - Properties
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var orderHistoryImage: UIImageView!
     @IBOutlet weak var updateInfoImage: UIImageView!
@@ -18,16 +13,26 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var nextButton3: UIButton!
     @IBOutlet weak var signOutButton: UIButton!
     
+    
+    // MARK: -  Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillLayoutSubviews() {
         borderViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
 
+    }
+    
+    // MARK: - Helper
     private func borderViews(){
         avatarImage.layer.cornerRadius = avatarImage.frame.height / 2
         orderHistoryImage.layer.cornerRadius = orderHistoryImage.frame.height / 2
@@ -37,8 +42,9 @@ class AccountViewController: UIViewController {
         nextButton2.roundedAllSide(with: 8)
         nextButton3.roundedAllSide(with: 8)
         signOutButton.roundedAllSide(with: 8)
-        
     }
+    
+    // MARK: - IBAction
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         
         switch sender.tag {

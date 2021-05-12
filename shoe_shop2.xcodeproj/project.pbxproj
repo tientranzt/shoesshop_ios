@@ -72,6 +72,7 @@
 		FF8D2311264B5E180072D5D3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2310264B5E180072D5D3 /* CoreDataManager.swift */; };
 		FF8D2313264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2312264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift */; };
 		FF8D2316264B5E540072D5D3 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2315264B5E540072D5D3 /* CartModel.swift */; };
+		FF8D231D264B8C4C0072D5D3 /* RootTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D231C264B8C4C0072D5D3 /* RootTabbarViewController.swift */; };
 		FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */; };
 		FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */; };
 		FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */; };
@@ -147,6 +148,7 @@
 		FF8D2310264B5E180072D5D3 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FF8D2312264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
 		FF8D2315264B5E540072D5D3 /* CartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		FF8D231C264B8C4C0072D5D3 /* RootTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabbarViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserInformationViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 		E26B1D392644CD3C0001ABE0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FF8D231C264B8C4C0072D5D3 /* RootTabbarViewController.swift */,
 				FF8D22FB264A83D00072D5D3 /* IntroPageViewController.swift */,
 				FF8D22FC264A83D00072D5D3 /* OrderSuccessViewController.swift */,
 				64E0F81A264A3ED600005B0B /* ChangeShipAddressViewController.swift */,
@@ -709,6 +712,7 @@
 				FFA4FEA226492113005F767F /* OrderHistoryTableViewCell.swift in Sources */,
 				E26B1DB82644DC5E0001ABE0 /* Constant.swift in Sources */,
 				E26B1DB22644DC170001ABE0 /* UIView+Extension.swift in Sources */,
+				FF8D231D264B8C4C0072D5D3 /* RootTabbarViewController.swift in Sources */,
 				E2F61FE626454E62001CE7E5 /* CustomSwitch.swift in Sources */,
 				E2F61FE126454E51001CE7E5 /* CustomTextField.swift in Sources */,
 				E26B1D202644CD240001ABE0 /* AppDelegate.swift in Sources */,

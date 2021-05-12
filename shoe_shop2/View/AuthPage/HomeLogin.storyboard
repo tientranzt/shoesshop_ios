@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LKD-UC-Pit">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LKD-UC-Pit">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMI-gK-gX9">
-                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCS-D0-1Me">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="722"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="680"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFc-0L-3ca">
                                                 <rect key="frame" x="110" y="274" width="170" height="18"/>
@@ -57,44 +57,44 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRb-Sm-7W9">
-                                                <rect key="frame" x="39" y="372" width="312" height="50.666666666666686"/>
+                                                <rect key="frame" x="39" y="372" width="312" height="47.666666666666686"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <state key="normal" title="Continue with Facebook">
                                                     <color key="titleColor" name="mainWhiteBackground"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlC-mU-oon">
-                                                <rect key="frame" x="39" y="513.33333333333337" width="312" height="50.333333333333371"/>
+                                                <rect key="frame" x="39" y="507.33333333333343" width="312" height="47.666666666666686"/>
                                                 <color key="backgroundColor" name="subGrayBackground"/>
                                                 <state key="normal" title="I'll use email or phone">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="zlP-Zv-NXS" kind="push" id="S3a-Sc-dMz"/>
+                                                    <segue destination="zlP-Zv-NXS" kind="show" id="S3a-Sc-dMz"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKu-ae-DNh">
-                                                <rect key="frame" x="39" y="442.66666666666663" width="312" height="50.666666666666686"/>
+                                                <rect key="frame" x="39" y="439.66666666666663" width="312" height="47.666666666666686"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Continue with Apple">
                                                     <color key="titleColor" name="mainWhiteBackground"/>
                                                 </state>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7pA-nd-e8x">
-                                                <rect key="frame" x="85.666666666666686" y="653.66666666666663" width="219" height="63.333333333333371"/>
+                                                <rect key="frame" x="85.666666666666686" y="645" width="219" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have account ? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUt-zG-F42">
-                                                        <rect key="frame" x="0.0" y="21.666666666666742" width="181" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="4.6666666666666288" width="181" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rS-e7-kDe">
-                                                        <rect key="frame" x="181" y="16.666666666666742" width="38" height="30"/>
+                                                        <rect key="frame" x="181" y="0.0" width="38" height="30"/>
                                                         <state key="normal" title="Login"/>
                                                         <connections>
                                                             <action selector="moveToLogin:" destination="7Gi-9v-ROf" eventType="touchUpInside" id="fgb-PA-U48"/>
-                                                            <segue destination="fqf-Cf-3F3" kind="push" id="NVe-98-bia"/>
+                                                            <segue destination="fqf-Cf-3F3" kind="show" id="NVe-98-bia"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -179,8 +179,10 @@
         <!--Navigation Controller-->
         <scene sceneID="c3m-Hj-ZBe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LKD-UC-Pit" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navHomeLogin" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LKD-UC-Pit" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" selectedImage="person.fill" id="ecE-7K-fEM"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ldm-Ut-MKS">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -197,13 +199,13 @@
         <!--Login View Controller-->
         <scene sceneID="lSX-HZ-90U">
             <objects>
-                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fqf-Cf-3F3" customClass="LoginViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fqf-Cf-3F3" customClass="LoginViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qiq-ER-sYQ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pt-as-T1p">
-                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gB-I0-1Xn">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="718.33333333333337"/>
@@ -254,6 +256,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginButtonTapped:" destination="fqf-Cf-3F3" eventType="touchUpInside" id="lhO-ad-a4X"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyc-vG-6ep" customClass="CustomSwitch" customModule="shoe_shop2" customModuleProvider="target">
                                                 <rect key="frame" x="39" y="442.33333333333337" width="34.333333333333343" height="21.666666666666686"/>
@@ -331,18 +336,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhp-Tu-fbo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2730.434782608696" y="-258.48214285714283"/>
+            <point key="canvasLocation" x="2877" y="436"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="wR8-dB-62n">
             <objects>
-                <viewController storyboardIdentifier="SignUp" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zlP-Zv-NXS" customClass="SignUpViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUp" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zlP-Zv-NXS" customClass="SignUpViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ad4-CB-MIw">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJ7-al-Nx7">
-                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRb-bR-zvV">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="728.33333333333337"/>
@@ -473,10 +478,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNt-rn-lta" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2701" y="428"/>
+            <point key="canvasLocation" x="2877" y="-248"/>
         </scene>
     </scenes>
     <resources>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="shoe_logo" width="811" height="307"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -24,6 +24,16 @@ class LoginViewController: UIViewController {
         btnLogin.layer.cornerRadius = 8;
     }
 
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        var tabbar = navigationController?.tabBarController as! RootTabbarViewController
+        
+        let navLoginVC = UIStoryboard(name: "AccountPage", bundle: nil).instantiateViewController(identifier: "navAccountPage") as! UINavigationController
+        
+        if let _ = tabbar.viewControllers?.last{
+            tabbar.viewControllers![3] = navLoginVC
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

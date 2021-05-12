@@ -20,9 +20,7 @@ class SignUpViewController: UIViewController {
         setUpView()
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
-    }
+  
     
     func setUpView() {
         textFieldUserName.lblTextFieldName.text = " USER NAME "

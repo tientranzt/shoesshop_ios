@@ -11,6 +11,7 @@ class NotificationViewController: UITableViewController {
 
     var colorsName = [ColorTheme.hightlightOrangeBackground, ColorTheme.starBackground, ColorTheme.priceColor]
     
+    // MARK: - Helper
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "ToastMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "toastMessageCell")
@@ -18,9 +19,19 @@ class NotificationViewController: UITableViewController {
         tableView.separatorStyle = .none
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+
+    }
+
 }
 
 
+// MARK: - Extension NotificationViewController
 extension NotificationViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
