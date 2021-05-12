@@ -22,7 +22,10 @@ class DetailProductViewController: UIViewController {
     @IBOutlet weak var addToCardButton: UIButton!
     let viewChoose = UIView()
     
-    fileprivate let imageNames = ["shoe2.png","shoe2.png","shoe2.png","shoe2.png","shoe2.png","shoe2.png","shoe2.png"]
+    var navBarDefaultColor: UIColor?
+    var navBarDefaultShadowImage: UIImage?
+    
+    fileprivate let imageNames = ["shoe2", "shoe2"]
     
     //MARK: - Outlet PageView
     @IBOutlet weak var pagerView: FSPagerView!{
@@ -43,15 +46,33 @@ class DetailProductViewController: UIViewController {
         super.viewDidLoad()
         customSizeButton()
         customColorButton()
-        addToCardButton.roundedAllSide(with: 16)
         setVisibleSizeButton(show: sizeEightButton, hidden: sizeNineButton, hidden: sizeTenButton)
         setVisibleColorButton(buttonChoose: colorGreenShoeButton)
-        contentView.layer.cornerRadius = 50
+        addToCardButton.roundedAllSide(with: 16)
+        contentView.roundedAllSide(with: 8)
         contentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        //contentView.roundedAllSide(with: 50)
+    }
+    
+    //MARK: - handle NavigationBar will apprear
+    override func viewWillAppear(_ animated: Bool) {
+       
+        navBarDefaultColor = self.navigationController?.navigationBar.barTintColor
+        navBarDefaultShadowImage = self.navigationController?.navigationBar.shadowImage
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: ColorTheme.shoeBackground4)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    //MARK: - handle NavigationBar will didappear
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = navBarDefaultColor
+        self.navigationController?.navigationBar.shadowImage = navBarDefaultShadowImage
+        self.navigationController?.navigationBar.isTranslucent = true
         
     }
     
+  
     
     override func viewWillLayoutSubviews() {
         viewChoose.layer.masksToBounds = true
@@ -153,20 +174,14 @@ extension DetailProductViewController: FSPagerViewDataSource, FSPagerViewDelegat
     
     public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell{
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        cell.imageView?.image = UIImage(named: self.imageNames[index])
+        cell.imageView?.image = UIImage(named: imageNames[index])
+        //cell.imageView?.downloaded(from: imageNames[index])
         cell.imageView?.contentMode = .scaleAspectFit
         cell.imageView?.clipsToBounds = true
         cell.isUserInteractionEnabled = false
-        
         return cell
     }
     
-    // MARK:- FSPagerView Delegate
-    
-    //    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
-    //        pagerView.deselectItem(at: index, animated: true)
-    //        pagerView.scrollToItem(at: index, animated: true)
-    //    }
     
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
         self.pageControl.currentPage = targetIndex
@@ -177,3 +192,12 @@ extension DetailProductViewController: FSPagerViewDataSource, FSPagerViewDelegat
     }
 }
 
+extension DetailProductViewController : UIScrollViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 0{
+            self.view.backgroundColor = UIColor(named: ColorTheme.shoeBackground4)
+        }else{
+            self.view.backgroundColor = .white
+        }
+    }
+}

@@ -18,4 +18,6 @@ struct ColorTheme {
     static let starBackground = "starBackground"
     static let subBlackBackground = "subBlackBackground"
     static let subGrayBackground = "subGrayBackground"
+    static let subBlueBackground = "subBlueBackground"
+    
 }

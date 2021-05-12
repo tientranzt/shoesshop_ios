@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class OrderSuccessViewController: UIViewController {
       
     @IBOutlet weak var trackYourOrderButton: UIButton!
@@ -14,13 +13,12 @@ class OrderSuccessViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
-        
+        self.navigationController?.isNavigationBarHidden = true
     }
     override func viewDidLayoutSubviews() {
         //MARK: -- Animaton Tick
         UIView.animate(withDuration: 1) {
-            self.backgroundImageView.frame = CGRect(x: self.backgroundImageView.layer.frame.minX, y: self.backgroundImageView.layer.frame.minY + 50 , width: self.backgroundImageView.layer.frame.width, height: self.backgroundImageView.layer.frame.height)}
+            self.backgroundImageView.frame = CGRect(x: self.backgroundImageView.layer.frame.minX, y: self.backgroundImageView.layer.frame.minY + 30 , width: self.backgroundImageView.layer.frame.width, height: self.backgroundImageView.layer.frame.height)}
     }
     
     //MARK: -- Radius View and Button

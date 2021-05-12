@@ -15,7 +15,7 @@ class IntroPageViewController: UIViewController {
     
     @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var goToViewButton: UIButton!
-    fileprivate let imageNames = ["shoe1.png","shoe1.png","shoe1.png"]
+    fileprivate let imageNames = ["introImage.png","introImage.png","introImage.png"]
     
     fileprivate let transformerNames = ["cross fading", "zoom out", "depth", "linear", "overlap", "ferris wheel", "inverted ferris wheel", "coverflow", "cubic"]
     fileprivate let transformerTypes: [FSPagerViewTransformerType] = [.crossFading, .zoomOut, .depth, .linear, .overlap, .ferrisWheel, .invertedFerrisWheel, .coverFlow, .cubic]
@@ -51,6 +51,7 @@ class IntroPageViewController: UIViewController {
             self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
             self.typeIndex = 1
             goToViewButton.isHidden = true
+
         }
     }
     
@@ -100,6 +101,7 @@ extension IntroPageViewController: FSPagerViewDataSource, FSPagerViewDelegate{
         cell.imageView?.contentMode = .scaleAspectFit
         cell.imageView?.clipsToBounds = true
         
+        
         let drawView = IntroPageUIView.init()
         drawView.backgroundColor = .white
         
@@ -127,7 +129,7 @@ extension IntroPageViewController: FSPagerViewDataSource, FSPagerViewDelegate{
                               duration: 0.5,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                            self?.sloganLabel.text = "Go happy go anywhere"
+                            self?.sloganLabel.text = "GO HAPPY GO ANYWHERE"
                      }, completion: nil)
             goToViewButton.isHidden = true
             sloganLabel.isHidden = false
@@ -136,7 +138,7 @@ extension IntroPageViewController: FSPagerViewDataSource, FSPagerViewDelegate{
                               duration: 0.5,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                            self?.sloganLabel.text = "Bring power to your steps"
+                            self?.sloganLabel.text = "BRING POWER TO YOUR STEPS"
                      }, completion: nil)
             goToViewButton.isHidden = true
             sloganLabel.isHidden = false
