@@ -13,7 +13,7 @@ class IntroPageUIView: UIView {
    
     override func draw(_ rect: CGRect) {
         // Drawing code
-        DrawIntroPage.drawCanvas1(frame: self.bounds, resizing: .center)
+        DrawIntroPage.drawCanvas1(frame: self.bounds, resizing: .aspectFit)
         
     }
 

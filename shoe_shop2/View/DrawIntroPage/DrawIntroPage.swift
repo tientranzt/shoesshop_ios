@@ -66,11 +66,11 @@ public class DrawIntroPage : NSObject {
 
         
         //// Text Drawing
-        let textRect = CGRect(x: 0, y: 91, width: 414, height: 60)
+        let textRect = CGRect(x: 0, y: 80, width: 420, height: 60)
         let textStyle = NSMutableParagraphStyle()
         textStyle.alignment = .center
         let textFontAttributes = [
-            .font: UIFont.systemFont(ofSize: 40, weight: .bold),
+            .font: UIFont.systemFont(ofSize: 60, weight: .bold),
             .foregroundColor: UIColor(named: ColorTheme.backgroundButton) as Any,
             .paragraphStyle: textStyle,
         ] as [NSAttributedString.Key: Any]
@@ -79,12 +79,12 @@ public class DrawIntroPage : NSObject {
 
 
         //// Text 2 Drawing
-        let text2Rect = CGRect(x: 2, y: 170, width: 414, height: 60)
+        let text2Rect = CGRect(x: 0, y: 170, width: 420, height: 60)
         let text2Style = NSMutableParagraphStyle()
         text2Style.alignment = .center
         let text2FontAttributes = [
             .font: UIFont.systemFont(ofSize: 25, weight: .medium),
-            .foregroundColor: UIColor.black,
+            .foregroundColor: UIColor(named: ColorTheme.subBlueBackground) as Any,
             .paragraphStyle: text2Style,
         ] as [NSAttributedString.Key: Any]
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q8G-az-Zeq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q8G-az-Zeq">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -21,10 +21,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efx-aG-CwS">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="820"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOG-7C-ewN" customClass="FSPagerView" customModule="FSPagerView">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="738"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="432"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="alwaysBounceHorizontal" value="YES"/>
@@ -37,15 +37,15 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0L-FR-44I" customClass="FSPageControl" customModule="FSPagerView">
-                                                <rect key="frame" x="0.0" y="738" width="320" height="123"/>
+                                                <rect key="frame" x="0.0" y="432" width="320" height="48"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hidesForSinglePage" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkv-Vo-fyA">
-                                                <rect key="frame" x="128" y="674" width="64" height="64"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="128" y="368" width="64" height="64"/>
+                                                <color key="backgroundColor" name="backgroundButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" secondItem="rkv-Vo-fyA" secondAttribute="width" multiplier="1:1" id="0LA-Hg-ckx"/>
                                                 </constraints>
@@ -57,10 +57,10 @@
                                                     <segue destination="jqf-xO-db5" kind="show" id="DmG-UT-jID"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello EveryBody" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0L-Tn-BUN">
-                                                <rect key="frame" x="20" y="676.5" width="280" height="31.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                <color key="textColor" name="AccentColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello EveryBody" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0L-Tn-BUN">
+                                                <rect key="frame" x="0.0" y="360.5" width="320" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <color key="textColor" name="backgroundButton"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -68,18 +68,17 @@
                                         <constraints>
                                             <constraint firstItem="qOG-7C-ewN" firstAttribute="leading" secondItem="efx-aG-CwS" secondAttribute="leading" id="0TO-R4-YUn"/>
                                             <constraint firstItem="rkv-Vo-fyA" firstAttribute="centerX" secondItem="efx-aG-CwS" secondAttribute="centerX" id="5YC-XO-vR6"/>
-                                            <constraint firstItem="o0L-FR-44I" firstAttribute="top" secondItem="A0L-Tn-BUN" secondAttribute="bottom" constant="30" id="9TZ-QH-W7U"/>
+                                            <constraint firstItem="o0L-FR-44I" firstAttribute="top" secondItem="A0L-Tn-BUN" secondAttribute="bottom" constant="50" id="9TZ-QH-W7U"/>
                                             <constraint firstItem="rkv-Vo-fyA" firstAttribute="width" secondItem="efx-aG-CwS" secondAttribute="width" multiplier="1:5" id="UJE-zN-khC"/>
-                                            <constraint firstItem="A0L-Tn-BUN" firstAttribute="leading" secondItem="efx-aG-CwS" secondAttribute="leading" constant="20" id="ZYz-3I-lJQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="A0L-Tn-BUN" secondAttribute="trailing" constant="20" id="h9d-bY-2wl"/>
+                                            <constraint firstItem="A0L-Tn-BUN" firstAttribute="leading" secondItem="efx-aG-CwS" secondAttribute="leading" id="ZYz-3I-lJQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="A0L-Tn-BUN" secondAttribute="trailing" id="h9d-bY-2wl"/>
                                             <constraint firstItem="o0L-FR-44I" firstAttribute="top" secondItem="qOG-7C-ewN" secondAttribute="bottom" id="jd6-8G-5zn"/>
-                                            <constraint firstAttribute="bottom" secondItem="o0L-FR-44I" secondAttribute="bottom" constant="-41" id="mj9-VA-DpU"/>
                                             <constraint firstAttribute="trailing" secondItem="qOG-7C-ewN" secondAttribute="trailing" id="o0N-ac-TDK"/>
                                             <constraint firstItem="o0L-FR-44I" firstAttribute="top" secondItem="rkv-Vo-fyA" secondAttribute="bottom" id="r47-Gz-jvR"/>
                                             <constraint firstItem="o0L-FR-44I" firstAttribute="leading" secondItem="efx-aG-CwS" secondAttribute="leading" id="tCy-Ge-zLh"/>
                                             <constraint firstItem="qOG-7C-ewN" firstAttribute="height" secondItem="efx-aG-CwS" secondAttribute="height" multiplier="9:10" id="uPV-ih-vPS"/>
                                             <constraint firstAttribute="trailing" secondItem="o0L-FR-44I" secondAttribute="trailing" id="vY0-RE-DgN"/>
-                                            <constraint firstItem="o0L-FR-44I" firstAttribute="height" secondItem="efx-aG-CwS" secondAttribute="height" multiplier="1.5:10" id="x9T-Ii-r86"/>
+                                            <constraint firstItem="o0L-FR-44I" firstAttribute="height" secondItem="efx-aG-CwS" secondAttribute="height" multiplier="1:10" id="x9T-Ii-r86"/>
                                             <constraint firstItem="qOG-7C-ewN" firstAttribute="top" secondItem="efx-aG-CwS" secondAttribute="top" id="yL5-6x-Fh7"/>
                                         </constraints>
                                     </view>
@@ -128,8 +127,8 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="backgroundButton">
+            <color red="0.23499999940395355" green="0.18400000035762787" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
