@@ -6,6 +6,7 @@ import FSPagerView
 class DetailProductViewController: UIViewController {
     
     
+    @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
     //MARK: - Outlet button size
     @IBOutlet weak var sizeEightButton: UIButton!
@@ -51,6 +52,13 @@ class DetailProductViewController: UIViewController {
         addToCardButton.roundedAllSide(with: 16)
         contentView.roundedAllSide(with: 8)
         contentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        reviewLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressReview)))
+        reviewLabel.underLine()
+    }
+    
+    //MARK: - Tapgesture
+    @objc func pressReview() {
+        print("hello")
     }
     
     //MARK: - handle NavigationBar will apprear

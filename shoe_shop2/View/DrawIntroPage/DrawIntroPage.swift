@@ -75,7 +75,7 @@ public class DrawIntroPage : NSObject {
             .paragraphStyle: textStyle,
         ] as [NSAttributedString.Key: Any]
 
-        "Shose Shop\n\n".draw(in: textRect, withAttributes: textFontAttributes)
+        "Shoes Shop\n\n".draw(in: textRect, withAttributes: textFontAttributes)
 
 
         //// Text 2 Drawing
