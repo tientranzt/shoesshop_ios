@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fcO-jr-f4h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fl1-Ho-0Z5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Root Tabbar View Controller-->
+        <scene sceneID="qar-Zl-1Ca">
+            <objects>
+                <viewController id="Fl1-Ho-0Z5" customClass="RootTabbarViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5lp-au-Evg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="c4I-yn-zAf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qna-E5-UpR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1368" y="-752"/>
+        </scene>
         <!--Root Tabbar View Controller-->
         <scene sceneID="5pz-dF-ePx">
             <objects>
@@ -40,7 +57,7 @@
         <!--Navigation Controller-->
         <scene sceneID="1y3-xf-BNa">
             <objects>
-                <navigationController id="AEq-zb-ojF" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navNotificationPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AEq-zb-ojF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="bell" catalog="system" selectedImage="bell.fill" id="nyU-Tb-ck5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z7l-YQ-8ip">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -57,7 +74,7 @@
         <!--Navigation Controller-->
         <scene sceneID="KTm-YD-Uwe">
             <objects>
-                <navigationController id="Mbf-kZ-Gxe" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navCartPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mbf-kZ-Gxe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="cart" catalog="system" selectedImage="cart.fill" id="0yj-ZY-nrs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TmK-vS-0bU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -108,5 +125,8 @@
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -86,6 +86,14 @@ class IntroPageViewController: UIViewController {
     override var shouldAutorotate: Bool {
         return true
     }
+    @IBAction func handleGoButton(_ sender: UIButton) {
+        
+        let tabController = CustomTabBarController()
+        tabController.view.backgroundColor = .white
+        tabController.modalPresentationStyle = .fullScreen
+        
+        present(tabController, animated: true, completion: nil)
+    }
 }
 
 extension IntroPageViewController: FSPagerViewDataSource, FSPagerViewDelegate{

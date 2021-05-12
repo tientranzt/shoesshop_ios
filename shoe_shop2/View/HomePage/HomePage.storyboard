@@ -177,7 +177,7 @@
         <!--Navigation Controller-->
         <scene sceneID="PF3-u1-7yc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tfd-n5-rkb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navHomePage" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tfd-n5-rkb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" selectedImage="house.fill" id="CiS-h9-d9j"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

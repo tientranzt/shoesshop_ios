@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hhW-07-fpO">
-                                <rect key="frame" x="20" y="44" width="374" height="653"/>
+                                <rect key="frame" x="20" y="88" width="374" height="609"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Wjr-TW-MUQ" id="rob-oY-xAP"/>
@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7J-uC-eWa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="437.68115942028987" y="1322.5446428571429"/>
+            <point key="canvasLocation" x="1347.8260869565217" y="1322.5446428571429"/>
         </scene>
         <!--Checkout-->
         <scene sceneID="K3Y-ZX-mXN">
@@ -98,7 +98,25 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubX-An-bfO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1394" y="1349"/>
+            <point key="canvasLocation" x="2302.898550724638" y="1348.6607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fk9-1Y-Ty2">
+            <objects>
+                <navigationController storyboardIdentifier="navCartPage" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PnU-JZ-9wy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4kR-Bs-0Ll">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wjr-TW-MUQ" kind="relationship" relationship="rootViewController" id="xTX-7w-8Vn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3e9-Tn-tu2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="437.68115942028987" y="1322.5446428571429"/>
         </scene>
     </scenes>
     <resources>

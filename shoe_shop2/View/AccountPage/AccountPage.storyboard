@@ -12,7 +12,7 @@
         <!--Account View Controller-->
         <scene sceneID="GOL-1R-vhe">
             <objects>
-                <viewController id="yfT-0U-ogV" customClass="AccountViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="accountPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yfT-0U-ogV" customClass="AccountViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VEc-kG-ZwU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
