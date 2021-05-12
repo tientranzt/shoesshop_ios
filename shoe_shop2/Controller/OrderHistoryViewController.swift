@@ -8,17 +8,29 @@
 import UIKit
 
 class OrderHistoryViewController: UITableViewController {
+    // MARK: - Properties
     private let reuseableCellIdentified = "orderHisotryCell"
     
-    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
+        configureNavBackground()
+    }
+    
+    // MARK: - Helper
+    
+    private func configureNavBackground(){
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    private func configureTableView(){
         tableView.register(UINib(nibName: "OrderHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: reuseableCellIdentified)
         tableView.rowHeight = 190
         tableView.showsVerticalScrollIndicator = false
         tableView.showsHorizontalScrollIndicator = false
         tableView.separatorStyle = .none
-
     }
 }
 
@@ -39,8 +51,5 @@ extension OrderHistoryViewController {
         return cell
     }
     
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//
-//    }
 }
 

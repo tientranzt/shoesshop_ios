@@ -21,6 +21,7 @@ class HomepageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollecions()
+        configureNavBackground()
     }
     
     override func viewWillLayoutSubviews() {
@@ -28,6 +29,11 @@ class HomepageViewController: UIViewController {
     }
     
     // MARK: - Helper
+    private func configureNavBackground(){
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
     private func configureCollecions(){
         categoryCollection.delegate = self
         categoryCollection.dataSource = self
