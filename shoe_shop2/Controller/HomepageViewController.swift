@@ -22,6 +22,7 @@ class HomepageViewController: UIViewController {
         super.viewDidLoad()
         configureCollecions()
         configureNavBackground()
+        
     }
     
     override func viewWillLayoutSubviews() {

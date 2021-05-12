@@ -548,7 +548,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UIN-sL-v67">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nQr-Ie-loF" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navAccountPage" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nQr-Ie-loF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" selectedImage="person.fill" id="fsD-Yq-TAa"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

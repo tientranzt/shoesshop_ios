@@ -54,7 +54,7 @@
                                     <color key="titleColor" name="mainWhiteBackground"/>
                                 </state>
                                 <connections>
-                                    <action selector="handleCheckoutButtonClicked:" destination="Wjr-TW-MUQ" eventType="touchUpInside" id="XDm-vY-jUS"/>
+                                    <segue destination="77x-dx-WoF" kind="show" id="1Cp-sX-fjD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -89,6 +89,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7J-uC-eWa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="437.68115942028987" y="1322.5446428571429"/>
+        </scene>
+        <!--Checkout-->
+        <scene sceneID="K3Y-ZX-mXN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Checkout" id="77x-dx-WoF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cfX-uY-eYF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ubX-An-bfO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1394" y="1349"/>
         </scene>
     </scenes>
     <resources>

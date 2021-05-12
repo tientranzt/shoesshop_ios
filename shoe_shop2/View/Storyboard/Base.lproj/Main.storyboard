@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Root Tabbar View Controller-->
         <scene sceneID="5pz-dF-ePx">
             <objects>
-                <tabBarController id="fcO-jr-f4h" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="fcO-jr-f4h" customClass="RootTabbarViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HzQ-hT-Z5n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
