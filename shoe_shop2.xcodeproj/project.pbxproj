@@ -83,6 +83,7 @@
 		FF8D2313264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2312264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift */; };
 		FF8D2316264B5E540072D5D3 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2315264B5E540072D5D3 /* CartModel.swift */; };
 		FF8D231D264B8C4C0072D5D3 /* RootTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D231C264B8C4C0072D5D3 /* RootTabbarViewController.swift */; };
+		FF8D2336264CB9590072D5D3 /* RAMAnimatedTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = FF8D2335264CB9590072D5D3 /* RAMAnimatedTabBarController */; };
 		FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */; };
 		FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */; };
 		FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */; };
@@ -185,6 +186,7 @@
 			files = (
 				3E6E5F471A16F0F76B5966AB /* Pods_shoe_shop2.framework in Frameworks */,
 				E26B1D832644D79C0001ABE0 /* FirebaseAuth in Frameworks */,
+				FF8D2336264CB9590072D5D3 /* RAMAnimatedTabBarController in Frameworks */,
 				FF8D2309264AA71B0072D5D3 /* ShimmerSwift in Frameworks */,
 				E26B1D852644D79C0001ABE0 /* FirebaseDatabase in Frameworks */,
 				E26B1D812644D79C0001ABE0 /* FirebaseStorage in Frameworks */,
@@ -626,6 +628,7 @@
 				E26B1D822644D79C0001ABE0 /* FirebaseAuth */,
 				E26B1D842644D79C0001ABE0 /* FirebaseDatabase */,
 				FF8D2308264AA71B0072D5D3 /* ShimmerSwift */,
+				FF8D2335264CB9590072D5D3 /* RAMAnimatedTabBarController */,
 			);
 			productName = shoe_shop2;
 			productReference = E26B1D1C2644CD240001ABE0 /* shoe_shop2.app */;
@@ -657,6 +660,7 @@
 			packageReferences = (
 				E26B1D7F2644D79C0001ABE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FF8D2307264AA71B0072D5D3 /* XCRemoteSwiftPackageReference "ShimmerSwift" */,
+				FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */,
 			);
 			productRefGroup = E26B1D1D2644CD240001ABE0 /* Products */;
 			projectDirPath = "";
@@ -1027,6 +1031,14 @@
 				minimumVersion = 2.2.0;
 			};
 		};
+		FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Ramotion/animated-tab-bar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1049,6 +1061,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF8D2307264AA71B0072D5D3 /* XCRemoteSwiftPackageReference "ShimmerSwift" */;
 			productName = ShimmerSwift;
+		};
+		FF8D2335264CB9590072D5D3 /* RAMAnimatedTabBarController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */;
+			productName = RAMAnimatedTabBarController;
 		};
 /* End XCSwiftPackageProductDependency section */
 

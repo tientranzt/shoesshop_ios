@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "RAMAnimatedTabBarController",
+        "repositoryURL": "https://github.com/Ramotion/animated-tab-bar.git",
+        "state": {
+          "branch": null,
+          "revision": "52174249fa7b296c0fce1114be8f34081b85ffc3",
+          "version": "5.2.0"
+        }
+      },
+      {
         "package": "BoringSSL-GRPC",
         "repositoryURL": "https://github.com/firebase/boringssl-SwiftPM.git",
         "state": {
