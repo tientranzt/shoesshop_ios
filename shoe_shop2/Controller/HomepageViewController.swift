@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class HomepageViewController: UIViewController {
+
+    // MARK: - juut for test firebase
+    private var ref = Database.database().reference()
 
     // MARK: - Properties
     @IBOutlet weak var categoryCollection: UICollectionView!
@@ -15,14 +19,19 @@ class HomepageViewController: UIViewController {
     @IBOutlet weak var lastestProductCollection: UICollectionView!
     @IBOutlet weak var searchButton: UIButton!
     
-    let categoriesList = ["Nike", "Pandas", "Adias", "Madda", "Chenny", "Jimroki"]
+    var categoriesList : [CategoryModel] = []
+    var productList : [ProductModel] = []
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollecions()
         configureNavBackground()
-        
+    
+        // MARK: - Fetch data in firebase funcs
+        fetchCategory()
+        fetchProduct()
+
     }
     
     override func viewWillLayoutSubviews() {
@@ -55,6 +64,35 @@ class HomepageViewController: UIViewController {
         lastestProductCollection.showsVerticalScrollIndicator = false
         lastestProductCollection.showsHorizontalScrollIndicator = false
     }
+    
+    // MARK: - Firebase func
+    func fetchCategory()  {
+        FirebaseManager.shared.fetchProductCategory { dataSnapshot in
+    
+            if let data = dataSnapshot.value as? [String: AnyObject] {
+                data.forEach { (key : String, value: AnyObject) in
+                
+                    self.categoriesList.append(FirebaseManager.shared.parseCategorModel(id: key ,object: value))
+                    DispatchQueue.main.async {
+                        self.categoryCollection.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
+    func fetchProduct() {
+        FirebaseManager.shared.fetchProduct { dataSnapshot in
+            if let data = dataSnapshot.value as? [String: AnyObject] {
+                data.forEach { (key : String, value: AnyObject) in
+                    self.productList.append(FirebaseManager.shared.parseProductModel(id: key, object: value))
+                    DispatchQueue.main.async {
+                        self.productCollection.reloadData()
+                    }
+                }
+            }
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegate , UICollectionViewDataSource
@@ -65,14 +103,26 @@ extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoriesList.count
+        if collectionView == self.categoryCollection {
+            return categoriesList.count
+        }
+        
+        if collectionView == self.productCollection {
+            return productList.count
+        }
+        
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == self.productCollection {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as! ProductCollectionViewCell
-
+            cell.productName.text = productList[indexPath.row].productName
+            cell.productPrice.text = productList[indexPath.row].price
+            cell.productImage.loadImage(url: URL(string: productList[indexPath.row].image)!)
+            cell.containerView.backgroundColor = UIColor(named: productList[indexPath.row].colorCode)
+            
             return cell
         }
 
@@ -83,7 +133,8 @@ extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDat
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! CategoriesCollectionViewCell
-    
+        
+        cell.textLabel.text =  categoriesList[indexPath.row].name
     
         return cell
     }

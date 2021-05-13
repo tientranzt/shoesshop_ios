@@ -10,6 +10,9 @@ import UIKit
 class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var heartButton: UIButton!
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
     
     var isHeartClicked : Bool = false {
         didSet {

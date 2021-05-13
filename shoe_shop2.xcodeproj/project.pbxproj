@@ -40,6 +40,13 @@
 		E26B1DB22644DC170001ABE0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B1DB12644DC170001ABE0 /* UIView+Extension.swift */; };
 		E26B1DB52644DC280001ABE0 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B1DB42644DC280001ABE0 /* UIImageView+Extension.swift */; };
 		E26B1DB82644DC5E0001ABE0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B1DB72644DC5E0001ABE0 /* Constant.swift */; };
+		E26B1DC12644DCC70001ABE0 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E26B1DBA2644DCC70001ABE0 /* 7.jpg */; };
+		E26B1DC22644DCC70001ABE0 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E26B1DBB2644DCC70001ABE0 /* 3.jpg */; };
+		E26B1DC32644DCC70001ABE0 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E26B1DBC2644DCC70001ABE0 /* 5.jpg */; };
+		E26B1DC42644DCC70001ABE0 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E26B1DBD2644DCC70001ABE0 /* 6.jpg */; };
+		E26B1DC52644DCC70001ABE0 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E26B1DBE2644DCC70001ABE0 /* 1.jpg */; };
+		E26B1DC62644DCC70001ABE0 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E26B1DBF2644DCC70001ABE0 /* 4.jpg */; };
+		E26B1DC72644DCC70001ABE0 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E26B1DC02644DCC70001ABE0 /* 2.jpg */; };
 		E2701153264BAF2F0089E500 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2701152264BAF2F0089E500 /* UILabel+Extension.swift */; };
 		E2701160264BB1C60089E500 /* ReviewPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E270115F264BB1C60089E500 /* ReviewPage.storyboard */; };
 		E2701163264BB2010089E500 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2701162264BB2010089E500 /* ReviewViewController.swift */; };
@@ -50,7 +57,6 @@
 		E270117F264BE4B50089E500 /* ReviewDetailPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E270117E264BE4B50089E500 /* ReviewDetailPage.storyboard */; };
 		E2701182264BF4BA0089E500 /* CustomPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2701181264BF4BA0089E500 /* CustomPresentation.swift */; };
 		E2701185264BF60A0089E500 /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2701184264BF60A0089E500 /* ReviewDetailViewController.swift */; };
-		E270119B264CBEB60089E500 /* RAMAnimatedTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = E270119A264CBEB60089E500 /* RAMAnimatedTabBarController */; };
 		E2F61FD226454DDB001CE7E5 /* HomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F61FD126454DDB001CE7E5 /* HomeLoginViewController.swift */; };
 		E2F61FD626454DE9001CE7E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F61FD426454DE8001CE7E5 /* LoginViewController.swift */; };
 		E2F61FD726454DE9001CE7E5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F61FD526454DE8001CE7E5 /* SignUpViewController.swift */; };
@@ -77,6 +83,13 @@
 		FF8D2313264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2312264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift */; };
 		FF8D2316264B5E540072D5D3 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2315264B5E540072D5D3 /* CartModel.swift */; };
 		FF8D231D264B8C4C0072D5D3 /* RootTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D231C264B8C4C0072D5D3 /* RootTabbarViewController.swift */; };
+		FF8D2336264CB9590072D5D3 /* RAMAnimatedTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = FF8D2335264CB9590072D5D3 /* RAMAnimatedTabBarController */; };
+		FF8D233D264CC2F10072D5D3 /* TextFielDigitCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D233B264CC2F10072D5D3 /* TextFielDigitCode.swift */; };
+		FF8D233E264CC2F10072D5D3 /* TextFielDigitCode.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8D233C264CC2F10072D5D3 /* TextFielDigitCode.xib */; };
+		FF8D2343264CC5AA0072D5D3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2342264CC5AA0072D5D3 /* FirebaseManager.swift */; };
+		FF8D2345264CD2B50072D5D3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2344264CD2B50072D5D3 /* Category.swift */; };
+		FF8D2347264D2AF50072D5D3 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2346264D2AF40072D5D3 /* ProductModel.swift */; };
+		FF8D2349264D60F00072D5D3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2348264D60F00072D5D3 /* UIColor+Extension.swift */; };
 		FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */; };
 		FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */; };
 		FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */; };
@@ -121,6 +134,13 @@
 		E26B1DB12644DC170001ABE0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		E26B1DB42644DC280001ABE0 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		E26B1DB72644DC5E0001ABE0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		E26B1DBA2644DCC70001ABE0 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
+		E26B1DBB2644DCC70001ABE0 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		E26B1DBC2644DCC70001ABE0 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		E26B1DBD2644DCC70001ABE0 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		E26B1DBE2644DCC70001ABE0 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		E26B1DBF2644DCC70001ABE0 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		E26B1DC02644DCC70001ABE0 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		E2701152264BAF2F0089E500 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		E270115F264BB1C60089E500 /* ReviewPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewPage.storyboard; sourceTree = "<group>"; };
 		E2701162264BB2010089E500 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +176,12 @@
 		FF8D2312264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
 		FF8D2315264B5E540072D5D3 /* CartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		FF8D231C264B8C4C0072D5D3 /* RootTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabbarViewController.swift; sourceTree = "<group>"; };
+		FF8D233B264CC2F10072D5D3 /* TextFielDigitCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFielDigitCode.swift; sourceTree = "<group>"; };
+		FF8D233C264CC2F10072D5D3 /* TextFielDigitCode.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFielDigitCode.xib; sourceTree = "<group>"; };
+		FF8D2342264CC5AA0072D5D3 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		FF8D2344264CD2B50072D5D3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		FF8D2346264D2AF40072D5D3 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		FF8D2348264D60F00072D5D3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserInformationViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +198,7 @@
 			files = (
 				3E6E5F471A16F0F76B5966AB /* Pods_shoe_shop2.framework in Frameworks */,
 				E26B1D832644D79C0001ABE0 /* FirebaseAuth in Frameworks */,
-				E270119B264CBEB60089E500 /* RAMAnimatedTabBarController in Frameworks */,
+				FF8D2336264CB9590072D5D3 /* RAMAnimatedTabBarController in Frameworks */,
 				FF8D2309264AA71B0072D5D3 /* ShimmerSwift in Frameworks */,
 				E26B1D852644D79C0001ABE0 /* FirebaseDatabase in Frameworks */,
 				E26B1D812644D79C0001ABE0 /* FirebaseStorage in Frameworks */,
@@ -247,6 +273,7 @@
 		E26B1D1E2644CD240001ABE0 /* shoe_shop2 */ = {
 			isa = PBXGroup;
 			children = (
+				FF8D2341264CC59C0072D5D3 /* FirebaseManager */,
 				E26B1D3D2644CD520001ABE0 /* Resource */,
 				E26B1D3C2644CD480001ABE0 /* Extension */,
 				FF8D230F264B5E180072D5D3 /* DataLocalManager */,
@@ -266,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				FF8D2314264B5E540072D5D3 /* Cart */,
+				FF8D2344264CD2B50072D5D3 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +301,7 @@
 		E26B1D382644CD380001ABE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF8D233A264CC2F10072D5D3 /* CustomTexfieldDigitCode */,
 				E270115D264BB14E0089E500 /* ReviewPage */,
 				FF8D22F8264A828E0072D5D3 /* OrderSuccessPage */,
 				64EB8251264822FB001B1B05 /* PaymentMethodViews */,
@@ -342,6 +371,7 @@
 				FF8D2312264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift */,
 				E26B1DB12644DC170001ABE0 /* UIView+Extension.swift */,
 				E26B1DB42644DC280001ABE0 /* UIImageView+Extension.swift */,
+				FF8D2348264D60F00072D5D3 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -350,6 +380,13 @@
 			isa = PBXGroup;
 			children = (
 				E26B1D2B2644CD280001ABE0 /* Assets.xcassets */,
+				E26B1DBE2644DCC70001ABE0 /* 1.jpg */,
+				E26B1DC02644DCC70001ABE0 /* 2.jpg */,
+				E26B1DBB2644DCC70001ABE0 /* 3.jpg */,
+				E26B1DBF2644DCC70001ABE0 /* 4.jpg */,
+				E26B1DBC2644DCC70001ABE0 /* 5.jpg */,
+				E26B1DBD2644DCC70001ABE0 /* 6.jpg */,
+				E26B1DBA2644DCC70001ABE0 /* 7.jpg */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -555,8 +592,26 @@
 			isa = PBXGroup;
 			children = (
 				FF8D2315264B5E540072D5D3 /* CartModel.swift */,
+				FF8D2346264D2AF40072D5D3 /* ProductModel.swift */,
 			);
 			path = Cart;
+			sourceTree = "<group>";
+		};
+		FF8D233A264CC2F10072D5D3 /* CustomTexfieldDigitCode */ = {
+			isa = PBXGroup;
+			children = (
+				FF8D233B264CC2F10072D5D3 /* TextFielDigitCode.swift */,
+				FF8D233C264CC2F10072D5D3 /* TextFielDigitCode.xib */,
+			);
+			path = CustomTexfieldDigitCode;
+			sourceTree = "<group>";
+		};
+		FF8D2341264CC59C0072D5D3 /* FirebaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				FF8D2342264CC5AA0072D5D3 /* FirebaseManager.swift */,
+			);
+			path = FirebaseManager;
 			sourceTree = "<group>";
 		};
 		FFA4FE9926491FF2005F767F /* ToastMessageCell */ = {
@@ -607,7 +662,7 @@
 				E26B1D822644D79C0001ABE0 /* FirebaseAuth */,
 				E26B1D842644D79C0001ABE0 /* FirebaseDatabase */,
 				FF8D2308264AA71B0072D5D3 /* ShimmerSwift */,
-				E270119A264CBEB60089E500 /* RAMAnimatedTabBarController */,
+				FF8D2335264CB9590072D5D3 /* RAMAnimatedTabBarController */,
 			);
 			productName = shoe_shop2;
 			productReference = E26B1D1C2644CD240001ABE0 /* shoe_shop2.app */;
@@ -639,7 +694,7 @@
 			packageReferences = (
 				E26B1D7F2644D79C0001ABE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FF8D2307264AA71B0072D5D3 /* XCRemoteSwiftPackageReference "ShimmerSwift" */,
-				E2701199264CBEB60089E500 /* XCRemoteSwiftPackageReference "animated-tab-bar" */,
+				FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */,
 			);
 			productRefGroup = E26B1D1D2644CD240001ABE0 /* Products */;
 			projectDirPath = "";
@@ -660,25 +715,33 @@
 				E26B1D2F2644CD280001ABE0 /* LaunchScreen.storyboard in Resources */,
 				E26B1D2C2644CD280001ABE0 /* Assets.xcassets in Resources */,
 				E2F61FE226454E51001CE7E5 /* CustomTextField.xib in Resources */,
+				E26B1DC52644DCC70001ABE0 /* 1.jpg in Resources */,
 				E26B1D542644CF6D0001ABE0 /* DetailProduct.storyboard in Resources */,
 				FFA4FE9D26491FF2005F767F /* ToastMessageTableViewCell.xib in Resources */,
 				FF8D22FA264A828E0072D5D3 /* OrderSuccessPage.storyboard in Resources */,
+				E26B1DC62644DCC70001ABE0 /* 4.jpg in Resources */,
 				FF8D230D264B5DB90072D5D3 /* CartTableViewCell.xib in Resources */,
+				E26B1DC22644DCC70001ABE0 /* 3.jpg in Resources */,
+				E26B1DC32644DCC70001ABE0 /* 5.jpg in Resources */,
 				E270117F264BE4B50089E500 /* ReviewDetailPage.storyboard in Resources */,
+				E26B1DC72644DCC70001ABE0 /* 2.jpg in Resources */,
 				64ABB2E0264AD0620000F5AC /* ForgotPassword.storyboard in Resources */,
 				E26B1D7C2644D45D0001ABE0 /* GoogleService-Info.plist in Resources */,
 				64EB825526482372001B1B05 /* PaymentCashMethod.xib in Resources */,
 				FF8D2306264A84100072D5D3 /* IntroPage.storyboard in Resources */,
 				FF56974B26451DCC003CE928 /* CategoriesCollectionViewCell.xib in Resources */,
+				FF8D233E264CC2F10072D5D3 /* TextFielDigitCode.xib in Resources */,
 				E2701160264BB1C60089E500 /* ReviewPage.storyboard in Resources */,
 				E26B1D572644CF740001ABE0 /* Checkout.storyboard in Resources */,
 				FF56975426451DE2003CE928 /* ProductCollectionViewCell.xib in Resources */,
 				FFA4FEA326492113005F767F /* OrderHistoryTableViewCell.xib in Resources */,
 				E26B1D4B2644CF500001ABE0 /* CartPage.storyboard in Resources */,
 				E2F61FDC26454E28001CE7E5 /* HomeLogin.storyboard in Resources */,
+				E26B1DC42644DCC70001ABE0 /* 6.jpg in Resources */,
 				E26B1D272644CD240001ABE0 /* Main.storyboard in Resources */,
 				E2701172264BCBC80089E500 /* CustomHeaderTableView.xib in Resources */,
 				64EB825B26482ACE001B1B05 /* PaymentOnlineMethod.xib in Resources */,
+				E26B1DC12644DCC70001ABE0 /* 7.jpg in Resources */,
 				E2701169264BB8510089E500 /* ReviewTableViewCell.xib in Resources */,
 				E26B1D512644CF630001ABE0 /* AccountPage.storyboard in Resources */,
 				E26B1D4E2644CF570001ABE0 /* Notification.storyboard in Resources */,
@@ -734,6 +797,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8D2349264D60F00072D5D3 /* UIColor+Extension.swift in Sources */,
 				64EB82582648239E001B1B05 /* PaymentCashMethod.swift in Sources */,
 				E2701153264BAF2F0089E500 /* UILabel+Extension.swift in Sources */,
 				E26B1D2A2644CD240001ABE0 /* shoe_shop2.xcdatamodeld in Sources */,
@@ -746,13 +810,16 @@
 				FF8D230E264B5DB90072D5D3 /* CartTableViewCell.swift in Sources */,
 				E26B1DB52644DC280001ABE0 /* UIImageView+Extension.swift in Sources */,
 				FF8D22FE264A83D00072D5D3 /* OrderSuccessViewController.swift in Sources */,
+				FF8D233D264CC2F10072D5D3 /* TextFielDigitCode.swift in Sources */,
 				E26B1D752644D01F0001ABE0 /* HomepageViewController.swift in Sources */,
 				E26B1D722644D0130001ABE0 /* CartViewController.swift in Sources */,
 				E26B1D6C2644CFFD0001ABE0 /* AccountViewController.swift in Sources */,
 				E2701185264BF60A0089E500 /* ReviewDetailViewController.swift in Sources */,
+				FF8D2345264CD2B50072D5D3 /* Category.swift in Sources */,
 				E2F61FD626454DE9001CE7E5 /* LoginViewController.swift in Sources */,
 				FF8D2316264B5E540072D5D3 /* CartModel.swift in Sources */,
 				E26B1D692644CFDA0001ABE0 /* DetailProductViewController.swift in Sources */,
+				FF8D2343264CC5AA0072D5D3 /* FirebaseManager.swift in Sources */,
 				FFA4FEA226492113005F767F /* OrderHistoryTableViewCell.swift in Sources */,
 				E26B1DB82644DC5E0001ABE0 /* Constant.swift in Sources */,
 				E26B1DB22644DC170001ABE0 /* UIView+Extension.swift in Sources */,
@@ -762,6 +829,7 @@
 				E2F61FE126454E51001CE7E5 /* CustomTextField.swift in Sources */,
 				E26B1D202644CD240001ABE0 /* AppDelegate.swift in Sources */,
 				64EB825E26482AE4001B1B05 /* PaymentOnineMethod.swift in Sources */,
+				FF8D2347264D2AF50072D5D3 /* ProductModel.swift in Sources */,
 				E2701175264BD0450089E500 /* CustomHeaderTableView.swift in Sources */,
 				E26B1D6F2644D0080001ABE0 /* NotificationViewController.swift in Sources */,
 				E2701182264BF4BA0089E500 /* CustomPresentation.swift in Sources */,
@@ -995,20 +1063,20 @@
 				minimumVersion = 7.11.1;
 			};
 		};
-		E2701199264CBEB60089E500 /* XCRemoteSwiftPackageReference "animated-tab-bar" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Ramotion/animated-tab-bar.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.0;
-			};
-		};
 		FF8D2307264AA71B0072D5D3 /* XCRemoteSwiftPackageReference "ShimmerSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/BeauNouvelle/ShimmerSwift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.2.0;
+			};
+		};
+		FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Ramotion/animated-tab-bar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1029,15 +1097,15 @@
 			package = E26B1D7F2644D79C0001ABE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		E270119A264CBEB60089E500 /* RAMAnimatedTabBarController */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E2701199264CBEB60089E500 /* XCRemoteSwiftPackageReference "animated-tab-bar" */;
-			productName = RAMAnimatedTabBarController;
-		};
 		FF8D2308264AA71B0072D5D3 /* ShimmerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FF8D2307264AA71B0072D5D3 /* XCRemoteSwiftPackageReference "ShimmerSwift" */;
 			productName = ShimmerSwift;
+		};
+		FF8D2335264CB9590072D5D3 /* RAMAnimatedTabBarController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */;
+			productName = RAMAnimatedTabBarController;
 		};
 /* End XCSwiftPackageProductDependency section */
 

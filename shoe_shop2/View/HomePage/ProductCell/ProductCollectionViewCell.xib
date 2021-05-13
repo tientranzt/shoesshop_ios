@@ -85,6 +85,9 @@
             <connections>
                 <outlet property="containerView" destination="k0a-XH-rMJ" id="EsE-bP-tjR"/>
                 <outlet property="heartButton" destination="cnF-6y-pcf" id="Ec0-LW-Ysc"/>
+                <outlet property="productImage" destination="io1-kO-vKS" id="XEu-7S-trl"/>
+                <outlet property="productName" destination="zhr-nk-SqC" id="3Ba-6H-GcK"/>
+                <outlet property="productPrice" destination="WQY-VW-7qV" id="Nkg-ei-gSf"/>
             </connections>
             <point key="canvasLocation" x="13.043478260869566" y="94.419642857142847"/>
         </collectionViewCell>
