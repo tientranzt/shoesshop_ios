@@ -23,7 +23,6 @@ class HomeLoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
-    
     func setUpView() {
         btnContinueWithApple.layer.cornerRadius = 8
         btnContinueWithFaceook.layer.cornerRadius = 8

@@ -247,6 +247,9 @@
                                                 <state key="normal" title="Forgot password?">
                                                     <color key="titleColor" name="middleGrayBackground"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="Txx-9V-dAh" kind="show" id="Lzg-Ub-Ben"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ej2-x7-PDz">
                                                 <rect key="frame" x="39" y="528" width="312" height="50.333333333333371"/>
@@ -342,6 +345,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhp-Tu-fbo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2877" y="436"/>
+        </scene>
+        <!--ForgotPassword-->
+        <scene sceneID="3lA-Do-eD6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ForgotPassword" id="Txx-9V-dAh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="z7L-PV-CFp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YQF-XU-req" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3447" y="445"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="wR8-dB-62n">
