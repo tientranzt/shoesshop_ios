@@ -86,6 +86,7 @@
 		FF8D2336264CB9590072D5D3 /* RAMAnimatedTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = FF8D2335264CB9590072D5D3 /* RAMAnimatedTabBarController */; };
 		FF8D233D264CC2F10072D5D3 /* TextFielDigitCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D233B264CC2F10072D5D3 /* TextFielDigitCode.swift */; };
 		FF8D233E264CC2F10072D5D3 /* TextFielDigitCode.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8D233C264CC2F10072D5D3 /* TextFielDigitCode.xib */; };
+		FF8D2343264CC5AA0072D5D3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2342264CC5AA0072D5D3 /* FirebaseManager.swift */; };
 		FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */; };
 		FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */; };
 		FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */; };
@@ -174,6 +175,7 @@
 		FF8D231C264B8C4C0072D5D3 /* RootTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabbarViewController.swift; sourceTree = "<group>"; };
 		FF8D233B264CC2F10072D5D3 /* TextFielDigitCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFielDigitCode.swift; sourceTree = "<group>"; };
 		FF8D233C264CC2F10072D5D3 /* TextFielDigitCode.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFielDigitCode.xib; sourceTree = "<group>"; };
+		FF8D2342264CC5AA0072D5D3 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserInformationViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 		E26B1D1E2644CD240001ABE0 /* shoe_shop2 */ = {
 			isa = PBXGroup;
 			children = (
+				FF8D2341264CC59C0072D5D3 /* FirebaseManager */,
 				E26B1D3D2644CD520001ABE0 /* Resource */,
 				E26B1D3C2644CD480001ABE0 /* Extension */,
 				FF8D230F264B5E180072D5D3 /* DataLocalManager */,
@@ -594,6 +597,14 @@
 			path = CustomTexfieldDigitCode;
 			sourceTree = "<group>";
 		};
+		FF8D2341264CC59C0072D5D3 /* FirebaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				FF8D2342264CC5AA0072D5D3 /* FirebaseManager.swift */,
+			);
+			path = FirebaseManager;
+			sourceTree = "<group>";
+		};
 		FFA4FE9926491FF2005F767F /* ToastMessageCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -797,6 +808,7 @@
 				E2F61FD626454DE9001CE7E5 /* LoginViewController.swift in Sources */,
 				FF8D2316264B5E540072D5D3 /* CartModel.swift in Sources */,
 				E26B1D692644CFDA0001ABE0 /* DetailProductViewController.swift in Sources */,
+				FF8D2343264CC5AA0072D5D3 /* FirebaseManager.swift in Sources */,
 				FFA4FEA226492113005F767F /* OrderHistoryTableViewCell.swift in Sources */,
 				E26B1DB82644DC5E0001ABE0 /* Constant.swift in Sources */,
 				E26B1DB22644DC170001ABE0 /* UIView+Extension.swift in Sources */,
