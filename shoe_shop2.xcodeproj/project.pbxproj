@@ -87,6 +87,9 @@
 		FF8D233D264CC2F10072D5D3 /* TextFielDigitCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D233B264CC2F10072D5D3 /* TextFielDigitCode.swift */; };
 		FF8D233E264CC2F10072D5D3 /* TextFielDigitCode.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8D233C264CC2F10072D5D3 /* TextFielDigitCode.xib */; };
 		FF8D2343264CC5AA0072D5D3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2342264CC5AA0072D5D3 /* FirebaseManager.swift */; };
+		FF8D2345264CD2B50072D5D3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2344264CD2B50072D5D3 /* Category.swift */; };
+		FF8D2347264D2AF50072D5D3 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2346264D2AF40072D5D3 /* ProductModel.swift */; };
+		FF8D2349264D60F00072D5D3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2348264D60F00072D5D3 /* UIColor+Extension.swift */; };
 		FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */; };
 		FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */; };
 		FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */; };
@@ -176,6 +179,9 @@
 		FF8D233B264CC2F10072D5D3 /* TextFielDigitCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFielDigitCode.swift; sourceTree = "<group>"; };
 		FF8D233C264CC2F10072D5D3 /* TextFielDigitCode.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFielDigitCode.xib; sourceTree = "<group>"; };
 		FF8D2342264CC5AA0072D5D3 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		FF8D2344264CD2B50072D5D3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		FF8D2346264D2AF40072D5D3 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		FF8D2348264D60F00072D5D3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserInformationViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				FF8D2314264B5E540072D5D3 /* Cart */,
+				FF8D2344264CD2B50072D5D3 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -364,6 +371,7 @@
 				FF8D2312264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift */,
 				E26B1DB12644DC170001ABE0 /* UIView+Extension.swift */,
 				E26B1DB42644DC280001ABE0 /* UIImageView+Extension.swift */,
+				FF8D2348264D60F00072D5D3 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -584,6 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				FF8D2315264B5E540072D5D3 /* CartModel.swift */,
+				FF8D2346264D2AF40072D5D3 /* ProductModel.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -788,6 +797,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8D2349264D60F00072D5D3 /* UIColor+Extension.swift in Sources */,
 				64EB82582648239E001B1B05 /* PaymentCashMethod.swift in Sources */,
 				E2701153264BAF2F0089E500 /* UILabel+Extension.swift in Sources */,
 				E26B1D2A2644CD240001ABE0 /* shoe_shop2.xcdatamodeld in Sources */,
@@ -805,6 +815,7 @@
 				E26B1D722644D0130001ABE0 /* CartViewController.swift in Sources */,
 				E26B1D6C2644CFFD0001ABE0 /* AccountViewController.swift in Sources */,
 				E2701185264BF60A0089E500 /* ReviewDetailViewController.swift in Sources */,
+				FF8D2345264CD2B50072D5D3 /* Category.swift in Sources */,
 				E2F61FD626454DE9001CE7E5 /* LoginViewController.swift in Sources */,
 				FF8D2316264B5E540072D5D3 /* CartModel.swift in Sources */,
 				E26B1D692644CFDA0001ABE0 /* DetailProductViewController.swift in Sources */,
@@ -818,6 +829,7 @@
 				E2F61FE126454E51001CE7E5 /* CustomTextField.swift in Sources */,
 				E26B1D202644CD240001ABE0 /* AppDelegate.swift in Sources */,
 				64EB825E26482AE4001B1B05 /* PaymentOnineMethod.swift in Sources */,
+				FF8D2347264D2AF50072D5D3 /* ProductModel.swift in Sources */,
 				E2701175264BD0450089E500 /* CustomHeaderTableView.swift in Sources */,
 				E26B1D6F2644D0080001ABE0 /* NotificationViewController.swift in Sources */,
 				E2701182264BF4BA0089E500 /* CustomPresentation.swift in Sources */,
