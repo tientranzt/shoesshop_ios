@@ -1,4 +1,5 @@
 import UIKit
+import RAMAnimatedTabBarController
 
 class LoginViewController: UIViewController {
 
@@ -25,14 +26,25 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        var tabbar = navigationController?.tabBarController as! RootTabbarViewController
+        let tabbar = navigationController?.tabBarController as! CustomTabBarController
+
+        let navAccountVC = UIStoryboard(name: "AccountPage", bundle: nil).instantiateViewController(identifier: "navAccountPage") as! UINavigationController
         
-        let navLoginVC = UIStoryboard(name: "AccountPage", bundle: nil).instantiateViewController(identifier: "navAccountPage") as! UINavigationController
+        navAccountVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
         
+        (navAccountVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
+
+
         if let _ = tabbar.viewControllers?.last{
-            tabbar.viewControllers![3] = navLoginVC
+//            tabbar.viewControllers[3].
+           
+            tabbar.viewControllers![3] = navAccountVC
+            tabbar.setSelectIndex(from: 0, to: 3)
+            
         }
         
+        
+     
     }
     /*
     // MARK: - Navigation

@@ -17,6 +17,7 @@ class AccountViewController: UIViewController {
     // MARK: -  Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = UIColor(named: ColorTheme.mainBlackBackground)
     }
     
     override func viewWillLayoutSubviews() {
