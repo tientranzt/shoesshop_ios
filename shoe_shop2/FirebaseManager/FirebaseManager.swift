@@ -1,11 +1,4 @@
-//
-//  FirebaseManager.swift
-//  shoe_shop2
-//
-//  Created by tientran on 13/05/2021.
-//
-
-import Foundation
+//import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
@@ -66,7 +59,6 @@ class FirebaseManager {
         let productModel = ProductModel(id: id, productName: productName, colorCode: colorCode, idColor: idColor, image: image, price: price)
 
         return productModel
-        
     }
     
     
