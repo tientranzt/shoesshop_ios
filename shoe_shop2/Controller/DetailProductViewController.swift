@@ -49,21 +49,23 @@ class DetailProductViewController: UIViewController {
         customColorButton()
         setVisibleSizeButton(show: sizeEightButton, hidden: sizeNineButton, hidden: sizeTenButton)
         setVisibleColorButton(buttonChoose: colorGreenShoeButton)
-        addToCardButton.roundedAllSide(with: 16)
+        addToCardButton.roundedAllSide(with: 8)
         contentView.roundedAllSide(with: 8)
         contentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         reviewLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressReview)))
         reviewLabel.underLine()
+        navigationController?.navigationBar.tintColor = UIColor(named: ColorTheme.mainBlackBackground)
     }
     
     //MARK: - Tapgesture
     @objc func pressReview() {
-        print("hello")
+        let reviewPageVC = UIStoryboard(name: "ReviewPage", bundle: nil).instantiateViewController(identifier: "ReviewViewController") as! ReviewViewController
+        present(reviewPageVC, animated: true, completion: nil)
+     
     }
     
     //MARK: - handle NavigationBar will apprear
     override func viewWillAppear(_ animated: Bool) {
-       
         navBarDefaultColor = self.navigationController?.navigationBar.barTintColor
         navBarDefaultShadowImage = self.navigationController?.navigationBar.shadowImage
         
