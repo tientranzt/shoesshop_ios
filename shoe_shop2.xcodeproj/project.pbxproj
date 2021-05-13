@@ -11,10 +11,15 @@
 		64ABB2E0264AD0620000F5AC /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64ABB2DF264AD0620000F5AC /* ForgotPassword.storyboard */; };
 		64ABB2E3264AD1600000F5AC /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ABB2E2264AD1600000F5AC /* ForgotPasswordViewController.swift */; };
 		64E0F81B264A3ED600005B0B /* ChangeShipAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0F81A264A3ED600005B0B /* ChangeShipAddressViewController.swift */; };
+		64EAE237264BDA2400083281 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EAE236264BDA2400083281 /* UIWindow+Extension.swift */; };
+		64EAE23B264C412B00083281 /* TextFielDigitCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EAE23A264C412B00083281 /* TextFielDigitCode.swift */; };
+		64EAE241264C416900083281 /* TextFielDigitCode.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64EAE240264C416900083281 /* TextFielDigitCode.xib */; };
 		64EB825526482372001B1B05 /* PaymentCashMethod.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64EB825426482372001B1B05 /* PaymentCashMethod.xib */; };
 		64EB82582648239E001B1B05 /* PaymentCashMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB82572648239E001B1B05 /* PaymentCashMethod.swift */; };
 		64EB825B26482ACE001B1B05 /* PaymentOnlineMethod.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64EB825A26482ACE001B1B05 /* PaymentOnlineMethod.xib */; };
 		64EB825E26482AE4001B1B05 /* PaymentOnineMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB825D26482AE4001B1B05 /* PaymentOnineMethod.swift */; };
+		64F98882264CBD7B00379DF2 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F98881264CBD7B00379DF2 /* NewPasswordViewController.swift */; };
+		64FA9662264BADE400655E4D /* VerifyEmailCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FA9661264BADE400655E4D /* VerifyEmailCodeViewController.swift */; };
 		E26B1D202644CD240001ABE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B1D1F2644CD240001ABE0 /* AppDelegate.swift */; };
 		E26B1D222644CD240001ABE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B1D212644CD240001ABE0 /* SceneDelegate.swift */; };
 		E26B1D272644CD240001ABE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26B1D252644CD240001ABE0 /* Main.storyboard */; };
@@ -85,10 +90,15 @@
 		64ABB2DF264AD0620000F5AC /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
 		64ABB2E2264AD1600000F5AC /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		64E0F81A264A3ED600005B0B /* ChangeShipAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeShipAddressViewController.swift; sourceTree = "<group>"; };
+		64EAE236264BDA2400083281 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		64EAE23A264C412B00083281 /* TextFielDigitCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFielDigitCode.swift; sourceTree = "<group>"; };
+		64EAE240264C416900083281 /* TextFielDigitCode.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFielDigitCode.xib; sourceTree = "<group>"; };
 		64EB825426482372001B1B05 /* PaymentCashMethod.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCashMethod.xib; sourceTree = "<group>"; };
 		64EB82572648239E001B1B05 /* PaymentCashMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCashMethod.swift; sourceTree = "<group>"; };
 		64EB825A26482ACE001B1B05 /* PaymentOnlineMethod.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentOnlineMethod.xib; sourceTree = "<group>"; };
 		64EB825D26482AE4001B1B05 /* PaymentOnineMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOnineMethod.swift; sourceTree = "<group>"; };
+		64F98881264CBD7B00379DF2 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
+		64FA9661264BADE400655E4D /* VerifyEmailCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailCodeViewController.swift; sourceTree = "<group>"; };
 		B2CB90B04F335B545CF44921 /* Pods_shoe_shop2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shoe_shop2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C953906715561AC4DC177CA8 /* Pods-shoe_shop2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shoe_shop2.release.xcconfig"; path = "Target Support Files/Pods-shoe_shop2/Pods-shoe_shop2.release.xcconfig"; sourceTree = "<group>"; };
 		D8979702779FF1451663FB4A /* Pods-shoe_shop2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shoe_shop2.debug.xcconfig"; path = "Target Support Files/Pods-shoe_shop2/Pods-shoe_shop2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +191,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		64EAE239264C409C00083281 /* CustomTexfieldDigitCode */ = {
+			isa = PBXGroup;
+			children = (
+				64EAE23A264C412B00083281 /* TextFielDigitCode.swift */,
+				64EAE240264C416900083281 /* TextFielDigitCode.xib */,
+			);
+			path = CustomTexfieldDigitCode;
+			sourceTree = "<group>";
+		};
 		64EB8251264822FB001B1B05 /* PaymentMethodViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +282,7 @@
 		E26B1D382644CD380001ABE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				64EAE239264C409C00083281 /* CustomTexfieldDigitCode */,
 				FF8D22F8264A828E0072D5D3 /* OrderSuccessPage */,
 				64EB8251264822FB001B1B05 /* PaymentMethodViews */,
 				E2F61FE426454E5A001CE7E5 /* CustomSwitch */,
@@ -300,6 +320,8 @@
 				E26B1D712644D0130001ABE0 /* CartViewController.swift */,
 				E26B1D742644D01F0001ABE0 /* HomepageViewController.swift */,
 				64ABB2E2264AD1600000F5AC /* ForgotPasswordViewController.swift */,
+				64FA9661264BADE400655E4D /* VerifyEmailCodeViewController.swift */,
+				64F98881264CBD7B00379DF2 /* NewPasswordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -327,6 +349,7 @@
 				FF8D2312264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift */,
 				E26B1DB12644DC170001ABE0 /* UIView+Extension.swift */,
 				E26B1DB42644DC280001ABE0 /* UIImageView+Extension.swift */,
+				64EAE236264BDA2400083281 /* UIWindow+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -608,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E26B1D482644CF470001ABE0 /* HomePage.storyboard in Resources */,
+				64EAE241264C416900083281 /* TextFielDigitCode.xib in Resources */,
 				FF56975026451DD5003CE928 /* LastestProductCollectionViewCell.xib in Resources */,
 				E26B1D2F2644CD280001ABE0 /* LaunchScreen.storyboard in Resources */,
 				E26B1D2C2644CD280001ABE0 /* Assets.xcassets in Resources */,
@@ -700,6 +724,7 @@
 				FF8D230E264B5DB90072D5D3 /* CartTableViewCell.swift in Sources */,
 				E26B1DB52644DC280001ABE0 /* UIImageView+Extension.swift in Sources */,
 				FF8D22FE264A83D00072D5D3 /* OrderSuccessViewController.swift in Sources */,
+				64F98882264CBD7B00379DF2 /* NewPasswordViewController.swift in Sources */,
 				E26B1D752644D01F0001ABE0 /* HomepageViewController.swift in Sources */,
 				E26B1D722644D0130001ABE0 /* CartViewController.swift in Sources */,
 				E26B1D6C2644CFFD0001ABE0 /* AccountViewController.swift in Sources */,
@@ -710,12 +735,14 @@
 				E26B1DB82644DC5E0001ABE0 /* Constant.swift in Sources */,
 				E26B1DB22644DC170001ABE0 /* UIView+Extension.swift in Sources */,
 				E2F61FE626454E62001CE7E5 /* CustomSwitch.swift in Sources */,
+				64EAE23B264C412B00083281 /* TextFielDigitCode.swift in Sources */,
 				E2F61FE126454E51001CE7E5 /* CustomTextField.swift in Sources */,
 				E26B1D202644CD240001ABE0 /* AppDelegate.swift in Sources */,
 				64EB825E26482AE4001B1B05 /* PaymentOnineMethod.swift in Sources */,
 				E26B1D6F2644D0080001ABE0 /* NotificationViewController.swift in Sources */,
 				E2F61FD726454DE9001CE7E5 /* SignUpViewController.swift in Sources */,
 				FF8D22FD264A83D00072D5D3 /* IntroPageViewController.swift in Sources */,
+				64FA9662264BADE400655E4D /* VerifyEmailCodeViewController.swift in Sources */,
 				FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */,
 				E26B1D222644CD240001ABE0 /* SceneDelegate.swift in Sources */,
 				FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */,
@@ -726,6 +753,7 @@
 				FF56975326451DE2003CE928 /* ProductCollectionViewCell.swift in Sources */,
 				FF8D2311264B5E180072D5D3 /* CoreDataManager.swift in Sources */,
 				FF8D2303264A83FF0072D5D3 /* IntroPageUIView.swift in Sources */,
+				64EAE237264BDA2400083281 /* UIWindow+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
