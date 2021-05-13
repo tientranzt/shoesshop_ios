@@ -84,6 +84,8 @@
 		FF8D2316264B5E540072D5D3 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2315264B5E540072D5D3 /* CartModel.swift */; };
 		FF8D231D264B8C4C0072D5D3 /* RootTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D231C264B8C4C0072D5D3 /* RootTabbarViewController.swift */; };
 		FF8D2336264CB9590072D5D3 /* RAMAnimatedTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = FF8D2335264CB9590072D5D3 /* RAMAnimatedTabBarController */; };
+		FF8D233D264CC2F10072D5D3 /* TextFielDigitCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D233B264CC2F10072D5D3 /* TextFielDigitCode.swift */; };
+		FF8D233E264CC2F10072D5D3 /* TextFielDigitCode.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8D233C264CC2F10072D5D3 /* TextFielDigitCode.xib */; };
 		FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */; };
 		FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */; };
 		FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */; };
@@ -170,6 +172,8 @@
 		FF8D2312264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
 		FF8D2315264B5E540072D5D3 /* CartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		FF8D231C264B8C4C0072D5D3 /* RootTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabbarViewController.swift; sourceTree = "<group>"; };
+		FF8D233B264CC2F10072D5D3 /* TextFielDigitCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFielDigitCode.swift; sourceTree = "<group>"; };
+		FF8D233C264CC2F10072D5D3 /* TextFielDigitCode.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFielDigitCode.xib; sourceTree = "<group>"; };
 		FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserInformationViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 		E26B1D382644CD380001ABE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF8D233A264CC2F10072D5D3 /* CustomTexfieldDigitCode */,
 				E270115D264BB14E0089E500 /* ReviewPage */,
 				FF8D22F8264A828E0072D5D3 /* OrderSuccessPage */,
 				64EB8251264822FB001B1B05 /* PaymentMethodViews */,
@@ -580,6 +585,15 @@
 			path = Cart;
 			sourceTree = "<group>";
 		};
+		FF8D233A264CC2F10072D5D3 /* CustomTexfieldDigitCode */ = {
+			isa = PBXGroup;
+			children = (
+				FF8D233B264CC2F10072D5D3 /* TextFielDigitCode.swift */,
+				FF8D233C264CC2F10072D5D3 /* TextFielDigitCode.xib */,
+			);
+			path = CustomTexfieldDigitCode;
+			sourceTree = "<group>";
+		};
 		FFA4FE9926491FF2005F767F /* ToastMessageCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,6 +710,7 @@
 				64EB825526482372001B1B05 /* PaymentCashMethod.xib in Resources */,
 				FF8D2306264A84100072D5D3 /* IntroPage.storyboard in Resources */,
 				FF56974B26451DCC003CE928 /* CategoriesCollectionViewCell.xib in Resources */,
+				FF8D233E264CC2F10072D5D3 /* TextFielDigitCode.xib in Resources */,
 				E2701160264BB1C60089E500 /* ReviewPage.storyboard in Resources */,
 				E26B1D572644CF740001ABE0 /* Checkout.storyboard in Resources */,
 				FF56975426451DE2003CE928 /* ProductCollectionViewCell.xib in Resources */,
@@ -774,6 +789,7 @@
 				FF8D230E264B5DB90072D5D3 /* CartTableViewCell.swift in Sources */,
 				E26B1DB52644DC280001ABE0 /* UIImageView+Extension.swift in Sources */,
 				FF8D22FE264A83D00072D5D3 /* OrderSuccessViewController.swift in Sources */,
+				FF8D233D264CC2F10072D5D3 /* TextFielDigitCode.swift in Sources */,
 				E26B1D752644D01F0001ABE0 /* HomepageViewController.swift in Sources */,
 				E26B1D722644D0130001ABE0 /* CartViewController.swift in Sources */,
 				E26B1D6C2644CFFD0001ABE0 /* AccountViewController.swift in Sources */,
