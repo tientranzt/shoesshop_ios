@@ -52,8 +52,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="RBe-pH-yeL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <state key="normal" title="Post">
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                        <state key="normal" title="SUBMIT FEEDBACK">
                                             <color key="titleColor" name="mainWhiteBackground"/>
                                         </state>
                                     </button>

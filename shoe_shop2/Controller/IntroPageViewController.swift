@@ -12,7 +12,7 @@ import FSPagerView
 class IntroPageViewController: UIViewController {
     
     
-    
+    var indexViewDisplay: Int = 0
     @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var goToViewButton: UIButton!
     fileprivate let imageNames = ["introImage.png","introImage.png","introImage.png"]
@@ -72,6 +72,7 @@ class IntroPageViewController: UIViewController {
         self.typeIndex = index // Manually trigger didSet
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
+        sloganLabel.text = "GO HAPPY GO ANYWHERE"
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -98,6 +99,8 @@ class IntroPageViewController: UIViewController {
 
 extension IntroPageViewController: FSPagerViewDataSource, FSPagerViewDelegate{
     
+        
+    
     //MARK: - PageView Data Source
     public func numberOfItems(in pagerView: FSPagerView) -> Int {
         return self.imageNames.count
@@ -116,12 +119,25 @@ extension IntroPageViewController: FSPagerViewDataSource, FSPagerViewDelegate{
         cell.isUserInteractionEnabled = false
         cell.backgroundView = drawView
         
-        updateUI(index: index)
-        
         return cell
     }
     
     // MARK:- FSPagerView Delegate
+    
+    func pagerView(_ pagerView: FSPagerView, willDisplay cell: FSPagerViewCell, forItemAt index: Int) {
+//        print("willDisPlay : \(index)")
+        indexViewDisplay = index
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, didEndDisplaying cell: FSPagerViewCell, forItemAt index: Int) {
+//        print("didEndDisplaying : \(index)")
+//        indexDidEndDisplaying = index
+//        //updateUI(index: index)
+        if index != indexViewDisplay {
+            updateUI(index: indexViewDisplay)
+        }
+    }
+    
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
         self.pageControl.currentPage = targetIndex
     }

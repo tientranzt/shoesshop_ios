@@ -22,6 +22,7 @@
                             <subviews>
                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ4-JY-AAE">
                                     <rect key="frame" x="0.0" y="-0.5" width="60" height="60"/>
+                                    <color key="tintColor" name="starBackground"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="ay7-ER-Xkd"/>
                                         <constraint firstAttribute="width" constant="60" id="fDV-8G-eqf"/>
