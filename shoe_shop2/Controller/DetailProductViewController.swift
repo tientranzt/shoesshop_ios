@@ -12,6 +12,8 @@ class DetailProductViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var reviewLabel: UILabel!
     
+    var product : ProductModel?
+    
     //MARK: - Outlet button size
     @IBOutlet weak var sizeEightButton: UIButton!
     @IBOutlet weak var sizeNineButton: UIButton!
@@ -56,7 +58,6 @@ class DetailProductViewController: UIViewController {
         reviewLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressReview)))
         reviewLabel.underLine()
         self.navigationController?.navigationBar.isHidden = true
-        
     }
     
     //MARK: - Tapgesture

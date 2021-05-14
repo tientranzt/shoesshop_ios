@@ -68,7 +68,6 @@ class HomepageViewController: UIViewController {
     // MARK: - Firebase func
     func fetchCategory()  {
         FirebaseManager.shared.fetchProductCategory { dataSnapshot in
-    
             if let data = dataSnapshot.value as? [String: AnyObject] {
                 data.forEach { (key : String, value: AnyObject) in
                 
@@ -119,7 +118,7 @@ extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDat
         if collectionView == self.productCollection {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as! ProductCollectionViewCell
             cell.productName.text = productList[indexPath.row].productName
-            cell.productPrice.text = productList[indexPath.row].price
+            cell.productPrice.text = "$\(productList[indexPath.row].price)"
             cell.productImage.loadImage(url: URL(string: productList[indexPath.row].image)!)
             cell.containerView.backgroundColor = UIColor(named: productList[indexPath.row].colorCode)
             
@@ -142,9 +141,25 @@ extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.productCollection || collectionView == self.lastestProductCollection{
             
-            let modifiedVC = UIStoryboard(name: "DetailProduct", bundle: nil).instantiateViewController(identifier: "detailViewController") as! DetailProductViewController
+            let detailVC = UIStoryboard(name: "DetailProduct", bundle: nil).instantiateViewController(identifier: "detailViewController") as! DetailProductViewController
+
+            detailVC.product = productList[indexPath.row]
+            navigationController?.pushViewController(detailVC, animated: true)
             
-            navigationController?.pushViewController(modifiedVC, animated: true)
+//            let id = productList[indexPath.row].id
+//
+//            FirebaseManager.shared.fectProductColor(idPath: id) { dataSnapshot in
+//
+//                if let data = dataSnapshot.value as? [String: AnyObject] {
+//                    data.forEach { (key : String, value: AnyObject) in
+//                        print(key)
+//                        FirebaseManager.shared.parseProductColorModel(idProductCategory: id, id : key, object: value)
+//
+//                    }
+//                }
+//
+//            }
+        
         }
     }
     
