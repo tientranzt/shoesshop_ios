@@ -86,6 +86,9 @@ class HomepageViewController: UIViewController {
                 data.forEach { (key : String, value: AnyObject) in
                     self.productList.append(FirebaseManager.shared.parseProductModel(id: key, object: value))
                     DispatchQueue.main.async {
+                        self.productList.sort { first, second in
+                            first.productName < second.productName
+                        }
                         self.productCollection.reloadData()
                     }
                 }
