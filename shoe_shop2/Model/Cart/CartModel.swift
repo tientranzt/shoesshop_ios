@@ -56,17 +56,17 @@ struct CartModel  {
         }
 //        let dataImage = image?.pngData()
 //        let dataImage = image?.jpegData(compressionQuality: 0.9)
-        
-        CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 001", shoeColorId: "nike-001-red", shoeSizeId: "nike001-red-41", shoeQuantity: 2, shoePrice: 450, shoeImage: nameImage, createdAt: formatter.string(from: now)))
-        CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 002", shoeColorId: "nike-002-red", shoeSizeId: "nike002-red-41", shoeQuantity: 3, shoePrice: 550, shoeImage: nameImage, createdAt: formatter.string(from: now)))
-        CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 003", shoeColorId: "nike-003-red", shoeSizeId: "nike003-red-41", shoeQuantity: 5, shoePrice: 350, shoeImage: nameImage, createdAt: formatter.string(from: now)))
-        CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 004", shoeColorId: "nike-004-red", shoeSizeId: "nike004-red-41", shoeQuantity: 1, shoePrice: 600, shoeImage: nameImage, createdAt: formatter.string(from: now)))
-        CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 005", shoeColorId: "nike-005-red", shoeSizeId: "nike005-red-41", shoeQuantity: 55, shoePrice: 440, shoeImage: nameImage, createdAt: formatter.string(from: now)))
-        CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 006", shoeColorId: "nike-006-red", shoeSizeId: "nike006-red-41", shoeQuantity: 55, shoePrice: 450, shoeImage: nameImage, createdAt: formatter.string(from: now)))
-        CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 007", shoeColorId: "nike-007-red", shoeSizeId: "nike007-red-41", shoeQuantity: 55, shoePrice: 340, shoeImage: nameImage, createdAt: formatter.string(from: now)))
-        CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 008", shoeColorId: "nike-008-red", shoeSizeId: "nike008-red-41", shoeQuantity: 55, shoePrice: 240, shoeImage: nameImage, createdAt: formatter.string(from: now)))
-        CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 009", shoeColorId: "nike-009-red", shoeSizeId: "nike009-red-41", shoeQuantity: 5, shoePrice: 450, shoeImage: nameImage, createdAt: formatter.string(from: now)))
-        CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 010", shoeColorId: "nike-010-red", shoeSizeId: "nike010-red-41", shoeQuantity: 5, shoePrice: 550, shoeImage: nameImage, createdAt: formatter.string(from: now)))
+        var tmp = false
+        tmp = CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 001", shoeColorId: "nike-001-red", shoeSizeId: "nike001-red-41", shoeQuantity: 2, shoePrice: 450, shoeImage: nameImage, createdAt: formatter.string(from: now)))
+        tmp = CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 002", shoeColorId: "nike-002-red", shoeSizeId: "nike002-red-41", shoeQuantity: 3, shoePrice: 550, shoeImage: nameImage, createdAt: formatter.string(from: now)))
+        tmp = CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 003", shoeColorId: "nike-003-red", shoeSizeId: "nike003-red-41", shoeQuantity: 5, shoePrice: 350, shoeImage: nameImage, createdAt: formatter.string(from: now)))
+        tmp = CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 004", shoeColorId: "nike-004-red", shoeSizeId: "nike004-red-41", shoeQuantity: 1, shoePrice: 600, shoeImage: nameImage, createdAt: formatter.string(from: now)))
+        tmp = CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 005", shoeColorId: "nike-005-red", shoeSizeId: "nike005-red-41", shoeQuantity: 55, shoePrice: 440, shoeImage: nameImage, createdAt: formatter.string(from: now)))
+        tmp = CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 006", shoeColorId: "nike-006-red", shoeSizeId: "nike006-red-41", shoeQuantity: 55, shoePrice: 450, shoeImage: nameImage, createdAt: formatter.string(from: now)))
+        tmp = CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 007", shoeColorId: "nike-007-red", shoeSizeId: "nike007-red-41", shoeQuantity: 55, shoePrice: 340, shoeImage: nameImage, createdAt: formatter.string(from: now)))
+        tmp = CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 008", shoeColorId: "nike-008-red", shoeSizeId: "nike008-red-41", shoeQuantity: 55, shoePrice: 240, shoeImage: nameImage, createdAt: formatter.string(from: now)))
+        tmp = CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 009", shoeColorId: "nike-009-red", shoeSizeId: "nike009-red-41", shoeQuantity: 5, shoePrice: 450, shoeImage: nameImage, createdAt: formatter.string(from: now)))
+        tmp = CoreDataManager.share.insertCart(cartModel: CartModel(username: "lxt", shoeName: "Nike 010", shoeColorId: "nike-010-red", shoeSizeId: "nike010-red-41", shoeQuantity: 5, shoePrice: 550, shoeImage: nameImage, createdAt: formatter.string(from: now)))
     }
     //MARK:- END
 }
