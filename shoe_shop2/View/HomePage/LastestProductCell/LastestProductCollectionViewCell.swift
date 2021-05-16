@@ -1,15 +1,10 @@
-//
-//  LastestProductCollectionViewCell.swift
-//  shoes_shop_ios
-//
-//  Created by tientran on 05/05/2021.
-//
-
 import UIKit
-
+import SDWebImage
 class LastestProductCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var lastestProductImage: UIImageView!
     @IBOutlet weak var containerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +13,12 @@ class LastestProductCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         containerView.roundedAllSide(with: 8)
     }
-    // a
+    
+    func customInitCell(product : ProductModel)  {
+        containerView.backgroundColor = UIColor(named: product.colorCode)
+        let loadingImage  = UIImage(systemName: "circles.hexagonpath")
+        lastestProductImage.tintColor = UIColor(named: ColorTheme.subGrayBackground)!
+        lastestProductImage.sd_setImage(with: URL(string: product.image)!, placeholderImage: loadingImage, options: .continueInBackground, completed: nil)
+    }
 
 }

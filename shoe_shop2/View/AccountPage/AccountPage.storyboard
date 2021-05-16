@@ -79,8 +79,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1K-P3-X32">
                                                 <rect key="frame" x="40" y="256.5" width="354" height="60"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.grid.hex" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b84-Ec-2S1">
-                                                        <rect key="frame" x="0.0" y="1" width="60" height="58.5"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.grid.cross.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b84-Ec-2S1">
+                                                        <rect key="frame" x="0.0" y="-1" width="60" height="62"/>
                                                         <color key="backgroundColor" name="subGrayBackground"/>
                                                         <color key="tintColor" name="hightlightOrangeColor"/>
                                                     </imageView>
@@ -266,9 +266,9 @@
                         <outlet property="orderHistoryImage" destination="b84-Ec-2S1" id="d1x-kR-8fz"/>
                         <outlet property="signOutButton" destination="WnU-md-o3q" id="tWP-Ms-Mg9"/>
                         <outlet property="updateInfoImage" destination="Ujk-cG-f1m" id="uRB-JC-tqt"/>
-                        <segue destination="Ahv-oC-pA8" kind="show" id="Nwa-wi-WVT"/>
-                        <segue destination="cvU-K8-1I6" kind="show" id="EGU-ui-YFm"/>
-                        <segue destination="zJ4-4g-YqE" kind="show" id="WLe-PJ-kvo"/>
+                        <segue destination="Ahv-oC-pA8" kind="show" identifier="gotoUpdateInfo" id="Nwa-wi-WVT"/>
+                        <segue destination="cvU-K8-1I6" kind="show" identifier="goToOrderHistory" id="EGU-ui-YFm"/>
+                        <segue destination="zJ4-4g-YqE" kind="show" identifier="goToUserInfo" id="WLe-PJ-kvo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TlS-qd-Xqq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -283,16 +283,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="mainWhiteBackground"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ZT4-xK-nKI">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZT4-xK-nKI" id="8Vk-cZ-Gmi">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="cvU-K8-1I6" id="gL3-aF-bXH"/>
                             <outlet property="delegate" destination="cvU-K8-1I6" id="AMR-Bd-Hdm"/>
@@ -744,7 +734,7 @@
         <image name="avatar" width="217" height="214"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="circle.circle" catalog="system" width="128" height="121"/>
-        <image name="circle.grid.hex" catalog="system" width="128" height="112"/>
+        <image name="circle.grid.cross.down.fill" catalog="system" width="128" height="125"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="lock.shield.fill" catalog="system" width="128" height="118"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
