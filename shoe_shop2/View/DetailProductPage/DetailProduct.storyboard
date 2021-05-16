@@ -28,7 +28,7 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgW-Uj-kCJ" customClass="FSPagerView" customModule="FSPagerView">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="233.5"/>
-                                                        <color key="backgroundColor" name="shoeBackground4"/>
+                                                        <color key="backgroundColor" name="mainWhiteBackground"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="alwaysBounceHorizontal" value="YES"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="removesInfiniteLoopForSingleItem" value="YES"/>
@@ -40,7 +40,7 @@
                                                         </connections>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" name="shoeBackground4"/>
+                                                <color key="backgroundColor" name="mainWhiteBackground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="GgW-Uj-kCJ" secondAttribute="bottom" constant="25" id="DIk-Bd-EEQ"/>
                                                     <constraint firstItem="GgW-Uj-kCJ" firstAttribute="top" secondItem="0I0-eA-R8d" secondAttribute="top" id="NpE-Wx-6Ie"/>
@@ -51,14 +51,17 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSc-9P-mhi">
                                                 <rect key="frame" x="0.0" y="258.5" width="414" height="603.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$140" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPS-6G-4fl">
-                                                        <rect key="frame" x="295" y="30" width="99" height="48"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$140" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPS-6G-4fl">
+                                                        <rect key="frame" x="294" y="30" width="100" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="PHt-sE-46e"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                                         <color key="textColor" name="priceColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150+Reviews" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNP-9K-2rz">
-                                                        <rect key="frame" x="294.5" y="78" width="100.5" height="20.5"/>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150+Reviews" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNP-9K-2rz">
+                                                        <rect key="frame" x="294" y="78" width="100.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="middleGrayBackground"/>
                                                         <nil key="highlightedColor"/>
@@ -102,9 +105,9 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-ye-Spf">
-                                                        <rect key="frame" x="20" y="387" width="110" height="30"/>
+                                                        <rect key="frame" x="20" y="387" width="150" height="30"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H40-JO-BGV">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H40-JO-BGV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="grayMainBackground"/>
                                                                 <state key="normal" title="8">
@@ -114,7 +117,7 @@
                                                                     <action selector="pressSizeButton:" destination="X6w-qM-FdF" eventType="touchUpInside" id="RRM-Aa-EM8"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZO0-Ki-kIg">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZO0-Ki-kIg">
                                                                 <rect key="frame" x="40" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="grayMainBackground"/>
                                                                 <state key="normal" title="9">
@@ -124,7 +127,7 @@
                                                                     <action selector="pressSizeButton:" destination="X6w-qM-FdF" eventType="touchUpInside" id="1HA-kG-zN1"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhI-Mb-bT7">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhI-Mb-bT7">
                                                                 <rect key="frame" x="80" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="grayMainBackground"/>
                                                                 <state key="normal" title="10">
@@ -132,6 +135,16 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="pressSizeButton:" destination="X6w-qM-FdF" eventType="touchUpInside" id="Gup-eE-OQG"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AV-0B-VYU">
+                                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                                <color key="backgroundColor" name="grayMainBackground"/>
+                                                                <state key="normal" title="11">
+                                                                    <color key="titleColor" name="mainWhiteBackground"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressSizeButton:" destination="X6w-qM-FdF" eventType="touchUpInside" id="KSO-sZ-VML"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -145,7 +158,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hFF-E1-ZOQ">
                                                         <rect key="frame" x="20" y="483.5" width="110" height="30"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBK-ns-Jy2">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBK-ns-Jy2">
                                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="shoeBackground1"/>
                                                                 <state key="normal">
@@ -155,14 +168,14 @@
                                                                     <action selector="pressColorButton:" destination="X6w-qM-FdF" eventType="touchUpInside" id="sbB-Vt-Dcd"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBk-N5-hVy">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBk-N5-hVy">
                                                                 <rect key="frame" x="40" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="shoeBackground2"/>
                                                                 <connections>
                                                                     <action selector="pressColorButton:" destination="X6w-qM-FdF" eventType="touchUpInside" id="BTP-N4-0LH"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQJ-cM-SHx">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQJ-cM-SHx">
                                                                 <rect key="frame" x="80" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="shoeBackground3"/>
                                                                 <connections>
@@ -221,7 +234,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" name="shoeBackground4"/>
+                                        <color key="backgroundColor" name="mainWhiteBackground"/>
                                         <constraints>
                                             <constraint firstItem="0I0-eA-R8d" firstAttribute="height" secondItem="Ub0-1W-vyT" secondAttribute="height" multiplier="3/10" id="435-kn-iTN"/>
                                             <constraint firstAttribute="trailing" secondItem="0I0-eA-R8d" secondAttribute="trailing" id="52o-ia-bGr"/>
@@ -291,18 +304,22 @@
                     <navigationItem key="navigationItem" id="FN8-Q3-krx"/>
                     <connections>
                         <outlet property="addToCardButton" destination="c4d-C8-OSL" id="hCL-y1-VwE"/>
-                        <outlet property="colorGreenShoeButton" destination="nBK-ns-Jy2" id="g3K-gM-9B8"/>
-                        <outlet property="colorPinkShoeButton" destination="ZQJ-cM-SHx" id="e7h-aH-SkZ"/>
-                        <outlet property="colorPurpleShoeButton" destination="zBk-N5-hVy" id="X7L-Om-QNZ"/>
+                        <outlet property="colorFirstShoeButton" destination="nBK-ns-Jy2" id="g3K-gM-9B8"/>
+                        <outlet property="colorSecondShoeButton" destination="zBk-N5-hVy" id="X7L-Om-QNZ"/>
+                        <outlet property="colorThirdShoeButton" destination="ZQJ-cM-SHx" id="e7h-aH-SkZ"/>
                         <outlet property="contentView" destination="CSc-9P-mhi" id="FIs-EL-SLz"/>
+                        <outlet property="descriptionShoesLabel" destination="Voj-aQ-Vhn" id="fF4-gy-zuu"/>
+                        <outlet property="nameShoesLabel" destination="vNC-yE-1Ej" id="AsF-aC-mdc"/>
                         <outlet property="pageControl" destination="aJ3-6N-SOc" id="xE6-mb-e7Z"/>
                         <outlet property="pagerView" destination="GgW-Uj-kCJ" id="e5g-N2-yCb"/>
                         <outlet property="parentPagerView" destination="0I0-eA-R8d" id="8Td-xD-hLw"/>
                         <outlet property="parentView" destination="Ub0-1W-vyT" id="9TS-OK-cBb"/>
+                        <outlet property="priceShoesLabel" destination="UPS-6G-4fl" id="YFh-Qc-fFC"/>
                         <outlet property="reviewLabel" destination="eNP-9K-2rz" id="vkf-Tz-Qza"/>
-                        <outlet property="sizeEightButton" destination="H40-JO-BGV" id="Eyd-x8-tg9"/>
-                        <outlet property="sizeNineButton" destination="ZO0-Ki-kIg" id="FFy-OW-8g8"/>
-                        <outlet property="sizeTenButton" destination="XhI-Mb-bT7" id="ROc-Zs-Vbh"/>
+                        <outlet property="sizeFirstButton" destination="H40-JO-BGV" id="Eyd-x8-tg9"/>
+                        <outlet property="sizeFourthButton" destination="3AV-0B-VYU" id="g0g-56-STm"/>
+                        <outlet property="sizeSecondButton" destination="ZO0-Ki-kIg" id="FFy-OW-8g8"/>
+                        <outlet property="sizeThirdButton" destination="XhI-Mb-bT7" id="ROc-Zs-Vbh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KVy-17-T1O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -336,9 +353,6 @@
         </namedColor>
         <namedColor name="shoeBackground3">
             <color red="0.97600001096725464" green="0.84299999475479126" blue="0.81999999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="shoeBackground4">
-            <color red="0.21600000560283661" green="0.69800001382827759" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

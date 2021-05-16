@@ -26,24 +26,34 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        let tabbar = navigationController?.tabBarController as! CustomTabBarController
-
-        let navAccountVC = UIStoryboard(name: "AccountPage", bundle: nil).instantiateViewController(identifier: "navAccountPage") as! UINavigationController
+//        let tabbar = navigationController?.tabBarController as! CustomTabBarController
+//
+//        let navAccountVC = UIStoryboard(name: "AccountPage", bundle: nil).instantiateViewController(identifier: "navAccountPage") as! UINavigationController
+//
+//        navAccountVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
+//
+//        (navAccountVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
+//
+//
+//        if let _ = tabbar.viewControllers?.last{
+////            tabbar.viewControllers[3].
+//
+//            tabbar.viewControllers![3] = navAccountVC
+//            tabbar.setSelectIndex(from: 0, to: 3)
+//
+//        }
         
-        navAccountVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
-        
-        (navAccountVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
-
-
-        if let _ = tabbar.viewControllers?.last{
-//            tabbar.viewControllers[3].
-           
-            tabbar.viewControllers![3] = navAccountVC
-            tabbar.setSelectIndex(from: 0, to: 3)
-            
+        if let email = customTextFieldEmailAddress.texField.text, let password = customTextFieldPassword.texField.text {
+            FirebaseManager.shared.signInWithEmail(email: email, password: password) { (result) in
+                switch result {
+                
+                case .success(_):
+                    print("dang nhap thanh cong")
+                case .failure(_):
+                    print("dang nhap that bai")
+                }
+            }
         }
-        
-        
      
     }
     /*
