@@ -125,14 +125,10 @@ extension IntroPageViewController: FSPagerViewDataSource, FSPagerViewDelegate{
     // MARK:- FSPagerView Delegate
     
     func pagerView(_ pagerView: FSPagerView, willDisplay cell: FSPagerViewCell, forItemAt index: Int) {
-//        print("willDisPlay : \(index)")
         indexViewDisplay = index
     }
     
     func pagerView(_ pagerView: FSPagerView, didEndDisplaying cell: FSPagerViewCell, forItemAt index: Int) {
-//        print("didEndDisplaying : \(index)")
-//        indexDidEndDisplaying = index
-//        //updateUI(index: index)
         if index != indexViewDisplay {
             updateUI(index: indexViewDisplay)
         }

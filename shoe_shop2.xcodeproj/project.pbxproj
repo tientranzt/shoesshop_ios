@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3E6E5F471A16F0F76B5966AB /* Pods_shoe_shop2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CB90B04F335B545CF44921 /* Pods_shoe_shop2.framework */; };
 		534782A4264E623700BE8FC4 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534782A3264E623700BE8FC4 /* CheckBox.swift */; };
+		6470F35C264E767D00362E05 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6470F35B264E767D00362E05 /* FacebookCore */; };
+		6470F35E264E767D00362E05 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 6470F35D264E767D00362E05 /* FacebookLogin */; };
 		64ABB2E0264AD0620000F5AC /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64ABB2DF264AD0620000F5AC /* ForgotPassword.storyboard */; };
 		64ABB2E3264AD1600000F5AC /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ABB2E2264AD1600000F5AC /* ForgotPasswordViewController.swift */; };
 		64E0F81B264A3ED600005B0B /* ChangeShipAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0F81A264A3ED600005B0B /* ChangeShipAddressViewController.swift */; };
@@ -70,7 +72,6 @@
 		FF8D2302264A83FF0072D5D3 /* DrawIntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2300264A83FF0072D5D3 /* DrawIntroPage.swift */; };
 		FF8D2303264A83FF0072D5D3 /* IntroPageUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2301264A83FF0072D5D3 /* IntroPageUIView.swift */; };
 		FF8D2306264A84100072D5D3 /* IntroPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8D2305264A84100072D5D3 /* IntroPage.storyboard */; };
-		FF8D2309264AA71B0072D5D3 /* ShimmerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF8D2308264AA71B0072D5D3 /* ShimmerSwift */; };
 		FF8D230D264B5DB90072D5D3 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8D230B264B5DB90072D5D3 /* CartTableViewCell.xib */; };
 		FF8D230E264B5DB90072D5D3 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D230C264B5DB90072D5D3 /* CartTableViewCell.swift */; };
 		FF8D2311264B5E180072D5D3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2310264B5E180072D5D3 /* CoreDataManager.swift */; };
@@ -85,6 +86,8 @@
 		FF8D2347264D2AF50072D5D3 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2346264D2AF40072D5D3 /* ProductModel.swift */; };
 		FF8D2349264D60F00072D5D3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2348264D60F00072D5D3 /* UIColor+Extension.swift */; };
 		FF8D234B264E1D3F0072D5D3 /* ProductColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D234A264E1D3E0072D5D3 /* ProductColor.swift */; };
+		FF8D2393264EBF7B0072D5D3 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = FF8D2392264EBF7B0072D5D3 /* SkeletonView */; };
+		FF8D2396264FD5280072D5D3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FF8D2395264FD5280072D5D3 /* SDWebImage */; };
 		FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */; };
 		FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */; };
 		FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */; };
@@ -186,10 +189,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6470F35E264E767D00362E05 /* FacebookLogin in Frameworks */,
 				3E6E5F471A16F0F76B5966AB /* Pods_shoe_shop2.framework in Frameworks */,
+				FF8D2393264EBF7B0072D5D3 /* SkeletonView in Frameworks */,
 				E26B1D832644D79C0001ABE0 /* FirebaseAuth in Frameworks */,
+				FF8D2396264FD5280072D5D3 /* SDWebImage in Frameworks */,
+				6470F35C264E767D00362E05 /* FacebookCore in Frameworks */,
 				FF8D2336264CB9590072D5D3 /* RAMAnimatedTabBarController in Frameworks */,
-				FF8D2309264AA71B0072D5D3 /* ShimmerSwift in Frameworks */,
 				E26B1D852644D79C0001ABE0 /* FirebaseDatabase in Frameworks */,
 				E26B1D812644D79C0001ABE0 /* FirebaseStorage in Frameworks */,
 			);
@@ -654,8 +660,11 @@
 				E26B1D802644D79C0001ABE0 /* FirebaseStorage */,
 				E26B1D822644D79C0001ABE0 /* FirebaseAuth */,
 				E26B1D842644D79C0001ABE0 /* FirebaseDatabase */,
-				FF8D2308264AA71B0072D5D3 /* ShimmerSwift */,
 				FF8D2335264CB9590072D5D3 /* RAMAnimatedTabBarController */,
+				FF8D2392264EBF7B0072D5D3 /* SkeletonView */,
+				FF8D2395264FD5280072D5D3 /* SDWebImage */,
+				6470F35B264E767D00362E05 /* FacebookCore */,
+				6470F35D264E767D00362E05 /* FacebookLogin */,
 			);
 			productName = shoe_shop2;
 			productReference = E26B1D1C2644CD240001ABE0 /* shoe_shop2.app */;
@@ -686,8 +695,10 @@
 			mainGroup = E26B1D132644CD240001ABE0;
 			packageReferences = (
 				E26B1D7F2644D79C0001ABE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				FF8D2307264AA71B0072D5D3 /* XCRemoteSwiftPackageReference "ShimmerSwift" */,
 				FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */,
+				FF8D2391264EBF7B0072D5D3 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				6470F35A264E767D00362E05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				FF8D2394264FD5270072D5D3 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = E26B1D1D2644CD240001ABE0 /* Products */;
 			projectDirPath = "";
@@ -1043,20 +1054,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6470F35A264E767D00362E05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.3.0;
+			};
+		};
 		E26B1D7F2644D79C0001ABE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.11.1;
-			};
-		};
-		FF8D2307264AA71B0072D5D3 /* XCRemoteSwiftPackageReference "ShimmerSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/BeauNouvelle/ShimmerSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.0;
 			};
 		};
 		FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */ = {
@@ -1067,9 +1078,35 @@
 				minimumVersion = 5.2.0;
 			};
 		};
+		FF8D2391264EBF7B0072D5D3 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.15.0;
+			};
+		};
+		FF8D2394264FD5270072D5D3 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6470F35B264E767D00362E05 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6470F35A264E767D00362E05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		6470F35D264E767D00362E05 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6470F35A264E767D00362E05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
 		E26B1D802644D79C0001ABE0 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E26B1D7F2644D79C0001ABE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -1085,15 +1122,20 @@
 			package = E26B1D7F2644D79C0001ABE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		FF8D2308264AA71B0072D5D3 /* ShimmerSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FF8D2307264AA71B0072D5D3 /* XCRemoteSwiftPackageReference "ShimmerSwift" */;
-			productName = ShimmerSwift;
-		};
 		FF8D2335264CB9590072D5D3 /* RAMAnimatedTabBarController */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */;
 			productName = RAMAnimatedTabBarController;
+		};
+		FF8D2392264EBF7B0072D5D3 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF8D2391264EBF7B0072D5D3 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+		FF8D2395264FD5280072D5D3 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF8D2394264FD5270072D5D3 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 

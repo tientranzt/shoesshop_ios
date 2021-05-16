@@ -24,7 +24,7 @@
                                 <rect key="frame" x="10" y="10" width="130" height="130"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="shoeBackground3"/>
+                        <color key="backgroundColor" name="mainWhiteBackground"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="150" id="3yr-qR-msL"/>
                             <constraint firstItem="jUv-Pb-XHC" firstAttribute="leading" secondItem="OXS-D0-3RK" secondAttribute="leading" constant="10" id="GVn-uP-Ker"/>
@@ -45,14 +45,15 @@
             </constraints>
             <connections>
                 <outlet property="containerView" destination="OXS-D0-3RK" id="Zpq-rP-0I5"/>
+                <outlet property="lastestProductImage" destination="jUv-Pb-XHC" id="OF1-GZ-wnU"/>
             </connections>
             <point key="canvasLocation" x="14" y="95"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="shoe1" width="465" height="537"/>
-        <namedColor name="shoeBackground3">
-            <color red="0.97600001096725464" green="0.84299999475479126" blue="0.81999999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="mainWhiteBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

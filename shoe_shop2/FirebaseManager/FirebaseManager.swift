@@ -53,6 +53,20 @@ class FirebaseManager {
         }
     }
     
+    func fetchProductLastest(completion : @escaping (DataSnapshot) -> Void) {
+        ref.child("CategoryProduct/nike").getData { (error, snapshot) in
+            if let error = error {
+                print("Error getting data \(error)")
+            }
+            else if snapshot.exists() {
+                completion(snapshot)
+            }
+            else {
+                print("No data available")
+            }
+        }
+    }
+    
 
     // MARK: - Parse Model
     func parseCategorModel(id: String, object : AnyObject) -> CategoryModel {
@@ -77,6 +91,7 @@ class FirebaseManager {
         
     }
     
+    
     func parseProductColorModel(idProductCategory : String,id : String, object : AnyObject) -> ProductColor {
 
         let obj = object as! [String: AnyObject]
@@ -90,7 +105,69 @@ class FirebaseManager {
         return ProductColor(id: id, productCategoryId: idProductCategory, colorCode: colorCode, description: description, imageLink: image, price: price, size: size)
     }
     
+    // MARK: - Auth Firebase
+    // sign up with fire base by email/password
+    func signUpWithEmail(email: String,password: String, completion: @escaping (Result<Bool,Error>) -> ()) {
+        
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
+            guard let _ = self else {
+                return
+            }
+            
+            if let realError = error {
+                completion(.failure(realError))
+                return
+            }
+            // sign up success
+            completion(.success(true))
+        }
+    }
     
+    // return if login
+    func isSignIn() -> Bool {
+        
+        if let _ = FirebaseAuth.Auth.auth().currentUser {
+            
+            return true
+        }
+        
+        return false
+    }
+    
+    // sigin
+    
+    func signInWithFacebook(accessToken: String, completion: @escaping (Result<Bool,Error>) -> () ) {
+        let credential = FacebookAuthProvider.credential(withAccessToken: accessToken)
+        FirebaseAuth.Auth.auth().signIn(with: credential) { [weak self] (result, error) in
+            guard let _ = self else {
+                return
+            }
+            
+            if let realError = error {
+                completion(.failure(realError))
+                return
+            }
+            // sign up success
+            completion(.success(true))
+        }
+    }
+    
+    // nho load data user khi dang nhap thanh cong
+    func signInWithEmail(email: String,password: String, completion: @escaping (Result<Bool,Error>) -> ()) {
+        
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) {   [weak self] (result, error) in
+            guard let _ = self else {
+                return
+            }
+            
+            if let realError = error {
+                completion(.failure(realError))
+                return
+            }
+            // sign up success
+            completion(.success(true))
+        }
+    }
     
     
 }
