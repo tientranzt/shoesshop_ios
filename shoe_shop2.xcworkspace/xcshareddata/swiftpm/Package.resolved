@@ -110,12 +110,21 @@
         }
       },
       {
-        "package": "ShimmerSwift",
-        "repositoryURL": "https://github.com/BeauNouvelle/ShimmerSwift.git",
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {
           "branch": null,
-          "revision": "f1a4366f74329c313e9528bcbe5286eacc750c05",
-          "version": "2.2.0"
+          "revision": "76dd4b49110b8624317fc128e7fa0d8a252018bc",
+          "version": "5.11.1"
+        }
+      },
+      {
+        "package": "SkeletonView",
+        "repositoryURL": "https://github.com/Juanpe/SkeletonView.git",
+        "state": {
+          "branch": null,
+          "revision": "36668f450b155c97da958dc5788c9149efaae7f8",
+          "version": "1.15.0"
         }
       },
       {

@@ -53,6 +53,20 @@ class FirebaseManager {
         }
     }
     
+    func fetchProductLastest(completion : @escaping (DataSnapshot) -> Void) {
+        ref.child("CategoryProduct/nike").getData { (error, snapshot) in
+            if let error = error {
+                print("Error getting data \(error)")
+            }
+            else if snapshot.exists() {
+                completion(snapshot)
+            }
+            else {
+                print("No data available")
+            }
+        }
+    }
+    
 
     // MARK: - Parse Model
     func parseCategorModel(id: String, object : AnyObject) -> CategoryModel {
@@ -76,6 +90,7 @@ class FirebaseManager {
         return productModel
         
     }
+    
     
     func parseProductColorModel(idProductCategory : String,id : String, object : AnyObject) -> ProductColor {
 

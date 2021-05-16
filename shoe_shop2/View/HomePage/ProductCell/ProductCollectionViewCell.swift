@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var containerView: UIView!
@@ -32,7 +33,20 @@ class ProductCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         heartButton.tintColor = UIColor(named: ColorTheme.middleGrayBackground)
-
+        containerView.showAnimatedSkeleton()
+    }
+    
+    func  heiAnimation()  {
+        containerView.hideSkeleton()
+    }
+    
+    func configureCell(product : ProductModel)  {
+        self.productName.text = product.productName
+        self.productPrice.text = "$\(product.price)"
+        productImage.tintColor = UIColor(named: ColorTheme.subGrayBackground)!
+        self.productImage.sd_setImage(with: URL(string: product.image)!, placeholderImage: UIImage(systemName: "circles.hexagonpath") , options: .continueInBackground, completed: nil)
+        self.containerView.backgroundColor = UIColor(named: product.colorCode)
+       
     }
     
     override func layoutSubviews() {
@@ -44,5 +58,4 @@ class ProductCollectionViewCell: UICollectionViewCell {
         isHeartClicked = !isHeartClicked
         print("button tapped")
     }
-    // a
 }
