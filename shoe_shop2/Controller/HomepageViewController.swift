@@ -163,7 +163,14 @@ extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDat
             
             let detailVC = UIStoryboard(name: "DetailProduct", bundle: nil).instantiateViewController(identifier: "detailViewController") as! DetailProductViewController
 
-            detailVC.product = productList[indexPath.row]
+            if collectionView == productCollection {
+                detailVC.product = productList[indexPath.row]
+            }
+            
+            if collectionView == lastestProductCollection {
+                detailVC.product = lastestProductList[indexPath.row]
+
+            }
             navigationController?.pushViewController(detailVC, animated: true)
             
 //            let id = productList[indexPath.row].id
