@@ -11,10 +11,14 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var btnPlus: UIButton!
     //Delegate property as weak
     @IBOutlet weak var checkBox: CheckBox!
+    @IBOutlet weak var stackViewPlusMinus: UIStackView!
     weak var cellDelegate: CartTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.stackViewPlusMinus.roundedAllSide(with: 2)
+        self.stackViewPlusMinus.borderAllSide(width: 0.2, color: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
+        
         let tapQuantity = UITapGestureRecognizer(target: self, action: #selector(handleQuantityTap))
         shoeQuantity.addGestureRecognizer(tapQuantity)
         let tapCheckBox = UITapGestureRecognizer(target: self, action: #selector(handleCheckBoxTap))
@@ -47,8 +51,9 @@ class CartTableViewCell: UITableViewCell {
         shoeName.text = cartItem.shoeName
         shoeQuantity.text = String(cartItem.shoeQuantity)
         shoePrice.text = "\(cartItem.shoePrice)$"
-        if let imageName = cartItem.shoeImage ,let image = getSavedImage(named: imageName) {
-            shoeImage.image = image
+        
+        if let imageName = cartItem.shoeImage {
+            self.shoeImage.sd_setImage(with: URL(string: imageName), placeholderImage: UIImage(systemName: "circles.hexagonpath"), options: .continueInBackground, completed: nil)
         }
     }
     

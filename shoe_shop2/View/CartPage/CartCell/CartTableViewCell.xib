@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -42,21 +43,21 @@
                                 <color key="textColor" name="mainBlackBackground"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-YA-ffy">
-                                <rect key="frame" x="0.0" y="28.5" width="134" height="20"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="250$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-YA-ffy">
+                                <rect key="frame" x="0.0" y="28.5" width="134" height="15"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" name="mainBlackBackground"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GWC-gm-mTs">
-                                <rect key="frame" x="0.0" y="56.5" width="77" height="20"/>
+                                <rect key="frame" x="0.0" y="51.5" width="87" height="25"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyE-yS-rtf">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                         <color key="backgroundColor" name="subGrayBackground"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fyE-yS-rtf" secondAttribute="height" multiplier="1:1" id="faS-h7-AB8"/>
-                                            <constraint firstAttribute="width" constant="20" id="teE-JG-woT"/>
+                                            <constraint firstAttribute="width" constant="25" id="teE-JG-woT"/>
                                         </constraints>
                                         <state key="normal" title="-">
                                             <color key="titleColor" name="mainBlackBackground"/>
@@ -66,7 +67,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOJ-TR-BoC">
-                                        <rect key="frame" x="28" y="0.0" width="21" height="20"/>
+                                        <rect key="frame" x="33" y="0.0" width="21" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="35" id="m4m-9D-Jxg"/>
                                         </constraints>
@@ -82,10 +83,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNk-Qg-nem">
-                                        <rect key="frame" x="57" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="62" y="0.0" width="25" height="25"/>
                                         <color key="backgroundColor" name="subGrayBackground"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="Nkb-ED-fKw"/>
+                                            <constraint firstAttribute="height" constant="25" id="Nkb-ED-fKw"/>
                                             <constraint firstAttribute="width" secondItem="QNk-Qg-nem" secondAttribute="height" multiplier="1:1" id="Z2m-Tb-eFD"/>
                                         </constraints>
                                         <color key="tintColor" name="mainWhiteBackground"/>
@@ -128,6 +129,7 @@
                 <outlet property="shoeName" destination="HZw-Jy-eoj" id="iIv-Iy-rXA"/>
                 <outlet property="shoePrice" destination="Sk7-YA-ffy" id="XEG-4W-DgG"/>
                 <outlet property="shoeQuantity" destination="GOJ-TR-BoC" id="xO3-gI-dwu"/>
+                <outlet property="stackViewPlusMinus" destination="GWC-gm-mTs" id="m6l-px-3gA"/>
             </connections>
             <point key="canvasLocation" x="42.753623188405797" y="-19.419642857142858"/>
         </tableViewCell>

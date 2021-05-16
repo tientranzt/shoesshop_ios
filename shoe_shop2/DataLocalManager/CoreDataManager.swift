@@ -26,7 +26,7 @@ class CoreDataManager {
     
     func insertCart(cartModel: CartModel) -> Bool {
         if let _ = fetchTaskByColorId(colorId: cartModel.shoeColorId) {
-            print("item exists")
+            print("item exists: [\(cartModel.shoeColorId)]")
             //MARK: - update all properties & add on quantity += 1
             return false
         }

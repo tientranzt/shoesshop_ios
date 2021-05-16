@@ -2,6 +2,11 @@ import UIKit
 
 extension UIView {
     
+    func borderAllSide(width: CGFloat , color: CGColor) {
+        layer.borderWidth = width
+        layer.borderColor = color
+    }
+    
     func roundedAllSide(with radius : CGFloat)  {
         layer.masksToBounds = true
         layer.cornerRadius = radius

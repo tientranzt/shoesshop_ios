@@ -5,6 +5,11 @@ import FSPagerView
 
 class DetailProductViewController: UIViewController {
     
+    //MARK:- TRIEULX
+    var indexColorSelected: Int = -1
+    var indexSizeSelected: Int = -1
+    
+    
     let viewChoose = UIView()
     var backgroundScrollView = UIColor()
     var colorButtonArray: [UIButton] = []
@@ -70,9 +75,40 @@ class DetailProductViewController: UIViewController {
         reviewLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressReview)))
         reviewLabel.underLine()
         self.navigationController?.navigationBar.isHidden = true
-        
+        //MARK: - TRIEULX
+        addToCardButton.addTarget(self, action: #selector(addToCartAction), for: .touchUpInside)
     }
-    
+    //MARK: - TRIEULX
+    @objc func addToCartAction(_ sender: Any) {
+        if indexColorSelected == -1 { //|| indexSizeSelected == -1 {
+            return
+        }
+        
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        let cart = CartModel(username: "lxt", // đợi login gửi qua
+                             shoeName: product!.productName,
+                             shoeId: product!.id,
+                             shoeColorId: productColorArray[indexColorSelected].id,
+                             shoeSizeId: "s35", // Chưa hiểu cách bắt sự kiện :v
+                             shoeQuantity: 1,
+                             shoePrice: Int(productColorArray[indexColorSelected].price) ?? -1,
+                             shoeImage: productColorArray[indexColorSelected].imageLink,
+                             createdAt: formatter.string(from: now)
+        )
+        if CoreDataManager.share.insertCart(cartModel: cart) {
+            showAlertNotify(title: "Insert item", message: "[\(product!.productName)] insert into your cart success!")
+        } else {
+            showAlertNotify(title: "Insert item", message: "[\(product!.productName)] exists in your cart")
+        }
+    }
+    func showAlertNotify(title: String ,message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     //MARK: - Get Data Firebase
     func getProductByColor() {
         guard let idProduct = product?.id else {
@@ -105,6 +141,9 @@ class DetailProductViewController: UIViewController {
     }
     
     func handleData(index: Int) {
+        //MARK:- TRIEULX
+        indexColorSelected = index
+        //
         nameShoesLabel.text = product?.productName
         descriptionShoesLabel.text = productColorArray[index].description
         priceShoesLabel.text = "\(productColorArray[index].price)$"
