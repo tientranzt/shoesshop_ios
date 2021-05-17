@@ -17,7 +17,8 @@ class CustomSwitch: UIControl {
     public var padding: CGFloat = 1
     
     
-    public var isOn = true
+    public var isOn: Bool = true
+    
     public var animationDuration: Double = 0.5
     
     fileprivate var thumbView = UIView(frame: CGRect.zero)
