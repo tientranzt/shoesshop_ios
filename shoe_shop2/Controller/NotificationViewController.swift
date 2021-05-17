@@ -11,8 +11,8 @@ class NotificationViewController: UITableViewController {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "ToastMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "toastMessageCell")
        
-        tableView.separatorStyle = .none
-        tableView.rowHeight = 90
+        //tableView.separatorStyle = .none
+        //tableView.rowHeight = 90
   
         fetchDataNotifications()
     }

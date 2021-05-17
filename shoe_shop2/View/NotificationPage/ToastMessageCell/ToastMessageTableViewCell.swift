@@ -9,8 +9,6 @@ import UIKit
 
 class ToastMessageTableViewCell: UITableViewCell {
     @IBOutlet weak var seperateView: UIView!
-    @IBOutlet weak var notificationIconImage: UIImageView!
-    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var notificationTitle: UILabel!
     @IBOutlet weak var bodyNotification: UILabel!
     
@@ -20,7 +18,6 @@ class ToastMessageTableViewCell: UITableViewCell {
     
     func configureColors(colorName : String)  {
         seperateView.backgroundColor = UIColor(named: colorName)
-        notificationIconImage.backgroundColor = UIColor(named: colorName)
     }
             
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,13 +33,11 @@ class ToastMessageTableViewCell: UITableViewCell {
     
     private func customView(){
         seperateView.roundedAllSide(with: 3)
-        notificationIconImage.layer.cornerRadius = notificationIconImage.frame.height / 2
-        containerView.roundedAllSide(with: 8)
+        //containerView.roundedAllSide(with: 8)
     }
     
     func initCell(notification : NotificationModel)  {
         seperateView.backgroundColor =  UIColor(named: notification.color)
-        notificationIconImage.backgroundColor =  UIColor(named: notification.color)
         notificationTitle.text =  notification.title
         bodyNotification.text =  notification.body
 
