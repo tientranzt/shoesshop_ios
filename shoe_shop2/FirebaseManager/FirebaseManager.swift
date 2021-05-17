@@ -67,6 +67,46 @@ class FirebaseManager {
         }
     }
     
+    
+    // MARK: - User firebase
+    
+    func insertUser(userName: String, Email: String) {
+        if let currentUser = Auth.auth().currentUser {
+            self.ref.child("UserProfile").child(currentUser.uid).child("Username").setValue(userName)
+            self.ref.child("UserProfile").child(currentUser.uid).child("Email").setValue(Email)
+        }
+       
+    }
+    
+    func fetchUser(completion: @escaping (DataSnapshot) -> Void) {
+        
+        if let currentUser = Auth.auth().currentUser {
+            self.ref.child("UserProfile").child(currentUser.uid).getData { (error, snapshot) in
+                if let error = error {
+                    print("Error getting data \(error)")
+                }
+                else if snapshot.exists() {
+                    print(snapshot)
+                    completion(snapshot)
+                }
+                else {
+                    print("No data available")
+                }
+            }
+        }
+    }
+    
+    func sendEmailResetPassword(email: String, completion: @escaping (Result<Bool,Error>) -> () ) {
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if let realError = error {
+                completion(.failure(realError))
+            }
+            // send succes
+            completion(.success(true))
+            
+        }
+    }
 
     // MARK: - Parse Model
     func parseCategorModel(id: String, object : AnyObject) -> CategoryModel {
@@ -109,6 +149,7 @@ class FirebaseManager {
     // sign up with fire base by email/password
     func signUpWithEmail(email: String,password: String, completion: @escaping (Result<Bool,Error>) -> ()) {
         
+        
         FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
             guard let _ = self else {
                 return
@@ -119,6 +160,7 @@ class FirebaseManager {
                 return
             }
             // sign up success
+            
             completion(.success(true))
         }
     }
@@ -134,10 +176,9 @@ class FirebaseManager {
         return false
     }
     
-    // sigin
+    // login with firebase by facebook or apple
     
-    func signInWithFacebook(accessToken: String, completion: @escaping (Result<Bool,Error>) -> () ) {
-        let credential = FacebookAuthProvider.credential(withAccessToken: accessToken)
+    func login(credential: AuthCredential, completion: @escaping (Result<Bool,Error>) -> () ) {
         FirebaseAuth.Auth.auth().signIn(with: credential) { [weak self] (result, error) in
             guard let _ = self else {
                 return
@@ -147,7 +188,7 @@ class FirebaseManager {
                 completion(.failure(realError))
                 return
             }
-            // sign up success
+            
             completion(.success(true))
         }
     }
@@ -170,5 +211,5 @@ class FirebaseManager {
     }
     
     
+    
 }
-

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LKD-UC-Pit">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LKD-UC-Pit">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -62,11 +62,14 @@
                                                 <state key="normal" title="Continue with Facebook">
                                                     <color key="titleColor" name="mainWhiteBackground"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginWithFacebook:" destination="7Gi-9v-ROf" eventType="touchUpInside" id="sep-wq-Tf1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlC-mU-oon">
                                                 <rect key="frame" x="39" y="507.33333333333343" width="312" height="47.666666666666686"/>
                                                 <color key="backgroundColor" name="subGrayBackground"/>
-                                                <state key="normal" title="I'll use email or phone">
+                                                <state key="normal" title="I'll use email">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -79,6 +82,9 @@
                                                 <state key="normal" title="Continue with Apple">
                                                     <color key="titleColor" name="mainWhiteBackground"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginWithApple:" destination="7Gi-9v-ROf" eventType="touchUpInside" id="beM-o1-C8N"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7pA-nd-e8x">
                                                 <rect key="frame" x="85.666666666666686" y="645" width="219" height="30"/>
@@ -93,7 +99,6 @@
                                                         <rect key="frame" x="181" y="0.0" width="38" height="30"/>
                                                         <state key="normal" title="Login"/>
                                                         <connections>
-                                                            <action selector="moveToLogin:" destination="7Gi-9v-ROf" eventType="touchUpInside" id="fgb-PA-U48"/>
                                                             <segue destination="fqf-Cf-3F3" kind="show" id="NVe-98-bia"/>
                                                         </connections>
                                                     </button>
@@ -169,7 +174,7 @@
                     <connections>
                         <outlet property="btnContinueWithApple" destination="ZKu-ae-DNh" id="dJy-8N-xKa"/>
                         <outlet property="btnContinueWithFaceook" destination="XRb-Sm-7W9" id="UL9-YK-OeR"/>
-                        <outlet property="btnUserEmailOrPhone" destination="AlC-mU-oon" id="zPU-6Q-hHo"/>
+                        <outlet property="btnUserEmail" destination="AlC-mU-oon" id="52d-yl-V8e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="epg-Mr-ys9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -248,7 +253,7 @@
                                                     <color key="titleColor" name="middleGrayBackground"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Txx-9V-dAh" kind="show" id="Lzg-Ub-Ben"/>
+                                                    <segue destination="Txx-9V-dAh" kind="presentation" modalPresentationStyle="automatic" id="Lzg-Ub-Ben"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ej2-x7-PDz">
@@ -340,6 +345,8 @@
                         <outlet property="btnLogin" destination="Ej2-x7-PDz" id="CgT-Au-Mwd"/>
                         <outlet property="customTextFieldEmailAddress" destination="Xef-cK-Oaw" id="89L-Kr-rfo"/>
                         <outlet property="customTextFieldPassword" destination="efZ-eL-h2K" id="YB4-Ls-ZMV"/>
+                        <outlet property="labelRememberMe" destination="hzk-eW-348" id="xWA-Vx-6QV"/>
+                        <outlet property="switchRememberMe" destination="jyc-vG-6ep" id="djX-T1-MDs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhp-Tu-fbo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -489,6 +496,7 @@
                     <navigationItem key="navigationItem" id="44N-Zk-Oz2"/>
                     <connections>
                         <outlet property="btnSignUp" destination="rRS-GV-XRb" id="AcC-gC-y7p"/>
+                        <outlet property="switchPolicyAndTerms" destination="wS4-IL-c3U" id="1Xm-yT-rWg"/>
                         <outlet property="textFieldEmail" destination="Lbs-Xc-ePy" id="CK3-Cb-HP4"/>
                         <outlet property="textFieldUserName" destination="Ny2-Oe-NBX" id="MMP-s8-iic"/>
                         <outlet property="texttFieldPassword" destination="pWo-gM-Dj4" id="Ctx-0n-DaK"/>
