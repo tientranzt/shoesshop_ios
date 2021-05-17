@@ -65,6 +65,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="cwq-aB-oSA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="6F2-wi-NeZ"/>
                 <constraint firstItem="2PU-Hn-Y9Q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6HZ-2Z-QAP"/>
@@ -76,8 +77,17 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="kMN-Ak-8KT" appends="YES" id="z2Q-B8-vZP"/>
+            </connections>
             <point key="canvasLocation" x="213.768115942029" y="-154.6875"/>
         </view>
+        <tapGestureRecognizer id="kMN-Ak-8KT">
+            <connections>
+                <action selector="focusTextfield:" destination="-1" id="Ncr-hv-dvN"/>
+                <outlet property="delegate" destination="2PU-Hn-Y9Q" id="7Am-jC-LdK"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="hide_pass" width="32" height="32"/>
