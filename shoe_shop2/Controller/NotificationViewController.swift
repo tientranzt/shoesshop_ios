@@ -1,22 +1,22 @@
-//
-//  NotificationViewController.swift
-//  shoe_shop2
-//
-//  Created by Nguyen Thanh Phuc on 5/7/21.
-//
-
 import UIKit
 
 class NotificationViewController: UITableViewController {
 
     var colorsName = [ColorTheme.hightlightOrangeBackground, ColorTheme.starBackground, ColorTheme.priceColor]
-    
+   
+    var notificationsList :  [NotificationModel] = []
+
     // MARK: - Helper
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "ToastMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "toastMessageCell")
-        tableView.rowHeight = 90
+       
         tableView.separatorStyle = .none
+//        tableView.rowHeight = 85
+//        tableView.estimatedRowHeight = 85
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 85
+        fetchDataNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,18 +27,37 @@ class NotificationViewController: UITableViewController {
         self.navigationController?.isNavigationBarHidden = false
 
     }
+    
+    func fetchDataNotifications()  {
+        notificationsList = []
+        FirebaseManager.shared.fetchNotifications { dataSnapshot in
+            if let data = dataSnapshot.value as? [String: AnyObject] {
+                data.forEach { (key : String, value: AnyObject) in
+                    self.notificationsList.append(FirebaseManager.shared.parseNotificationModel(object: value))
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
 
 }
 
 
 // MARK: - Extension NotificationViewController
 extension NotificationViewController {
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return colorsName.count
+        return notificationsList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,6 +65,7 @@ extension NotificationViewController {
         cell.configureColors(colorName: colorsName[indexPath.row])
         cell.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         cell.backgroundColor = UIColor(named: ColorTheme.subGrayBackground)
+        cell.initCell(notification: notificationsList[indexPath.row])
         return cell
     }
     

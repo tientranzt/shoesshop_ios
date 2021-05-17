@@ -10,25 +10,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="toastMessageCell" rowHeight="56" id="KGk-i7-Jjw" customClass="ToastMessageTableViewCell" customModule="shoe_shop2" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="344" height="56"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="toastMessageCell" rowHeight="86" id="KGk-i7-Jjw" customClass="ToastMessageTableViewCell" customModule="shoe_shop2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="86"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="344" height="56"/>
+                <rect key="frame" x="0.0" y="0.0" width="344" height="86"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xn-Nv-1I9">
-                        <rect key="frame" x="10" y="12" width="324" height="44"/>
+                        <rect key="frame" x="10" y="12" width="324" height="74"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUv-CT-eCp">
-                                <rect key="frame" x="8" y="4.5" width="5" height="35"/>
+                                <rect key="frame" x="8" y="7.5" width="5" height="59"/>
                                 <color key="backgroundColor" name="starBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="5" id="ivr-kX-48K"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PUk-y1-gsP">
-                                <rect key="frame" x="28" y="3" width="40" height="38"/>
+                                <rect key="frame" x="28" y="18" width="40" height="38"/>
                                 <color key="backgroundColor" name="starBackground"/>
                                 <color key="tintColor" name="mainWhiteBackground"/>
                                 <constraints>
@@ -37,9 +37,9 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ifq-bd-sPe">
-                                <rect key="frame" x="83" y="-3" width="201" height="50.5"/>
+                                <rect key="frame" x="83" y="12" width="201" height="50.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9R-Ie-sgS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9R-Ie-sgS">
                                         <rect key="frame" x="0.0" y="0.0" width="119.5" height="17"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" name="mainBlackBackground"/>
@@ -54,7 +54,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrh-Xb-CIY">
-                                <rect key="frame" x="289" y="7" width="30" height="30"/>
+                                <rect key="frame" x="289" y="22" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="657-ep-nEw"/>
                                     <constraint firstAttribute="width" constant="30" id="B6j-4K-RVz"/>
@@ -89,11 +89,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bodyNotification" destination="4Vp-iZ-hnA" id="fd8-qe-cFa"/>
                 <outlet property="containerView" destination="1xn-Nv-1I9" id="Iwh-BB-H7B"/>
                 <outlet property="notificationIconImage" destination="PUk-y1-gsP" id="XpR-om-cqK"/>
+                <outlet property="notificationTitle" destination="P9R-Ie-sgS" id="SGO-w4-Ra7"/>
                 <outlet property="seperateView" destination="BUv-CT-eCp" id="rbN-yf-3BJ"/>
             </connections>
-            <point key="canvasLocation" x="89.855072463768124" y="51.5625"/>
+            <point key="canvasLocation" x="89.855072463768124" y="61.607142857142854"/>
         </tableViewCell>
     </objects>
     <resources>

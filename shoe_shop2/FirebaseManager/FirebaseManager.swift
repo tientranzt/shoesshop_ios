@@ -3,7 +3,6 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
-
 class FirebaseManager {
     
     static let shared = FirebaseManager()
@@ -23,8 +22,8 @@ class FirebaseManager {
         }
     }
     
-    func fetchProduct(completion : @escaping (DataSnapshot) -> Void) {
-        ref.child("CategoryProduct/adidas").getData { (error, snapshot) in
+    func fetchProduct(categoryId: String, completion : @escaping (DataSnapshot) -> Void) {
+        ref.child("CategoryProduct/\(categoryId)").getData { (error, snapshot) in
             if let error = error {
                 print("Error getting data \(error)")
             }
@@ -67,8 +66,33 @@ class FirebaseManager {
         }
     }
     
+    func fetchNotifications(completion : @escaping (DataSnapshot) -> Void) {
+        ref.child("Notifications").getData { (error, snapshot) in
+            if let error = error {
+                print("Error getting data \(error)")
+            }
+            else if snapshot.exists() {
+                completion(snapshot)
+            }
+            else {
+                print("No data available")
+            }
+        }
+    }
+    
 
     // MARK: - Parse Model
+    
+    func parseNotificationModel(object : AnyObject) -> NotificationModel {
+    
+        let title =  object["title"] as! String
+        let body =  object["body"] as! String
+        let color =  object["color"] as! String
+        let notificationModel =  NotificationModel(color: color, title: title, body: body)
+    
+        return notificationModel
+    }
+    
     func parseCategorModel(id: String, object : AnyObject) -> CategoryModel {
         let categoryName = object["name"] as! String
         let country = object["country"] as! String
@@ -104,6 +128,9 @@ class FirebaseManager {
 
         return ProductColor(id: id, productCategoryId: idProductCategory, colorCode: colorCode, description: description, imageLink: image, price: price, size: size)
     }
+    
+    
+    
     
     // MARK: - Auth Firebase
     // sign up with fire base by email/password
@@ -168,7 +195,5 @@ class FirebaseManager {
             completion(.success(true))
         }
     }
-    
-    
 }
 
