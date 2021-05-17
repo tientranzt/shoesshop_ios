@@ -1,22 +1,23 @@
 import UIKit
 import FirebaseDatabase
-import SkeletonView
 import SDWebImage
 
-class HomepageViewController: UIViewController {
-
-    // MARK: - juut for test firebase
-    private var ref = Database.database().reference()
-
+class HomepageViewController: UIViewController, UIViewControllerTransitioningDelegate {
+    
     // MARK: - Properties
     @IBOutlet weak var categoryCollection: UICollectionView!
     @IBOutlet weak var productCollection: UICollectionView!
     @IBOutlet weak var lastestProductCollection: UICollectionView!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var productSearchBar: UISearchBar!
     
     var categoriesList : [CategoryModel] = []
     var productList : [ProductModel] = []
     var lastestProductList : [ProductModel] = []
+    var filteredProduct : [ProductModel] = []
+    
+    var refreshControl = UIRefreshControl()
+
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -26,7 +27,7 @@ class HomepageViewController: UIViewController {
     
         // MARK: - Fetch data in firebase funcs
         fetchCategory()
-        fetchProduct()
+        fetchProduct(with: "adidas")
         fetchLastestProduct()
     }
     
@@ -67,6 +68,7 @@ class HomepageViewController: UIViewController {
     
     // MARK: - Firebase func
     func fetchCategory()  {
+        categoriesList = []
         FirebaseManager.shared.fetchProductCategory { dataSnapshot in
             if let data = dataSnapshot.value as? [String: AnyObject] {
                 data.forEach { (key : String, value: AnyObject) in
@@ -80,17 +82,14 @@ class HomepageViewController: UIViewController {
         }
     }
     
-    func fetchProduct() {
-
-        FirebaseManager.shared.fetchProduct { dataSnapshot in
+    func fetchProduct(with categoryId : String) {
+        productList = []
+        
+        FirebaseManager.shared.fetchProduct(categoryId: categoryId) { dataSnapshot in
             if let data = dataSnapshot.value as? [String: AnyObject] {
                 data.forEach { (key : String, value: AnyObject) in
                     self.productList.append(FirebaseManager.shared.parseProductModel(id: key, object: value))
                     DispatchQueue.main.async {
-                        
-                        self.productList.sort { first, second in
-                            first.productName < second.productName
-                        }
                         self.productCollection.reloadData()
                     }
                 }
@@ -99,7 +98,7 @@ class HomepageViewController: UIViewController {
     }
     
     func fetchLastestProduct() {
-
+        lastestProductList = []
         FirebaseManager.shared.fetchProductLastest { dataSnapshot in
             if let data = dataSnapshot.value as? [String: AnyObject] {
                 data.forEach { (key : String, value: AnyObject) in
@@ -111,10 +110,46 @@ class HomepageViewController: UIViewController {
             }
         }
     }
+    
+    private func fileterProductByName(productNameSearchText : String){
+        filteredProduct = []
+        
+        filteredProduct += productList.filter({ $0.productName.lowercased().contains(productNameSearchText.lowercased())})
+        
+        filteredProduct += lastestProductList.filter({ $0.productName.lowercased().contains(productNameSearchText.lowercased())})
+    }
+    
+    // MARK: - IBAction
+    @IBAction func handleSearchButton(_ sender: UIButton) {
+        
+        guard let searchText = productSearchBar.text else {
+            return
+        }
+        
+        fileterProductByName(productNameSearchText: searchText)
+        
+        if filteredProduct.count == 0 { return }
+        
+        let searchVC = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(identifier: "searchPageController") as! SearchTableViewController
+        searchVC.listFilteredProduct = filteredProduct
+        productSearchBar.text = ""
+        
+        present(UINavigationController(rootViewController: searchVC), animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func handleReloadData(_ sender: UIBarButtonItem) {
+        
+        fetchCategory()
+        fetchProduct(with: "adidas")
+        fetchLastestProduct()
+        
+    }
+    
 }
 
 // MARK: - UICollectionViewDelegate , UICollectionViewDataSource
-extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDataSource{
+extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.categoryCollection {
@@ -150,21 +185,26 @@ extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDat
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! CategoriesCollectionViewCell
-        
         cell.textLabel.text =  categoriesList[indexPath.row].name
-    
         return cell
     }
     
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.productCollection || collectionView == self.lastestProductCollection{
             
             let detailVC = UIStoryboard(name: "DetailProduct", bundle: nil).instantiateViewController(identifier: "detailViewController") as! DetailProductViewController
 
-            detailVC.product = productList[indexPath.row]
-            navigationController?.pushViewController(detailVC, animated: true)
+            if collectionView == productCollection {
+                detailVC.product = productList[indexPath.row]
+                navigationController?.pushViewController(detailVC, animated: true)
+
+            }
+            
+            if collectionView == lastestProductCollection {
+                detailVC.product = lastestProductList[indexPath.row]
+                navigationController?.pushViewController(detailVC, animated: true)
+            }
             
 //            let id = productList[indexPath.row].id
 //            FirebaseManager.shared.fectProductColor(idPath: id) { dataSnapshot in
@@ -176,12 +216,26 @@ extension HomepageViewController : UICollectionViewDelegate, UICollectionViewDat
 //                    }
 //                }
 //            }
+        }
         
+        if collectionView == categoryCollection {
+            let cell = collectionView.cellForItem(at: indexPath) as! CategoriesCollectionViewCell
+            cell.textLabel.textColor = UIColor(named: ColorTheme.mainWhiteBackground)
+            cell.containerView.backgroundColor = UIColor(named: ColorTheme.backgroundButton)
+            fetchProduct(with: categoriesList[indexPath.row].id)
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if collectionView == categoryCollection {
+            let cell = collectionView.cellForItem(at: indexPath) as! CategoriesCollectionViewCell
+            cell.textLabel.textColor = UIColor(named: ColorTheme.middleGrayBackground)
+            cell.containerView.backgroundColor = UIColor(named: ColorTheme.mainWhiteBackground)
+        }
+    }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension HomepageViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -192,9 +246,6 @@ extension HomepageViewController : UICollectionViewDelegateFlowLayout {
         if collectionView == self.lastestProductCollection {
             return CGSize(width: 150, height: 150)
         }
-        
         return CGSize(width: 120, height: 45)
-        
     }
-    
 }

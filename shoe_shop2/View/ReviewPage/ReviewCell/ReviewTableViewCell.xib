@@ -51,8 +51,8 @@
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UI0-eM-zZB">
-                        <rect key="frame" x="140" y="46" width="264" height="72"/>
-                        <string key="text">Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!</string>
+                        <rect key="frame" x="140" y="46" width="264" height="94"/>
+                        <string key="text">Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!</string>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" name="middleGrayBackground"/>
                         <nil key="highlightedColor"/>
@@ -71,11 +71,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="avatarUserImage" destination="myh-p6-LnM" id="cAz-6W-DAd"/>
+                <outlet property="reviewContentLabel" destination="UI0-eM-zZB" id="YzR-An-bZ0"/>
+            </connections>
             <point key="canvasLocation" x="542.02898550724638" y="78.348214285714278"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="avatar" width="217" height="214"/>
+        <image name="avatar" width="215" height="211"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="middleGrayBackground">
             <color red="0.62699997425079346" green="0.62699997425079346" blue="0.62699997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
