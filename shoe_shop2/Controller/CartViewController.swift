@@ -39,30 +39,30 @@ class CartViewController: UIViewController {
 //        navigationController?.pushViewController(modifiedVC, animated: true)
     }
     
-    func checkAvailable(cartItem : Cart) {
-//        print(cartItem)
-        guard let productId = cartItem.productId, let productColorId = cartItem.productColorId, let productSizeId = cartItem.productSizeId else {
-            return
-        }
-        DispatchQueue.global().sync {
-            FirebaseManager.shared.fetchStorageByColor(idProduct: productId, idColor: productColorId, idSize: productSizeId, completion: { (data) in
-                if let numberOfItem = data.value as? Int {
-                    print("Tồn kho [\(productColorId)-\(productSizeId)]: \(numberOfItem)")
-                    let index = self.cartList.firstIndex(of: cartItem)
-                    let quantityChange = 0
-                    if numberOfItem < cartItem.productQuantity {
-                        CoreDataManager.share.updateCart(colorId: productColorId, quantity: numberOfItem)
-                        DispatchQueue.main.async {
-                            //notify and change quantity
-                        }
-                    } else {
-                        
-                    }
-                }
-            })
-        }
-        
-    }
+//    func checkAvailable(cartItem : Cart) {
+////        print(cartItem)
+//        guard let productId = cartItem.productId, let productColorId = cartItem.productColorId, let productSizeId = cartItem.productSizeId else {
+//            return
+//        }
+//        DispatchQueue.global().sync {
+//            FirebaseManager.shared.fetchStorageByColor(idProduct: productId, idColor: productColorId, idSize: productSizeId, completion: { (data) in
+//                if let numberOfItem = data.value as? Int {
+//                    print("Tồn kho [\(productColorId)-\(productSizeId)]: \(numberOfItem)")
+//                    let index = self.cartList.firstIndex(of: cartItem)
+//                    let quantityChange = 0
+//                    if numberOfItem < cartItem.productQuantity {
+//                        CoreDataManager.share.updateCart(colorId: productColorId, quantity: numberOfItem)
+//                        DispatchQueue.main.async {
+//                            //notify and change quantity
+//                        }
+//                    } else {
+//
+//                    }
+//                }
+//            })
+//        }
+//
+//    }
     
     func configureTableView() {
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: CartTableViewCell.identifier)
