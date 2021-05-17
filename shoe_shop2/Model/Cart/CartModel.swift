@@ -4,36 +4,36 @@ import UIKit
 struct CartModel  {
     
     var username: String
-    var shoeName: String
-    var shoeId: String
-    var shoeColorId: String
-    var shoeSizeId: String
-    var shoeQuantity: Int
-    var shoePrice: Int
-    var shoeImage: String
+    var productName: String
+    var productId: String
+    var productColorId: String
+    var productSizeId: String
+    var productQuantity: Int
+    var productPrice: Int
+    var productImage: String
     var createdAt: String
     var updatedAt: String?
     var isSelected: Bool
     
     
-    init(username: String, shoeName: String, shoeId: String, shoeColorId: String, shoeSizeId: String, shoeQuantity: Int, shoePrice: Int, shoeImage: String, createdAt: String) {
+    init(username: String, productName: String, productId: String, productColorId: String, productSizeId: String, productQuantity: Int, productPrice: Int, productImage: String, createdAt: String) {
         self.username = username
-        self.shoeName = shoeName
-        self.shoeId = shoeId
-        self.shoeColorId = shoeColorId
-        self.shoeSizeId = shoeSizeId
-        self.shoeQuantity = shoeQuantity
-        self.shoePrice = shoePrice
-        self.shoeImage = shoeImage
+        self.productName = productName
+        self.productId = productId
+        self.productColorId = productColorId
+        self.productSizeId = productSizeId
+        self.productQuantity = productQuantity
+        self.productPrice = productPrice
+        self.productImage = productImage
         self.createdAt = createdAt
         self.updatedAt = nil
         self.isSelected = true
     }
     
-    mutating func changeQuantity(username: String, shoeColorId: String, shoeQuantity: Int, updatedAt: String) {
+    mutating func changeQuantity(username: String, productColorId: String, productQuantity: Int, updatedAt: String) {
         self.username = username
-        self.shoeColorId = shoeColorId
-        self.shoeQuantity = shoeQuantity
+        self.productColorId = productColorId
+        self.productQuantity = productQuantity
         self.updatedAt = updatedAt
     }
 }

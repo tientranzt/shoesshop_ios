@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCartTableViewCell" rowHeight="102" id="KGk-i7-Jjw" customClass="CartTableViewCell" customModule="shoe_shop2" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="311" height="102"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCartTableViewCell" rowHeight="159" id="KGk-i7-Jjw" customClass="CartTableViewCell" customModule="shoe_shop2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="159"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="311" height="102"/>
+                <rect key="frame" x="0.0" y="0.0" width="370" height="159"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzd-eI-LMb" customClass="CheckBox" customModule="shoe_shop2" customModuleProvider="target">
-                        <rect key="frame" x="25" y="41" width="20" height="20"/>
+                        <rect key="frame" x="25" y="69.5" width="20" height="20"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="gg2-Ci-wi6"/>
@@ -28,29 +27,29 @@
                         </constraints>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="QO8-wu-KH6">
-                        <rect key="frame" x="55" y="5" width="92" height="92"/>
+                        <rect key="frame" x="55" y="5" width="149" height="149"/>
                         <color key="backgroundColor" name="shoeBackground2"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="QO8-wu-KH6" secondAttribute="height" multiplier="1:1" id="AUM-6o-kyz"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vnu-bk-zAx">
-                        <rect key="frame" x="167" y="13" width="134" height="76.5"/>
+                        <rect key="frame" x="224" y="20" width="136" height="119"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Max 250" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZw-Jy-eoj">
-                                <rect key="frame" x="0.0" y="0.0" width="134" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Air Max 250" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZw-Jy-eoj">
+                                <rect key="frame" x="0.0" y="0.0" width="136" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="mainBlackBackground"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="250$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-YA-ffy">
-                                <rect key="frame" x="0.0" y="28.5" width="134" height="15"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" text="250$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-YA-ffy">
+                                <rect key="frame" x="0.0" y="65.5" width="136" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" name="mainBlackBackground"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GWC-gm-mTs">
-                                <rect key="frame" x="0.0" y="51.5" width="87" height="25"/>
+                                <rect key="frame" x="0.0" y="94" width="87" height="25"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyE-yS-rtf">
                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
@@ -125,13 +124,13 @@
                 <outlet property="btnMinus" destination="fyE-yS-rtf" id="6Pw-3w-NFY"/>
                 <outlet property="btnPlus" destination="QNk-Qg-nem" id="PVK-ZZ-YHB"/>
                 <outlet property="checkBox" destination="zzd-eI-LMb" id="CPz-dE-cgQ"/>
-                <outlet property="shoeImage" destination="QO8-wu-KH6" id="f9j-A1-dXQ"/>
-                <outlet property="shoeName" destination="HZw-Jy-eoj" id="iIv-Iy-rXA"/>
-                <outlet property="shoePrice" destination="Sk7-YA-ffy" id="XEG-4W-DgG"/>
-                <outlet property="shoeQuantity" destination="GOJ-TR-BoC" id="xO3-gI-dwu"/>
+                <outlet property="productImage" destination="QO8-wu-KH6" id="WGd-gR-koW"/>
+                <outlet property="productName" destination="HZw-Jy-eoj" id="FX9-UI-LRc"/>
+                <outlet property="productPrice" destination="Sk7-YA-ffy" id="Toz-IJ-wuA"/>
+                <outlet property="productQuantity" destination="GOJ-TR-BoC" id="rqb-dQ-shH"/>
                 <outlet property="stackViewPlusMinus" destination="GWC-gm-mTs" id="m6l-px-3gA"/>
             </connections>
-            <point key="canvasLocation" x="42.753623188405797" y="-19.419642857142858"/>
+            <point key="canvasLocation" x="85.507246376811594" y="-0.33482142857142855"/>
         </tableViewCell>
     </objects>
     <resources>

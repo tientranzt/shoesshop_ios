@@ -3,10 +3,10 @@ import UIKit
 class CartTableViewCell: UITableViewCell {
     
     static let identifier = "customCartTableViewCell"
-    @IBOutlet weak var shoeImage: UIImageView!
-    @IBOutlet weak var shoeName: UILabel!
-    @IBOutlet weak var shoePrice: UILabel!
-    @IBOutlet weak var shoeQuantity: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
+    @IBOutlet weak var productQuantity: UILabel!
     @IBOutlet weak var btnMinus: UIButton!
     @IBOutlet weak var btnPlus: UIButton!
     //Delegate property as weak
@@ -20,13 +20,19 @@ class CartTableViewCell: UITableViewCell {
         self.stackViewPlusMinus.borderAllSide(width: 0.2, color: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
         
         let tapQuantity = UITapGestureRecognizer(target: self, action: #selector(handleQuantityTap))
-        shoeQuantity.addGestureRecognizer(tapQuantity)
+        productQuantity.addGestureRecognizer(tapQuantity)
         let tapCheckBox = UITapGestureRecognizer(target: self, action: #selector(handleCheckBoxTap))
         checkBox.addGestureRecognizer(tapCheckBox)
-        shoeImage.roundedAllSide(with: 8)
+        productImage.roundedAllSide(with: 8)
         btnPlus.roundedAllSide(with: 2)
         btnMinus.roundedAllSide(with: 2)
         // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -48,12 +54,16 @@ class CartTableViewCell: UITableViewCell {
         } else {
             checkBox.setImage( UIImage(named: "ic_unchecked"), for: UIControl.State.normal)
         }
-        shoeName.text = cartItem.shoeName
-        shoeQuantity.text = String(cartItem.shoeQuantity)
-        shoePrice.text = "\(cartItem.shoePrice)$"
+        productName.text = cartItem.productName
+        productQuantity.text = String(cartItem.productQuantity)
+        productPrice.text = "\(cartItem.productPrice)$"
+
+        if let imageName = cartItem.productImage {
+            self.productImage.sd_setImage(with: URL(string: imageName), placeholderImage: UIImage(systemName: "circles.hexagonpath"), options: .continueInBackground, completed: nil)
+        }
         
-        if let imageName = cartItem.shoeImage {
-            self.shoeImage.sd_setImage(with: URL(string: imageName), placeholderImage: UIImage(systemName: "circles.hexagonpath"), options: .continueInBackground, completed: nil)
+        if cartItem.productQuantity == 0 {
+            checkBox.isEnabled = false
         }
     }
     
@@ -66,7 +76,6 @@ class CartTableViewCell: UITableViewCell {
     
     @objc func handleCheckBoxTap(){
         cellDelegate?.pressCheckBox(cell: self)
-        //        self.imgCheckBox.image = self.imgCheckBox.image == UIImage(named: "ic_checked") ? UIImage(named: "ic_unchecked") : UIImage(named: "ic_checked")
     }
     
     @objc func handleQuantityTap(){

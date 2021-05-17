@@ -80,7 +80,8 @@ class DetailProductViewController: UIViewController {
     }
     //MARK: - TRIEULX
     @objc func addToCartAction(_ sender: Any) {
-        if indexColorSelected == -1 { //|| indexSizeSelected == -1 {
+        if indexSizeSelected == -1 {
+            print("chua click size")
             return
         }
         
@@ -89,13 +90,13 @@ class DetailProductViewController: UIViewController {
         formatter.dateStyle = .short
         formatter.timeStyle = .short
         let cart = CartModel(username: "lxt", // đợi login gửi qua
-                             shoeName: product!.productName,
-                             shoeId: product!.id,
-                             shoeColorId: productColorArray[indexColorSelected].id,
-                             shoeSizeId: "s35", // Chưa hiểu cách bắt sự kiện :v
-                             shoeQuantity: 1,
-                             shoePrice: Int(productColorArray[indexColorSelected].price) ?? -1,
-                             shoeImage: productColorArray[indexColorSelected].imageLink,
+                             productName: product!.productName,
+                             productId: product!.id,
+                             productColorId: productColorArray[indexColorSelected].id,
+                             productSizeId: sizeButtonArray[indexSizeSelected].currentTitle!,
+                             productQuantity: 1,
+                             productPrice: Int(productColorArray[indexColorSelected].price) ?? -1,
+                             productImage: productColorArray[indexColorSelected].imageLink,
                              createdAt: formatter.string(from: now)
         )
         if CoreDataManager.share.insertCart(cartModel: cart) {
@@ -143,6 +144,7 @@ class DetailProductViewController: UIViewController {
     func handleData(index: Int) {
         //MARK:- TRIEULX
         indexColorSelected = index
+        indexSizeSelected = -1
         //
         nameShoesLabel.text = product?.productName
         descriptionShoesLabel.text = productColorArray[index].description
@@ -199,6 +201,10 @@ class DetailProductViewController: UIViewController {
     
     //MARK: - Action Button Size
     @IBAction func pressSizeButton(_ sender: UIButton) {
+        //MARK:- TRIEULX
+        indexSizeSelected = sender.tag
+        print("\(sizeButtonArray[indexSizeSelected].currentTitle ?? "ss")")
+        
         switch sender.tag {
         case 0:
             setVisibleSizeButton(show: sizeFirstButton, hidden: sizeSecondButton, hidden: sizeThirdButton, hidden: sizeFourthButton)

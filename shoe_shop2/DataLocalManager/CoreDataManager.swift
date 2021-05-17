@@ -12,7 +12,7 @@ class CoreDataManager {
     func fetchTaskByColorId(colorId : String) -> Cart? {
         var task = [Cart]()
         let taskRequest :  NSFetchRequest<Cart> =  Cart.fetchRequest()
-        taskRequest.predicate = NSPredicate(format: "shoeColorId == %@", colorId as CVarArg)
+        taskRequest.predicate = NSPredicate(format: "productColorId == %@", colorId as CVarArg)
         
         do {
             task = try self.moc.fetch(taskRequest)
@@ -25,25 +25,26 @@ class CoreDataManager {
     //MARK: - INSERT CART ITEM
     
     func insertCart(cartModel: CartModel) -> Bool {
-        if let _ = fetchTaskByColorId(colorId: cartModel.shoeColorId) {
-            print("item exists: [\(cartModel.shoeColorId)]")
+        if let _ = fetchTaskByColorId(colorId: cartModel.productColorId) {
+            print("item exists: [\(cartModel.productColorId)]")
             //MARK: - update all properties & add on quantity += 1
             return false
         }
         let cart =  Cart(context: self.moc)
         cart.username = cartModel.username
-        cart.shoeName = cartModel.shoeName
-        cart.shoeColorId = cartModel.shoeColorId
-        cart.shoeSizeId = cartModel.shoeSizeId
-        cart.shoePrice = Int64(cartModel.shoePrice)
-        cart.shoeQuantity = Int64(cartModel.shoeQuantity)
+        cart.productName = cartModel.productName
+        cart.productId = cartModel.productId
+        cart.productColorId = cartModel.productColorId
+        cart.productSizeId = cartModel.productSizeId
+        cart.productPrice = Int64(cartModel.productPrice)
+        cart.productQuantity = Int64(cartModel.productQuantity)
         cart.createdAt = cartModel.createdAt
         cart.updatedAt = cartModel.updatedAt
-        cart.shoeImage = cartModel.shoeImage
-        //        cart.setValue(cart.username, forKeyPath: "username")
+        cart.productImage = cartModel.productImage
+        cart.isSelected = cartModel.isSelected
         do {
             try self.moc.save()
-            print("Insert success [\(String(describing: cart.shoeColorId))]")
+            print("Insert success [\(String(describing: cart.productColorId))]")
             return true
         } catch  {
             print(error)
@@ -58,10 +59,10 @@ class CoreDataManager {
             if let cart = fetchTaskByColorId(colorId: colorId) {
                 
                 cart.setValue(cart.username, forKeyPath: "username")
-                cart.setValue(cart.shoeColorId, forKeyPath: "shoeColorId")
-                cart.setValue(cart.shoeSizeId, forKeyPath: "shoeSizeId")
-                cart.setValue(cart.shoeQuantity, forKeyPath: "shoeQuantity")
-                cart.setValue(cart.shoePrice, forKeyPath: "shoePrice")
+                cart.setValue(cart.productColorId, forKeyPath: "productColorId")
+                cart.setValue(cart.productSizeId, forKeyPath: "productSizeId")
+                cart.setValue(cart.productQuantity, forKeyPath: "productQuantity")
+                cart.setValue(cart.productPrice, forKeyPath: "productPrice")
                 cart.setValue(cart.updatedAt, forKeyPath: "updatedAt")
                 
                 do {
@@ -127,7 +128,7 @@ class CoreDataManager {
             print(error)
         }
         for cart in task {
-            sum += (Int(cart.shoePrice * cart.shoeQuantity))
+            sum += (Int(cart.productPrice * cart.productQuantity))
         }
         return sum
     }
@@ -152,7 +153,7 @@ class CoreDataManager {
     func updateCart(colorId: String, quantity : Int) -> Bool  {
         do {
             if let cart = fetchTaskByColorId(colorId: colorId) {
-                cart.shoeQuantity = Int64(quantity)
+                cart.productQuantity = Int64(quantity)
                 do {
                     try self.moc.save()
                     return true

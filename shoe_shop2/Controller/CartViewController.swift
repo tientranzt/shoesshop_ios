@@ -17,18 +17,53 @@ class CartViewController: UIViewController {
         }
     }
     var cartList: [Cart] = [Cart]()
+    var itemNotExists: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         btnCheckOut.roundedAllSide(with: 8)
-//        CartModel.setDataTemp() // Delete after merge
         fetchData()
         configureTableView()
-//        println(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString)
+        btnCheckOut.addTarget(self, action: #selector(checkOutAction), for: .touchUpInside)
         print("Link data local: \(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as String)")
     }
+        
+    //MARK:- HANDLE ACTION CHECKOUT
+    @objc func checkOutAction(_ sender: UIButton) {
+        
+//        for cartItem in cartList.filter({ $0.isSelected }) {
+//            checkAvailable(cartItem: cartItem)
+//        }
+//        let modifiedVC = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(identifier: "checkoutPage") as! CheckoutViewController
+//
+//        navigationController?.pushViewController(modifiedVC, animated: true)
+    }
     
-
+    func checkAvailable(cartItem : Cart) {
+//        print(cartItem)
+        guard let productId = cartItem.productId, let productColorId = cartItem.productColorId, let productSizeId = cartItem.productSizeId else {
+            return
+        }
+        DispatchQueue.global().sync {
+            FirebaseManager.shared.fetchStorageByColor(idProduct: productId, idColor: productColorId, idSize: productSizeId, completion: { (data) in
+                if let numberOfItem = data.value as? Int {
+                    print("Tồn kho [\(productColorId)-\(productSizeId)]: \(numberOfItem)")
+                    let index = self.cartList.firstIndex(of: cartItem)
+                    let quantityChange = 0
+                    if numberOfItem < cartItem.productQuantity {
+                        CoreDataManager.share.updateCart(colorId: productColorId, quantity: numberOfItem)
+                        DispatchQueue.main.async {
+                            //notify and change quantity
+                        }
+                    } else {
+                        
+                    }
+                }
+            })
+        }
+        
+    }
+    
     func configureTableView() {
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: CartTableViewCell.identifier)
         tableView.separatorStyle = .none
@@ -39,16 +74,14 @@ class CartViewController: UIViewController {
     }
 
     func fetchData()  {
-        cartList = CoreDataManager.share.fetchAllItemCart()
-        countItem = CoreDataManager.share.getCountItemCartSelected()
-        countPrice = CoreDataManager.share.getTotalPriceItemCartSelected()
-        tableView.reloadData()
-    }
-    //MARK:- HANDLE ACTION CHECKOUT
-    @IBAction func checkOutAction(_ sender: UIButton) {
-        let modifiedVC = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(identifier: "checkoutPage") as! CheckoutViewController
-        
-        navigationController?.pushViewController(modifiedVC, animated: true)
+        DispatchQueue.global().sync {
+            self.cartList = CoreDataManager.share.fetchAllItemCart()
+            self.countItem = CoreDataManager.share.getCountItemCartSelected()
+            self.countPrice = CoreDataManager.share.getTotalPriceItemCartSelected()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -86,23 +119,20 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         deleteAction.backgroundColor = UIColor(named: "grayMainBackground")
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
-    
-    //MARK:- Handle change shoeQuantity item
-    
 }
 
 //MARK:- HANDLE CART CELL
 extension CartViewController: CartTableViewCellDelegate {
     // protocol handle button plus
     func pressButtonPlus(cell: CartTableViewCell, didTapped button: UIButton?) {
-        guard let text = cell.shoeQuantity.text else { return }
+        guard let text = cell.productQuantity.text else { return }
         if let quantity = Int(text) {
             setQuantity(cell: cell, quantity: quantity + 1)
         }
     }
     // protocol handle button minus
     func pressButtonMinus(cell: CartTableViewCell, didTapped button: UIButton?) {
-        guard let text = cell.shoeQuantity.text else { return }
+        guard let text = cell.productQuantity.text else { return }
         if let quantity = Int(text) {
             setQuantity(cell: cell, quantity: quantity - 1)
         }
@@ -120,17 +150,15 @@ extension CartViewController: CartTableViewCellDelegate {
     func showAlertDeleteItem(cell: CartTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else  { return }
         let cart = cartList[indexPath.row]
-        let alert = UIAlertController(title: "Delete item", message: "[\(String(describing: cell.shoeName.text!))] \n Are you sure you want to delete this item ?", preferredStyle: .alert)
+        
+        let alert = UIAlertController(title: "Delete item", message: "[\(String(describing: cell.productName.text!))] \n Are you sure you want to delete this item ?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { action in
             //update data
-            guard let colorId = cart.shoeColorId else { return }
+            guard let colorId = cart.productColorId else { return }
             if !CoreDataManager.share.deleteCart(colorId: colorId) {
                 return
             }
-            //remove row
-            self.cartList.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            self.tableView.reloadData()
+            self.fetchData()
             print("Delete success")
         }))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
@@ -141,35 +169,29 @@ extension CartViewController: CartTableViewCellDelegate {
     func handleCheckBox(cell: CartTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else  { return }
         let cart = cartList[indexPath.row]
-        if cart.isSelected {
-            if !CoreDataManager.share.updateCart(colorId: cart.shoeColorId!, isChecked: false) {
-                showAlertErrorQuantity(title: "Error", message:  "Please try again.")
-                return
-            }
-            cart.isSelected = false
-            cell.checkBox.isChecked = false
-            countItem -= 1
-            countPrice -= Int(cart.shoePrice * cart.shoeQuantity)
-        } else {
-            if !CoreDataManager.share.updateCart(colorId: cart.shoeColorId!, isChecked: true) {
-                showAlertErrorQuantity(title: "Error", message:  "Please try again.")
-                return
-            }
-            cart.isSelected = true
-            cell.checkBox.isChecked = true
-            countItem += 1
-            countPrice += Int(cart.shoePrice * cart.shoeQuantity)
+        guard let productColorId = cart.productColorId else {
+            return
         }
+        //
+        let isSelected = cart.isSelected
+        if !CoreDataManager.share.updateCart(colorId: productColorId, isChecked: !isSelected) {
+            showAlertErrorQuantity(title: "Error", message:  "Please try again.")
+            return
+        }
+        countItem = !isSelected ? countItem + 1 : countItem - 1
+        countPrice = !isSelected ? countPrice + Int(cart.productPrice * cart.productQuantity) : countPrice - Int(cart.productPrice * cart.productQuantity)
+        cell.checkBox.isChecked = !isSelected //Set UI
+        cart.isSelected = !isSelected //Require put last
     }
     
     //MARK: - Change quantity cart item
     func showAlertInputQuantity(cell: CartTableViewCell) {
-        let alert = UIAlertController(title: "Input quantity", message: "[\(String(describing: cell.shoeName.text!))]", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Input quantity", message: "[\(String(describing: cell.productName.text!))]", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
         alert.addTextField(configurationHandler: { textField in
             textField.keyboardType = .numberPad
-            textField.placeholder = cell.shoeQuantity.text
+            textField.placeholder = cell.productQuantity.text
             textField.delegate = self // handle input
         })
 
@@ -204,21 +226,21 @@ extension CartViewController: CartTableViewCellDelegate {
             showAlertDeleteItem(cell: cell)
             return
         }
-        let value = Int64(quantity) - cart.shoeQuantity
+        let value = Int64(quantity) - cart.productQuantity
         if value == 0 {
             print("Value not change")
             return
         }
-        if !CoreDataManager.share.updateCart(colorId: cart.shoeColorId!, quantity: quantity) {
+        if !CoreDataManager.share.updateCart(colorId: cart.productColorId!, quantity: quantity) {
             showAlertErrorQuantity(title: "Input error", message:  "Please try again.")
             return
         }
         if cart.isSelected
         {
-            countPrice += Int((value * cart.shoePrice))
+            countPrice += Int((value * cart.productPrice))
         }
-        cart.shoeQuantity = Int64(quantity)
-        cell.shoeQuantity.text = String(quantity)
+        cart.productQuantity = Int64(quantity)
+        cell.productQuantity.text = String(quantity)
     }
 }
 
