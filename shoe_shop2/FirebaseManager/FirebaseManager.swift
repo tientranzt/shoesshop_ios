@@ -72,8 +72,8 @@ class FirebaseManager {
     
     func insertUser(userName: String, Email: String) {
         if let currentUser = Auth.auth().currentUser {
-            self.ref.child("UserProfile").child(currentUser.uid).child("Username").setValue(userName)
-            self.ref.child("UserProfile").child(currentUser.uid).child("Email").setValue(Email)
+            self.ref.child("UserProfile").child(currentUser.uid).child("userName").setValue(userName)
+            self.ref.child("UserProfile").child(currentUser.uid).child("email").setValue(Email)
         }
        
     }
@@ -145,6 +145,14 @@ class FirebaseManager {
         return ProductColor(id: id, productCategoryId: idProductCategory, colorCode: colorCode, description: description, imageLink: image, price: price, size: size)
     }
     
+//    func parseUser(userId: String,object: AnyObject) ->  User{
+//
+//        let obj = object as! [String: AnyObject]
+//        let userName = object["userName"] as! String ?? ""
+//        let email = object["email"] as! String ?? ""
+//
+//        return User(userId: , userName: <#T##String#>, Email: <#T##String#>, shipAddress: <#T##String#>, PhoneNumber: <#T##String#>, imgAvatar: <#T##String#>)
+//    }
     // MARK: - Auth Firebase
     // sign up with fire base by email/password
     func signUpWithEmail(email: String,password: String, completion: @escaping (Result<Bool,Error>) -> ()) {

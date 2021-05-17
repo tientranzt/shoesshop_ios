@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
             if email != "" && password != "" {
                 if customTextFieldPassword.isRightFormat && customTextFieldEmailAddress.isRightFormat {
                     let queueLogin = DispatchQueue(label: "Queue Login")
-                    queueLogin.sync {
+                    queueLogin.async {
                         FirebaseManager.shared.signInWithEmail(email: email, password: password) { [weak self] (result) in
                             switch result {
                             case .success(_):
