@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hhW-07-fpO">
-                                <rect key="frame" x="20" y="88" width="374" height="609"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="609"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Wjr-TW-MUQ" id="rob-oY-xAP"/>
@@ -54,7 +54,7 @@
                                     <color key="titleColor" name="mainWhiteBackground"/>
                                 </state>
                                 <connections>
-                                    <segue destination="77x-dx-WoF" kind="show" id="1Cp-sX-fjD"/>
+                                    <action selector="checkOutAction:" destination="Wjr-TW-MUQ" eventType="touchUpInside" id="VKk-TR-b3k"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,7 +63,7 @@
                         <constraints>
                             <constraint firstItem="GTy-0h-rxJ" firstAttribute="bottom" secondItem="C5T-cN-Eyc" secondAttribute="bottom" constant="20" id="5Ek-oP-oer"/>
                             <constraint firstItem="sj9-jy-HI6" firstAttribute="leading" secondItem="K95-8h-gFg" secondAttribute="leading" id="5N6-8b-cV4"/>
-                            <constraint firstItem="hhW-07-fpO" firstAttribute="leading" secondItem="GTy-0h-rxJ" secondAttribute="leading" constant="20" id="GSs-zx-YaP"/>
+                            <constraint firstItem="hhW-07-fpO" firstAttribute="leading" secondItem="GTy-0h-rxJ" secondAttribute="leading" id="GSs-zx-YaP"/>
                             <constraint firstItem="C5T-cN-Eyc" firstAttribute="leading" secondItem="GTy-0h-rxJ" secondAttribute="leading" constant="20" id="HQz-gq-f0k"/>
                             <constraint firstItem="C5T-cN-Eyc" firstAttribute="centerX" secondItem="GTy-0h-rxJ" secondAttribute="centerX" id="MjG-ZJ-11r"/>
                             <constraint firstItem="C5T-cN-Eyc" firstAttribute="top" secondItem="sj9-jy-HI6" secondAttribute="bottom" constant="15" id="OFx-2b-d61"/>
@@ -75,7 +75,7 @@
                             <constraint firstItem="K95-8h-gFg" firstAttribute="leading" secondItem="GTy-0h-rxJ" secondAttribute="leading" constant="20" id="flF-uH-se1"/>
                             <constraint firstItem="GTy-0h-rxJ" firstAttribute="trailing" secondItem="xIX-Pn-fTG" secondAttribute="trailing" constant="20" id="nWC-dK-TWO"/>
                             <constraint firstItem="sj9-jy-HI6" firstAttribute="top" secondItem="K95-8h-gFg" secondAttribute="bottom" constant="15" id="sx8-dl-M7G"/>
-                            <constraint firstItem="GTy-0h-rxJ" firstAttribute="trailing" secondItem="hhW-07-fpO" secondAttribute="trailing" constant="20" id="wzL-dD-ah4"/>
+                            <constraint firstItem="GTy-0h-rxJ" firstAttribute="trailing" secondItem="hhW-07-fpO" secondAttribute="trailing" id="wzL-dD-ah4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hIK-5D-2UJ"/>
@@ -90,31 +90,21 @@
             </objects>
             <point key="canvasLocation" x="1347.8260869565217" y="1322.5446428571429"/>
         </scene>
-        <!--Checkout-->
-        <scene sceneID="K3Y-ZX-mXN">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Checkout" id="77x-dx-WoF" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="cfX-uY-eYF"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ubX-An-bfO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2302.898550724638" y="1348.6607142857142"/>
-        </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Fk9-1Y-Ty2">
+        <scene sceneID="N7x-8d-GVP">
             <objects>
-                <navigationController storyboardIdentifier="navCartPage" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PnU-JZ-9wy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navCartPage" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ixt-50-9TW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4kR-Bs-0Ll">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QUD-pT-jkV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Wjr-TW-MUQ" kind="relationship" relationship="rootViewController" id="xTX-7w-8Vn"/>
+                        <segue destination="Wjr-TW-MUQ" kind="relationship" relationship="rootViewController" id="nV6-kv-czU"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3e9-Tn-tu2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQd-Ff-drR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="437.68115942028987" y="1322.5446428571429"/>
         </scene>

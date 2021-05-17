@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E6E5F471A16F0F76B5966AB /* Pods_shoe_shop2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CB90B04F335B545CF44921 /* Pods_shoe_shop2.framework */; };
+		534782A4264E623700BE8FC4 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534782A3264E623700BE8FC4 /* CheckBox.swift */; };
 		646D087826511B56005D2213 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D087726511B56005D2213 /* User.swift */; };
 		646D087C26512DA5005D2213 /* VerifyEmailCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D087A26512DA5005D2213 /* VerifyEmailCodeViewController.swift */; };
 		646D087D26512DA5005D2213 /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D087B26512DA5005D2213 /* UpdateUserInformationViewController.swift */; };
@@ -104,6 +105,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		534782A3264E623700BE8FC4 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		6410B533264FDB540032597C /* shoe_shop2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shoe_shop2.entitlements; sourceTree = "<group>"; };
 		646D087726511B56005D2213 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		646D087A26512DA5005D2213 /* VerifyEmailCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyEmailCodeViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		534782A2264E623700BE8FC4 /* CustomCheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				534782A3264E623700BE8FC4 /* CheckBox.swift */,
+			);
+			path = CustomCheckBox;
+			sourceTree = "<group>";
+		};
 		64EB8251264822FB001B1B05 /* PaymentMethodViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +323,7 @@
 		E26B1D382644CD380001ABE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				534782A2264E623700BE8FC4 /* CustomCheckBox */,
 				FF8D233A264CC2F10072D5D3 /* CustomTexfieldDigitCode */,
 				E270115D264BB14E0089E500 /* ReviewPage */,
 				FF8D22F8264A828E0072D5D3 /* OrderSuccessPage */,
@@ -865,6 +876,7 @@
 				E26B1D222644CD240001ABE0 /* SceneDelegate.swift in Sources */,
 				FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */,
 				E2F61FD226454DDB001CE7E5 /* HomeLoginViewController.swift in Sources */,
+				534782A4264E623700BE8FC4 /* CheckBox.swift in Sources */,
 				64ABB2E3264AD1600000F5AC /* ForgotPasswordViewController.swift in Sources */,
 				FFA4FE9C26491FF2005F767F /* ToastMessageTableViewCell.swift in Sources */,
 				E26B1D662644CFCF0001ABE0 /* CheckoutViewController.swift in Sources */,
