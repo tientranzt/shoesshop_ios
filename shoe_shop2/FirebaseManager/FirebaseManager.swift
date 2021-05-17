@@ -78,15 +78,21 @@ class FirebaseManager {
        
     }
     
+    func getUserId() -> String {
+        if let user = Auth.auth().currentUser {
+            return user.uid
+        }
+        return ""
+    }
+    
     func fetchUser(completion: @escaping (DataSnapshot) -> Void) {
         
         if let currentUser = Auth.auth().currentUser {
-            self.ref.child("UserProfile").child(currentUser.uid).getData { (error, snapshot) in
+            self.ref.child("UserProfile/\(currentUser.uid)").getData { (error, snapshot) in
                 if let error = error {
                     print("Error getting data \(error)")
                 }
                 else if snapshot.exists() {
-                    print(snapshot)
                     completion(snapshot)
                 }
                 else {
@@ -143,6 +149,10 @@ class FirebaseManager {
 //        let pr = ProductColor(id: id, productCategoryId: idProductCategory, colorCode: colorCode, description: description, imageLink: image, price: price, size: size)
 
         return ProductColor(id: id, productCategoryId: idProductCategory, colorCode: colorCode, description: description, imageLink: image, price: price, size: size)
+    }
+    
+    func parseUser() {
+        
     }
     
     // MARK: - Auth Firebase
