@@ -146,7 +146,7 @@ class DetailProductViewController: UIViewController {
             item.layer.borderWidth = 0.5
         }
     }
-     
+    
     func handleSizeButton(indexButton: Int) {
         //MARK: - Lấy size giày trên Firebase gán vào button
         for (index, item) in sizeDictionaryArray.values.enumerated(){
@@ -199,7 +199,7 @@ class DetailProductViewController: UIViewController {
     
     @IBAction func pressPopToViewHomePage(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
-       
+        
     }
     
     //MARK: - Enable True or False
@@ -296,29 +296,34 @@ class DetailProductViewController: UIViewController {
         }
     }
     @IBAction func pressAddToCart(_ sender: Any) {
-//        if indexSizeSelected == -1 {
-//            return
-//        }
-//
-//        let now = Date()
-//        let formatter = DateFormatter()
-//        formatter.dateStyle = .short
-//        formatter.timeStyle = .short
-//        let cart = CartModel(username: "lxt", // đợi login gửi qua
-//                             shoeName: product!.productName,
-//                             shoeId: product!.id,
-//                             shoeColorId: productColorArray[indexColorSelected].id,
-//                             shoeSizeId: sizeButtonArray[indexSizeSelected].currentTitle!, // Chưa hiểu cách bắt sự kiện :v
-//                             shoeQuantity: 1,
-//                             shoePrice: Int(productColorArray[indexColorSelected].price) ?? -1,
-//                             shoeImage: productColorArray[indexColorSelected].imageLink,
-//                             createdAt: formatter.string(from: now)
-//        )
-//        if CoreDataManager.share.insertCart(cartModel: cart) {
-//            showAlertNotify(title: "Insert item", message: "[\(product!.productName)] insert into your cart success!")
-//        } else {
-//            showAlertNotify(title: "Insert item", message: "[\(product!.productName)] exists in your cart")
-//        }
+        if indexSizeSelected == -1 {
+            return
+        }
+        
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        let cart = CartModel(username: "any",
+                             productName: product!.productName,
+                             productId: product!.id,
+                             productColorId: productColorArray[indexColorSelected].id,
+                             productSizeId: sizeButtonArray[indexSizeSelected].currentTitle!, // Chưa hiểu cách bắt sự kiện :v
+                             productQuantity: 1,
+                             productPrice: Int(productColorArray[indexColorSelected].price) ?? -1,
+                             productImage: productColorArray[indexColorSelected].imageLink,
+                             createdAt: formatter.string(from: now)
+        )
+        if CoreDataManager.share.insertCart(cartModel: cart) {
+            showAlertNotify(title: "Insert item", message: "[\(product!.productName)] insert into your cart success!")
+        } else {
+            showAlertNotify(title: "Insert item", message: "[\(product!.productName)] exists in your cart")
+        }
+    }
+    func showAlertNotify(title: String ,message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

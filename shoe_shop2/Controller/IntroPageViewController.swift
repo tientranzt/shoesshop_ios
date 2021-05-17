@@ -15,7 +15,7 @@ class IntroPageViewController: UIViewController {
     var indexViewDisplay: Int = 0
     @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var goToViewButton: UIButton!
-    fileprivate let imageNames = ["introImage.png","introImage.png","introImage.png"]
+    fileprivate let imageNames = ["ImageIntro.png","ImageIntro.png","ImageIntro.png"]
     
     fileprivate let transformerNames = ["cross fading", "zoom out", "depth", "linear", "overlap", "ferris wheel", "inverted ferris wheel", "coverflow", "cubic"]
     fileprivate let transformerTypes: [FSPagerViewTransformerType] = [.crossFading, .zoomOut, .depth, .linear, .overlap, .ferrisWheel, .invertedFerrisWheel, .coverFlow, .cubic]
