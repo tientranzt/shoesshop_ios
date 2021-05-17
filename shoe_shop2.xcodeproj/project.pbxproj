@@ -69,6 +69,10 @@
 		FF56975026451DD5003CE928 /* LastestProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF56974E26451DD5003CE928 /* LastestProductCollectionViewCell.xib */; };
 		FF56975326451DE2003CE928 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56975126451DE1003CE928 /* ProductCollectionViewCell.swift */; };
 		FF56975426451DE2003CE928 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF56975226451DE2003CE928 /* ProductCollectionViewCell.xib */; };
+		FF76429C26520C30009DB6DE /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF76429A26520C30009DB6DE /* SearchResultTableViewCell.swift */; };
+		FF76429D26520C30009DB6DE /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF76429B26520C30009DB6DE /* SearchResultTableViewCell.xib */; };
+		FF76429F26520C4B009DB6DE /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF76429E26520C4B009DB6DE /* SearchTableViewController.swift */; };
+		FF7642A126525B6C009DB6DE /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7642A026525B6C009DB6DE /* NotificationModel.swift */; };
 		FF8D22FA264A828E0072D5D3 /* OrderSuccessPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8D22F9264A828E0072D5D3 /* OrderSuccessPage.storyboard */; };
 		FF8D22FD264A83D00072D5D3 /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D22FB264A83D00072D5D3 /* IntroPageViewController.swift */; };
 		FF8D22FE264A83D00072D5D3 /* OrderSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D22FC264A83D00072D5D3 /* OrderSuccessViewController.swift */; };
@@ -89,7 +93,6 @@
 		FF8D2347264D2AF50072D5D3 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2346264D2AF40072D5D3 /* ProductModel.swift */; };
 		FF8D2349264D60F00072D5D3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2348264D60F00072D5D3 /* UIColor+Extension.swift */; };
 		FF8D234B264E1D3F0072D5D3 /* ProductColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D234A264E1D3E0072D5D3 /* ProductColor.swift */; };
-		FF8D2393264EBF7B0072D5D3 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = FF8D2392264EBF7B0072D5D3 /* SkeletonView */; };
 		FF8D2396264FD5280072D5D3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FF8D2395264FD5280072D5D3 /* SDWebImage */; };
 		FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */; };
 		FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */; };
@@ -163,6 +166,10 @@
 		FF56974E26451DD5003CE928 /* LastestProductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LastestProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		FF56975126451DE1003CE928 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF56975226451DE2003CE928 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		FF76429A26520C30009DB6DE /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		FF76429B26520C30009DB6DE /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		FF76429E26520C4B009DB6DE /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		FF7642A026525B6C009DB6DE /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		FF8D22F9264A828E0072D5D3 /* OrderSuccessPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrderSuccessPage.storyboard; sourceTree = "<group>"; };
 		FF8D22FB264A83D00072D5D3 /* IntroPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
 		FF8D22FC264A83D00072D5D3 /* OrderSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderSuccessViewController.swift; sourceTree = "<group>"; };
@@ -198,7 +205,6 @@
 			files = (
 				6470F35E264E767D00362E05 /* FacebookLogin in Frameworks */,
 				3E6E5F471A16F0F76B5966AB /* Pods_shoe_shop2.framework in Frameworks */,
-				FF8D2393264EBF7B0072D5D3 /* SkeletonView in Frameworks */,
 				E26B1D832644D79C0001ABE0 /* FirebaseAuth in Frameworks */,
 				FF8D2396264FD5280072D5D3 /* SDWebImage in Frameworks */,
 				6470F35C264E767D00362E05 /* FacebookCore in Frameworks */,
@@ -298,6 +304,7 @@
 			children = (
 				FF8D2314264B5E540072D5D3 /* Cart */,
 				FF8D2344264CD2B50072D5D3 /* Category.swift */,
+				FF7642A026525B6C009DB6DE /* NotificationModel.swift */,
 				646D087726511B56005D2213 /* User.swift */,
 			);
 			path = Model;
@@ -350,6 +357,7 @@
 				64ABB2E2264AD1600000F5AC /* ForgotPasswordViewController.swift */,
 				E2701162264BB2010089E500 /* ReviewViewController.swift */,
 				E2701184264BF60A0089E500 /* ReviewDetailViewController.swift */,
+				FF76429E26520C4B009DB6DE /* SearchTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -404,6 +412,7 @@
 		E26B1D402644CE4A0001ABE0 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				FF76429926520BED009DB6DE /* SearchResultCell */,
 				FF56974826451DBC003CE928 /* ProductCell */,
 				FF56974726451DB4003CE928 /* LastestProductCell */,
 				FF56974626451DA3003CE928 /* CategoriesCell */,
@@ -547,6 +556,15 @@
 			path = ProductCell;
 			sourceTree = "<group>";
 		};
+		FF76429926520BED009DB6DE /* SearchResultCell */ = {
+			isa = PBXGroup;
+			children = (
+				FF76429A26520C30009DB6DE /* SearchResultTableViewCell.swift */,
+				FF76429B26520C30009DB6DE /* SearchResultTableViewCell.xib */,
+			);
+			path = SearchResultCell;
+			sourceTree = "<group>";
+		};
 		FF8D22F8264A828E0072D5D3 /* OrderSuccessPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,7 +682,6 @@
 				E26B1D822644D79C0001ABE0 /* FirebaseAuth */,
 				E26B1D842644D79C0001ABE0 /* FirebaseDatabase */,
 				FF8D2335264CB9590072D5D3 /* RAMAnimatedTabBarController */,
-				FF8D2392264EBF7B0072D5D3 /* SkeletonView */,
 				FF8D2395264FD5280072D5D3 /* SDWebImage */,
 				6470F35B264E767D00362E05 /* FacebookCore */,
 				6470F35D264E767D00362E05 /* FacebookLogin */,
@@ -699,7 +716,6 @@
 			packageReferences = (
 				E26B1D7F2644D79C0001ABE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */,
-				FF8D2391264EBF7B0072D5D3 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				6470F35A264E767D00362E05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				FF8D2394264FD5270072D5D3 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
@@ -726,6 +742,7 @@
 				FFA4FE9D26491FF2005F767F /* ToastMessageTableViewCell.xib in Resources */,
 				FF8D22FA264A828E0072D5D3 /* OrderSuccessPage.storyboard in Resources */,
 				FF8D230D264B5DB90072D5D3 /* CartTableViewCell.xib in Resources */,
+				FF76429D26520C30009DB6DE /* SearchResultTableViewCell.xib in Resources */,
 				E270117F264BE4B50089E500 /* ReviewDetailPage.storyboard in Resources */,
 				64ABB2E0264AD0620000F5AC /* ForgotPassword.storyboard in Resources */,
 				E26B1D7C2644D45D0001ABE0 /* GoogleService-Info.plist in Resources */,
@@ -818,9 +835,12 @@
 				E26B1D6C2644CFFD0001ABE0 /* AccountViewController.swift in Sources */,
 				E2701185264BF60A0089E500 /* ReviewDetailViewController.swift in Sources */,
 				FF8D2345264CD2B50072D5D3 /* Category.swift in Sources */,
+				FF76429C26520C30009DB6DE /* SearchResultTableViewCell.swift in Sources */,
 				E2F61FD626454DE9001CE7E5 /* LoginViewController.swift in Sources */,
 				FF8D2316264B5E540072D5D3 /* CartModel.swift in Sources */,
+				FF76429F26520C4B009DB6DE /* SearchTableViewController.swift in Sources */,
 				E26B1D692644CFDA0001ABE0 /* DetailProductViewController.swift in Sources */,
+				FF7642A126525B6C009DB6DE /* NotificationModel.swift in Sources */,
 				FF8D2343264CC5AA0072D5D3 /* FirebaseManager.swift in Sources */,
 				FFA4FEA226492113005F767F /* OrderHistoryTableViewCell.swift in Sources */,
 				E26B1DB82644DC5E0001ABE0 /* Constant.swift in Sources */,
@@ -1086,14 +1106,6 @@
 				minimumVersion = 5.2.0;
 			};
 		};
-		FF8D2391264EBF7B0072D5D3 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.15.0;
-			};
-		};
 		FF8D2394264FD5270072D5D3 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -1134,11 +1146,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */;
 			productName = RAMAnimatedTabBarController;
-		};
-		FF8D2392264EBF7B0072D5D3 /* SkeletonView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FF8D2391264EBF7B0072D5D3 /* XCRemoteSwiftPackageReference "SkeletonView" */;
-			productName = SkeletonView;
 		};
 		FF8D2395264FD5280072D5D3 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;

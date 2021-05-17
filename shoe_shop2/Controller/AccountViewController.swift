@@ -25,6 +25,7 @@ class AccountViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.fetchUser()
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -75,4 +76,15 @@ class AccountViewController: UIViewController {
        
     }
     
+    // MARK: - func firebase
+    
+    func fetchUser() {
+        FirebaseManager.shared.fetchUser { (dataSnapshot) in
+            if let data = dataSnapshot.value as? [String: AnyObject] {
+                data.forEach { (key: String, value: AnyObject) in
+                    
+                }
+            }
+        }
+    }
 }

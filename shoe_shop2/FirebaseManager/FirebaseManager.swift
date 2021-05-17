@@ -3,7 +3,6 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
-
 class FirebaseManager {
     
     static let shared = FirebaseManager()
@@ -23,8 +22,8 @@ class FirebaseManager {
         }
     }
     
-    func fetchProduct(completion : @escaping (DataSnapshot) -> Void) {
-        ref.child("CategoryProduct/adidas").getData { (error, snapshot) in
+    func fetchProduct(categoryId: String, completion : @escaping (DataSnapshot) -> Void) {
+        ref.child("CategoryProduct/\(categoryId)").getData { (error, snapshot) in
             if let error = error {
                 print("Error getting data \(error)")
             }
@@ -67,6 +66,20 @@ class FirebaseManager {
         }
     }
     
+    func fetchNotifications(completion : @escaping (DataSnapshot) -> Void) {
+        ref.child("Notifications").getData { (error, snapshot) in
+            if let error = error {
+                print("Error getting data \(error)")
+            }
+            else if snapshot.exists() {
+                completion(snapshot)
+            }
+            else {
+                print("No data available")
+            }
+        }
+    }
+    
     
     // MARK: - User firebase
     
@@ -78,15 +91,21 @@ class FirebaseManager {
        
     }
     
+    func getUserId() -> String {
+        if let user = Auth.auth().currentUser {
+            return user.uid
+        }
+        return ""
+    }
+    
     func fetchUser(completion: @escaping (DataSnapshot) -> Void) {
         
         if let currentUser = Auth.auth().currentUser {
-            self.ref.child("UserProfile").child(currentUser.uid).getData { (error, snapshot) in
+            self.ref.child("UserProfile/\(currentUser.uid)").getData { (error, snapshot) in
                 if let error = error {
                     print("Error getting data \(error)")
                 }
                 else if snapshot.exists() {
-                    print(snapshot)
                     completion(snapshot)
                 }
                 else {
@@ -109,6 +128,17 @@ class FirebaseManager {
     }
 
     // MARK: - Parse Model
+    
+    func parseNotificationModel(object : AnyObject) -> NotificationModel {
+    
+        let title =  object["title"] as! String
+        let body =  object["body"] as! String
+        let color =  object["color"] as! String
+        let notificationModel =  NotificationModel(color: color, title: title, body: body)
+    
+        return notificationModel
+    }
+    
     func parseCategorModel(id: String, object : AnyObject) -> CategoryModel {
         let categoryName = object["name"] as! String
         let country = object["country"] as! String
@@ -143,6 +173,10 @@ class FirebaseManager {
 //        let pr = ProductColor(id: id, productCategoryId: idProductCategory, colorCode: colorCode, description: description, imageLink: image, price: price, size: size)
 
         return ProductColor(id: id, productCategoryId: idProductCategory, colorCode: colorCode, description: description, imageLink: image, price: price, size: size)
+    }
+    
+    func parseUser() {
+        
     }
     
     // MARK: - Auth Firebase
@@ -209,7 +243,5 @@ class FirebaseManager {
             completion(.success(true))
         }
     }
-    
-    
     
 }

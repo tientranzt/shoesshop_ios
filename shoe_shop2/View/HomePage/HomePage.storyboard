@@ -41,6 +41,9 @@
                                                         <state key="normal" image="magnifyingglass" catalog="system">
                                                             <color key="titleColor" name="mainWhiteBackground"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="handleSearchButton:" destination="I6z-OS-GMs" eventType="touchUpInside" id="8OY-g8-aCC"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -145,17 +148,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mHB-fi-hdj">
-                        <barButtonItem key="leftBarButtonItem" image="slider.horizontal.3" catalog="system" id="aNK-su-k0a">
+                        <barButtonItem key="leftBarButtonItem" image="cart" catalog="system" id="aNK-su-k0a">
                             <color key="tintColor" name="middleGrayBackground"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="cart" catalog="system" id="E6n-e2-6Sj">
+                        <barButtonItem key="rightBarButtonItem" image="arrow.clockwise" catalog="system" id="E6n-e2-6Sj">
                             <color key="tintColor" name="middleGrayBackground"/>
+                            <connections>
+                                <action selector="handleReloadData:" destination="I6z-OS-GMs" id="HLP-Fu-l84"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="categoryCollection" destination="wnx-Eb-xU7" id="5la-1S-A5Y"/>
                         <outlet property="lastestProductCollection" destination="kvu-WQ-Bw6" id="LYO-Ep-xBc"/>
                         <outlet property="productCollection" destination="CRw-eH-VuS" id="Kf1-zC-XAW"/>
+                        <outlet property="productSearchBar" destination="MH9-GJ-g41" id="5Mp-OD-WPP"/>
                         <outlet property="searchButton" destination="fSC-HW-AH7" id="cPf-ua-yFh"/>
                         <segue destination="o9I-cv-YnG" kind="show" id="7Df-bb-7eF"/>
                     </connections>
@@ -163,6 +170,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNo-GL-Fkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2813.04347826087" y="83.705357142857139"/>
+        </scene>
+        <!--Search Result-->
+        <scene sceneID="bTi-mA-JZB">
+            <objects>
+                <tableViewController storyboardIdentifier="searchPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ef1-cc-Ubi" customClass="SearchTableViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hlX-ZH-PJF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Ef1-cc-Ubi" id="rHq-Rn-s0j"/>
+                            <outlet property="delegate" destination="Ef1-cc-Ubi" id="aAz-3m-Via"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search Result" id="Poq-Hx-X5X"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZd-2Y-yEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3881" y="-363"/>
         </scene>
         <!--DetailProduct-->
         <scene sceneID="eDC-1U-h8Q">
@@ -199,11 +225,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
         <namedColor name="backgroundButton">
             <color red="0.23499999940395355" green="0.18400000035762787" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

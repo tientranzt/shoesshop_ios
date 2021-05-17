@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SkeletonView
 
 class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var containerView: UIView!
@@ -18,9 +17,11 @@ class ProductCollectionViewCell: UICollectionViewCell {
     var isHeartClicked : Bool = false {
         didSet {
             if isHeartClicked {
+                print("yes")
                 heartButton.tintColor = .red
                 
             } else {
+                print("no")
                 heartButton.tintColor = UIColor(named: ColorTheme.middleGrayBackground)
             }
         }
@@ -33,12 +34,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         heartButton.tintColor = UIColor(named: ColorTheme.middleGrayBackground)
-        containerView.showAnimatedSkeleton()
     }
     
-    func  heiAnimation()  {
-        containerView.hideSkeleton()
-    }
+   
     
     func configureCell(product : ProductModel)  {
         self.productName.text = product.productName
