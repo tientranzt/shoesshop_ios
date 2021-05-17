@@ -12,10 +12,8 @@ class NotificationViewController: UITableViewController {
         tableView.register(UINib(nibName: "ToastMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "toastMessageCell")
        
         tableView.separatorStyle = .none
-//        tableView.rowHeight = 85
-//        tableView.estimatedRowHeight = 85
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 85
+        tableView.rowHeight = 90
+  
         fetchDataNotifications()
     }
     
@@ -47,10 +45,7 @@ class NotificationViewController: UITableViewController {
 
 // MARK: - Extension NotificationViewController
 extension NotificationViewController {
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
+
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
