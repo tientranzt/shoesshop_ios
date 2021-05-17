@@ -9,6 +9,7 @@ import UIKit
 
 class ReviewViewController: UIViewController {
     
+    let reviewArray: [String] = ["Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!","Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!"]
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +20,13 @@ class ReviewViewController: UIViewController {
 
 extension ReviewViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return reviewArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell") as! ReviewTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        cell.reviewContentLabel.text = reviewArray[indexPath.row]
         return cell
     }
     

@@ -1,6 +1,6 @@
 import UIKit
 import FSPagerView
-
+import SDWebImage
 
 
 class DetailProductViewController: UIViewController {
@@ -77,8 +77,8 @@ class DetailProductViewController: UIViewController {
         contentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         reviewLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressReview)))
         reviewLabel.underLine()
-        self.navigationController?.navigationBar.isHidden = true
     }
+    
     
     //MARK: - Get Data Firebase
     func getProductByColor() {
@@ -112,9 +112,6 @@ class DetailProductViewController: UIViewController {
     }
     
     func handleData(index: Int) {
-        //MARK:- TRIEULX
-        indexColorSelected = index
-        
         nameShoesLabel.text = product?.productName
         descriptionShoesLabel.text = productColorArray[index].description
         priceShoesLabel.text = "\(productColorArray[index].price)$"
@@ -131,20 +128,30 @@ class DetailProductViewController: UIViewController {
         viewChoose.layer.cornerRadius = viewChoose.frame.size.width / 2
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Show the navigation bar on other view controllers
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     private func customSizeButton() {
         for item in sizeButtonArray {
             item.roundedAllSide(with: 8)
             item.layer.borderWidth = 0.5
         }
     }
-    
+     
     func handleSizeButton(indexButton: Int) {
         //MARK: - Lấy size giày trên Firebase gán vào button
-        print(sizeDictionaryArray)
         for (index, item) in sizeDictionaryArray.values.enumerated(){
             if index == indexButton{
                 let sortedKeys = Array(item.keys).sorted(by: <)
-                //print("sortedKeys: \(sortedKeys)")
                 for (index, keys) in sortedKeys.enumerated() {
                     sizeButtonArray[index].setTitle(keys, for: .normal)
                     guard let numberShoes = item[keys] else {
@@ -192,6 +199,7 @@ class DetailProductViewController: UIViewController {
     
     @IBAction func pressPopToViewHomePage(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+       
     }
     
     //MARK: - Enable True or False
@@ -226,6 +234,9 @@ class DetailProductViewController: UIViewController {
         pagerView.scrollToItem(at: sender.tag, animated: true)
         handleData(index: sender.tag)
         handleSizeButton(indexButton: sender.tag)
+        //MARK:- TRIEULX
+        indexColorSelected = sender.tag
+        indexSizeSelected = -1
     }
     
     //MARK: - Handle Button Color
@@ -326,8 +337,9 @@ extension DetailProductViewController: FSPagerViewDataSource, FSPagerViewDelegat
         cell.imageView?.contentMode = .scaleAspectFit
         cell.imageView?.clipsToBounds = true
         cell.isUserInteractionEnabled = false
-        cell.imageView?.downloaded(from: productImageArray[index])
-        
+        //cell.imageView?.downloaded(from: productImageArray[index])
+        let url = URL(string: productImageArray[index])
+        cell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(systemName: "circles.hexagonpath"), options: .continueInBackground, completed: nil)
         handleData(index: index)
         handleSizeButton(indexButton: index)
         
