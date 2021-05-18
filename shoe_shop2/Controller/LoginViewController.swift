@@ -49,9 +49,9 @@ class LoginViewController: UIViewController {
                                     tabbar.viewControllers![3] = navAccountVC
                                     tabbar.setSelectIndex(from: 0, to: 3)
                                 }
-                            case .failure(let error):
+                            case .failure(_):
                                 
-                                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                                let alert = UIAlertController(title: "Error", message: "Sign In Fail Please Try Again!", preferredStyle: .alert)
                                 let okayAction = UIAlertAction(title: "OK", style: .default, handler: {[weak self] action in
                                     
                                     self?.view.isUserInteractionEnabled = true

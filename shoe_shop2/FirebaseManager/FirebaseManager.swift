@@ -231,6 +231,10 @@ class FirebaseManager {
                 return
             }
             // sign up success
+            guard let realResult = result else {
+                return
+            }
+            self?.ref.child("UserProfile").child(realResult.user.uid).child("isNewUser").setValue("TRUE")
             completion(.success(true))
         }
     }
@@ -291,7 +295,6 @@ class FirebaseManager {
                 completion(.failure(realError))
                 return
             }
-            self?.ref.child("UserProfile").child(self?.getUserId() ?? "").child("isNewUser").setValue("TRUE")
             completion(.success(true))
         }
     }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T2M-nu-xHQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T2M-nu-xHQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -264,6 +264,17 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Igw-fA-Xl4">
+                                                <rect key="frame" x="374" y="15" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="kos-46-cwA"/>
+                                                    <constraint firstAttribute="width" constant="25" id="mVC-lo-tev"/>
+                                                </constraints>
+                                                <state key="normal" image="close"/>
+                                                <connections>
+                                                    <action selector="closeScreen:" destination="zgf-p6-VyM" eventType="touchUpInside" id="f8j-vA-a72"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -274,8 +285,10 @@
                                             <constraint firstItem="1ZB-Fy-FUZ" firstAttribute="height" secondItem="3dw-QX-LjP" secondAttribute="height" multiplier="0.3" id="O8Z-VP-Lno"/>
                                             <constraint firstItem="1ZB-Fy-FUZ" firstAttribute="centerX" secondItem="3dw-QX-LjP" secondAttribute="centerX" id="ObP-gd-lBp"/>
                                             <constraint firstItem="1ZB-Fy-FUZ" firstAttribute="width" secondItem="3dw-QX-LjP" secondAttribute="width" multiplier="0.9" id="S5Z-Ys-qxU"/>
+                                            <constraint firstItem="Igw-fA-Xl4" firstAttribute="top" secondItem="3dw-QX-LjP" secondAttribute="top" constant="15" id="Tgh-n0-62X"/>
                                             <constraint firstAttribute="bottom" secondItem="qq2-mR-3v5" secondAttribute="bottom" constant="210" id="URb-oH-sLP"/>
                                             <constraint firstItem="qq2-mR-3v5" firstAttribute="height" secondItem="3dw-QX-LjP" secondAttribute="height" multiplier="0.07" id="WgK-vH-ndB"/>
+                                            <constraint firstAttribute="trailing" secondItem="Igw-fA-Xl4" secondAttribute="trailing" constant="15" id="YgQ-KK-Nr5"/>
                                             <constraint firstItem="yEf-0O-MDD" firstAttribute="leading" secondItem="1ZB-Fy-FUZ" secondAttribute="leading" id="ZRQ-3M-19q"/>
                                             <constraint firstItem="qq2-mR-3v5" firstAttribute="top" secondItem="1ZB-Fy-FUZ" secondAttribute="bottom" constant="100" id="gN7-uQ-qL3"/>
                                             <constraint firstItem="1ZB-Fy-FUZ" firstAttribute="top" secondItem="yEf-0O-MDD" secondAttribute="bottom" constant="10" id="qTq-Dl-PQP"/>
@@ -315,6 +328,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="64" height="64"/>
         <image name="location" width="240" height="240"/>
         <namedColor name="backgroundButton">
             <color red="0.23499999940395355" green="0.18400000035762787" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
