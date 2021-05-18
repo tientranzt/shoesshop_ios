@@ -53,9 +53,6 @@
                                 <state key="normal" title="Checkout">
                                     <color key="titleColor" name="mainWhiteBackground"/>
                                 </state>
-                                <connections>
-                                    <action selector="checkOutAction:" destination="Wjr-TW-MUQ" eventType="touchUpInside" id="VKk-TR-b3k"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GTy-0h-rxJ"/>
@@ -81,9 +78,9 @@
                     <navigationItem key="navigationItem" id="hIK-5D-2UJ"/>
                     <connections>
                         <outlet property="btnCheckOut" destination="C5T-cN-Eyc" id="ITu-zh-HMU"/>
+                        <outlet property="lblTotalItem" destination="sj9-jy-HI6" id="jc8-0F-neM"/>
+                        <outlet property="lblTotalPrice" destination="xIX-Pn-fTG" id="Vsv-hc-ax7"/>
                         <outlet property="tableView" destination="hhW-07-fpO" id="U8n-qd-NhG"/>
-                        <outlet property="totalItem" destination="sj9-jy-HI6" id="oKx-yT-12S"/>
-                        <outlet property="totalPrice" destination="xIX-Pn-fTG" id="WhL-JO-lfu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7J-uC-eWa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
