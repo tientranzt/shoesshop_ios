@@ -29,7 +29,7 @@ class ReviewDetailViewController: UIViewController {
     var selectedStar: Int!
     var countStart: Int = 0
     
-    var productDetailID : String = ""
+    var productDetailID: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,26 +63,28 @@ class ReviewDetailViewController: UIViewController {
     
 
     @IBAction func pressSubmitFeedBack(_ sender: UIButton) {
-        print(star.star)
-        print(reviewTextView.text)
-        print(productDetailID)
+        guard let userID = Auth.auth().currentUser?.uid else {
+            let alert = UIAlertController(title: "Notification", message: "Please Login Before Review !", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//            alert.addAction(UIAlertAction(title: "Login", style: .default, handler: { _ in
+//                let loginVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "HomeLogin")
+//                self.navigationController?.pushViewController(loginVC, animated: true)
+//            }))
+            present(alert, animated: true, completion: nil)
+            return
+        }
         guard let start = star.star else {
             return
         }
         guard let reviewText = reviewTextView.text else {
             return
         }
-        guard let userID = Auth.auth().currentUser?.uid else {
+        guard let productID = productDetailID else {
             return
         }
-        
-        print(userID)
-        
-//        ref.child("reviews").setVaxlue(["id": "a Phuc te cu"])
-//        ref.child("reviews/\(self.productDetailID)").setValue(["star": start, "userID" :  userID, "comment" : reviewText])
-//        Database.database().reference().child("reviews").setValue([])
-        ref.child("reviews").child(self.productDetailID).childByAutoId().setValue(["star": start, "userID" :  userID, "comment" : reviewText])
+        FirebaseManager.shared.ref.child("reviews").child(productID).childByAutoId().setValue(["star": start, "userID" :  userID, "comment" : reviewText])
             
+        self.navigationController?.popViewController(animated: true)
     }
     @objc func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
@@ -106,15 +108,5 @@ class ReviewDetailViewController: UIViewController {
         }
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

@@ -1037,7 +1037,7 @@
 				CODE_SIGN_ENTITLEMENTS = shoe_shop2/shoe_shop2.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 64HC3SHTV9;
 				INFOPLIST_FILE = shoe_shop2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1060,7 +1060,7 @@
 				CODE_SIGN_ENTITLEMENTS = shoe_shop2/shoe_shop2.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 64HC3SHTV9;
 				INFOPLIST_FILE = shoe_shop2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
