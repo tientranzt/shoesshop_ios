@@ -10,10 +10,6 @@ class NotificationViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "ToastMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "toastMessageCell")
-       
-        //tableView.separatorStyle = .none
-        //tableView.rowHeight = 90
-  
         fetchDataNotifications()
     }
     
@@ -23,7 +19,6 @@ class NotificationViewController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
-
     }
     
     func fetchDataNotifications()  {
@@ -31,13 +26,30 @@ class NotificationViewController: UITableViewController {
         FirebaseManager.shared.fetchNotifications { dataSnapshot in
             if let data = dataSnapshot.value as? [String: AnyObject] {
                 data.forEach { (key : String, value: AnyObject) in
-                    self.notificationsList.append(FirebaseManager.shared.parseNotificationModel(object: value))
+                    self.notificationsList.append(FirebaseManager.shared.parseNotificationModel(key : key, object: value))
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
                 }
             }
         }
+    }
+    
+    func showAlertDeleteItem(cell: IndexPath) {
+        
+        let cartIndex = cell.row
+        
+        let alert = UIAlertController(title: "Delete item", message: "Are you sure you want to delete this item ?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { action in
+            
+            let pathNeedDelete = self.notificationsList[cartIndex].keyPath
+            FirebaseManager.shared.ref.child("Notifications/\(pathNeedDelete)").removeValue()
+            self.notificationsList.remove(at: cartIndex)
+            self.tableView.reloadData()
+            print("Delete success")
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
@@ -66,5 +78,18 @@ extension NotificationViewController {
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
+    }
+    
+    //MARK:- Configure + Handle swipe delete item
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .normal, title:  "", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            self.showAlertDeleteItem(cell: indexPath)
+        })
+        let iconImage = UIImage(systemName: "trash")
+        deleteAction.image = iconImage!.withTintColor(UIColor(named: "deleteButtonTint")!, renderingMode: .alwaysOriginal)
+        deleteAction.backgroundColor = UIColor(named: "grayMainBackground")
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }

@@ -7,7 +7,7 @@ import CodableFirebase
 class FirebaseManager {
     
     static let shared = FirebaseManager()
-    private var ref = Database.database().reference()
+    let ref = Database.database().reference()
     
     func fetchProductCategory(completion : @escaping (DataSnapshot) -> Void) {
         ref.child("Category").getData { (error, snapshot) in
@@ -130,13 +130,13 @@ class FirebaseManager {
 
     // MARK: - Parse Model
     
-    func parseNotificationModel(object : AnyObject) -> NotificationModel {
+    func parseNotificationModel(key : String ,object : AnyObject) -> NotificationModel {
     
         let title =  object["title"] as! String
         let body =  object["body"] as! String
         let color =  object["color"] as! String
-        let notificationModel =  NotificationModel(color: color, title: title, body: body)
-    
+        let notificationModel =  NotificationModel(keyPath: key, color: color, title: title, body: body)
+        print(notificationModel)
         return notificationModel
     }
     
@@ -278,5 +278,7 @@ class FirebaseManager {
         }
         
     }
+    
+    
     
 }
