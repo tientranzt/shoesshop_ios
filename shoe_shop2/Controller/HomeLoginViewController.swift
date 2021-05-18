@@ -35,6 +35,7 @@ class HomeLoginViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
+        self.view.isUserInteractionEnabled = true
     }
     func setUpView() {
         btnContinueWithApple.layer.cornerRadius = 8
@@ -56,6 +57,7 @@ class HomeLoginViewController: UIViewController {
     
     
     @IBAction func loginWithFacebook(_ sender: Any) {
+        self.view.isUserInteractionEnabled = false
         // call acction of FBlogin button
         loginFacebookButton.sendActions(for: .touchUpInside)
     }
@@ -63,7 +65,6 @@ class HomeLoginViewController: UIViewController {
         
         loginAppleButton.sendActions(for: .touchUpInside)
     }
-    
     // MARK: - function for login with apple
     
     @objc func signByApple() {
@@ -124,25 +125,17 @@ class HomeLoginViewController: UIViewController {
     }
     
     func loginWithFacebookOrApple(credential: AuthCredential) {
-        print("da vao day")
-        self.btnContinueWithFaceook.isUserInteractionEnabled = false
-        self.btnUserEmail.isUserInteractionEnabled = false
-        self.btnContinueWithApple.isUserInteractionEnabled = false
+        
         FirebaseManager.shared.login(credential: credential) { [weak self] (result) in
             switch result {
             case .success(_):
-                if let user = Auth.auth().currentUser {
-                    let email = user.email ?? ""
-                    let displayName = user.displayName ?? ""
-                    FirebaseManager.shared.insertUser(userName: displayName, Email: email)
-                }
                 self?.goToUserProfile()
             case .failure(let error):
+                // need logout with apple if login with apple enable
+                LoginManager().logOut()
                 let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
                 let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
-                    self?.btnContinueWithFaceook.isUserInteractionEnabled = true
-                    self?.btnUserEmail.isUserInteractionEnabled = true
-                    self?.btnContinueWithApple.isUserInteractionEnabled = true
+                    self?.view.isUserInteractionEnabled = true
                 })
                 alert.addAction(okayAction)
                 self?.present(alert, animated: true, completion: nil)

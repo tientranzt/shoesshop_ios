@@ -10,8 +10,9 @@ import Foundation
 struct User {
     var userId: String
     var userName: String
-    var Email: String
+    var email: String
     var shipAddress: String
-    var PhoneNumber: String
+    var phoneNumber: String
     var imgAvatar: String
+    var isNewUser: String
 }
