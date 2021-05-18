@@ -1,5 +1,4 @@
 import UIKit
-import SkeletonView
 import RAMAnimatedTabBarController
 class AccountViewController: UIViewController {
     
