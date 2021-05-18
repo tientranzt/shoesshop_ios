@@ -56,7 +56,7 @@ class UpdateUserInformationViewController: UIViewController {
         if textFieldLocation.text != "" && textFieldEmail.text != "" && textFieldUserName.text != "" && textFieldPhoneNumber.text != ""  {
             
             if let location = textFieldLocation.text, let email = textFieldEmail.text, let userName = textFieldUserName.text ,let phoneNumber = textFieldPhoneNumber.text {
-                if LogicTextfield.shared.isValidEmail(email) && LogicTextfield.shared.isValidPhoneNumber(value: phoneNumber) {
+                if LogicLogin.shared.isValidEmail(email) && LogicLogin.shared.isValidPhoneNumber(value: phoneNumber) {
                     
                     self.user.email = email
                     self.user.phoneNumber = phoneNumber

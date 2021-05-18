@@ -129,7 +129,13 @@ class HomeLoginViewController: UIViewController {
         FirebaseManager.shared.login(credential: credential) { [weak self] (result) in
             switch result {
             case .success(_):
-                self?.goToUserProfile()
+                if let view = self?.view {
+                    LogicLogin.shared.showToast(message: "Sign In Success!", view: view)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    // Put your code which should be executed with a delay here
+                    self?.goToUserProfile()
+                }
             case .failure(let error):
                 // need logout with apple if login with apple enable
                 LoginManager().logOut()

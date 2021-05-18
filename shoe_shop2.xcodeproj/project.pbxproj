@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		3E6E5F471A16F0F76B5966AB /* Pods_shoe_shop2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CB90B04F335B545CF44921 /* Pods_shoe_shop2.framework */; };
 		534782A4264E623700BE8FC4 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534782A3264E623700BE8FC4 /* CheckBox.swift */; };
+		645695AD2653FDBB0011E0C5 /* ChangeShipAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645695AC2653FDBA0011E0C5 /* ChangeShipAddressViewController.swift */; };
 		646D087826511B56005D2213 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D087726511B56005D2213 /* User.swift */; };
-		646D087C26512DA5005D2213 /* VerifyEmailCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D087A26512DA5005D2213 /* VerifyEmailCodeViewController.swift */; };
 		646D087D26512DA5005D2213 /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D087B26512DA5005D2213 /* UpdateUserInformationViewController.swift */; };
-		646D088026515C88005D2213 /* LogicTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D087F26515C88005D2213 /* LogicTextfield.swift */; };
+		646D088026515C88005D2213 /* LogicLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D087F26515C88005D2213 /* LogicLogin.swift */; };
 		6470F35C264E767D00362E05 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6470F35B264E767D00362E05 /* FacebookCore */; };
 		6470F35E264E767D00362E05 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 6470F35D264E767D00362E05 /* FacebookLogin */; };
 		64ABB2E0264AD0620000F5AC /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64ABB2DF264AD0620000F5AC /* ForgotPassword.storyboard */; };
@@ -108,10 +108,10 @@
 /* Begin PBXFileReference section */
 		534782A3264E623700BE8FC4 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		6410B533264FDB540032597C /* shoe_shop2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shoe_shop2.entitlements; sourceTree = "<group>"; };
+		645695AC2653FDBA0011E0C5 /* ChangeShipAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeShipAddressViewController.swift; sourceTree = "<group>"; };
 		646D087726511B56005D2213 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		646D087A26512DA5005D2213 /* VerifyEmailCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyEmailCodeViewController.swift; sourceTree = "<group>"; };
 		646D087B26512DA5005D2213 /* UpdateUserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserInformationViewController.swift; sourceTree = "<group>"; };
-		646D087F26515C88005D2213 /* LogicTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicTextfield.swift; sourceTree = "<group>"; };
+		646D087F26515C88005D2213 /* LogicLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicLogin.swift; sourceTree = "<group>"; };
 		64ABB2DF264AD0620000F5AC /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
 		64ABB2E2264AD1600000F5AC /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		64E0F81A264A3ED600005B0B /* ChangeShipAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeShipAddressViewController.swift; sourceTree = "<group>"; };
@@ -350,8 +350,8 @@
 		E26B1D392644CD3C0001ABE0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				645695AC2653FDBA0011E0C5 /* ChangeShipAddressViewController.swift */,
 				646D087B26512DA5005D2213 /* UpdateUserInformationViewController.swift */,
-				646D087A26512DA5005D2213 /* VerifyEmailCodeViewController.swift */,
 				FF8D231C264B8C4C0072D5D3 /* RootTabbarViewController.swift */,
 				FF8D22FB264A83D00072D5D3 /* IntroPageViewController.swift */,
 				FF8D22FC264A83D00072D5D3 /* OrderSuccessViewController.swift */,
@@ -380,7 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				E26B1DB72644DC5E0001ABE0 /* Constant.swift */,
-				646D087F26515C88005D2213 /* LogicTextfield.swift */,
+				646D087F26515C88005D2213 /* LogicLogin.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -829,7 +829,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF8D2349264D60F00072D5D3 /* UIColor+Extension.swift in Sources */,
-				646D087C26512DA5005D2213 /* VerifyEmailCodeViewController.swift in Sources */,
 				64EB82582648239E001B1B05 /* PaymentCashMethod.swift in Sources */,
 				E2701153264BAF2F0089E500 /* UILabel+Extension.swift in Sources */,
 				FF8D234B264E1D3F0072D5D3 /* ProductColor.swift in Sources */,
@@ -857,6 +856,7 @@
 				E26B1D692644CFDA0001ABE0 /* DetailProductViewController.swift in Sources */,
 				FF7642A126525B6C009DB6DE /* NotificationModel.swift in Sources */,
 				FF8D2343264CC5AA0072D5D3 /* FirebaseManager.swift in Sources */,
+				645695AD2653FDBB0011E0C5 /* ChangeShipAddressViewController.swift in Sources */,
 				FFA4FEA226492113005F767F /* OrderHistoryTableViewCell.swift in Sources */,
 				E26B1DB82644DC5E0001ABE0 /* Constant.swift in Sources */,
 				E26B1DB22644DC170001ABE0 /* UIView+Extension.swift in Sources */,
@@ -874,7 +874,7 @@
 				E2F61FD726454DE9001CE7E5 /* SignUpViewController.swift in Sources */,
 				E2701168264BB8510089E500 /* ReviewTableViewCell.swift in Sources */,
 				FF8D22FD264A83D00072D5D3 /* IntroPageViewController.swift in Sources */,
-				646D088026515C88005D2213 /* LogicTextfield.swift in Sources */,
+				646D088026515C88005D2213 /* LogicLogin.swift in Sources */,
 				FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */,
 				646D087826511B56005D2213 /* User.swift in Sources */,
 				E26B1D222644CD240001ABE0 /* SceneDelegate.swift in Sources */,
