@@ -2,6 +2,7 @@
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
+import CodableFirebase
 
 class FirebaseManager {
     
@@ -242,6 +243,40 @@ class FirebaseManager {
             // sign up success
             completion(.success(true))
         }
+    }
+    
+    
+    // MARK: - fetch review data
+//    completion : @escaping ([Review]) -> Void
+    func fetchReviewData(reviewId : String, completion : @escaping ([Review]) -> Void) {
+        
+        var reviewList : [Review] = []
+        
+        self.ref.child("reviews/\(reviewId)").getData { (error, snapshot) in
+            if let error = error {
+                print("Error getting data \(error)")
+            }
+            else if snapshot.exists() {
+                let value = snapshot.value as! [String : AnyObject]
+                
+                do {
+                    for review in value{
+                        let rev  = try FirebaseDecoder().decode(Review.self, from: review.value)
+                        reviewList.append(rev)
+                    }
+                    
+                    completion(reviewList)
+                    
+                    
+                } catch let error {
+                    print(error)
+                }
+            }
+            else {
+                print("No data available")
+            }
+        }
+        
     }
     
 }
