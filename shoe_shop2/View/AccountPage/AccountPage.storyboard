@@ -26,7 +26,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="tve-0A-d2r">
                                                 <rect key="frame" x="40" y="30" width="354" height="150"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="LZr-4D-LrA">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="LZr-4D-LrA">
                                                         <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZfJ-pr-Pea">
@@ -204,6 +204,9 @@
                                                 <state key="normal" title=" Sign Out" image="lock.shield.fill" catalog="system">
                                                     <color key="titleColor" name="mainBlackBackground"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signOut:" destination="yfT-0U-ogV" eventType="touchUpInside" id="I5G-d6-BzQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -260,6 +263,7 @@
                     <connections>
                         <outlet property="avatarImage" destination="LZr-4D-LrA" id="JTc-Ch-fmE"/>
                         <outlet property="infoImage" destination="kru-CN-9Df" id="b62-WF-3Yi"/>
+                        <outlet property="lblUserName" destination="Jdg-yc-7wB" id="17V-96-bgx"/>
                         <outlet property="nextButton1" destination="qbt-ST-H0f" id="25J-UJ-mEF"/>
                         <outlet property="nextButton2" destination="eCT-a0-JTc" id="fqC-9h-PDR"/>
                         <outlet property="nextButton3" destination="2yb-ge-fIw" id="XM1-Ym-mWq"/>
@@ -310,12 +314,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efy-sq-93M">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="7RV-7y-4ZC">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="7RV-7y-4ZC">
                                                 <rect key="frame" x="87" y="10" width="240" height="240"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="240" id="0ZY-Ra-p0b"/>
                                                     <constraint firstAttribute="width" secondItem="7RV-7y-4ZC" secondAttribute="height" id="qQ4-vz-ETc"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="x9X-7b-Yaq" appends="YES" id="gIp-eh-pRN"/>
+                                                </connections>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Yy-Ot-6S0">
                                                 <rect key="frame" x="40" y="270" width="334" height="80"/>
@@ -390,16 +398,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y29-gP-aTr">
                                                 <rect key="frame" x="40" y="430" width="334" height="80"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4v9-LE-tZN">
-                                                        <rect key="frame" x="10" y="10" width="57.5" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhoneNumber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4v9-LE-tZN">
+                                                        <rect key="frame" x="10" y="10" width="98.5" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" name="middleGrayBackground"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12th March, 1998" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJm-O7-853">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0123456789" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJm-O7-853">
                                                         <rect key="frame" x="10" y="38" width="314" height="19.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nSj-IM-n5E">
                                                         <rect key="frame" x="294" y="22.5" width="30" height="35.5"/>
@@ -466,6 +474,9 @@
                                                         <state key="normal" title="Cancle">
                                                             <color key="titleColor" name="mainWhiteBackground"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="cancelUpdate:" destination="Ahv-oC-pA8" eventType="touchUpInside" id="hrW-hH-Pvt"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S58-lV-Rsz">
                                                         <rect key="frame" x="90" y="0.0" width="90" height="50"/>
@@ -473,6 +484,9 @@
                                                         <state key="normal" title="Save">
                                                             <color key="titleColor" name="mainWhiteBackground"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="saveUpdate:" destination="Ahv-oC-pA8" eventType="touchUpInside" id="dFk-vG-kag"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -530,10 +544,21 @@
                     <navigationItem key="navigationItem" id="vya-Lf-LeE"/>
                     <connections>
                         <outlet property="avartarImage" destination="7RV-7y-4ZC" id="Env-hh-bFq"/>
+                        <outlet property="btnCancel" destination="5Ih-7i-XQT" id="Hfp-v3-sY4"/>
+                        <outlet property="btnSave" destination="S58-lV-Rsz" id="RNG-ir-f04"/>
                         <outlet property="containerStackView" destination="7cL-96-o4j" id="XyO-wc-lU2"/>
+                        <outlet property="textFieldEmail" destination="heT-Qm-oGP" id="1uf-Wx-Isf"/>
+                        <outlet property="textFieldLocation" destination="i6f-YY-JMF" id="vxw-5y-NTr"/>
+                        <outlet property="textFieldPhoneNumber" destination="fJm-O7-853" id="5l5-Gn-Fk3"/>
+                        <outlet property="textFieldUserName" destination="rzD-Ok-KZ6" id="mn0-uq-2yH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pm9-Wb-nu1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="x9X-7b-Yaq">
+                    <connections>
+                        <action selector="pickImageChangeAvatar:" destination="Ahv-oC-pA8" id="Ij1-mH-KZX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2157" y="155"/>
         </scene>
@@ -571,7 +596,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bvr-dv-QqT">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Ids-ff-VIy">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Ids-ff-VIy">
                                                 <rect key="frame" x="87" y="10" width="240" height="240"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ids-ff-VIy" secondAttribute="height" id="39e-yR-7jA"/>
@@ -631,16 +656,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qd-7H-6XM">
                                                 <rect key="frame" x="40" y="430" width="334" height="80"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEU-VB-sQE">
-                                                        <rect key="frame" x="10" y="10" width="57.5" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhoneNumber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEU-VB-sQE">
+                                                        <rect key="frame" x="10" y="10" width="98.5" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" name="middleGrayBackground"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12th March, 1998" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iz7-Z2-va2">
+                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0123456789" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iz7-Z2-va2">
                                                         <rect key="frame" x="10" y="38" width="314" height="19.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
                                                 </subviews>
                                                 <viewLayoutGuide key="safeArea" id="kDR-5i-O3p"/>
@@ -724,6 +749,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Fdy-bh-E2q"/>
+                    <connections>
+                        <outlet property="avartarImage" destination="Ids-ff-VIy" id="wK9-8P-TvG"/>
+                        <outlet property="textfieldEmail" destination="yE0-Rb-9Dv" id="Y9U-Yj-NHJ"/>
+                        <outlet property="textfieldLocation" destination="i56-6v-lpj" id="6Bp-wP-0Fx"/>
+                        <outlet property="textfieldPhoneNumber" destination="iz7-Z2-va2" id="egK-Le-fpB"/>
+                        <outlet property="textfieldUserName" destination="HU7-Bx-DLw" id="z96-CS-rPl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="seJ-yk-bJy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -731,7 +763,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="avatar" width="217" height="214"/>
+        <image name="avatar" width="215" height="211"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="circle.circle" catalog="system" width="128" height="121"/>
         <image name="circle.grid.cross.down.fill" catalog="system" width="128" height="125"/>

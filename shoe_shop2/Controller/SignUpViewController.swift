@@ -36,7 +36,10 @@ class SignUpViewController: UIViewController {
 
     
     @IBAction func signUp(_ sender: Any) {
-        btnSignUp.isUserInteractionEnabled = false
+        
+        // block UI dont allow user touch anything at this time
+        self.view.isUserInteractionEnabled = false
+        self.navigationItem.setHidesBackButton(true, animated: true)
         // check textfield is nil
         if let email = textFieldEmail.texField.text, let password = texttFieldPassword.texField.text, let userName = textFieldUserName.texField.text {
             // if not nil check user accept policy and term
@@ -54,39 +57,48 @@ class SignUpViewController: UIViewController {
                             case .failure(let error):
                                 
                                 let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                                let okayAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                                let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+                                    self?.view.isUserInteractionEnabled = true
+                                    self?.navigationItem.setHidesBackButton(false, animated: true)
+                                })
                                 alert.addAction(okayAction)
                                 self.present(alert, animated: true, completion: nil)
-                                self.btnSignUp.isUserInteractionEnabled = true
+                                
+                                break
                             }
                         }
                     }
                     else {
                         let alert = UIAlertController(title: "Policy And Terms", message: "Please accept policy and terms", preferredStyle: .alert)
-                        let okayAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+                            self?.view.isUserInteractionEnabled = true
+                            self?.navigationItem.setHidesBackButton(false, animated: true)
+                        })
                         alert.addAction(okayAction)
                         self.present(alert, animated: true, completion: nil)
-                        self.btnSignUp.isUserInteractionEnabled = true
+                        
                     }
                 }
                 else {
                     let alert = UIAlertController(title: "Error", message: "some data wrong format \n 1. User Name can't be null \n 2. Email need right format \n 3. Password need at least 8 characters", preferredStyle: .alert)
-                    let okayAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+                        self?.view.isUserInteractionEnabled = true
+                        self?.navigationItem.setHidesBackButton(false, animated: true)
+                    })
                     alert.addAction(okayAction)
-                    
                     self.present(alert, animated: true, completion: nil)
-                    self.btnSignUp.isUserInteractionEnabled = true
                 }
             }
             // atleat 1 rext field nill
             else {
                 let alert = UIAlertController(title: "Error", message: "Some data is null please checkout", preferredStyle: .alert)
                 
-                let okayAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+                    self?.view.isUserInteractionEnabled = true
+                    self?.navigationItem.setHidesBackButton(false, animated: true)
+                })
                 alert.addAction(okayAction)
-                
                 self.present(alert, animated: true, completion: nil)
-                self.btnSignUp.isUserInteractionEnabled = true
             }
         }
     }
