@@ -30,7 +30,9 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         // stop user to click many times at the same time
-        self.btnLogin.isUserInteractionEnabled = false
+        self.view.isUserInteractionEnabled = false
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
         if let email = customTextFieldEmailAddress.texField.text, let password = customTextFieldPassword.texField.text{
             if email != "" && password != "" {
                 if customTextFieldPassword.isRightFormat && customTextFieldEmailAddress.isRightFormat {
@@ -51,19 +53,20 @@ class LoginViewController: UIViewController {
                                 
                                 let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
                                 let okayAction = UIAlertAction(title: "OK", style: .default, handler: {[weak self] action in
-                                    self?.present(alert, animated: true, completion: nil)
-                                    self?.btnLogin.isUserInteractionEnabled = true
+                                    
+                                    self?.view.isUserInteractionEnabled = true
+                                    self?.navigationItem.setHidesBackButton(false, animated: true)
                                 })
                                 alert.addAction(okayAction)
-                                
-                                
+                                self?.present(alert, animated: true, completion: nil)
                             }
                         }
                     }
                 }else{
                     let alert = UIAlertController(title: "Error", message: "some data wrong format \n 1. Email need right format \n 2. Password need at least 8 characters", preferredStyle: .alert)
                     let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
-                        self?.btnLogin.isUserInteractionEnabled = true
+                        self?.view.isUserInteractionEnabled = true
+                        self?.navigationItem.setHidesBackButton(false, animated: true)
                     })
                     alert.addAction(okayAction)
                     
@@ -72,7 +75,8 @@ class LoginViewController: UIViewController {
             }else {
                 let alert = UIAlertController(title: "Error", message: "Some data is null please check again!", preferredStyle: .alert)
                 let okayAction = UIAlertAction(title: "OK", style: .default, handler: {[weak self] action in
-                    self?.btnLogin.isUserInteractionEnabled = true
+                    self?.view.isUserInteractionEnabled = true
+                    self?.navigationItem.setHidesBackButton(false, animated: true)
                 })
                 alert.addAction(okayAction)
                 self.present(alert, animated: true, completion: nil)

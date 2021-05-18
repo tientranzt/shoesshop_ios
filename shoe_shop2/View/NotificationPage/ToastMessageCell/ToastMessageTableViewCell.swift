@@ -11,6 +11,7 @@ class ToastMessageTableViewCell: UITableViewCell {
     @IBOutlet weak var seperateView: UIView!
     @IBOutlet weak var notificationTitle: UILabel!
     @IBOutlet weak var bodyNotification: UILabel!
+    @IBOutlet weak var removeNotificationButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
