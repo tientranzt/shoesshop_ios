@@ -12,6 +12,7 @@ import UIKit
 }
 
 class CustomHeaderTableView: UIView {
+    var star: Int?
     
     @IBOutlet weak var starOneImage: UIImageView?
     @IBOutlet weak var starTwoImage: UIImageView?
@@ -65,5 +66,6 @@ class CustomHeaderTableView: UIView {
                 
             }
         }
+        star = selectedIndex
     }
 }

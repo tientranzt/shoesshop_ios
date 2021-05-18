@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 @objc protocol ReviewDetailViewControllerDelegate {
     @objc optional func confirmReview()
 }
 
 class ReviewDetailViewController: UIViewController {
+    
+    var ref = Database.database().reference()
+
     @IBOutlet weak var postButton: UIButton!
+    @IBOutlet weak var reviewTextView: UITextView!
     
     @IBOutlet weak var starView: UIView!
     var star: CustomHeaderTableView!
@@ -21,8 +27,9 @@ class ReviewDetailViewController: UIViewController {
     var pointOrigin: CGPoint?
     var starArray : [UIImageView?]?
     var selectedStar: Int!
-
+    var countStart: Int = 0
     
+    var productDetailID : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +55,6 @@ class ReviewDetailViewController: UIViewController {
         star = UINib(nibName: "CustomHeaderTableView", bundle: .main).instantiate(withOwner: nil, options: nil).first as? CustomHeaderTableView
         star.frame = self.starView.bounds
         star.addTapGestureForStarView()
-//        star.delegate = self
         self.starView.addSubview(star)
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
@@ -56,6 +62,28 @@ class ReviewDetailViewController: UIViewController {
     }
     
 
+    @IBAction func pressSubmitFeedBack(_ sender: UIButton) {
+        print(star.star)
+        print(reviewTextView.text)
+        print(productDetailID)
+        guard let start = star.star else {
+            return
+        }
+        guard let reviewText = reviewTextView.text else {
+            return
+        }
+        guard let userID = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
+        print(userID)
+        
+//        ref.child("reviews").setVaxlue(["id": "a Phuc te cu"])
+//        ref.child("reviews/\(self.productDetailID)").setValue(["star": start, "userID" :  userID, "comment" : reviewText])
+//        Database.database().reference().child("reviews").setValue([])
+        ref.child("reviews").child(self.productDetailID).childByAutoId().setValue(["star": start, "userID" :  userID, "comment" : reviewText])
+            
+    }
     @objc func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
         
@@ -90,9 +118,3 @@ class ReviewDetailViewController: UIViewController {
      */
     
 }
-
-//extension ReviewDetailViewController: CustomHeaderTableViewDelegate {
-//    func startDidSelect(selectedIndex: Int) {
-//        print(selectedIndex)
-//    }
-//}

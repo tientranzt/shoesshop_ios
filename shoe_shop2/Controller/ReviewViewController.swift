@@ -10,6 +10,7 @@ import UIKit
 class ReviewViewController: UIViewController {
     
     let reviewArray: [String] = ["Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!","Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!"]
+    var productID : String = ""
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,7 @@ extension ReviewViewController: CustomHeaderTableViewDelegate {
         detailReviewVC.modalPresentationStyle = .custom
         detailReviewVC.transitioningDelegate = self
         self.present(detailReviewVC, animated: true, completion: nil)
+        detailReviewVC.productDetailID = productID
     }
 }
 

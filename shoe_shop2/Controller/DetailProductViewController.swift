@@ -121,6 +121,11 @@ class DetailProductViewController: UIViewController {
     @objc func pressReview() {
         let reviewPageVC = UIStoryboard(name: "ReviewPage", bundle: nil).instantiateViewController(identifier: "ReviewViewController") as! ReviewViewController
         present(reviewPageVC, animated: true, completion: nil)
+        guard let producOfID = product?.id else {
+            return
+        }
+        reviewPageVC.productID = producOfID
+        //print("id: \(reviewPageVC.productID)")
     }
     
     override func viewWillLayoutSubviews() {

@@ -56,6 +56,9 @@
                                         <state key="normal" title="SUBMIT FEEDBACK">
                                             <color key="titleColor" name="mainWhiteBackground"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressSubmitFeedBack:" destination="8OP-1N-qjY" eventType="touchUpInside" id="GDA-Ct-f9U"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -83,6 +86,7 @@
                     </view>
                     <connections>
                         <outlet property="postButton" destination="dnG-GI-gPB" id="dE4-s2-oTp"/>
+                        <outlet property="reviewTextView" destination="56P-n1-3j1" id="5cP-yW-sJC"/>
                         <outlet property="starView" destination="Z4m-NN-Mcd" id="Vj0-py-FYt"/>
                     </connections>
                 </viewController>
