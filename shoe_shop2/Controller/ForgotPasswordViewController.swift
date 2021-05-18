@@ -39,7 +39,7 @@ class ForgotPasswordViewController: UIViewController {
         btnSendCode.isUserInteractionEnabled = false
         textFieldEmail.textField.isEnabled = false
         if let email = textFieldEmail.textField.text {
-            if LogicTextfield.shared.isValidEmail(email) {
+            if LogicLogin.shared.isValidEmail(email) {
 
                 FirebaseManager.shared.sendEmailResetPassword(email: email) { (result) in
                     switch result {
