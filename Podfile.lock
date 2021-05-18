@@ -1,20 +1,24 @@
 PODS:
+  - CodableFirebase (0.2.1)
   - FSPagerView (0.8.3)
   - IQKeyboardManager (6.5.6)
 
 DEPENDENCIES:
+  - CodableFirebase
   - FSPagerView
   - IQKeyboardManager
 
 SPEC REPOS:
   trunk:
+    - CodableFirebase
     - FSPagerView
     - IQKeyboardManager
 
 SPEC CHECKSUMS:
+  CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
 
-PODFILE CHECKSUM: ef0117e803045c69700fdc8e010bdb0a795fdeb8
+PODFILE CHECKSUM: bef0e0dfab4796c775fbada6a8b96c9e6177f1a2
 
 COCOAPODS: 1.8.4
