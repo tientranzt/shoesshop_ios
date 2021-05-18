@@ -52,8 +52,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSc-9P-mhi">
                                                 <rect key="frame" x="0.0" y="250" width="414" height="603.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$140" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPS-6G-4fl">
-                                                        <rect key="frame" x="274" y="30" width="120" height="48"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPS-6G-4fl">
+                                                        <rect key="frame" x="274" y="30" width="120" height="0.0"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="120" id="PHt-sE-46e"/>
                                                         </constraints>
@@ -61,14 +61,14 @@
                                                         <color key="textColor" name="priceColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150+Reviews" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNP-9K-2rz">
-                                                        <rect key="frame" x="284" y="78" width="100.5" height="20.5"/>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Reviews" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNP-9K-2rz">
+                                                        <rect key="frame" x="295.5" y="30" width="77" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="middleGrayBackground"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="B4G-SI-LFQ">
-                                                        <rect key="frame" x="20" y="68" width="130" height="20"/>
+                                                        <rect key="frame" x="20" y="20" width="130" height="20"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bfz-5p-0Y3">
                                                                 <rect key="frame" x="0.0" y="-0.5" width="22" height="20"/>
@@ -92,21 +92,20 @@
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voj-aQ-Vhn">
-                                                        <rect key="frame" x="20" y="118" width="374" height="142.5"/>
-                                                        <string key="text">Nike's first lifestyle Air Max meets the soft, smooth and resilient React foam in the Nike Air Max 270 React EOI. The design draws inspiration from the Air Max Pantheon with colours and materials that nod to and celebrate Air Max icons while the large window around the Air showcases Nike's greatest innovation.</string>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voj-aQ-Vhn">
+                                                        <rect key="frame" x="20" y="70" width="374" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="middleGrayBackground"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMT-Az-Zg5">
-                                                        <rect key="frame" x="20" y="280.5" width="43.5" height="26.5"/>
+                                                        <rect key="frame" x="20" y="90" width="43.5" height="26.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-ye-Spf">
-                                                        <rect key="frame" x="20" y="327" width="150" height="30"/>
+                                                        <rect key="frame" x="20" y="136.5" width="150" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H40-JO-BGV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -151,13 +150,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFS-vC-fOw">
-                                                        <rect key="frame" x="20" y="377" width="55.5" height="26.5"/>
+                                                        <rect key="frame" x="20" y="186.5" width="55.5" height="26.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hFF-E1-ZOQ">
-                                                        <rect key="frame" x="20" y="423.5" width="110" height="30"/>
+                                                        <rect key="frame" x="20" y="233" width="110" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBK-ns-Jy2">
                                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -186,7 +185,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4d-C8-OSL">
-                                                        <rect key="frame" x="20" y="493.5" width="374" height="50"/>
+                                                        <rect key="frame" x="20" y="303" width="374" height="50"/>
                                                         <color key="backgroundColor" name="backgroundButton"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="smG-EM-X6H"/>
@@ -199,8 +198,8 @@
                                                             <action selector="pressAddToCart:" destination="X6w-qM-FdF" eventType="touchUpInside" id="Sqx-n4-gjE"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Max 270" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNC-yE-1Ej">
-                                                        <rect key="frame" x="20" y="20" width="276" height="48"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNC-yE-1Ej">
+                                                        <rect key="frame" x="20" y="20" width="276" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -323,6 +322,11 @@
                         <outlet property="sizeFourthButton" destination="3AV-0B-VYU" id="g0g-56-STm"/>
                         <outlet property="sizeSecondButton" destination="ZO0-Ki-kIg" id="FFy-OW-8g8"/>
                         <outlet property="sizeThirdButton" destination="XhI-Mb-bT7" id="ROc-Zs-Vbh"/>
+                        <outlet property="starFive" destination="3Fz-5S-mto" id="16x-ss-iCq"/>
+                        <outlet property="starFour" destination="r4b-PC-10l" id="dV8-yW-5Np"/>
+                        <outlet property="starOne" destination="bfz-5p-0Y3" id="P3P-aT-Yqb"/>
+                        <outlet property="starThree" destination="yQe-85-e3A" id="Tf2-hA-VgW"/>
+                        <outlet property="starTwo" destination="4Jp-Sy-Lng" id="iyu-Yf-ASa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KVy-17-T1O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

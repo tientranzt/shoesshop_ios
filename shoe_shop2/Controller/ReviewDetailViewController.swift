@@ -64,6 +64,13 @@ class ReviewDetailViewController: UIViewController {
 
     @IBAction func pressSubmitFeedBack(_ sender: UIButton) {
         guard let userID = Auth.auth().currentUser?.uid else {
+            let alert = UIAlertController(title: "Notification", message: "Please Login Before Review !", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//            alert.addAction(UIAlertAction(title: "Login", style: .default, handler: { _ in
+//                let loginVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "HomeLogin")
+//                self.navigationController?.pushViewController(loginVC, animated: true)
+//            }))
+            present(alert, animated: true, completion: nil)
             return
         }
         guard let start = star.star else {
@@ -101,15 +108,5 @@ class ReviewDetailViewController: UIViewController {
         }
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

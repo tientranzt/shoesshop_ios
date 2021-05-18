@@ -19,7 +19,6 @@ class ReviewViewController: UIViewController {
         fechDataFirebase()
     }
     
-    
     func fechDataFirebase() {
         guard let id = productID else {
             return
@@ -44,6 +43,7 @@ extension ReviewViewController: UITableViewDataSource, UITableViewDelegate{
         cell.reviewContentLabel.text = reviewArray![indexPath.row].comment
         cell.userId = reviewArray![indexPath.row].userID
         cell.fetchUserImage()
+        cell.handleStar(indexStar: reviewArray![indexPath.row].star)
         return cell
     }
     

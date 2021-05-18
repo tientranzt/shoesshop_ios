@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="myh-p6-LnM">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="myh-p6-LnM">
                         <rect key="frame" x="20" y="20" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="BlL-Fh-QaY"/>
@@ -51,8 +51,9 @@
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UI0-eM-zZB">
-                        <rect key="frame" x="140" y="46" width="264" height="94"/>
-                        <string key="text">Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!</string>
+                        <rect key="frame" x="140" y="46" width="264" height="84"/>
+                        <color key="backgroundColor" name="mainWhiteBackground"/>
+                        <string key="text">Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!Overall, I'd say it's definitely worth a try to get a feel for this new option in stability technology and see if it works for you!Overall, I'd say it's definitely worth a try \</string>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" name="middleGrayBackground"/>
                         <nil key="highlightedColor"/>
@@ -61,26 +62,34 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="UI0-eM-zZB" secondAttribute="trailing" constant="10" id="4Ib-tp-I6q"/>
                     <constraint firstItem="UI0-eM-zZB" firstAttribute="top" secondItem="FFU-L9-Pzd" secondAttribute="bottom" constant="5" id="A8z-sK-Bek"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UI0-eM-zZB" secondAttribute="bottom" constant="10" id="HgU-QS-PZe"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UI0-eM-zZB" secondAttribute="bottom" constant="20" id="HgU-QS-PZe"/>
                     <constraint firstItem="FFU-L9-Pzd" firstAttribute="leading" secondItem="myh-p6-LnM" secondAttribute="trailing" constant="20" id="Jee-U7-XsZ"/>
                     <constraint firstItem="myh-p6-LnM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="Jqf-9U-1Xd"/>
                     <constraint firstItem="UI0-eM-zZB" firstAttribute="leading" secondItem="myh-p6-LnM" secondAttribute="trailing" constant="20" id="W8i-L4-49H"/>
                     <constraint firstItem="FFU-L9-Pzd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="YL2-NN-4ER"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="myh-p6-LnM" secondAttribute="bottom" constant="30" id="dlo-3Z-BaT"/>
                     <constraint firstItem="myh-p6-LnM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="ieE-M2-GDo"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="myh-p6-LnM" secondAttribute="bottom" constant="20" id="t6T-SO-ob6"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatarUserImage" destination="myh-p6-LnM" id="cAz-6W-DAd"/>
                 <outlet property="reviewContentLabel" destination="UI0-eM-zZB" id="YzR-An-bZ0"/>
+                <outlet property="starFive" destination="1zr-Ru-67M" id="56c-v1-oac"/>
+                <outlet property="starFour" destination="eEO-mN-Z0a" id="GDC-hI-4cM"/>
+                <outlet property="starOne" destination="8a4-hQ-wcy" id="KaU-J4-CcV"/>
+                <outlet property="starThree" destination="hE4-pV-Ohf" id="qzM-UC-R1h"/>
+                <outlet property="starTwo" destination="jhp-t1-scH" id="UQF-gz-goN"/>
             </connections>
             <point key="canvasLocation" x="542.02898550724638" y="78.348214285714278"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="avatar" width="215" height="211"/>
+        <image name="avatar" width="217" height="214"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="mainWhiteBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="middleGrayBackground">
             <color red="0.62699997425079346" green="0.62699997425079346" blue="0.62699997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

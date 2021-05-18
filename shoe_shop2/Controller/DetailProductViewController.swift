@@ -11,7 +11,6 @@ class DetailProductViewController: UIViewController {
     var indexSizeSelected: Int = -1
     var currentTitle: String = ""
     
-    
     let viewChoose = UIView()
     var backgroundScrollView = UIColor()
     
@@ -22,6 +21,15 @@ class DetailProductViewController: UIViewController {
     var indexViewDisplay: Int = 0
     var sizeDictionaryArray : [String: [String: Int]] = [:]
     var numberOfShoesSize: [Int] = []
+    var starProduct: Int = 0
+    
+    //MARK: - Outlet image star
+    @IBOutlet weak var starOne: UIImageView!
+    @IBOutlet weak var starTwo: UIImageView!
+    @IBOutlet weak var starThree: UIImageView!
+    @IBOutlet weak var starFour: UIImageView!
+    @IBOutlet weak var starFive: UIImageView!
+    var starImageArray: [UIImageView] = []
     
     @IBOutlet weak var nameShoesLabel: UILabel!
     @IBOutlet weak var priceShoesLabel: UILabel!
@@ -67,6 +75,7 @@ class DetailProductViewController: UIViewController {
         super.viewDidLoad()
         colorButtonArray = [colorFirstShoeButton,colorSecondShoeButton,colorThirdShoeButton]
         sizeButtonArray = [sizeFirstButton, sizeSecondButton, sizeThirdButton, sizeFourthButton]
+        starImageArray = [starOne, starTwo, starThree, starThree, starFour, starFive]
         self.backgroundScrollView = colorFirstShoeButton.backgroundColor ?? .white
         customSizeButton()
         roundedColorButton()
@@ -77,6 +86,7 @@ class DetailProductViewController: UIViewController {
         contentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         reviewLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressReview)))
         reviewLabel.underLine()
+        fechReviewStar()
     }
     
     
@@ -115,6 +125,23 @@ class DetailProductViewController: UIViewController {
         nameShoesLabel.text = product?.productName
         descriptionShoesLabel.text = productColorArray[index].description
         priceShoesLabel.text = "\(productColorArray[index].price)$"
+    }
+    
+    func fechReviewStar() {
+        guard let id = product?.id else {
+            return
+        }
+        FirebaseManager.shared.fetchReviewData(reviewId: id) { (data) in
+            let sum = data.sumStar()
+            self.reviewLabel.text = "\(data.count) Review"
+            for (index, item) in self.starImageArray.enumerated(){
+                if index <= sum{
+                    item.isHidden = false
+                }else{
+                    item.isHidden = true
+                }
+            }
+        }
     }
     
     //MARK: - Tapgesture
@@ -171,7 +198,7 @@ class DetailProductViewController: UIViewController {
             }
         }
         
-        //MARK: - Nếu số lượng giày của size đó hết button đó sẽ bị ẩn đi
+        //MARK: - If the number of shoes of that size runs out, the button will be hidden
         for (index, value) in numberOfShoesSize.enumerated(){
             if value == 0{
                 sizeButtonArray[index].isHidden = true
@@ -179,7 +206,7 @@ class DetailProductViewController: UIViewController {
                 sizeButtonArray[index].isHidden = false
             }
         }
-        //MARK: - Xoá button đang được sellect khi đổi màu
+        //MARK: - clear button choosing
         for buttonSize in sizeButtonArray{
             buttonSize.backgroundColor = UIColor(named: ColorTheme.grayMainBackground)
             buttonSize.tintColor = UIColor(named: ColorTheme.mainBlackBackground)
@@ -194,7 +221,6 @@ class DetailProductViewController: UIViewController {
         indexSizeSelected = sender.tag
         
         handleSelectButtonSize(sender: sender.tag, arrayButton: sizeButtonArray)
-        print("Số lượng tồn: \(numberOfShoesSize[sender.tag])")
         guard let title = sender.currentTitle else {
             return
         }
@@ -380,5 +406,16 @@ extension DetailProductViewController : UIScrollViewDelegate{
         }else{
             self.view.backgroundColor = .white
         }
+    }
+}
+
+extension Array where Element == Review {
+    func sumStar() -> Int {
+        var sum: Int = 0
+        for item in self {
+            sum += item.star + 1
+        }
+        if self.count == 0 {return 0}
+        return sum / self.count
     }
 }

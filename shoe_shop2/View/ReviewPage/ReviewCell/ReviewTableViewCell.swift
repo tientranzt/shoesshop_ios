@@ -12,20 +12,41 @@ import SDWebImage
 class ReviewTableViewCell: UITableViewCell {
     var userId: String?
     
+    @IBOutlet weak var starOne: UIImageView!
+    @IBOutlet weak var starTwo: UIImageView!
+    @IBOutlet weak var starThree: UIImageView!
+    @IBOutlet weak var starFour: UIImageView!
+    @IBOutlet weak var starFive: UIImageView!
+    
+    var starArray: [UIImageView] = []
     @IBOutlet weak var reviewContentLabel: UILabel!
     @IBOutlet weak var avatarUserImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        starArray = [starOne, starTwo, starThree, starFour, starFive]
+//        for item in starArray {
+//            item.isHidden = true
+//        }
+        handleStar(indexStar: 3)
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     override func layoutSubviews() {
         avatarUserImage.layer.cornerRadius = avatarUserImage.layer.bounds.width / 2
+    }
+    
+    func handleStar(indexStar: Int) {
+        for (index, image) in starArray.enumerated(){
+            if index <= indexStar {
+                image.isHidden = false
+            }else {
+                image.isHidden = true
+            }
+        }
     }
     
     func fetchUserImage() {
