@@ -7,7 +7,7 @@ import CodableFirebase
 class FirebaseManager {
     
     static let shared = FirebaseManager()
-    private var ref = Database.database().reference()
+    var ref = Database.database().reference()
     
     func fetchProductCategory(completion : @escaping (DataSnapshot) -> Void) {
         ref.child("Category").getData { (error, snapshot) in
@@ -252,14 +252,12 @@ class FirebaseManager {
         
         var reviewList : [Review] = []
         
-        self.ref.child("reviews/\(reviewId)").getData { (error, snapshot) in
-            if let error = error {
-                print("Error getting data \(error)")
-            }
-            else if snapshot.exists() {
+        self.ref.child("reviews/\(reviewId)").observe(.value) { (snapshot) in
+            if snapshot.exists() {
                 let value = snapshot.value as! [String : AnyObject]
                 
                 do {
+                    reviewList = []
                     for review in value{
                         let rev  = try FirebaseDecoder().decode(Review.self, from: review.value)
                         reviewList.append(rev)
@@ -276,7 +274,6 @@ class FirebaseManager {
                 print("No data available")
             }
         }
-        
     }
     
 }

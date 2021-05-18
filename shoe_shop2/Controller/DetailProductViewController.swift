@@ -120,12 +120,11 @@ class DetailProductViewController: UIViewController {
     //MARK: - Tapgesture
     @objc func pressReview() {
         let reviewPageVC = UIStoryboard(name: "ReviewPage", bundle: nil).instantiateViewController(identifier: "ReviewViewController") as! ReviewViewController
-        present(reviewPageVC, animated: true, completion: nil)
-        guard let producOfID = product?.id else {
+        guard let productID = product?.id else {
             return
         }
-        reviewPageVC.productID = producOfID
-        //print("id: \(reviewPageVC.productID)")
+        reviewPageVC.productID = productID
+        present(reviewPageVC, animated: true, completion: nil)
     }
     
     override func viewWillLayoutSubviews() {
