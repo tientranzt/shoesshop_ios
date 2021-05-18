@@ -74,6 +74,7 @@
 		FF76429D26520C30009DB6DE /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF76429B26520C30009DB6DE /* SearchResultTableViewCell.xib */; };
 		FF76429F26520C4B009DB6DE /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF76429E26520C4B009DB6DE /* SearchTableViewController.swift */; };
 		FF7642A126525B6C009DB6DE /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7642A026525B6C009DB6DE /* NotificationModel.swift */; };
+		FF7642A326533FE3009DB6DE /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7642A226533FE3009DB6DE /* Review.swift */; };
 		FF8D22FA264A828E0072D5D3 /* OrderSuccessPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8D22F9264A828E0072D5D3 /* OrderSuccessPage.storyboard */; };
 		FF8D22FD264A83D00072D5D3 /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D22FB264A83D00072D5D3 /* IntroPageViewController.swift */; };
 		FF8D22FE264A83D00072D5D3 /* OrderSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D22FC264A83D00072D5D3 /* OrderSuccessViewController.swift */; };
@@ -172,6 +173,7 @@
 		FF76429B26520C30009DB6DE /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		FF76429E26520C4B009DB6DE /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		FF7642A026525B6C009DB6DE /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		FF7642A226533FE3009DB6DE /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		FF8D22F9264A828E0072D5D3 /* OrderSuccessPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrderSuccessPage.storyboard; sourceTree = "<group>"; };
 		FF8D22FB264A83D00072D5D3 /* IntroPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
 		FF8D22FC264A83D00072D5D3 /* OrderSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderSuccessViewController.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				FF8D2344264CD2B50072D5D3 /* Category.swift */,
 				FF7642A026525B6C009DB6DE /* NotificationModel.swift */,
 				646D087726511B56005D2213 /* User.swift */,
+				FF7642A226533FE3009DB6DE /* Review.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -846,6 +849,7 @@
 				E26B1D6C2644CFFD0001ABE0 /* AccountViewController.swift in Sources */,
 				E2701185264BF60A0089E500 /* ReviewDetailViewController.swift in Sources */,
 				FF8D2345264CD2B50072D5D3 /* Category.swift in Sources */,
+				FF7642A326533FE3009DB6DE /* Review.swift in Sources */,
 				FF76429C26520C30009DB6DE /* SearchResultTableViewCell.swift in Sources */,
 				E2F61FD626454DE9001CE7E5 /* LoginViewController.swift in Sources */,
 				FF8D2316264B5E540072D5D3 /* CartModel.swift in Sources */,

@@ -8,36 +8,18 @@
 import UIKit
 import FirebaseAuth
 import RAMAnimatedTabBarController
+import FirebaseAuth
+
 class RootTabbarViewController: UIViewController {
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let tabController = CustomTabBarController()
-//        tabController.modalPresentationStyle = .fullScreen
-//
-//        let homeNav = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(identifier: "navHomePage") as! UINavigationController
-//        present(homeNav, animated: true, completion: nil)
-        
-//        tabBar.isTranslucent = false
-//        tabBar.backgroundColor = UIColor(named: ColorTheme.mainWhiteBackground)
-//
-//        let navLoginVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "navHomeLogin") as! UINavigationController
-//
-//        if let _ = viewControllers?.last {
-//            viewControllers![3] = navLoginVC
-//        }
-//
-//        if let firstVC = viewControllers?.first {
-//            let tab = UITabBarItem()
-//
-//        }
     }
-
 }
 
 class CustomTabBarController : RAMAnimatedTabBarController{
+    
+    let user = Auth.auth().currentUser
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +29,9 @@ class CustomTabBarController : RAMAnimatedTabBarController{
         
         let cartNav = UIStoryboard(name: "CartPage", bundle: nil).instantiateViewController(identifier: "navCartPage") as! UINavigationController
         
-        let accountNav = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "navHomeLogin") as! UINavigationController
+        let loginNav = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "navHomeLogin") as! UINavigationController
+        
+        let accountNav = UIStoryboard(name: "AccountPage", bundle: nil).instantiateViewController(identifier: "navAccountPage") as! UINavigationController
         
         homeNav.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
         
@@ -58,14 +42,21 @@ class CustomTabBarController : RAMAnimatedTabBarController{
         
         accountNav.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
         
+        loginNav.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
+                
         
         (homeNav.tabBarItem as? RAMAnimatedTabBarItem)?.animation   = RAMBounceAnimation()
         (notificationNav.tabBarItem as? RAMAnimatedTabBarItem)?.animation   = RAMBounceAnimation()
         (cartNav.tabBarItem as? RAMAnimatedTabBarItem)?.animation   = RAMBounceAnimation()
         (accountNav.tabBarItem as? RAMAnimatedTabBarItem)?.animation   = RAMBounceAnimation()
-        
-        setViewControllers([homeNav, notificationNav, cartNav, accountNav], animated: true)
-        
+        (loginNav.tabBarItem as? RAMAnimatedTabBarItem)?.animation   = RAMBounceAnimation()
+
+        if user != nil {
+            setViewControllers([homeNav, notificationNav, cartNav, accountNav ], animated: true)
+        }
+        else {
+            setViewControllers([homeNav, notificationNav, cartNav, loginNav ], animated: true)
+        }
         
     }
 }

@@ -9,5 +9,6 @@ target 'shoe_shop2' do
 
 	pod 'FSPagerView'
 	pod 'IQKeyboardManager'
+	pod 'CodableFirebase'
 
 end
