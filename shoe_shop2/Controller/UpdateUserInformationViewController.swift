@@ -64,7 +64,12 @@ class UpdateUserInformationViewController: UIViewController {
                         self.user.phoneNumber = phoneNumber
                         self.user.userName = userName
                         self.user.shipAddress = location
-                        
+                        // save to user default
+                        let encoder = JSONEncoder()
+                        if let encoded = try? encoder.encode(self.user) {
+                            let defaults = UserDefaults.standard
+                            defaults.set(encoded, forKey: "user")
+                        }
                         FirebaseManager.shared.updateUser(user: self.user)
                         self.navigationController?.popViewController(animated: true)
                     }
