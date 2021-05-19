@@ -373,8 +373,6 @@ class DetailProductViewController: UIViewController {
 
 extension DetailProductViewController: ReviewViewControllerDelegate {
     func shouldLogin() {
-        
-    
         let tabbar = self.navigationController?.tabBarController as! CustomTabBarController
         
         let loginVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "navHomeLogin") as! UINavigationController
@@ -386,7 +384,6 @@ extension DetailProductViewController: ReviewViewControllerDelegate {
             tabbar.viewControllers![3] = loginVC
             tabbar.setSelectIndex(from: 0, to: 3)
         }
-        
     }
 }
 
