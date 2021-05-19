@@ -77,13 +77,12 @@ class DetailProductViewController: UIViewController {
         sizeButtonArray = [sizeFirstButton, sizeSecondButton, sizeThirdButton, sizeFourthButton]
         starImageArray = [starOne, starTwo, starThree, starFour, starFive]
         self.backgroundScrollView = colorFirstShoeButton.backgroundColor ?? .white
+        
         customSizeButton()
         roundedColorButton()
         getProductByColor()
         sellectedButtonColor(buttonChoose: colorFirstShoeButton)
         addToCardButton.roundedAllSide(with: 8)
-        contentView.roundedAllSide(with: 8)
-        contentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         reviewLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressReview)))
         reviewLabel.underLine()
         fechReviewStar()
@@ -150,7 +149,11 @@ class DetailProductViewController: UIViewController {
             }
         }
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        contentView.layer.cornerRadius = 40
+        contentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
     //MARK: - Tapgesture
     @objc func pressReview() {
         let reviewPageVC = UIStoryboard(name: "ReviewPage", bundle: nil).instantiateViewController(identifier: "ReviewViewController") as! ReviewViewController
@@ -297,6 +300,7 @@ class DetailProductViewController: UIViewController {
         pagerView.backgroundColor = senderButton.backgroundColor
         parentPagerView.backgroundColor = senderButton.backgroundColor
         pagerView.backgroundColor = senderButton.backgroundColor
+        parentView.backgroundColor = senderButton.backgroundColor
     }
     
     
