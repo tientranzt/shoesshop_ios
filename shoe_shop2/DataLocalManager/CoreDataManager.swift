@@ -41,6 +41,7 @@ class CoreDataManager {
         cart.createdAt = cartModel.createdAt
         cart.updatedAt = cartModel.updatedAt
         cart.productImage = cartModel.productImage
+        cart.colorCode = cartModel.colorCode
         cart.isSelected = cartModel.isSelected
         do {
             try self.moc.save()
@@ -57,14 +58,12 @@ class CoreDataManager {
     func updateCart(colorId: String, cartModel : CartModel)  {
         do {
             if let cart = fetchTaskByColorId(colorId: colorId) {
-                
-                cart.setValue(cart.username, forKeyPath: "username")
-                cart.setValue(cart.productColorId, forKeyPath: "productColorId")
-                cart.setValue(cart.productSizeId, forKeyPath: "productSizeId")
-                cart.setValue(cart.productQuantity, forKeyPath: "productQuantity")
-                cart.setValue(cart.productPrice, forKeyPath: "productPrice")
-                cart.setValue(cart.updatedAt, forKeyPath: "updatedAt")
-                
+                cart.username = cartModel.username
+                cart.productColorId = cartModel.productColorId
+                cart.productSizeId = cartModel.productSizeId
+                cart.productQuantity = Int64(cartModel.productQuantity)
+                cart.productPrice = Int64(cartModel.productPrice)
+                cart.updatedAt = cartModel.updatedAt
                 do {
                     try self.moc.save()
                     print("Update success")

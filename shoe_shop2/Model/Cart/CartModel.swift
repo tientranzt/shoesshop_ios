@@ -11,12 +11,13 @@ struct CartModel  {
     var productQuantity: Int
     var productPrice: Int
     var productImage: String
+    var colorCode: String
     var createdAt: String
     var updatedAt: String?
     var isSelected: Bool
     
     
-    init(username: String, productName: String, productId: String, productColorId: String, productSizeId: String, productQuantity: Int, productPrice: Int, productImage: String, createdAt: String) {
+    init(username: String, productName: String, productId: String, productColorId: String, productSizeId: String, productQuantity: Int, productPrice: Int, productImage: String, colorCode: String, createdAt: String) {
         self.username = username
         self.productName = productName
         self.productId = productId
@@ -25,6 +26,7 @@ struct CartModel  {
         self.productQuantity = productQuantity
         self.productPrice = productPrice
         self.productImage = productImage
+        self.colorCode = colorCode
         self.createdAt = createdAt
         self.updatedAt = nil
         self.isSelected = true

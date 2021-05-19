@@ -49,6 +49,7 @@ class CartTableViewCell: UITableViewCell {
     }
     
     func setData(cartItem: Cart) {
+        self.productImage.backgroundColor = UIColor(named: cartItem.colorCode ?? "#f3f3f3")
         if cartItem.isSelected {
             checkBox.setImage( UIImage(named: "ic_checked"), for: UIControl.State.normal)
         } else {

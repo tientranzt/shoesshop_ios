@@ -339,6 +339,7 @@ class DetailProductViewController: UIViewController {
     }
     @IBAction func pressAddToCart(_ sender: Any) {
         if indexSizeSelected == -1 {
+            showAlertNotify(title: "Insert item", message: "[\(product!.productName)] Pick a size value, please!")
             return
         }
         
@@ -350,10 +351,11 @@ class DetailProductViewController: UIViewController {
                              productName: product!.productName,
                              productId: product!.id,
                              productColorId: productColorArray[indexColorSelected].id,
-                             productSizeId: sizeButtonArray[indexSizeSelected].currentTitle!, // Chưa hiểu cách bắt sự kiện :v
+                             productSizeId: sizeButtonArray[indexSizeSelected].currentTitle!,
                              productQuantity: 1,
                              productPrice: Int(productColorArray[indexColorSelected].price) ?? -1,
                              productImage: productColorArray[indexColorSelected].imageLink,
+                             colorCode: productColorArray[indexColorSelected].colorCode,
                              createdAt: formatter.string(from: now)
         )
         if CoreDataManager.share.insertCart(cartModel: cart) {
