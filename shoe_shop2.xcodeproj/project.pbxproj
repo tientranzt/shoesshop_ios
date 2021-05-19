@@ -76,6 +76,8 @@
 		FF76429F26520C4B009DB6DE /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF76429E26520C4B009DB6DE /* SearchTableViewController.swift */; };
 		FF7642A126525B6C009DB6DE /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7642A026525B6C009DB6DE /* NotificationModel.swift */; };
 		FF7642A326533FE3009DB6DE /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7642A226533FE3009DB6DE /* Review.swift */; };
+		FF7642B226549E8A009DB6DE /* MailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7642B126549E8A009DB6DE /* MailManager.swift */; };
+		FF7642B526549F21009DB6DE /* SwiftSMTP in Frameworks */ = {isa = PBXBuildFile; productRef = FF7642B426549F21009DB6DE /* SwiftSMTP */; };
 		FF8D22FA264A828E0072D5D3 /* OrderSuccessPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8D22F9264A828E0072D5D3 /* OrderSuccessPage.storyboard */; };
 		FF8D22FD264A83D00072D5D3 /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D22FB264A83D00072D5D3 /* IntroPageViewController.swift */; };
 		FF8D22FE264A83D00072D5D3 /* OrderSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D22FC264A83D00072D5D3 /* OrderSuccessViewController.swift */; };
@@ -176,6 +178,7 @@
 		FF76429E26520C4B009DB6DE /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		FF7642A026525B6C009DB6DE /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		FF7642A226533FE3009DB6DE /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		FF7642B126549E8A009DB6DE /* MailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailManager.swift; sourceTree = "<group>"; };
 		FF8D22F9264A828E0072D5D3 /* OrderSuccessPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrderSuccessPage.storyboard; sourceTree = "<group>"; };
 		FF8D22FB264A83D00072D5D3 /* IntroPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
 		FF8D22FC264A83D00072D5D3 /* OrderSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderSuccessViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +220,7 @@
 				FF8D2336264CB9590072D5D3 /* RAMAnimatedTabBarController in Frameworks */,
 				E26B1D852644D79C0001ABE0 /* FirebaseDatabase in Frameworks */,
 				E26B1D812644D79C0001ABE0 /* FirebaseStorage in Frameworks */,
+				FF7642B526549F21009DB6DE /* SwiftSMTP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				6410B533264FDB540032597C /* shoe_shop2.entitlements */,
+				FF7642AF26549E70009DB6DE /* MailManager */,
 				FF8D2341264CC59C0072D5D3 /* FirebaseManager */,
 				E26B1D3D2644CD520001ABE0 /* Resource */,
 				E26B1D3C2644CD480001ABE0 /* Extension */,
@@ -582,6 +587,14 @@
 			path = SearchResultCell;
 			sourceTree = "<group>";
 		};
+		FF7642AF26549E70009DB6DE /* MailManager */ = {
+			isa = PBXGroup;
+			children = (
+				FF7642B126549E8A009DB6DE /* MailManager.swift */,
+			);
+			path = MailManager;
+			sourceTree = "<group>";
+		};
 		FF8D22F8264A828E0072D5D3 /* OrderSuccessPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +715,7 @@
 				FF8D2395264FD5280072D5D3 /* SDWebImage */,
 				6470F35B264E767D00362E05 /* FacebookCore */,
 				6470F35D264E767D00362E05 /* FacebookLogin */,
+				FF7642B426549F21009DB6DE /* SwiftSMTP */,
 			);
 			productName = shoe_shop2;
 			productReference = E26B1D1C2644CD240001ABE0 /* shoe_shop2.app */;
@@ -735,6 +749,7 @@
 				FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */,
 				6470F35A264E767D00362E05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				FF8D2394264FD5270072D5D3 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				FF7642B326549F21009DB6DE /* XCRemoteSwiftPackageReference "Swift-SMTP" */,
 			);
 			productRefGroup = E26B1D1D2644CD240001ABE0 /* Products */;
 			projectDirPath = "";
@@ -841,6 +856,7 @@
 				FF56974C26451DCC003CE928 /* CategoriesCollectionViewCell.swift in Sources */,
 				FF8D2302264A83FF0072D5D3 /* DrawIntroPage.swift in Sources */,
 				FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */,
+				FF7642B226549E8A009DB6DE /* MailManager.swift in Sources */,
 				530AA8072654AD0500A0511D /* DateFormat.swift in Sources */,
 				FF8D2313264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift in Sources */,
 				FF8D230E264B5DB90072D5D3 /* CartTableViewCell.swift in Sources */,
@@ -1118,6 +1134,14 @@
 				minimumVersion = 7.11.1;
 			};
 		};
+		FF7642B326549F21009DB6DE /* XCRemoteSwiftPackageReference "Swift-SMTP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/Swift-SMTP.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.200;
+			};
+		};
 		FF8D2334264CB9590072D5D3 /* XCRemoteSwiftPackageReference "animated-tab-bar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Ramotion/animated-tab-bar.git";
@@ -1161,6 +1185,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E26B1D7F2644D79C0001ABE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		FF7642B426549F21009DB6DE /* SwiftSMTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF7642B326549F21009DB6DE /* XCRemoteSwiftPackageReference "Swift-SMTP" */;
+			productName = SwiftSMTP;
 		};
 		FF8D2335264CB9590072D5D3 /* RAMAnimatedTabBarController */ = {
 			isa = XCSwiftPackageProductDependency;
