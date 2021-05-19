@@ -64,7 +64,11 @@ class CheckoutViewController: UIViewController {
      }
      */
     @IBAction func orderAction(_ sender: Any) {
-        let userID = "tG21zTv15TdzV5RmDpm8QCZ3zqx1"
+        
+        guard let userId = dataInput["userId"] else {
+            print("not found key user ID")
+            return
+        }
         guard let keyOrderDetail = dataInput["keyOrderDetail"] else {
             print("not found key order ID")
             return
@@ -75,9 +79,11 @@ class CheckoutViewController: UIViewController {
             "total_item" : dataInput["totalItem"] as! Int,
             "order_detail_id" : "\(keyOrderDetail)",
             "date_order" : "\(DateFormat.dateToString(date: Date()))",
+            "payment_method" : "pay by cash",
             "status" : 0
         ]
-        FirebaseManager.shared.ref.child("OrderHistory/\(userID)").childByAutoId().setValue(json)
+        FirebaseManager.shared.ref.child("OrderHistory/\(userId)").childByAutoId().setValue(json)
+        CoreDataManager.share.deleteCartAfterOrder()
     }
     
     @IBAction func changeAddress(_ sender: Any) {
@@ -87,6 +93,7 @@ class CheckoutViewController: UIViewController {
 //
 //        present(viewControllerChangeShipAddress, animated: true)
     }
+    
     func showAlertChangeAddress() {
         let alert = UIAlertController(title: "Ship address", message: "Input ship address please", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
