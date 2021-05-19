@@ -16,7 +16,7 @@ import FirebaseAuth
 class ReviewDetailViewController: UIViewController {
     
     var ref = Database.database().reference()
-
+    
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var reviewTextView: UITextView!
     
@@ -32,10 +32,9 @@ class ReviewDetailViewController: UIViewController {
     var productDetailID: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        reviewTextView.selectAll(reviewTextView)
+        if let range = reviewTextView.selectedTextRange { reviewTextView.replace(range, withText: "") }
         setupViews()
-        
         star.starDidSelect(selectedIndex: selectedStar)
         postButton.roundedAllSide(with: 8)
     }
@@ -61,16 +60,12 @@ class ReviewDetailViewController: UIViewController {
         self.view.addGestureRecognizer(panGesture)
     }
     
-
+    
     @IBAction func pressSubmitFeedBack(_ sender: UIButton) {
         guard let userID = Auth.auth().currentUser?.uid else {
-            let alert = UIAlertController(title: "Notification", message: "Please Login Before Review !", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-//            alert.addAction(UIAlertAction(title: "Login", style: .default, handler: { _ in
-//                let loginVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "HomeLogin")
-//                self.navigationController?.pushViewController(loginVC, animated: true)
-//            }))
-            present(alert, animated: true, completion: nil)
+//            let alert = UIAlertController(title: "Notification", message: "Please Login Before Review !", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//            present(alert, animated: true, completion: nil)
             return
         }
         guard let start = star.star else {
@@ -83,7 +78,7 @@ class ReviewDetailViewController: UIViewController {
             return
         }
         FirebaseManager.shared.ref.child("reviews").child(productID).childByAutoId().setValue(["star": start, "userID" :  userID, "comment" : reviewText])
-            
+        
         self.navigationController?.popViewController(animated: true)
     }
     @objc func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {

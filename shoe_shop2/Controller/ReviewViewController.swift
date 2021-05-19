@@ -6,11 +6,18 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
+
+@objc protocol ReviewViewControllerDelegate {
+    @objc optional func shouldLogin()
+}
 
 class ReviewViewController: UIViewController {
     
     var reviewArray: [Review]?
     var productID: String?
+    var delegate: ReviewViewControllerDelegate?
     
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
@@ -36,7 +43,9 @@ extension ReviewViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reviewArray?.count ?? 0
     }
-    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell") as! ReviewTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
@@ -61,6 +70,16 @@ extension ReviewViewController: UITableViewDataSource, UITableViewDelegate{
 
 extension ReviewViewController: CustomHeaderTableViewDelegate {
     func startDidSelect(selectedIndex: Int) {
+        guard (Auth.auth().currentUser?.uid) != nil else {
+            let alert = UIAlertController(title: "Notification", message: "Please Login Before Review !", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Login", style: .default, handler: {_ in
+                self.delegate?.shouldLogin?()
+                self.dismiss(animated: true)
+            }))
+            present(alert, animated: true, completion: nil)
+            return
+        }
         let detailReviewVC = UIStoryboard(name: "ReviewDetailPage", bundle: nil).instantiateViewController(withIdentifier: "ReviewDetail") as! ReviewDetailViewController
         detailReviewVC.initStart(index: selectedIndex)
         detailReviewVC.modalPresentationStyle = .custom

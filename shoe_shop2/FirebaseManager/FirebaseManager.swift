@@ -319,10 +319,12 @@ class FirebaseManager {
                     
                 } catch let error {
                     print(error)
+                    completion(reviewList)
                 }
             }
             else {
                 print("No data available")
+                completion(reviewList)
             }
         }
     }

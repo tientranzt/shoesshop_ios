@@ -1,7 +1,7 @@
 import UIKit
 import FSPagerView
 import SDWebImage
-
+import RAMAnimatedTabBarController
 
 class DetailProductViewController: UIViewController {
     
@@ -75,7 +75,7 @@ class DetailProductViewController: UIViewController {
         super.viewDidLoad()
         colorButtonArray = [colorFirstShoeButton,colorSecondShoeButton,colorThirdShoeButton]
         sizeButtonArray = [sizeFirstButton, sizeSecondButton, sizeThirdButton, sizeFourthButton]
-        starImageArray = [starOne, starTwo, starThree, starThree, starFour, starFive]
+        starImageArray = [starOne, starTwo, starThree, starFour, starFive]
         self.backgroundScrollView = colorFirstShoeButton.backgroundColor ?? .white
         customSizeButton()
         roundedColorButton()
@@ -132,10 +132,17 @@ class DetailProductViewController: UIViewController {
             return
         }
         FirebaseManager.shared.fetchReviewData(reviewId: id) { (data) in
-            let sum = data.sumStar()
+            print(data.count)
             self.reviewLabel.text = "\(data.count) Review"
+            if data.count == 0 {
+                for item in self.starImageArray {
+                    item.isHidden = true
+                }
+                return
+            }
+            let sum = data.sumStar()
             for (index, item) in self.starImageArray.enumerated(){
-                if index <= sum{
+                if index <= sum {
                     item.isHidden = false
                 }else{
                     item.isHidden = true
@@ -151,6 +158,7 @@ class DetailProductViewController: UIViewController {
             return
         }
         reviewPageVC.productID = productID
+        reviewPageVC.delegate = self
         present(reviewPageVC, animated: true, completion: nil)
     }
     
@@ -357,6 +365,25 @@ class DetailProductViewController: UIViewController {
     }
 }
 
+extension DetailProductViewController: ReviewViewControllerDelegate {
+    func shouldLogin() {
+        
+    
+        let tabbar = self.navigationController?.tabBarController as! CustomTabBarController
+        
+        let loginVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "navHomeLogin") as! UINavigationController
+        
+        loginVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
+        (loginVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
+        
+        if let _ = tabbar.viewControllers?.last{
+            tabbar.viewControllers![3] = loginVC
+            tabbar.setSelectIndex(from: 0, to: 3)
+        }
+        
+    }
+}
+
 
 extension DetailProductViewController: FSPagerViewDataSource, FSPagerViewDelegate{
     
@@ -413,7 +440,7 @@ extension Array where Element == Review {
     func sumStar() -> Int {
         var sum: Int = 0
         for item in self {
-            sum += item.star + 1
+            sum += item.star
         }
         if self.count == 0 {return 0}
         return sum / self.count
