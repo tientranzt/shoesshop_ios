@@ -23,7 +23,10 @@ class ChangeShipAddressViewController: UIViewController {
         btnSave.layer.cornerRadius = 8
     }
     
-
+    @IBAction func closeScreen(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

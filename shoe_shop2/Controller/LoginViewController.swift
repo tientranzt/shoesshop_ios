@@ -41,17 +41,27 @@ class LoginViewController: UIViewController {
                         FirebaseManager.shared.signInWithEmail(email: email, password: password) { [weak self] (result) in
                             switch result {
                             case .success(_):
-                                let tabbar = self?.navigationController?.tabBarController as! CustomTabBarController
-                                let navAccountVC = UIStoryboard(name: "AccountPage", bundle: nil).instantiateViewController(identifier: "navAccountPage") as! UINavigationController
-                                navAccountVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
-                                (navAccountVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
-                                if let _ = tabbar.viewControllers?.last{
-                                    tabbar.viewControllers![3] = navAccountVC
-                                    tabbar.setSelectIndex(from: 0, to: 3)
-                                }
-                            case .failure(let error):
                                 
-                                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                                if let view = self?.view {
+                                    LogicLogin.shared.showToast(message: "Sign In Success!", view: view)
+                                }
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                    // Put your code which should be executed with a delay here
+                                    
+                                    let tabbar = self?.navigationController?.tabBarController as! CustomTabBarController
+                                    let navAccountVC = UIStoryboard(name: "AccountPage", bundle: nil).instantiateViewController(identifier: "navAccountPage") as! UINavigationController
+                                    navAccountVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
+                                    (navAccountVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
+                                    if let _ = tabbar.viewControllers?.last{
+                                        tabbar.viewControllers![3] = navAccountVC
+                                        tabbar.setSelectIndex(from: 0, to: 3)
+                                    }
+                                }
+                                
+                            case .failure(_):
+                                
+                                let alert = UIAlertController(title: "Error", message: "Sign In Fail Please Try Again!", preferredStyle: .alert)
                                 let okayAction = UIAlertAction(title: "OK", style: .default, handler: {[weak self] action in
                                     
                                     self?.view.isUserInteractionEnabled = true

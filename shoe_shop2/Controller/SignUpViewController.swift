@@ -51,8 +51,17 @@ class SignUpViewController: UIViewController {
                             
                             case .success(_):
                                 
-                                FirebaseManager.shared.insertUser(userName: userName, Email: email)
-                                self.navigationController?.popViewController(animated: true)
+                                let alert = UIAlertController(title: "Sign Up Success !", message: "Successful account registration!", preferredStyle: .alert)
+                                let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+                                    FirebaseManager.shared.insertUser(userName: userName, Email: email)
+                                    self?.navigationController?.popViewController(animated: true)
+                                    self?.view.isUserInteractionEnabled = true
+                                    self?.navigationItem.setHidesBackButton(false, animated: true)
+                                })
+                                alert.addAction(okayAction)
+                                self.present(alert, animated: true, completion: nil)
+                                
+                                
                                 break
                             case .failure(let error):
                                 

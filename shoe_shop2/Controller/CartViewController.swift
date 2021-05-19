@@ -3,17 +3,17 @@ import UIKit
 class CartViewController: UIViewController {
     //MARK: - Outlet + properties
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var totalPrice: UILabel!
-    @IBOutlet weak var totalItem: UILabel!
+    @IBOutlet weak var lblTotalPrice: UILabel!
+    @IBOutlet weak var lblTotalItem: UILabel!
     @IBOutlet weak var btnCheckOut: UIButton!
-    var countItem: Int = 0 {
+    var totalItem: Int = 0 {
         didSet {
-            totalItem.text = "\(countItem) item"
+            lblTotalItem.text = "\(totalItem) item"
         }
     }
-    var countPrice: Int = 0 {
+    var totalPrice: Int = 0 {
         didSet {
-            totalPrice.text = "\(countPrice)$"
+            lblTotalPrice.text = "\(totalPrice)$"
         }
     }
     var cartList: [Cart] = [Cart]()
@@ -30,13 +30,32 @@ class CartViewController: UIViewController {
         
     //MARK:- HANDLE ACTION CHECKOUT
     @objc func checkOutAction(_ sender: UIButton) {
+        let userID = "tG21zTv15TdzV5RmDpm8QCZ3zqx1"
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        formatter.dateFormat = "dd-MM-yyyy_HH:mm"
         
-//        for cartItem in cartList.filter({ $0.isSelected }) {
-//            checkAvailable(cartItem: cartItem)
-//        }
-//        let modifiedVC = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(identifier: "checkoutPage") as! CheckoutViewController
-//
-//        navigationController?.pushViewController(modifiedVC, animated: true)
+        let keyOrderDetail = "\(userID)_\(formatter.string(from: Date()))"
+        for cartItem in cartList.filter({ $0.isSelected }) {
+            let json: [ String : Any ] =
+              [
+                "shoe_id" : "\(cartItem.productId ?? "")",
+                "shoe_color_id" : "\(cartItem.productColorId ?? "")",
+                "shoe_size_id" : "\(cartItem.productSizeId ?? "")",
+                "shoe_quantity" : cartItem.productQuantity,
+                "shoe_price" : cartItem.productPrice
+            ]
+            FirebaseManager.shared.ref.child("OrderDetail/\(keyOrderDetail)").childByAutoId().setValue(json)
+        }
+        
+        let checkoutVC = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(identifier: "checkoutPage") as! CheckoutViewController
+        checkoutVC.dataInput = [
+        "totalPrice" : totalPrice,
+        "totalItem" : totalItem,
+        "keyOrderDetail" : keyOrderDetail
+        ]
+        navigationController?.pushViewController(checkoutVC, animated: true)
     }
     
 //    func checkAvailable(cartItem : Cart) {
@@ -76,8 +95,8 @@ class CartViewController: UIViewController {
     func fetchData()  {
         DispatchQueue.global().sync {
             self.cartList = CoreDataManager.share.fetchAllItemCart()
-            self.countItem = CoreDataManager.share.getCountItemCartSelected()
-            self.countPrice = CoreDataManager.share.getTotalPriceItemCartSelected()
+            self.totalItem = CoreDataManager.share.getCountItemCartSelected()
+            self.totalPrice = CoreDataManager.share.getTotalPriceItemCartSelected()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -178,8 +197,8 @@ extension CartViewController: CartTableViewCellDelegate {
             showAlertErrorQuantity(title: "Error", message:  "Please try again.")
             return
         }
-        countItem = !isSelected ? countItem + 1 : countItem - 1
-        countPrice = !isSelected ? countPrice + Int(cart.productPrice * cart.productQuantity) : countPrice - Int(cart.productPrice * cart.productQuantity)
+        totalItem = !isSelected ? totalItem + 1 : totalItem - 1
+        totalPrice = !isSelected ? totalPrice + Int(cart.productPrice * cart.productQuantity) : totalPrice - Int(cart.productPrice * cart.productQuantity)
         cell.checkBox.isChecked = !isSelected //Set UI
         cart.isSelected = !isSelected //Require put last
     }
@@ -237,7 +256,7 @@ extension CartViewController: CartTableViewCellDelegate {
         }
         if cart.isSelected
         {
-            countPrice += Int((value * cart.productPrice))
+            totalPrice += Int((value * cart.productPrice))
         }
         cart.productQuantity = Int64(quantity)
         cell.productQuantity.text = String(quantity)

@@ -77,7 +77,7 @@ extension CustomTextField: UITextFieldDelegate {
             return
         }
         if texField.keyboardType == .emailAddress {
-            if LogicTextfield.shared.isValidEmail(currentText) {
+            if LogicLogin.shared.isValidEmail(currentText) {
                 
                 self.isRightFormat = true
                 self.borderView.layer.borderColor = UIColor(named: ColorTheme.middleGrayBackground)?.cgColor

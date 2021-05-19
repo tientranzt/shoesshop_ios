@@ -9,18 +9,21 @@ import UIKit
 
 class CheckoutViewController: UIViewController {
     
+    //MARK: - Properties + Outlet
+    var dataInput: [String : Any] = [:]
     @IBOutlet weak var viewShipAddress: UIView!
     @IBOutlet weak var txtAddress: UILabel!
     @IBOutlet weak var viewPaymentMethod: UIView!
     @IBOutlet weak var btnOrder: UIButton!
+    @IBOutlet weak var lblTotalItem: UILabel!
+    @IBOutlet weak var lblTotalPrice: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setData()
         // Do any additional setup after loading the view.
         txtAddress.adjustsFontSizeToFitWidth = true
         
     }
-    
     
     override func viewDidLayoutSubviews() {
         
@@ -29,6 +32,13 @@ class CheckoutViewController: UIViewController {
         setShadowForVieư(view: viewShipAddress)
         setShadowForVieư(view: viewPaymentMethod)
         btnOrder.layer.cornerRadius = 8
+    }
+    
+    func setData() {
+        if let totalItem = dataInput["totalItem"], let totalPrice = dataInput["totalPrice"] {
+            lblTotalItem.text = "\(totalItem) item"
+            lblTotalPrice.text = "\(totalPrice) $"
+        }
     }
     
     func setShadowForVieư(view: UIView) {
@@ -54,11 +64,44 @@ class CheckoutViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    @IBAction func orderAction(_ sender: Any) {
+        let userID = "tG21zTv15TdzV5RmDpm8QCZ3zqx1"
+        guard let keyOrderDetail = dataInput["keyOrderDetail"] else {
+            print("not found key order ID")
+            return
+        }
+        let json: [String : Any] = [
+            "ship_address" : "\(txtAddress.text ?? "")",
+            "total_price" : dataInput["totalPrice"] as! Int,
+            "total_item" : dataInput["totalItem"] as! Int,
+            "order_detail_id" : "\(keyOrderDetail)",
+            "status" : 0
+        ]
+        FirebaseManager.shared.ref.child("OrderHistory/\(userID)").childByAutoId().setValue(json)
+    }
+    
     @IBAction func changeAddress(_ sender: Any) {
-        let viewControllerChangeShipAddress = (storyboard?.instantiateViewController(identifier: "ChangeShipAddress"))! as ChangeShipAddressViewController
-        viewControllerChangeShipAddress.modalPresentationStyle = .popover
-        
-        present(viewControllerChangeShipAddress, animated: true)
+        showAlertChangeAddress()
+//        let viewControllerChangeShipAddress = (storyboard?.instantiateViewController(identifier: "ChangeShipAddress"))! as ChangeShipAddressViewController
+//        viewControllerChangeShipAddress.modalPresentationStyle = .popover
+//
+//        present(viewControllerChangeShipAddress, animated: true)
+    }
+    func showAlertChangeAddress() {
+        let alert = UIAlertController(title: "Ship address", message: "Input ship address please", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "input here..."
+        })
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            guard let text = alert.textFields?.first?.text else {
+                print("input ship address nil")
+                return
+            }
+            self.txtAddress.text = text
+        }))
+        self.present(alert, animated: true)
     }
     
 }
