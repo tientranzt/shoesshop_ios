@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct OrderHistory {
+struct OrderHistory: Codable { 
     
     var dateOrder: String
     var shipAddress: String
     var totalItem: Int
     var totalPrice: Double
-
+    
 }

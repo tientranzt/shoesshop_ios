@@ -11,7 +11,11 @@ class ChangeShipAddressViewController: UIViewController {
 
     @IBOutlet weak var textViewAddress: UITextView!
     @IBOutlet weak var btnSave: UIButton!
-    var textCureentAddress: String!
+    @IBOutlet weak var textViewPhoneNumber: UITextView!
+    var currentUser: User!
+    
+    public var completionHandler: ((User?)-> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,10 +24,32 @@ class ChangeShipAddressViewController: UIViewController {
         textViewAddress.layer.borderWidth = 1
         textViewAddress.layer.cornerRadius = 8
         
+        textViewPhoneNumber.layer.borderColor = UIColor(named: "middleGrayBackground")?.cgColor
+        textViewPhoneNumber.layer.borderWidth = 1
+        textViewPhoneNumber.layer.cornerRadius = 8
+        
+        
         btnSave.layer.cornerRadius = 8
+        textViewAddress.text = currentUser.shipAddress
+        textViewPhoneNumber.text = currentUser.phoneNumber
     }
     
     @IBAction func closeScreen(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func saveShipAddress(_ sender: Any) {
+        currentUser.shipAddress = textViewAddress.text
+        currentUser.phoneNumber = textViewPhoneNumber.text
+        
+        
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(currentUser) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "user")
+        }
+        
+        completionHandler?(currentUser)
+        
         self.dismiss(animated: true, completion: nil)
     }
     

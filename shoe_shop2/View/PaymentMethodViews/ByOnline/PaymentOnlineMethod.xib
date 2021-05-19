@@ -7,12 +7,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentOnineMethod" customModule="shoe_shop2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentOnineMethod">
             <connections>
-                <outlet property="imageMethod" destination="ic7-Wm-5KJ" id="D6Y-V8-2pB"/>
-                <outlet property="isChecked" destination="GSy-lv-aBq" id="qkn-A1-CqY"/>
-                <outlet property="methodName" destination="ehX-zT-9xy" id="JAW-ID-HmT"/>
-                <outlet property="seriMethod" destination="cRj-n4-MZt" id="0B7-cN-XoZ"/>
+                <outlet property="imageMethod" destination="ic7-Wm-5KJ" id="ogx-QI-Aw6"/>
+                <outlet property="isChecked" destination="GSy-lv-aBq" id="Ve9-MR-Dm9"/>
+                <outlet property="methodName" destination="ehX-zT-9xy" id="Fct-mB-IrG"/>
+                <outlet property="seriMethod" destination="cRj-n4-MZt" id="QLO-xC-Ptj"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -32,10 +32,16 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BVB-Qa-w2U">
                             <rect key="frame" x="137" y="22" width="181" height="66"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label seri method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRj-n4-MZt">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRj-n4-MZt">
                                     <rect key="frame" x="0.0" y="0.0" width="181" height="28"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <nil key="textColor"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="label seri method">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="systemBold" size="20"/>
+                                                <font key="NSOriginalFont" metaFont="systemBold" size="20"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="method name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehX-zT-9xy">

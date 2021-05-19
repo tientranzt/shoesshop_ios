@@ -10,9 +10,14 @@ import UIKit
 class PaymentOnlineMethod: UIView {
 
     @IBOutlet weak var imageMethod: UIImageView!
+    
     @IBOutlet weak var seriMethod: UILabel!
     @IBOutlet weak var methodName: UILabel!
     @IBOutlet weak var isChecked: UIImageView!
+    
+//    @IBOutlet weak var seriMethod: UILabel!
+//    @IBOutlet weak var methodName: UILabel!
+//    @IBOutlet weak var isChecked: UIImageView!
     /*
      @IBOutlet weak var isChecked: UIImageView!
      // Only override draw() if you perform custom drawing.

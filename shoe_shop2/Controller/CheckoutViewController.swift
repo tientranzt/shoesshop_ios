@@ -17,10 +17,23 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var btnOrder: UIButton!
     @IBOutlet weak var lblTotalItem: UILabel!
     @IBOutlet weak var lblTotalPrice: UILabel!
+    
+    @IBOutlet weak var viewPayCrash: PaymentCashMethod!
+    @IBOutlet weak var viewPayVisa: PaymentOnlineMethod!
+    
+    @IBOutlet weak var viewPayPaypal: PaymentOnlineMethod!
+    var currentUser: User?
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
         txtAddress.adjustsFontSizeToFitWidth = true
+        
+        viewPayVisa.seriMethod.text = "•••• •••• ••••"
+        viewPayVisa.methodName.text = "Visa"
+        
+        viewPayPaypal.seriMethod.text = "•••• •••• ••••"
+        viewPayPaypal.methodName.text = "Paypal"
+        viewPayPaypal.imageMethod.image = UIImage(named: "paypal")
         
     }
     
@@ -31,6 +44,17 @@ class CheckoutViewController: UIViewController {
         setShadowForVieư(view: viewShipAddress)
         setShadowForVieư(view: viewPaymentMethod)
         btnOrder.layer.cornerRadius = 8
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if let saveUser = UserDefaults.standard.object(forKey: "user") as? Data {
+            let decoder = JSONDecoder()
+            if let loadUser = try? decoder.decode(User.self, from: saveUser) {
+                txtAddress.text = "Phone Number: " + loadUser.phoneNumber + "\n" + loadUser.shipAddress
+                self.currentUser = loadUser
+            }
+        }
     }
     
     func setData() {
@@ -87,28 +111,66 @@ class CheckoutViewController: UIViewController {
     }
     
     @IBAction func changeAddress(_ sender: Any) {
-        showAlertChangeAddress()
-//        let viewControllerChangeShipAddress = (storyboard?.instantiateViewController(identifier: "ChangeShipAddress"))! as ChangeShipAddressViewController
-//        viewControllerChangeShipAddress.modalPresentationStyle = .popover
-//
-//        present(viewControllerChangeShipAddress, animated: true)
+        //showAlertChangeAddress()
+        let viewControllerChangeShipAddress = (storyboard?.instantiateViewController(identifier: "ChangeShipAddress"))! as ChangeShipAddressViewController
+   
+        viewControllerChangeShipAddress.currentUser = self.currentUser
+        viewControllerChangeShipAddress.completionHandler = { [weak self] user in
+            if let realUser = user {
+                self?.txtAddress.text = "Phone Number: " + realUser.phoneNumber + "\n" + realUser.shipAddress
+            }
+        }
+        
+        viewControllerChangeShipAddress.modalPresentationStyle = .custom
+        viewControllerChangeShipAddress.transitioningDelegate = self
+        
+        present(viewControllerChangeShipAddress, animated: true)
     }
     
-    func showAlertChangeAddress() {
-        let alert = UIAlertController(title: "Ship address", message: "Input ship address please", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//    func showAlertChangeAddress() {
+//        let alert = UIAlertController(title: "Ship address", message: "Input ship address please", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//
+//        alert.addTextField(configurationHandler: { textField in
+//            textField.placeholder = "input here..."
+//        })
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+//            guard let text = alert.textFields?.first?.text else {
+//                print("input ship address nil")
+//                return
+//            }
+//            self.txtAddress.text = text
+//        }))
+//        self.present(alert, animated: true)
+//    }
+    
+    @IBAction func selectPayByCash(_ sender: Any) {
+        // do nothing
+    }
+    
+    
+    @IBAction func selectPayByVisa(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Payment Method", message: "This Fuction Is Not Available Now! ", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okayAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func selectPayByPaypal(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Payment Method", message: "This Fuction Is Not Available Now! ", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okayAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+}
 
-        alert.addTextField(configurationHandler: { textField in
-            textField.placeholder = "input here..."
-        })
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            guard let text = alert.textFields?.first?.text else {
-                print("input ship address nil")
-                return
-            }
-            self.txtAddress.text = text
-        }))
-        self.present(alert, animated: true)
+extension CheckoutViewController: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return CustomPresentation(presentedViewController: presented, presenting: presenting)
     }
     
 }
