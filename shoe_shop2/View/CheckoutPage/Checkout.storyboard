@@ -35,8 +35,8 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a ádsadsaa ádsadsaa ádsadsaa ádsadsaa ádsadsaa " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80P-Bd-zKK">
-                                                        <rect key="frame" x="40" y="50.5" width="223.5" height="36"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đường D1, Khu Công Nghệ Cao, Phường Tân Phú, Quận 9, Thành phố Hồ Chí Minh" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80P-Bd-zKK">
+                                                        <rect key="frame" x="40" y="50.5" width="223.5" height="54"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -171,7 +171,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="orderAction:" destination="T2M-nu-xHQ" eventType="touchUpInside" id="VXE-ie-kmN"/>
-                                                    <segue destination="BoZ-cr-rw6" kind="show" id="WBm-aT-zE0"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -244,16 +243,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-97.101449275362327" y="179.46428571428569"/>
-        </scene>
-        <!--OrderSuccessPage-->
-        <scene sceneID="8g6-l4-5L9">
-            <objects>
-                <viewControllerPlaceholder storyboardName="OrderSuccessPage" id="BoZ-cr-rw6" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="E7j-Xb-jXk"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v3m-65-Wqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="46" y="642"/>
         </scene>
         <!--Change Ship Address View Controller-->
         <scene sceneID="s3p-rS-TYS">

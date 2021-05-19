@@ -7,7 +7,8 @@
 
 import UIKit
 class OrderSuccessViewController: UIViewController {
-      
+    
+    static let identifier = "orderSuccessPage"
     @IBOutlet weak var trackYourOrderButton: UIButton!
     @IBOutlet weak var backgroundImageView: UIView!
     

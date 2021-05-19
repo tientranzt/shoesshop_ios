@@ -20,6 +20,7 @@ class OrderHistoryViewController: UITableViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        orderHistoryList = []
         FirebaseManager.shared.fetchOrderHistory { [weak self] (snapshot) in
             if let data = snapshot.value as? [String: AnyObject] {
                 data.forEach { (key : String, value: AnyObject) in

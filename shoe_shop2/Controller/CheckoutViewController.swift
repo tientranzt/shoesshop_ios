@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import RAMAnimatedTabBarController
 
 class CheckoutViewController: UIViewController {
     
     //MARK: - Properties + Outlet
+    let indicator = UIActivityIndicatorView()
+    var cartListInput: [Cart] = []
     var dataInput: [String : Any] = [:]
     @IBOutlet weak var viewShipAddress: UIView!
     @IBOutlet weak var txtAddress: UILabel!
@@ -41,8 +44,8 @@ class CheckoutViewController: UIViewController {
         
         // shadown
         // chay sai khi chay iphone 8 , nen cho vao viewDidLayoutSubbiew
-        setShadowForVieư(view: viewShipAddress)
-        setShadowForVieư(view: viewPaymentMethod)
+        setShadowForView(view: viewShipAddress)
+        setShadowForView(view: viewPaymentMethod)
         btnOrder.layer.cornerRadius = 8
     }
     
@@ -83,7 +86,7 @@ class CheckoutViewController: UIViewController {
         }
     }
     
-    func setShadowForVieư(view: UIView) {
+    func setShadowForView(view: UIView) {
         
         view.layer.borderColor = UIColor(named: "grayMainBackground")?.cgColor
         view.layer.borderWidth = 1
@@ -97,42 +100,93 @@ class CheckoutViewController: UIViewController {
         
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    @IBAction func orderAction(_ sender: Any) {
+    func requireLogin() {
+        let tabbar = self.navigationController?.tabBarController as! CustomTabBarController
+        let loginVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "navHomeLogin") as! UINavigationController
         
-        guard let userId = dataInput["userId"] else {
-            print("not found key user ID")
+        loginVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
+        (loginVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
+        
+        if let _ = tabbar.viewControllers?.last{
+            tabbar.viewControllers![3] = loginVC
+            tabbar.setSelectIndex(from: 0, to: 3)
+        }
+    }
+    
+    func addIndicator() {
+        self.view.addSubview(indicator)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        NSLayoutConstraint.activate([
+            indicator.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            indicator.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            indicator.topAnchor.constraint(equalTo: self.view.topAnchor),
+            indicator.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+        indicator.startAnimating()
+    }
+    
+    @IBAction func orderAction(_ sender: Any) {
+        addIndicator()
+        let userId = FirebaseManager.shared.getUserId()
+        if userId == "" {
+            self.requireLogin()
             return
         }
-        guard let keyOrderDetail = dataInput["keyOrderDetail"] else {
-            print("not found key order ID")
+        guard let keyAuto = FirebaseManager.shared.ref.child("OrderHistory/\(userId)").childByAutoId().key else {
             return
         }
+        let dateCurrent = DateFormat.dateToString(date: Date())
+        //add order detail
+        let keyOrderDetail = "\(keyAuto)"
+        for cartItem in self.cartListInput {
+            guard let productColorId = cartItem.productColorId else {
+                print("item nil")
+                return
+            }
+            let json: [ String : Any ] =
+                [
+                    "shoe_id" : "\(cartItem.productId ?? "")",
+                    "shoe_color_id" : "\(productColorId)",
+                    "shoe_size_id" : "\(cartItem.productSizeId ?? "")",
+                    "shoe_quantity" : cartItem.productQuantity,
+                    "shoe_price" : cartItem.productPrice
+                ]
+            FirebaseManager.shared.ref.child("OrderDetail/\(keyOrderDetail)").childByAutoId().setValue(json)
+        }
+        //add order history
         let json: [String : Any] = [
-            "ship_address" : "\(txtAddress.text ?? "")",
-            "total_price" : dataInput["totalPrice"] as! Int,
-            "total_item" : dataInput["totalItem"] as! Int,
+            "ship_address" : "\(self.txtAddress.text ?? "")",
+            "total_price" : self.dataInput["totalPrice"] as! Int,
+            "total_item" : self.dataInput["totalItem"] as! Int,
             "order_detail_id" : "\(keyOrderDetail)",
-            "date_order" : "\(DateFormat.dateToString(date: Date()))",
+            "date_order" : "\(dateCurrent)",
             "payment_method" : "pay by cash",
             "status" : 0
         ]
-        FirebaseManager.shared.ref.child("OrderHistory/\(userId)").childByAutoId().setValue(json)
-        CoreDataManager.share.deleteCartAfterOrder()
+        let path = "OrderHistory/\(userId)/\(keyAuto)"
+        FirebaseManager.shared.ref.child(path).setValue(json) { (error, ref) in
+            if let error = error {
+                print("Error getting data \(error)")
+                FirebaseManager.shared.ref.child("OrderDetail/\(keyOrderDetail)").removeValue { error, _ in
+                    print(error ?? "error nil")
+                    return
+                }
+                return
+            } else {
+                CoreDataManager.share.deleteCartAfterOrder()
+                self.indicator.stopAnimating()
+                self.indicator.removeFromSuperview()
+                let orderSuccessPageVc = UIStoryboard(name: "OrderSuccessPage", bundle: nil).instantiateViewController(identifier: OrderSuccessViewController.identifier) as! OrderSuccessViewController
+                self.navigationController?.pushViewController(orderSuccessPageVc, animated: true)
+            }
+        }
     }
     
     @IBAction func changeAddress(_ sender: Any) {
         //showAlertChangeAddress()
         let viewControllerChangeShipAddress = (storyboard?.instantiateViewController(identifier: "ChangeShipAddress"))! as ChangeShipAddressViewController
-   
+        
         viewControllerChangeShipAddress.currentUser = self.currentUser
         viewControllerChangeShipAddress.completionHandler = { [weak self] user in
             if let realUser = user {
@@ -145,23 +199,6 @@ class CheckoutViewController: UIViewController {
         
         present(viewControllerChangeShipAddress, animated: true)
     }
-    
-//    func showAlertChangeAddress() {
-//        let alert = UIAlertController(title: "Ship address", message: "Input ship address please", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//
-//        alert.addTextField(configurationHandler: { textField in
-//            textField.placeholder = "input here..."
-//        })
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-//            guard let text = alert.textFields?.first?.text else {
-//                print("input ship address nil")
-//                return
-//            }
-//            self.txtAddress.text = text
-//        }))
-//        self.present(alert, animated: true)
-//    }
     
     @IBAction func selectPayByCash(_ sender: Any) {
         // do nothing
