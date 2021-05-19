@@ -143,11 +143,12 @@ class FirebaseManager {
         
         let userId = getUserId()
         if userId != "" {
-            self.ref.child("UserProfile").child(userId).getData { (error, snapshot) in
+            self.ref.child("OrderHistory").child(userId).getData { (error, snapshot) in
                 if let error = error {
                     print("Error getting data \(error)")
                 }
                 else if snapshot.exists() {
+                    print(snapshot)
                     completion(snapshot)
                 }
                 else {
@@ -216,6 +217,17 @@ class FirebaseManager {
         
         return User(userId: self.getUserId(), userName: userName, email: email, shipAddress: shipAddress, phoneNumber: phoneNumber, imgAvatar: imgAvatar, isNewUser: isNewUser)
         
+    }
+    
+    func parseOrderHistory(object: AnyObject) -> OrderHistory {
+        
+        let obj = object as! [String: AnyObject]
+        let orderDate = obj["date_order"] as! String
+        let shipAddress = obj["ship_address"] as! String
+        let totalItem = obj["total_item"] as! Int
+        let totalPrice = obj["total_price"] as! Double
+        
+        return OrderHistory(dateOrder: orderDate, shipAddress: shipAddress, totalItem: totalItem, totalPrice: totalPrice)
     }
     
     // MARK: - Auth Firebase

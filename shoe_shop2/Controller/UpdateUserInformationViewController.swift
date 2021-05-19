@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseStorage
 class UpdateUserInformationViewController: UIViewController {
-
+    
     @IBOutlet weak var avartarImage: UIImageView!
     @IBOutlet weak var containerStackView: UIStackView!
     private let storage = Storage.storage().reference()
@@ -20,13 +20,14 @@ class UpdateUserInformationViewController: UIViewController {
     @IBOutlet weak var textFieldPhoneNumber: UITextField!
     @IBOutlet weak var textFieldLocation: UITextField!
     
+    var saveImageDone: Bool = true;
     
     
     var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -51,24 +52,36 @@ class UpdateUserInformationViewController: UIViewController {
         self.view.isUserInteractionEnabled = false
         self.navigationItem.setHidesBackButton(true, animated: true)
         
-        // check text is "" if "" alert to user
-        
-        if textFieldLocation.text != "" && textFieldEmail.text != "" && textFieldUserName.text != "" && textFieldPhoneNumber.text != ""  {
+        if saveImageDone {
+            // check text is "" if "" alert to user
             
-            if let location = textFieldLocation.text, let email = textFieldEmail.text, let userName = textFieldUserName.text ,let phoneNumber = textFieldPhoneNumber.text {
-                if LogicLogin.shared.isValidEmail(email) && LogicLogin.shared.isValidPhoneNumber(value: phoneNumber) {
-                    
-                    self.user.email = email
-                    self.user.phoneNumber = phoneNumber
-                    self.user.userName = userName
-                    self.user.shipAddress = location
-                    
-                    FirebaseManager.shared.updateUser(user: self.user)
-                    self.navigationController?.popViewController(animated: true)
+            if textFieldLocation.text != "" && textFieldEmail.text != "" && textFieldUserName.text != "" && textFieldPhoneNumber.text != ""  {
+                
+                if let location = textFieldLocation.text, let email = textFieldEmail.text, let userName = textFieldUserName.text ,let phoneNumber = textFieldPhoneNumber.text {
+                    if LogicLogin.shared.isValidEmail(email) && LogicLogin.shared.isValidPhoneNumber(value: phoneNumber) {
+                        
+                        self.user.email = email
+                        self.user.phoneNumber = phoneNumber
+                        self.user.userName = userName
+                        self.user.shipAddress = location
+                        
+                        FirebaseManager.shared.updateUser(user: self.user)
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    else {
+                        // alert wrong format emal or phonenumber
+                        let alert = UIAlertController(title: "Save User Information", message: "Email Or Phone Number Not Right Format, Please Check Again!", preferredStyle: .alert)
+                        let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+                            self?.view.isUserInteractionEnabled = true
+                            self?.navigationItem.setHidesBackButton(false, animated: true)
+                        })
+                        alert.addAction(okayAction)
+                        self.present(alert, animated: true, completion: nil)
+                    }
                 }
                 else {
-                    // alert wrong format emal or phonenumber
-                    let alert = UIAlertController(title: "Policy And Terms", message: "Email Or Phone Number Not Right Format, Please Check Again!", preferredStyle: .alert)
+                    // alert somthing wrong try it again or later
+                    let alert = UIAlertController(title: "Save User Information", message: "Update Infomation Fail Please Try Again! ", preferredStyle: .alert)
                     let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
                         self?.view.isUserInteractionEnabled = true
                         self?.navigationItem.setHidesBackButton(false, animated: true)
@@ -76,10 +89,11 @@ class UpdateUserInformationViewController: UIViewController {
                     alert.addAction(okayAction)
                     self.present(alert, animated: true, completion: nil)
                 }
+                
             }
             else {
-                // alert somthing wrong try it again or later
-                let alert = UIAlertController(title: "Policy And Terms", message: "Update Infomation Fail Please Try Again! ", preferredStyle: .alert)
+                //alert error
+                let alert = UIAlertController(title: "Save User Information", message: "Some Data Is Null Please Check Again! ", preferredStyle: .alert)
                 let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
                     self?.view.isUserInteractionEnabled = true
                     self?.navigationItem.setHidesBackButton(false, animated: true)
@@ -87,17 +101,9 @@ class UpdateUserInformationViewController: UIViewController {
                 alert.addAction(okayAction)
                 self.present(alert, animated: true, completion: nil)
             }
-            
         }
         else {
-            //alert error
-            let alert = UIAlertController(title: "Policy And Terms", message: "Some Data Is Null Please Check Again! ", preferredStyle: .alert)
-            let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
-                self?.view.isUserInteractionEnabled = true
-                self?.navigationItem.setHidesBackButton(false, animated: true)
-            })
-            alert.addAction(okayAction)
-            self.present(alert, animated: true, completion: nil)
+            LogicLogin.shared.showToast(message: "waiting...", view: self.view)
         }
         
     }
@@ -131,6 +137,8 @@ extension UpdateUserInformationViewController: UIImagePickerControllerDelegate, 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        self.saveImageDone = false
+        
         picker.dismiss(animated: true, completion: nil)
         
         guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage  else {
@@ -149,19 +157,30 @@ extension UpdateUserInformationViewController: UIImagePickerControllerDelegate, 
         // get download url
         // save dowload url to user defaul
         let userId = FirebaseManager.shared.getUserId()
-        storage.child(userId).putData( imageData, metadata: nil, completion: {[weak self] _,error in
-            guard error == nil else {
-                print("upload fail")
-                return
-            }
-            self?.storage.child(userId).downloadURL(completion: {[weak self] (url, error) in
-                guard let url = url , error == nil else {
-                    print("dowload fail")
+        let uploadImageQueue = DispatchQueue(label: "upload Image")
+        uploadImageQueue.async {
+            self.storage.child(userId).putData( imageData, metadata: nil, completion: {[weak self] _,error in
+                guard error == nil else {
+                    print("upload fail")
                     return
                 }
-                self?.user.imgAvatar = url.absoluteString
+                self?.storage.child(userId).downloadURL(completion: {[weak self] (url, error) in
+                    guard let url = url , error == nil else {
+                        let alert = UIAlertController(title: "Save User Information", message: " Save User Information Fail! ", preferredStyle: .alert)
+                        let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+                            self?.view.isUserInteractionEnabled = true
+                            self?.navigationItem.setHidesBackButton(false, animated: true)
+                        })
+                        alert.addAction(okayAction)
+                        self?.present(alert, animated: true, completion: nil)
+                        return
+                    }
+                    self?.saveImageDone = true
+                    self?.user.imgAvatar = url.absoluteString
+                    self?.btnSave.sendActions(for: .touchUpInside)
+                })
             })
-        })
+        }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
