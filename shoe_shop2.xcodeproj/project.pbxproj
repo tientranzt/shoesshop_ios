@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E6E5F471A16F0F76B5966AB /* Pods_shoe_shop2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CB90B04F335B545CF44921 /* Pods_shoe_shop2.framework */; };
+		530AA8072654AD0500A0511D /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530AA8062654AD0500A0511D /* DateFormat.swift */; };
 		534782A4264E623700BE8FC4 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534782A3264E623700BE8FC4 /* CheckBox.swift */; };
 		645695AD2653FDBB0011E0C5 /* ChangeShipAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645695AC2653FDBA0011E0C5 /* ChangeShipAddressViewController.swift */; };
 		646D087826511B56005D2213 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D087726511B56005D2213 /* User.swift */; };
@@ -106,6 +107,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		530AA8062654AD0500A0511D /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		534782A3264E623700BE8FC4 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		6410B533264FDB540032597C /* shoe_shop2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shoe_shop2.entitlements; sourceTree = "<group>"; };
 		645695AC2653FDBA0011E0C5 /* ChangeShipAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeShipAddressViewController.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 			children = (
 				E26B1DB72644DC5E0001ABE0 /* Constant.swift */,
 				646D087F26515C88005D2213 /* LogicLogin.swift */,
+				530AA8062654AD0500A0511D /* DateFormat.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -838,6 +841,7 @@
 				FF56974C26451DCC003CE928 /* CategoriesCollectionViewCell.swift in Sources */,
 				FF8D2302264A83FF0072D5D3 /* DrawIntroPage.swift in Sources */,
 				FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */,
+				530AA8072654AD0500A0511D /* DateFormat.swift in Sources */,
 				FF8D2313264B5E3B0072D5D3 /* NSManagedObjectContext+Extension.swift in Sources */,
 				FF8D230E264B5DB90072D5D3 /* CartTableViewCell.swift in Sources */,
 				E26B1DB52644DC280001ABE0 /* UIImageView+Extension.swift in Sources */,

@@ -20,7 +20,6 @@ class CheckoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
-        // Do any additional setup after loading the view.
         txtAddress.adjustsFontSizeToFitWidth = true
         
     }
@@ -75,6 +74,7 @@ class CheckoutViewController: UIViewController {
             "total_price" : dataInput["totalPrice"] as! Int,
             "total_item" : dataInput["totalItem"] as! Int,
             "order_detail_id" : "\(keyOrderDetail)",
+            "date_order" : "\(DateFormat.dateToString(date: Date()))",
             "status" : 0
         ]
         FirebaseManager.shared.ref.child("OrderHistory/\(userID)").childByAutoId().setValue(json)

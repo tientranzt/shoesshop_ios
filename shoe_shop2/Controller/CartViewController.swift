@@ -19,24 +19,23 @@ class CartViewController: UIViewController {
     var cartList: [Cart] = [Cart]()
     var itemNotExists: [String] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         btnCheckOut.roundedAllSide(with: 8)
-        fetchData()
         configureTableView()
         btnCheckOut.addTarget(self, action: #selector(checkOutAction), for: .touchUpInside)
-        print("Link data local: \(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as String)")
     }
         
     //MARK:- HANDLE ACTION CHECKOUT
     @objc func checkOutAction(_ sender: UIButton) {
+        if  {
+            <#code#>
+        }
         let userID = "tG21zTv15TdzV5RmDpm8QCZ3zqx1"
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .short
-        formatter.dateFormat = "dd-MM-yyyy_HH:mm"
-        
-        let keyOrderDetail = "\(userID)_\(formatter.string(from: Date()))"
+        let keyOrderDetail = "\(userID)_\(DateFormat.dateToString(date: Date()))"
         for cartItem in cartList.filter({ $0.isSelected }) {
             let json: [ String : Any ] =
               [
