@@ -88,6 +88,7 @@ class AccountViewController: UIViewController {
                 return
             }
             DispatchQueue.main.async {
+                UserDefaults.standard.removeObject(forKey: "user")
                 self?.backToLogin()
             }
         })
