@@ -89,6 +89,17 @@ class CoreDataManager {
         return false
     }
     
+    //MARK: - DELETE CART ITEMS AFTER LOG_OUT
+    func deleteCartAfterLogout(){
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Cart")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try self.moc.execute(deleteRequest)
+        } catch {
+            print(error)
+        }
+    }
+    
     //MARK: - DELETE CART ITEMS AFTER ORDER SUCCESS
     func deleteCartAfterOrder(){
         var task = [Cart]()
@@ -107,8 +118,8 @@ class CoreDataManager {
         }
         //return false
     }
-    //MARK: - FETCH ALL CART ITEM
     
+    //MARK: - FETCH ALL CART ITEM
     func fetchAllItemCart() -> [Cart] {
         var task = [Cart]()
         let taskRequest : NSFetchRequest<Cart> = Cart.fetchRequest()
@@ -120,6 +131,7 @@ class CoreDataManager {
         return task
     }
     
+    //MARK: - GET COUNT ITEM SELECTED
     func getCountItemCartSelected() -> Int {
         var count = 0
         let taskRequest :  NSFetchRequest<Cart> =  Cart.fetchRequest()
@@ -133,6 +145,7 @@ class CoreDataManager {
         return count
     }
     
+    //MARK: - GET TOTAL PRICE ITEM SELECTED
     func getTotalPriceItemCartSelected() -> Int {
         var sum = 0
         var task = [Cart]()
@@ -151,7 +164,6 @@ class CoreDataManager {
     }
     
     //MARK: - UPDATE CART ITEM
-    
     func updateCart(colorId: String, isChecked : Bool) -> Bool {
         do {
             if let cart = fetchTaskByColorId(colorId: colorId) {

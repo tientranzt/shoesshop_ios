@@ -355,6 +355,7 @@ class FirebaseManager {
                 return false
             }
         }
+        CoreDataManager.share.deleteCartAfterLogout()
         return true
     }
     
