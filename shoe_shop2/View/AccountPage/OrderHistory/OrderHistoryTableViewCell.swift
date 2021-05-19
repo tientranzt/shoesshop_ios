@@ -12,8 +12,11 @@ class OrderHistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var addressPointView: UIView!
     @IBOutlet weak var destinationPointView: UIView!
     
+    @IBOutlet weak var lblDateOrder: UILabel!
+    @IBOutlet weak var lblShipAddress: UILabel!
+    @IBOutlet weak var lblTotalPrice: UILabel!
+    
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var orderProductImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,11 +32,12 @@ class OrderHistoryTableViewCell: UITableViewCell {
         super.layoutSubviews()
         addressPointView.layer.cornerRadius = addressPointView.frame.height / 2
         destinationPointView.layer.cornerRadius = addressPointView.frame.height / 2
-        orderProductImage.layer.cornerRadius = orderProductImage.frame.height / 2
         containerView.roundedAllSide(with: 8)
     }
     
-    @IBAction func orderAgainButtonTapped(_ sender: UIButton) {
-        print("order button clicked")
+    func configureCell(orderHistory : OrderHistory)  {
+        self.lblDateOrder.text = orderHistory.dateOrder
+        self.lblShipAddress.text = orderHistory.shipAddress
+        self.lblTotalPrice.text = "Total: $ \(orderHistory.totalPrice)"
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3E6E5F471A16F0F76B5966AB /* Pods_shoe_shop2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CB90B04F335B545CF44921 /* Pods_shoe_shop2.framework */; };
 		534782A4264E623700BE8FC4 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534782A3264E623700BE8FC4 /* CheckBox.swift */; };
+		642E1B982654B0D900B2D53B /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E1B972654B0D900B2D53B /* OrderHistory.swift */; };
 		645695AD2653FDBB0011E0C5 /* ChangeShipAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645695AC2653FDBA0011E0C5 /* ChangeShipAddressViewController.swift */; };
 		646D087826511B56005D2213 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D087726511B56005D2213 /* User.swift */; };
 		646D087D26512DA5005D2213 /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D087B26512DA5005D2213 /* UpdateUserInformationViewController.swift */; };
@@ -110,6 +111,7 @@
 /* Begin PBXFileReference section */
 		534782A3264E623700BE8FC4 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		6410B533264FDB540032597C /* shoe_shop2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shoe_shop2.entitlements; sourceTree = "<group>"; };
+		642E1B972654B0D900B2D53B /* OrderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistory.swift; sourceTree = "<group>"; };
 		645695AC2653FDBA0011E0C5 /* ChangeShipAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeShipAddressViewController.swift; sourceTree = "<group>"; };
 		646D087726511B56005D2213 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		646D087B26512DA5005D2213 /* UpdateUserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserInformationViewController.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				FF7642A026525B6C009DB6DE /* NotificationModel.swift */,
 				646D087726511B56005D2213 /* User.swift */,
 				FF7642A226533FE3009DB6DE /* Review.swift */,
+				642E1B972654B0D900B2D53B /* OrderHistory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 			files = (
 				FF8D2349264D60F00072D5D3 /* UIColor+Extension.swift in Sources */,
 				64EB82582648239E001B1B05 /* PaymentCashMethod.swift in Sources */,
+				642E1B982654B0D900B2D53B /* OrderHistory.swift in Sources */,
 				E2701153264BAF2F0089E500 /* UILabel+Extension.swift in Sources */,
 				FF8D234B264E1D3F0072D5D3 /* ProductColor.swift in Sources */,
 				E26B1D2A2644CD240001ABE0 /* shoe_shop2.xcdatamodeld in Sources */,

@@ -763,7 +763,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="avatar" width="215" height="211"/>
+        <image name="avatar" width="217" height="214"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="circle.circle" catalog="system" width="128" height="121"/>
         <image name="circle.grid.cross.down.fill" catalog="system" width="128" height="125"/>
