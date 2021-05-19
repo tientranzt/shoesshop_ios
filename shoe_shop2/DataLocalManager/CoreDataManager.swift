@@ -90,6 +90,24 @@ class CoreDataManager {
         return false
     }
     
+    //MARK: - DELETE CART ITEMS AFTER ORDER SUCCESS
+    func deleteCartAfterOrder(){
+        var task = [Cart]()
+        let taskRequest :  NSFetchRequest<Cart> =  Cart.fetchRequest()
+        taskRequest.predicate = NSPredicate(format: "isSelected == %i", 1)
+        do {
+            task = try self.moc.fetch(taskRequest)
+            for object in task {
+                self.moc.delete(object)
+            }
+            try self.moc.save()
+            print("delete success")
+            //return true
+        } catch  {
+            print(error)
+        }
+        //return false
+    }
     //MARK: - FETCH ALL CART ITEM
     
     func fetchAllItemCart() -> [Cart] {

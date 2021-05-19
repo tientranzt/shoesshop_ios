@@ -148,9 +148,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mHB-fi-hdj">
-                        <barButtonItem key="leftBarButtonItem" image="cart" catalog="system" id="aNK-su-k0a">
-                            <color key="tintColor" name="middleGrayBackground"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="arrow.clockwise" catalog="system" id="E6n-e2-6Sj">
                             <color key="tintColor" name="middleGrayBackground"/>
                             <connections>
@@ -226,7 +223,6 @@
     </scenes>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
-        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
