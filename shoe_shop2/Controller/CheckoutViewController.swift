@@ -11,6 +11,7 @@ import RAMAnimatedTabBarController
 class CheckoutViewController: UIViewController {
     
     //MARK: - Properties + Outlet
+    let indicator = UIActivityIndicatorView()
     var cartListInput: [Cart] = []
     var dataInput: [String : Any] = [:]
     @IBOutlet weak var viewShipAddress: UIView!
@@ -93,73 +94,80 @@ class CheckoutViewController: UIViewController {
         }
     }
     
+    func addIndicator() {
+        self.view.addSubview(indicator)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        NSLayoutConstraint.activate([
+            indicator.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            indicator.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            indicator.topAnchor.constraint(equalTo: self.view.topAnchor),
+            indicator.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+        indicator.startAnimating()
+    }
+    
     @IBAction func orderAction(_ sender: Any) {
+        addIndicator()
         let userId = FirebaseManager.shared.getUserId()
-                if userId == "" {
-                    requireLogin()
-                    return
-                }
-                guard let keyAuto = FirebaseManager.shared.ref.child("OrderHistory/\(userId)").childByAutoId().key else {
-                    return
-                }
-                let dateUnique = DateFormat.dateToString(date: Date())
-                //add order detail
-                let keyOrderDetail = "\(keyAuto)"
-                for cartItem in cartListInput {
-                    let json: [ String : Any ] =
-                        [
-                            "shoe_id" : "\(cartItem.productId ?? "")",
-                            "shoe_color_id" : "\(cartItem.productColorId ?? "")",
-                            "shoe_size_id" : "\(cartItem.productSizeId ?? "")",
-                            "shoe_quantity" : cartItem.productQuantity,
-                            "shoe_price" : cartItem.productPrice
-                        ]
-                    FirebaseManager.shared.ref.child("OrderDetail/\(keyOrderDetail)").childByAutoId().setValue(json)
-                }
-                //add order history
-                let json: [String : Any] = [
-                    "ship_address" : "\(txtAddress.text ?? "")",
-                    "total_price" : dataInput["totalPrice"] as! Int,
-                    "total_item" : dataInput["totalItem"] as! Int,
-                    "order_detail_id" : "\(keyOrderDetail)",
-                    "date_order" : "\(dateUnique)",
-                    "payment_method" : "pay by cash",
-                    "status" : 0
+        if userId == "" {
+            self.requireLogin()
+            return
+        }
+        guard let keyAuto = FirebaseManager.shared.ref.child("OrderHistory/\(userId)").childByAutoId().key else {
+            return
+        }
+        let dateCurrent = DateFormat.dateToString(date: Date())
+        //add order detail
+        let keyOrderDetail = "\(keyAuto)"
+        for cartItem in self.cartListInput {
+            guard let productColorId = cartItem.productColorId else {
+                print("item nil")
+                return
+            }
+            let json: [ String : Any ] =
+                [
+                    "shoe_id" : "\(cartItem.productId ?? "")",
+                    "shoe_color_id" : "\(productColorId)",
+                    "shoe_size_id" : "\(cartItem.productSizeId ?? "")",
+                    "shoe_quantity" : cartItem.productQuantity,
+                    "shoe_price" : cartItem.productPrice
                 ]
-                let path = "OrderHistory/\(userId)/\(keyAuto)"
-                FirebaseManager.shared.ref.child(path).setValue(json) { (error, ref) in
-                    if let error = error {
-                        print("Error getting data \(error)")
-                        return
-                    } else {
-                        CoreDataManager.share.deleteCartAfterOrder()
-                    }
+            FirebaseManager.shared.ref.child("OrderDetail/\(keyOrderDetail)").childByAutoId().setValue(json)
+        }
+        //add order history
+        let json: [String : Any] = [
+            "ship_address" : "\(self.txtAddress.text ?? "")",
+            "total_price" : self.dataInput["totalPrice"] as! Int,
+            "total_item" : self.dataInput["totalItem"] as! Int,
+            "order_detail_id" : "\(keyOrderDetail)",
+            "date_order" : "\(dateCurrent)",
+            "payment_method" : "pay by cash",
+            "status" : 0
+        ]
+        let path = "OrderHistory/\(userId)/\(keyAuto)"
+        FirebaseManager.shared.ref.child(path).setValue(json) { (error, ref) in
+            if let error = error {
+                print("Error getting data \(error)")
+                FirebaseManager.shared.ref.child("OrderDetail/\(keyOrderDetail)").removeValue { error, _ in
+                    print(error ?? "error nil")
+                    return
                 }
-        //        myRef.child("Users").child(Username).child("Userid").setValue(user.getUid(), new DatabaseReference.CompletionListener() {
-        //            void onComplete(DatabaseError error, DatabaseReference ref) {
-        //                System.err.println("Value was set. Error = "+error);
-        //                // Or: throw error.toException();
-        //            }
-        //        })
-        //        FirebaseManager.shared.ref.child(path).getData { (error, snapshot) in
-        //            if let error = error {
-        //                print("Error getting data \(error)")
-        //                return
-        //            }
-        //            else if snapshot.exists() {
-        //                CoreDataManager.share.deleteCartAfterOrder()
-        //            }
-        //            else {
-        //                print("No data available")
-        //            }
-        //        }
-
+                return
+            } else {
+                CoreDataManager.share.deleteCartAfterOrder()
+                self.indicator.stopAnimating()
+                self.indicator.removeFromSuperview()
+                let orderSuccessPageVc = UIStoryboard(name: "OrderSuccessPage", bundle: nil).instantiateViewController(identifier: OrderSuccessViewController.identifier) as! OrderSuccessViewController
+                self.navigationController?.pushViewController(orderSuccessPageVc, animated: true)
+            }
+        }
     }
     
     @IBAction func changeAddress(_ sender: Any) {
         //showAlertChangeAddress()
         let viewControllerChangeShipAddress = (storyboard?.instantiateViewController(identifier: "ChangeShipAddress"))! as ChangeShipAddressViewController
-   
+        
         viewControllerChangeShipAddress.currentUser = self.currentUser
         viewControllerChangeShipAddress.completionHandler = { [weak self] user in
             if let realUser = user {

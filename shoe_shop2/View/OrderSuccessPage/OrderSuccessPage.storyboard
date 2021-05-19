@@ -12,7 +12,7 @@
         <!--Order Success View Controller-->
         <scene sceneID="vkN-4n-4Um">
             <objects>
-                <viewController id="Fnz-E8-9ug" customClass="OrderSuccessViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="orderSuccessPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fnz-E8-9ug" customClass="OrderSuccessViewController" customModule="shoe_shop2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dhv-2K-JmA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
