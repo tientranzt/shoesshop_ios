@@ -55,6 +55,25 @@ class CheckoutViewController: UIViewController {
                 self.currentUser = loadUser
             }
         }
+        else {
+            // fetch data user from firebase
+            FirebaseManager.shared.fetchUser { [weak self] (dataSnapshot) in
+                let data = dataSnapshot.value as AnyObject
+                self?.currentUser = FirebaseManager.shared.parseUser(object: data)
+                if let realUser = self?.currentUser {
+                    DispatchQueue.main.async {
+                        self?.txtAddress.text = "Phone Number: " + realUser.phoneNumber + "\n" + realUser.shipAddress
+                    }
+                    // save to user default
+                    let encoder = JSONEncoder()
+                    if let encoded = try? encoder.encode(realUser) {
+                        let defaults = UserDefaults.standard
+                        defaults.set(encoded, forKey: "user")
+                    }
+                }
+            }
+            
+        }
     }
     
     func setData() {

@@ -111,7 +111,9 @@ class CartViewController: UIViewController {
     }
     
     func fetchData()  {
+        
         DispatchQueue.global().sync {
+            self.cartList.removeAll()
             self.cartList = CoreDataManager.share.fetchAllItemCart()
             self.totalItem = CoreDataManager.share.getCountItemCartSelected()
             self.totalPrice = CoreDataManager.share.getTotalPriceItemCartSelected()
