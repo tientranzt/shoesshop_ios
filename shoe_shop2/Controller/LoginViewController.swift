@@ -46,9 +46,8 @@ class LoginViewController: UIViewController {
                                     LogicLogin.shared.showToast(message: "Sign In Success!", view: view)
                                 }
                                 
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                     // Put your code which should be executed with a delay here
-                                    
                                     let tabbar = self?.navigationController?.tabBarController as! CustomTabBarController
                                     let navAccountVC = UIStoryboard(name: "AccountPage", bundle: nil).instantiateViewController(identifier: "navAccountPage") as! UINavigationController
                                     navAccountVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
