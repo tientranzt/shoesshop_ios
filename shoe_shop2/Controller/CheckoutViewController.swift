@@ -30,11 +30,6 @@ class CheckoutViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.navigationController?.isNavigationBarHidden = false
-//        self.tabBarController?.tabBar.isHidden = false
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
