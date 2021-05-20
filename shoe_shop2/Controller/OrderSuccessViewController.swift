@@ -30,4 +30,8 @@ class OrderSuccessViewController: UIViewController {
         trackYourOrderButton.roundedAllSide(with: 8)
     }
 
+    @IBAction func trackOrderAction(_ sender: Any) {
+        let orderSuccessPageVc = UIStoryboard(name: "AccountPage", bundle: nil).instantiateViewController(identifier: "orderHistoryVC") as! OrderHistoryViewController
+        self.navigationController?.pushViewController(orderSuccessPageVc, animated: true)
+    }
 }

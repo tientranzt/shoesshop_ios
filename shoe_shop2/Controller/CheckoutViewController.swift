@@ -141,23 +141,23 @@ class CheckoutViewController: UIViewController {
         let dateCurrent = DateFormat.dateToString(date: Date())
         //add order detail
         let keyOrderDetail = "\(dateCurrent)-\(keyAuto)"
+        var jsonCartItem: [[ String : Any ]] = []
         for cartItem in self.cartListInput {
             guard let productColorId = cartItem.productColorId else {
                 print("item nil")
                 return
             }
-            let json: [ String : Any ] =
-                [
+            jsonCartItem.append([
                     "shoe_id" : "\(cartItem.productId ?? "")",
                     "shoe_color_id" : "\(productColorId)",
                     "shoe_size_id" : "\(cartItem.productSizeId ?? "")",
                     "shoe_quantity" : cartItem.productQuantity,
                     "shoe_price" : cartItem.productPrice
-                ]
-            FirebaseManager.shared.ref.child("OrderDetail/\(keyOrderDetail)").childByAutoId().setValue(json)
+                ])
         }
+        FirebaseManager.shared.ref.child("OrderDetail/\(keyOrderDetail)").setValue(jsonCartItem)
         //add order history
-        let json: [String : Any] = [
+        let jsonOrderHistory: [String : Any] = [
             "ship_address" : "\(self.txtAddress.text ?? "")",
             "total_price" : self.dataInput["totalPrice"] as! Int,
             "total_item" : self.dataInput["totalItem"] as! Int,
@@ -166,8 +166,8 @@ class CheckoutViewController: UIViewController {
             "payment_method" : "pay by cash",
             "status" : 0
         ]
-        let path = "OrderHistory/\(currentUser?.userName ?? "any")-\(userId)/\(keyOrderDetail)"
-        FirebaseManager.shared.ref.child(path).setValue(json) { (error, ref) in
+        let path = "OrderHistory/\(userId)/\(keyOrderDetail)"
+        FirebaseManager.shared.ref.child(path).setValue(jsonOrderHistory) { (error, ref) in
             if let error = error {
                 print("Error getting data \(error)")
                 FirebaseManager.shared.ref.child("OrderDetail/\(keyOrderDetail)").removeValue { error, _ in
