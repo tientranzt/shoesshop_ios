@@ -21,12 +21,12 @@
                                 <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCS-D0-1Me">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="680"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="679.33333333333337"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFc-0L-3ca">
-                                                <rect key="frame" x="110" y="274" width="170" height="18"/>
+                                                <rect key="frame" x="118.33333333333333" y="273.66666666666669" width="153.33333333333337" height="18"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="It's easier to sign up now">
+                                                    <fragment content="It's easier to login now">
                                                         <attributes>
                                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" metaFont="system" size="15"/>
@@ -43,23 +43,22 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yA7-Oi-Xap">
-                                                <rect key="frame" x="0.0" y="233.66666666666669" width="390" height="30.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="233.66666666666669" width="390" height="30"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Sign Up">
+                                                    <fragment content="Login">
                                                         <attributes>
                                                             <color key="NSColor" red="0.028097239847715727" green="0.02185254172997559" blue="0.014244166888686093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="27" name="Arial-BoldMT"/>
-                                                            <font key="NSOriginalFont" metaFont="systemBold" size="17"/>
+                                                            <font key="NSFont" metaFont="systemBold" size="27"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRb-Sm-7W9">
-                                                <rect key="frame" x="39" y="372" width="312" height="47.666666666666686"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRb-Sm-7W9">
+                                                <rect key="frame" x="39" y="371.66666666666669" width="312" height="47.666666666666686"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
-                                                <state key="normal" title="Continue with Facebook">
+                                                <state key="normal" title="Continue with Facebook" image="facebook">
                                                     <color key="titleColor" name="mainWhiteBackground"/>
                                                 </state>
                                                 <connections>
@@ -67,19 +66,20 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlC-mU-oon">
-                                                <rect key="frame" x="39" y="507.33333333333343" width="312" height="47.666666666666686"/>
+                                                <rect key="frame" x="39" y="506.99999999999994" width="312" height="47.333333333333314"/>
                                                 <color key="backgroundColor" name="subGrayBackground"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="I'll use email">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="zlP-Zv-NXS" kind="show" id="S3a-Sc-dMz"/>
+                                                    <segue destination="fqf-Cf-3F3" kind="show" id="fOl-ia-PbC"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKu-ae-DNh">
-                                                <rect key="frame" x="39" y="439.66666666666663" width="312" height="47.666666666666686"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKu-ae-DNh">
+                                                <rect key="frame" x="39" y="439.33333333333337" width="312" height="47.666666666666686"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Continue with Apple">
+                                                <state key="normal" title="Continue with Apple" image="apple">
                                                     <color key="titleColor" name="mainWhiteBackground"/>
                                                 </state>
                                                 <connections>
@@ -87,19 +87,19 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7pA-nd-e8x">
-                                                <rect key="frame" x="85.666666666666686" y="645" width="219" height="30"/>
+                                                <rect key="frame" x="73.333333333333329" y="644.33333333333337" width="243.66666666666669" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have account ? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUt-zG-F42">
-                                                        <rect key="frame" x="0.0" y="4.6666666666666288" width="181" height="20.333333333333332"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have account ? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUt-zG-F42">
+                                                        <rect key="frame" x="0.0" y="5" width="164.66666666666666" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rS-e7-kDe">
-                                                        <rect key="frame" x="181" y="0.0" width="38" height="30"/>
-                                                        <state key="normal" title="Login"/>
+                                                        <rect key="frame" x="164.66666666666669" y="0.0" width="79" height="30"/>
+                                                        <state key="normal" title="Sign in now"/>
                                                         <connections>
-                                                            <segue destination="fqf-Cf-3F3" kind="show" id="NVe-98-bia"/>
+                                                            <segue destination="zlP-Zv-NXS" kind="show" id="gFk-mE-y75"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -508,6 +508,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="apple" width="25" height="25"/>
+        <image name="facebook" width="25" height="25"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="shoe_logo" width="811" height="307"/>
