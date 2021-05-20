@@ -16,31 +16,21 @@ class OrderSuccessViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
-        self.tabBarController?.tabBar.isHidden = true
+        self.view.isUserInteractionEnabled = false
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        self.navigationController?.isNavigationBarHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
+//    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        // Show the navigation bar on other view controllers
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
         CartViewController.isNavToHome = true
     }
-    @IBAction func pressTrackYourOrder(_ sender: Any) {
-        let tabbar = self.navigationController?.tabBarController as! CustomTabBarController
-        
-        
-        let historyVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "navHomeLogin") as! UINavigationController
-        
-        historyVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
-        (historyVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
-        
-        if let _ = tabbar.viewControllers?.last{
-            tabbar.viewControllers![3] = historyVC
-            tabbar.setSelectIndex(from: 2, to: 3)
-        }
-    }
+    
     override func viewDidLayoutSubviews() {
         //MARK: -- Animaton Tick
         UIView.animate(withDuration: 1) {

@@ -131,7 +131,6 @@ class DetailProductViewController: UIViewController {
             return
         }
         FirebaseManager.shared.fetchReviewData(reviewId: id) { (data) in
-            print(data.count)
             self.reviewLabel.text = "\(data.count) Review"
             if data.count == 0 {
                 for item in self.starImageArray {
