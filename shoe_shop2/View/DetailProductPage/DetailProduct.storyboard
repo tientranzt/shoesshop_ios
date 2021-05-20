@@ -110,7 +110,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H40-JO-BGV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="grayMainBackground"/>
-                                                                <state key="normal" title="8">
+                                                                <state key="normal">
                                                                     <color key="titleColor" name="mainBlackBackground"/>
                                                                 </state>
                                                                 <connections>
@@ -120,7 +120,7 @@
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZO0-Ki-kIg">
                                                                 <rect key="frame" x="40" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="grayMainBackground"/>
-                                                                <state key="normal" title="9">
+                                                                <state key="normal">
                                                                     <color key="titleColor" name="mainBlackBackground"/>
                                                                 </state>
                                                                 <connections>
@@ -130,7 +130,7 @@
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhI-Mb-bT7">
                                                                 <rect key="frame" x="80" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="grayMainBackground"/>
-                                                                <state key="normal" title="10">
+                                                                <state key="normal">
                                                                     <color key="titleColor" name="mainBlackBackground"/>
                                                                 </state>
                                                                 <connections>
@@ -140,7 +140,7 @@
                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AV-0B-VYU">
                                                                 <rect key="frame" x="120" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="grayMainBackground"/>
-                                                                <state key="normal" title="11">
+                                                                <state key="normal">
                                                                     <color key="titleColor" name="mainBlackBackground"/>
                                                                 </state>
                                                                 <connections>
