@@ -114,6 +114,8 @@ class CheckoutViewController: UIViewController {
     }
     
     func addIndicator() {
+        navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = true
         self.view.addSubview(indicator)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.backgroundColor = UIColor.black.withAlphaComponent(0.3)
@@ -129,7 +131,7 @@ class CheckoutViewController: UIViewController {
     @IBAction func orderAction(_ sender: Any) {
         addIndicator()
         let userId = FirebaseManager.shared.getUserId()
-        if userId == "" {
+        if userId == "" || currentUser == nil{
             self.requireLogin()
             return
         }
@@ -138,7 +140,7 @@ class CheckoutViewController: UIViewController {
         }
         let dateCurrent = DateFormat.dateToString(date: Date())
         //add order detail
-        let keyOrderDetail = "\(keyAuto)"
+        let keyOrderDetail = "\(dateCurrent)-\(keyAuto)"
         for cartItem in self.cartListInput {
             guard let productColorId = cartItem.productColorId else {
                 print("item nil")
@@ -164,7 +166,7 @@ class CheckoutViewController: UIViewController {
             "payment_method" : "pay by cash",
             "status" : 0
         ]
-        let path = "OrderHistory/\(userId)/\(keyAuto)"
+        let path = "OrderHistory/\(currentUser?.userName ?? "any")-\(userId)/\(keyOrderDetail)"
         FirebaseManager.shared.ref.child(path).setValue(json) { (error, ref) in
             if let error = error {
                 print("Error getting data \(error)")
@@ -174,13 +176,22 @@ class CheckoutViewController: UIViewController {
                 }
                 return
             } else {
-                CoreDataManager.share.deleteCartAfterOrder()
-                self.indicator.stopAnimating()
-                self.indicator.removeFromSuperview()
-                let orderSuccessPageVc = UIStoryboard(name: "OrderSuccessPage", bundle: nil).instantiateViewController(identifier: OrderSuccessViewController.identifier) as! OrderSuccessViewController
-                self.navigationController?.pushViewController(orderSuccessPageVc, animated: true)
+                self.orderSuccess()
             }
         }
+    }
+    
+    func orderSuccess() {
+        CoreDataManager.share.deleteCartAfterOrder()
+        self.indicator.stopAnimating()
+        self.indicator.removeFromSuperview()
+        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+        DispatchQueue.global().async {
+            MailManager.sentMailViaUserEmail(userEmail: self.currentUser!.email)
+        }
+        let orderSuccessPageVc = UIStoryboard(name: "OrderSuccessPage", bundle: nil).instantiateViewController(identifier: OrderSuccessViewController.identifier) as! OrderSuccessViewController
+        self.navigationController?.pushViewController(orderSuccessPageVc, animated: true)
     }
     
     @IBAction func changeAddress(_ sender: Any) {
