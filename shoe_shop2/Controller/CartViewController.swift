@@ -1,7 +1,9 @@
 import UIKit
+import RAMAnimatedTabBarController
 
 class CartViewController: UIViewController {
     //MARK: - Outlet + properties
+    static var isNavToHome = false
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblTotalPrice: UILabel!
     @IBOutlet weak var lblTotalItem: UILabel!
@@ -20,8 +22,20 @@ class CartViewController: UIViewController {
     var itemNotExists: [String] = []
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if CartViewController.isNavToHome {
+            pushToHomePage()
+        }
         fetchData()
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Show the navigation bar on other view controllers
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         btnCheckOut.roundedAllSide(with: 8)
@@ -242,5 +256,21 @@ extension CartViewController: UITextFieldDelegate {
             }
         }
         return false
+    }
+}
+
+extension CartViewController {
+    func pushToHomePage() {
+        CartViewController.isNavToHome = false
+        let tabbar = self.navigationController?.tabBarController as! CustomTabBarController
+        let homeVC = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(identifier: "navHomePage") as! UINavigationController
+        
+        homeVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
+        (homeVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
+        
+        if let _ = tabbar.viewControllers?.last{
+            tabbar.viewControllers![0] = homeVC
+            tabbar.setSelectIndex(from: 2, to: 0)
+        }
     }
 }

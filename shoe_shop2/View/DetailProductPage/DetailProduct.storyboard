@@ -50,7 +50,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSc-9P-mhi">
-                                                <rect key="frame" x="0.0" y="250" width="414" height="603.5"/>
+                                                <rect key="frame" x="0.0" y="250" width="414" height="612"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPS-6G-4fl">
                                                         <rect key="frame" x="274" y="30" width="120" height="0.0"/>
@@ -110,7 +110,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H40-JO-BGV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="grayMainBackground"/>
-                                                                <state key="normal">
+                                                                <state key="normal" title="9">
                                                                     <color key="titleColor" name="mainBlackBackground"/>
                                                                 </state>
                                                                 <connections>
@@ -120,7 +120,7 @@
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZO0-Ki-kIg">
                                                                 <rect key="frame" x="40" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="grayMainBackground"/>
-                                                                <state key="normal">
+                                                                <state key="normal" title="10">
                                                                     <color key="titleColor" name="mainBlackBackground"/>
                                                                 </state>
                                                                 <connections>
@@ -130,7 +130,7 @@
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhI-Mb-bT7">
                                                                 <rect key="frame" x="80" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="grayMainBackground"/>
-                                                                <state key="normal">
+                                                                <state key="normal" title="11">
                                                                     <color key="titleColor" name="mainBlackBackground"/>
                                                                 </state>
                                                                 <connections>
@@ -140,7 +140,7 @@
                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AV-0B-VYU">
                                                                 <rect key="frame" x="120" y="0.0" width="30" height="30"/>
                                                                 <color key="backgroundColor" name="grayMainBackground"/>
-                                                                <state key="normal">
+                                                                <state key="normal" title="12">
                                                                     <color key="titleColor" name="mainBlackBackground"/>
                                                                 </state>
                                                                 <connections>
@@ -243,8 +243,8 @@
                                             <constraint firstItem="CSc-9P-mhi" firstAttribute="top" secondItem="0I0-eA-R8d" secondAttribute="bottom" id="6ja-Vp-h5h"/>
                                             <constraint firstAttribute="trailing" secondItem="CSc-9P-mhi" secondAttribute="trailing" id="Be2-iH-ScE"/>
                                             <constraint firstItem="0I0-eA-R8d" firstAttribute="top" secondItem="Ub0-1W-vyT" secondAttribute="top" id="WCk-0s-z9X"/>
+                                            <constraint firstAttribute="bottom" secondItem="CSc-9P-mhi" secondAttribute="bottom" id="YWe-MT-5dv"/>
                                             <constraint firstItem="CSc-9P-mhi" firstAttribute="leading" secondItem="Ub0-1W-vyT" secondAttribute="leading" id="YX5-5d-biQ"/>
-                                            <constraint firstItem="CSc-9P-mhi" firstAttribute="height" secondItem="Ub0-1W-vyT" secondAttribute="height" multiplier="0.7" id="mTv-XZ-Ipk"/>
                                             <constraint firstItem="0I0-eA-R8d" firstAttribute="leading" secondItem="Ub0-1W-vyT" secondAttribute="leading" id="pZi-No-cWA"/>
                                         </constraints>
                                     </view>
@@ -277,6 +277,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Ub0-1W-vyT" secondAttribute="bottom" id="5Ur-VH-Lll"/>
                                     <constraint firstItem="Ub0-1W-vyT" firstAttribute="leading" secondItem="KDF-PA-dMT" secondAttribute="leading" id="9L2-pm-D3g"/>
+                                    <constraint firstItem="Ub0-1W-vyT" firstAttribute="height" relation="greaterThanOrEqual" secondItem="KDF-PA-dMT" secondAttribute="height" id="DaD-Ns-1yf"/>
                                     <constraint firstItem="Grb-Dd-BFh" firstAttribute="top" secondItem="Ub0-1W-vyT" secondAttribute="top" constant="10" id="Fqn-Ei-tmB"/>
                                     <constraint firstItem="Ub0-1W-vyT" firstAttribute="top" secondItem="KDF-PA-dMT" secondAttribute="top" id="Jpo-PY-Ni3"/>
                                     <constraint firstItem="Grb-Dd-BFh" firstAttribute="leading" secondItem="Ub0-1W-vyT" secondAttribute="leading" constant="10" id="KaE-Ar-hDv"/>
@@ -298,6 +299,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KDF-PA-dMT" firstAttribute="bottom" secondItem="OoL-mo-Ozo" secondAttribute="bottom" constant="-34" id="68h-u6-9f8"/>
+                            <constraint firstItem="CSc-9P-mhi" firstAttribute="height" relation="greaterThanOrEqual" secondItem="OoL-mo-Ozo" secondAttribute="height" multiplier="0.683036" id="CCR-Ry-Adl"/>
                             <constraint firstItem="KDF-PA-dMT" firstAttribute="top" secondItem="OoL-mo-Ozo" secondAttribute="top" id="CMb-O7-hVZ"/>
                             <constraint firstItem="KDF-PA-dMT" firstAttribute="leading" secondItem="OoL-mo-Ozo" secondAttribute="leading" id="LX1-3p-6Sb"/>
                             <constraint firstItem="KDF-PA-dMT" firstAttribute="trailing" secondItem="OoL-mo-Ozo" secondAttribute="trailing" id="Q2n-Bh-GsU"/>
