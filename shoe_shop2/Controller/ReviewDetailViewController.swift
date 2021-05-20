@@ -63,9 +63,6 @@ class ReviewDetailViewController: UIViewController {
     
     @IBAction func pressSubmitFeedBack(_ sender: UIButton) {
         guard let userID = Auth.auth().currentUser?.uid else {
-//            let alert = UIAlertController(title: "Notification", message: "Please Login Before Review !", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-//            present(alert, animated: true, completion: nil)
             return
         }
         guard let start = star.star else {
@@ -79,7 +76,12 @@ class ReviewDetailViewController: UIViewController {
         }
         FirebaseManager.shared.ref.child("reviews").child(productID).childByAutoId().setValue(["star": start, "userID" :  userID, "comment" : reviewText])
         
-        self.navigationController?.popViewController(animated: true)
+        let alert = UIAlertController(title: "Botification", message: "Review Success", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        present(alert, animated: true, completion: nil)
+            
     }
     @objc func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
