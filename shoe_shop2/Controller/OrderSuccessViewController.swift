@@ -56,7 +56,6 @@ class OrderSuccessViewController: UIViewController {
         super.viewWillLayoutSubviews()
         backgroundImageView.layer.cornerRadius = backgroundImageView.layer.frame.width / 2
         backgroundImageView.clipsToBounds = true
-        trackYourOrderButton.roundedAllSide(with: 8)
     }
     
 }
