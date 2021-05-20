@@ -63,7 +63,6 @@
                                                     <constraint firstAttribute="height" constant="100" id="abY-sZ-Bph"/>
                                                 </constraints>
                                             </stackView>
-                                                    <action selector="trackOrderAction:" destination="Fnz-E8-9ug" eventType="touchUpInside" id="Aey-Rj-nCs"/>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
