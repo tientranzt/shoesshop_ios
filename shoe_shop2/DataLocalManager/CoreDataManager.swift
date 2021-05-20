@@ -2,6 +2,7 @@ import UIKit
 import CoreData
 
 class CoreDataManager {
+    let TAG = "CoreDataManager << "
     static var share = CoreDataManager(moc: NSManagedObjectContext.currentContext)
     
     var moc : NSManagedObjectContext
@@ -9,25 +10,36 @@ class CoreDataManager {
         self.moc = moc
     }
     
+    //MARK: - GET TASKS BY COLOR_ID
     func fetchTaskByColorId(colorId : String) -> Cart? {
         var task = [Cart]()
         let taskRequest :  NSFetchRequest<Cart> =  Cart.fetchRequest()
         taskRequest.predicate = NSPredicate(format: "productColorId == %@", colorId as CVarArg)
-        
         do {
             task = try self.moc.fetch(taskRequest)
         } catch  {
-            print(error)
+            print("\(TAG) \(error)")
         }
         return task.first ?? nil
     }
     
-    //MARK: - INSERT CART ITEM
+    //MARK: - GET TASKS BY COLOR_ID + SIZE_ID
+//    func fetchTaskByColorId(colorId : String, sizeId: String) -> Cart? {
+//        var task = [Cart]()
+//        let taskRequest :  NSFetchRequest<Cart> =  Cart.fetchRequest()
+//        taskRequest.predicate = NSPredicate(format: "productColorId == %@ && productSizeId == %@", colorId as CVarArg, sizeId as CVarArg)
+//        do {
+//            task = try self.moc.fetch(taskRequest)
+//        } catch  {
+//            print("\(TAG) \(error)
+//        }
+//        return task.first ?? nil
+//    }
     
+    //MARK: - INSERT CART ITEM
     func insertCart(cartModel: CartModel) -> Bool {
         if let _ = fetchTaskByColorId(colorId: cartModel.productColorId) {
-            print("item exists: [\(cartModel.productColorId)]")
-            //MARK: - update all properties & add on quantity += 1
+            //update all properties & add on quantity += 1
             return false
         }
         let cart =  Cart(context: self.moc)
@@ -45,16 +57,15 @@ class CoreDataManager {
         cart.isSelected = cartModel.isSelected
         do {
             try self.moc.save()
-            print("Insert success [\(String(describing: cart.productColorId))]")
+            print("\(TAG) Insert success [\(cart.productColorId!))]")
             return true
         } catch  {
-            print(error)
+            print("\(TAG) \(error)")
         }
         return false
     }
     
     //MARK: - UPDATE CART ITEM
-    
     func updateCart(colorId: String, cartModel : CartModel)  {
         do {
             if let cart = fetchTaskByColorId(colorId: colorId) {
@@ -66,16 +77,14 @@ class CoreDataManager {
                 cart.updatedAt = cartModel.updatedAt
                 do {
                     try self.moc.save()
-                    print("Update success")
                 } catch  {
-                    print(error)
+                    print("\(TAG) \(error)")
                 }
             }
         }
     }
     
     //MARK: - DELETE CART ITEM
-    
     func deleteCart(colorId: String) -> Bool {
         do {
             if let cart = fetchTaskByColorId(colorId: colorId) {
@@ -84,7 +93,7 @@ class CoreDataManager {
                 return true
             }
         } catch  {
-            print(error)
+            print("\(TAG) \(error)")
         }
         return false
     }
@@ -96,7 +105,7 @@ class CoreDataManager {
         do {
             try self.moc.execute(deleteRequest)
         } catch {
-            print(error)
+            print("\(TAG) \(error)")
         }
     }
     
@@ -111,12 +120,10 @@ class CoreDataManager {
                 self.moc.delete(object)
             }
             try self.moc.save()
-            print("delete success")
-            //return true
+            print("\(TAG) Delete items selected after order success")
         } catch  {
-            print(error)
+            print("\(TAG) \(error)")
         }
-        //return false
     }
     
     //MARK: - FETCH ALL CART ITEM
@@ -125,8 +132,8 @@ class CoreDataManager {
         let taskRequest : NSFetchRequest<Cart> = Cart.fetchRequest()
         do {
             task = try self.moc.fetch(taskRequest)
-        } catch let err as NSError {
-            print(err)
+        } catch let error as NSError {
+            print("\(TAG) \(error)")
         }
         return task
     }
@@ -136,11 +143,10 @@ class CoreDataManager {
         var count = 0
         let taskRequest :  NSFetchRequest<Cart> =  Cart.fetchRequest()
         taskRequest.predicate = NSPredicate(format: "isSelected == %i", 1)
-        
         do {
             count = try self.moc.fetch(taskRequest).count
         } catch  {
-            print(error)
+            print("\(TAG) \(error)")
         }
         return count
     }
@@ -155,7 +161,7 @@ class CoreDataManager {
         do {
             task = try self.moc.fetch(taskRequest)
         } catch  {
-            print(error)
+            print("\(TAG) \(error)")
         }
         for cart in task {
             sum += (Int(cart.productPrice * cart.productQuantity))
@@ -172,7 +178,7 @@ class CoreDataManager {
                     try self.moc.save()
                     return true
                 } catch  {
-                    print(error)
+                    print("\(TAG) \(error)")
                 }
             }
         }
@@ -187,7 +193,7 @@ class CoreDataManager {
                     try self.moc.save()
                     return true
                 } catch  {
-                    print(error)
+                    print("\(TAG) \(error)")
                 }
             }
         }

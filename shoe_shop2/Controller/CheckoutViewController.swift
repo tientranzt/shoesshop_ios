@@ -20,41 +20,60 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var btnOrder: UIButton!
     @IBOutlet weak var lblTotalItem: UILabel!
     @IBOutlet weak var lblTotalPrice: UILabel!
-    
     @IBOutlet weak var viewPayCrash: PaymentCashMethod!
     @IBOutlet weak var viewPayVisa: PaymentOnlineMethod!
-    
     @IBOutlet weak var viewPayPaypal: PaymentOnlineMethod!
     var currentUser: User?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.navigationController?.isNavigationBarHidden = false
+//        self.tabBarController?.tabBar.isHidden = false
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
         setData()
+        getUserDefault()
+    }
+    
+    func configureView() {
         txtAddress.adjustsFontSizeToFitWidth = true
-        
         viewPayVisa.seriMethod.text = "•••• •••• ••••"
         viewPayVisa.methodName.text = "Visa"
-        
         viewPayPaypal.seriMethod.text = "•••• •••• ••••"
         viewPayPaypal.methodName.text = "Paypal"
         viewPayPaypal.imageMethod.image = UIImage(named: "paypal")
-        
     }
     
     override func viewDidLayoutSubviews() {
-        
-        // shadown
-        // chay sai khi chay iphone 8 , nen cho vao viewDidLayoutSubbiew
         setShadowForView(view: viewShipAddress)
         setShadowForView(view: viewPaymentMethod)
         btnOrder.layer.cornerRadius = 8
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
+    func setShadowForView(view: UIView) {
+        view.layer.borderColor = UIColor(named: "grayMainBackground")?.cgColor
+        view.layer.borderWidth = 1
+        view.layer.cornerRadius = 8
+        view.layer.shadowColor = UIColor(red: 197/255, green: 197/255, blue: 197/255, alpha: 1).cgColor
+        view.layer.shadowOffset = CGSize.zero
+        view.layer.shadowRadius = 5
+        view.layer.shadowOffset = .zero
+        view.layer.shadowOpacity = 0.2
+    }
+    
+    //MARK: - Get user default
+    func getUserDefault() {
         if let saveUser = UserDefaults.standard.object(forKey: "user") as? Data {
             let decoder = JSONDecoder()
             if let loadUser = try? decoder.decode(User.self, from: saveUser) {
-                txtAddress.text = "Phone Number: " + loadUser.phoneNumber + "\n Address: " + loadUser.shipAddress
+                txtAddress.text = "Phone Number: " + loadUser.phoneNumber + "\nAddress: " + loadUser.shipAddress
                 self.currentUser = loadUser
             }
         }
@@ -65,7 +84,7 @@ class CheckoutViewController: UIViewController {
                 self?.currentUser = FirebaseManager.shared.parseUser(object: data)
                 if let realUser = self?.currentUser {
                     DispatchQueue.main.async {
-                        self?.txtAddress.text = "Phone Number: " + realUser.phoneNumber + "\n Address: " + realUser.shipAddress
+                        self?.txtAddress.text = "Phone Number: " + realUser.phoneNumber + "\nAddress: " + realUser.shipAddress
                     }
                     // save to user default
                     let encoder = JSONEncoder()
@@ -75,10 +94,10 @@ class CheckoutViewController: UIViewController {
                     }
                 }
             }
-            
         }
     }
     
+    //MARK: - Set data input
     func setData() {
         if let totalItem = dataInput["totalItem"], let totalPrice = dataInput["totalPrice"] {
             lblTotalItem.text = "\(totalItem) item"
@@ -86,36 +105,9 @@ class CheckoutViewController: UIViewController {
         }
     }
     
-    func setShadowForView(view: UIView) {
-        
-        view.layer.borderColor = UIColor(named: "grayMainBackground")?.cgColor
-        view.layer.borderWidth = 1
-        view.layer.cornerRadius = 8
-        
-        view.layer.shadowColor = UIColor(red: 197/255, green: 197/255, blue: 197/255, alpha: 1).cgColor
-        view.layer.shadowOffset = CGSize.zero
-        view.layer.shadowRadius = 5
-        view.layer.shadowOffset = .zero
-        view.layer.shadowOpacity = 0.2
-        
-    }
-    
-    func requireLogin() {
-        let tabbar = self.navigationController?.tabBarController as! CustomTabBarController
-        let loginVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "navHomeLogin") as! UINavigationController
-        
-        loginVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
-        (loginVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
-        
-        if let _ = tabbar.viewControllers?.last{
-            tabbar.viewControllers![3] = loginVC
-            tabbar.setSelectIndex(from: 0, to: 3)
-        }
-    }
-    
-    func addIndicator() {
-        navigationController?.isNavigationBarHidden = true
-        tabBarController?.tabBar.isHidden = true
+    func startIndicator() {
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
         self.view.addSubview(indicator)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.backgroundColor = UIColor.black.withAlphaComponent(0.3)
@@ -128,14 +120,28 @@ class CheckoutViewController: UIViewController {
         indicator.startAnimating()
     }
     
+    func stopIndicator() {
+        self.indicator.stopAnimating()
+        self.indicator.removeFromSuperview()
+        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    func popToCartViewController() {
+        stopIndicator()
+        navigationController?.popViewController(animated: true)
+    }
+    
+    //MARK: - Order action
     @IBAction func orderAction(_ sender: Any) {
-        addIndicator()
+        startIndicator()
         let userId = FirebaseManager.shared.getUserId()
-        if userId == "" || currentUser == nil{
-            self.requireLogin()
+        if userId == "" {
+            popToCartViewController()
             return
         }
         guard let keyAuto = FirebaseManager.shared.ref.child("OrderHistory/\(userId)").childByAutoId().key else {
+            popToCartViewController()
             return
         }
         let dateCurrent = DateFormat.dateToString(date: Date())
@@ -144,6 +150,7 @@ class CheckoutViewController: UIViewController {
         var jsonCartItem: [[ String : Any ]] = []
         for cartItem in self.cartListInput {
             guard let productColorId = cartItem.productColorId else {
+                popToCartViewController()
                 print("item nil")
                 return
             }
@@ -169,11 +176,9 @@ class CheckoutViewController: UIViewController {
         let path = "OrderHistory/\(userId)/\(keyOrderDetail)"
         FirebaseManager.shared.ref.child(path).setValue(jsonOrderHistory) { (error, ref) in
             if let error = error {
-                print("Error getting data \(error)")
-                FirebaseManager.shared.ref.child("OrderDetail/\(keyOrderDetail)").removeValue { error, _ in
-                    print(error ?? "error nil")
-                    return
-                }
+                print("Error set data \(error)")
+                FirebaseManager.shared.ref.child("OrderDetail/\(keyOrderDetail)").removeValue()
+                self.popToCartViewController()
                 return
             } else {
                 self.orderSuccess()
@@ -183,10 +188,9 @@ class CheckoutViewController: UIViewController {
     
     func orderSuccess() {
         CoreDataManager.share.deleteCartAfterOrder()
-        self.indicator.stopAnimating()
-        self.indicator.removeFromSuperview()
-        self.navigationController?.isNavigationBarHidden = false
-        self.tabBarController?.tabBar.isHidden = false
+        stopIndicator()
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
         DispatchQueue.global().async {
             MailManager.sentMailViaUserEmail(userEmail: self.currentUser!.email)
         }
@@ -194,6 +198,7 @@ class CheckoutViewController: UIViewController {
         self.navigationController?.pushViewController(orderSuccessPageVc, animated: true)
     }
     
+    //MARK: - Change address action
     @IBAction func changeAddress(_ sender: Any) {
         //showAlertChangeAddress()
         let viewControllerChangeShipAddress = (storyboard?.instantiateViewController(identifier: "ChangeShipAddress"))! as ChangeShipAddressViewController

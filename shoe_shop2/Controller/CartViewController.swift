@@ -43,15 +43,18 @@ class CartViewController: UIViewController {
         btnCheckOut.addTarget(self, action: #selector(checkOutAction), for: .touchUpInside)
     }
     
-    
     //MARK:- HANDLE ACTION CHECKOUT
     @objc func checkOutAction(_ sender: UIButton) {
+        let userId = FirebaseManager.shared.getUserId()
+        if userId == "" {
+            self.requireLogin()
+            return
+        }
         let list = cartList.filter({ $0.isSelected })
         if list.count == 0 {
             showAlertError(title: "My cart", message: "Your cart no item selected")
             return
         }
-        
         let checkoutVC = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(identifier: "checkoutPage") as! CheckoutViewController
         checkoutVC.cartListInput = list
         checkoutVC.dataInput = [
@@ -61,6 +64,18 @@ class CartViewController: UIViewController {
         navigationController?.pushViewController(checkoutVC, animated: true)
     }
     
+    func requireLogin() {
+        let tabbar = self.navigationController?.tabBarController as! CustomTabBarController
+        let loginVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "navHomeLogin") as! UINavigationController
+        
+        loginVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
+        (loginVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
+        
+        if let _ = tabbar.viewControllers?.last{
+            tabbar.viewControllers![3] = loginVC
+            tabbar.setSelectIndex(from: 0, to: 3)
+        }
+    }
     
     func configureTableView() {
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: CartTableViewCell.identifier)
@@ -159,7 +174,6 @@ extension CartViewController: CartTableViewCellDelegate {
                 return
             }
             self.fetchData()
-            print("Delete success")
         }))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -228,7 +242,6 @@ extension CartViewController: CartTableViewCellDelegate {
         }
         let value = Int64(quantity) - cart.productQuantity
         if value == 0 {
-            print("Value not change")
             return
         }
         if !CoreDataManager.share.updateCart(colorId: cart.productColorId!, quantity: quantity) {
