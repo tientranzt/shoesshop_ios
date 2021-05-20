@@ -54,7 +54,7 @@ class CheckoutViewController: UIViewController {
         if let saveUser = UserDefaults.standard.object(forKey: "user") as? Data {
             let decoder = JSONDecoder()
             if let loadUser = try? decoder.decode(User.self, from: saveUser) {
-                txtAddress.text = "Phone Number: " + loadUser.phoneNumber + "\n" + loadUser.shipAddress
+                txtAddress.text = "Phone Number: " + loadUser.phoneNumber + "\n Address: " + loadUser.shipAddress
                 self.currentUser = loadUser
             }
         }
@@ -65,7 +65,7 @@ class CheckoutViewController: UIViewController {
                 self?.currentUser = FirebaseManager.shared.parseUser(object: data)
                 if let realUser = self?.currentUser {
                     DispatchQueue.main.async {
-                        self?.txtAddress.text = "Phone Number: " + realUser.phoneNumber + "\n" + realUser.shipAddress
+                        self?.txtAddress.text = "Phone Number: " + realUser.phoneNumber + "\n Address: " + realUser.shipAddress
                     }
                     // save to user default
                     let encoder = JSONEncoder()
