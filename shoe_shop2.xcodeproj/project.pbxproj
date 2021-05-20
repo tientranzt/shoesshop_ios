@@ -19,7 +19,6 @@
 		6470F35E264E767D00362E05 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 6470F35D264E767D00362E05 /* FacebookLogin */; };
 		64ABB2E0264AD0620000F5AC /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64ABB2DF264AD0620000F5AC /* ForgotPassword.storyboard */; };
 		64ABB2E3264AD1600000F5AC /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ABB2E2264AD1600000F5AC /* ForgotPasswordViewController.swift */; };
-		64E0F81B264A3ED600005B0B /* ChangeShipAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0F81A264A3ED600005B0B /* ChangeShipAddressViewController.swift */; };
 		64EB825526482372001B1B05 /* PaymentCashMethod.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64EB825426482372001B1B05 /* PaymentCashMethod.xib */; };
 		64EB82582648239E001B1B05 /* PaymentCashMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB82572648239E001B1B05 /* PaymentCashMethod.swift */; };
 		64EB825B26482ACE001B1B05 /* PaymentOnlineMethod.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64EB825A26482ACE001B1B05 /* PaymentOnlineMethod.xib */; };
@@ -100,7 +99,6 @@
 		FF8D2349264D60F00072D5D3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D2348264D60F00072D5D3 /* UIColor+Extension.swift */; };
 		FF8D234B264E1D3F0072D5D3 /* ProductColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D234A264E1D3E0072D5D3 /* ProductColor.swift */; };
 		FF8D2396264FD5280072D5D3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FF8D2395264FD5280072D5D3 /* SDWebImage */; };
-		FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */; };
 		FFA4FE9626491FC4005F767F /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */; };
 		FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */; };
 		FFA4FE9C26491FF2005F767F /* ToastMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA4FE9A26491FF2005F767F /* ToastMessageTableViewCell.swift */; };
@@ -120,7 +118,6 @@
 		646D087F26515C88005D2213 /* LogicLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicLogin.swift; sourceTree = "<group>"; };
 		64ABB2DF264AD0620000F5AC /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
 		64ABB2E2264AD1600000F5AC /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		64E0F81A264A3ED600005B0B /* ChangeShipAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeShipAddressViewController.swift; sourceTree = "<group>"; };
 		64EB825426482372001B1B05 /* PaymentCashMethod.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCashMethod.xib; sourceTree = "<group>"; };
 		64EB82572648239E001B1B05 /* PaymentCashMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCashMethod.swift; sourceTree = "<group>"; };
 		64EB825A26482ACE001B1B05 /* PaymentOnlineMethod.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentOnlineMethod.xib; sourceTree = "<group>"; };
@@ -200,7 +197,6 @@
 		FF8D2346264D2AF40072D5D3 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		FF8D2348264D60F00072D5D3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FF8D234A264E1D3E0072D5D3 /* ProductColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColor.swift; sourceTree = "<group>"; };
-		FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserInformationViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		FFA4FE9A26491FF2005F767F /* ToastMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastMessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -365,7 +361,6 @@
 				FF8D231C264B8C4C0072D5D3 /* RootTabbarViewController.swift */,
 				FF8D22FB264A83D00072D5D3 /* IntroPageViewController.swift */,
 				FF8D22FC264A83D00072D5D3 /* OrderSuccessViewController.swift */,
-				64E0F81A264A3ED600005B0B /* ChangeShipAddressViewController.swift */,
 				E2F61FD426454DE8001CE7E5 /* LoginViewController.swift */,
 				E2F61FD526454DE8001CE7E5 /* SignUpViewController.swift */,
 				E2F61FD126454DDB001CE7E5 /* HomeLoginViewController.swift */,
@@ -374,7 +369,6 @@
 				FFA4FE9726491FD6005F767F /* OrderHistoryViewController.swift */,
 				E26B1D6B2644CFFD0001ABE0 /* AccountViewController.swift */,
 				FFA4FE9526491FC4005F767F /* UserInformationViewController.swift */,
-				FFA4FE9326491FBE005F767F /* UpdateUserInformationViewController.swift */,
 				E26B1D6E2644D0080001ABE0 /* NotificationViewController.swift */,
 				E26B1D712644D0130001ABE0 /* CartViewController.swift */,
 				E26B1D742644D01F0001ABE0 /* HomepageViewController.swift */,
@@ -855,7 +849,6 @@
 				E2701153264BAF2F0089E500 /* UILabel+Extension.swift in Sources */,
 				FF8D234B264E1D3F0072D5D3 /* ProductColor.swift in Sources */,
 				E26B1D2A2644CD240001ABE0 /* shoe_shop2.xcdatamodeld in Sources */,
-				64E0F81B264A3ED600005B0B /* ChangeShipAddressViewController.swift in Sources */,
 				FF56974F26451DD5003CE928 /* LastestProductCollectionViewCell.swift in Sources */,
 				FF56974C26451DCC003CE928 /* CategoriesCollectionViewCell.swift in Sources */,
 				FF8D2302264A83FF0072D5D3 /* DrawIntroPage.swift in Sources */,
@@ -899,7 +892,6 @@
 				E2701168264BB8510089E500 /* ReviewTableViewCell.swift in Sources */,
 				FF8D22FD264A83D00072D5D3 /* IntroPageViewController.swift in Sources */,
 				646D088026515C88005D2213 /* LogicLogin.swift in Sources */,
-				FFA4FE9426491FBE005F767F /* UpdateUserInformationViewController.swift in Sources */,
 				646D087826511B56005D2213 /* User.swift in Sources */,
 				E26B1D222644CD240001ABE0 /* SceneDelegate.swift in Sources */,
 				FFA4FE9826491FD6005F767F /* OrderHistoryViewController.swift in Sources */,

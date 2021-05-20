@@ -108,7 +108,12 @@ class UpdateUserInformationViewController: UIViewController {
             }
         }
         else {
-            LogicLogin.shared.showToast(message: "waiting...", view: self.view)
+            LogicLogin.shared.showToast(message: "waiting ...", view: self.view)
+        
+            // call this code affter 3 second when image load slow or fail
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.btnSave.sendActions(for: .touchUpInside)
+            }
         }
         
     }
@@ -171,7 +176,7 @@ extension UpdateUserInformationViewController: UIImagePickerControllerDelegate, 
                 }
                 self?.storage.child(userId).downloadURL(completion: {[weak self] (url, error) in
                     guard let url = url , error == nil else {
-                        let alert = UIAlertController(title: "Save User Information", message: " Save User Information Fail! ", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "Save User Information", message: " Save User Information Fail Please Try Again ! ", preferredStyle: .alert)
                         let okayAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
                             self?.view.isUserInteractionEnabled = true
                             self?.navigationItem.setHidesBackButton(false, animated: true)
@@ -182,7 +187,6 @@ extension UpdateUserInformationViewController: UIImagePickerControllerDelegate, 
                     }
                     self?.saveImageDone = true
                     self?.user.imgAvatar = url.absoluteString
-                    self?.btnSave.sendActions(for: .touchUpInside)
                 })
             })
         }

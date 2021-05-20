@@ -62,7 +62,6 @@ class HomeLoginViewController: UIViewController {
         loginFacebookButton.sendActions(for: .touchUpInside)
     }
     @IBAction func loginWithApple(_ sender: Any) {
-        
         loginAppleButton.sendActions(for: .touchUpInside)
     }
     // MARK: - function for login with apple
@@ -157,14 +156,17 @@ extension HomeLoginViewController: LoginButtonDelegate {
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         
         if let  _ = error {
+            self.view.isUserInteractionEnabled = true
             // do nothing
             return
         }
         guard let realResult = result else {
+            self.view.isUserInteractionEnabled = true
             // do nothing
             return
         }
         if realResult.isCancelled {
+            self.view.isUserInteractionEnabled = true
             return
         }
         // sign in success need login with fire base
