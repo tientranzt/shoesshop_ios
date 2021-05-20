@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RAMAnimatedTabBarController
+
 class OrderSuccessViewController: UIViewController {
     
     static let identifier = "orderSuccessPage"
@@ -15,6 +17,20 @@ class OrderSuccessViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+    }
+    @IBAction func pressTrackYourOrder(_ sender: Any) {
+        let tabbar = self.navigationController?.tabBarController as! CustomTabBarController
+        
+        
+        let historyVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "navHomeLogin") as! UINavigationController
+        
+        historyVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
+        (historyVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
+        
+        if let _ = tabbar.viewControllers?.last{
+            tabbar.viewControllers![3] = historyVC
+            tabbar.setSelectIndex(from: 2, to: 3)
+        }
     }
     override func viewDidLayoutSubviews() {
         //MARK: -- Animaton Tick
@@ -29,5 +45,5 @@ class OrderSuccessViewController: UIViewController {
         backgroundImageView.clipsToBounds = true
         trackYourOrderButton.roundedAllSide(with: 8)
     }
-
+    
 }

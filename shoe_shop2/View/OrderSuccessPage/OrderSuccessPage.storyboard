@@ -73,6 +73,9 @@
                                                 <state key="normal" title="Track Your Order">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pressTrackYourOrder:" destination="Fnz-E8-9ug" eventType="touchUpInside" id="Y3s-OK-cp5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
