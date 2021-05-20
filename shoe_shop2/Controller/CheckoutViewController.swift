@@ -201,7 +201,7 @@ class CheckoutViewController: UIViewController {
         viewControllerChangeShipAddress.currentUser = self.currentUser
         viewControllerChangeShipAddress.completionHandler = { [weak self] user in
             if let realUser = user {
-                self?.txtAddress.text = "Phone Number: " + realUser.phoneNumber + "\n" + realUser.shipAddress
+                self?.txtAddress.text = "Phone Number: " + realUser.phoneNumber + "\n Address: " + realUser.shipAddress
             }
         }
         
