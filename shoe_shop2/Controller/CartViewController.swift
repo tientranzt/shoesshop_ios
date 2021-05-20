@@ -1,5 +1,4 @@
 import UIKit
-import RAMAnimatedTabBarController
 
 class CartViewController: UIViewController {
     //MARK: - Outlet + properties
@@ -30,76 +29,24 @@ class CartViewController: UIViewController {
         btnCheckOut.addTarget(self, action: #selector(checkOutAction), for: .touchUpInside)
     }
     
-    func requireLogin() {
-        let tabbar = self.navigationController?.tabBarController as! CustomTabBarController
-        let loginVC = UIStoryboard(name: "HomeLogin", bundle: nil).instantiateViewController(identifier: "navHomeLogin") as! UINavigationController
-        
-        loginVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
-        (loginVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
-        
-        if let _ = tabbar.viewControllers?.last{
-            tabbar.viewControllers![3] = loginVC
-            tabbar.setSelectIndex(from: 0, to: 3)
-        }
-    }
+    
     //MARK:- HANDLE ACTION CHECKOUT
     @objc func checkOutAction(_ sender: UIButton) {
-        if cartList.filter({ $0.isSelected }).count == 0 {
+        let list = cartList.filter({ $0.isSelected })
+        if list.count == 0 {
             showAlertError(title: "My cart", message: "Your cart no item selected")
             return
         }
-        let userId = FirebaseManager.shared.getUserId()
-        if userId == "" {
-            requireLogin()
-            return
-        }
-        let keyOrderDetail = "\(userId)_\(DateFormat.dateToString(date: Date()))"
-        for cartItem in cartList.filter({ $0.isSelected }) {
-            let json: [ String : Any ] =
-                [
-                    "shoe_id" : "\(cartItem.productId ?? "")",
-                    "shoe_color_id" : "\(cartItem.productColorId ?? "")",
-                    "shoe_size_id" : "\(cartItem.productSizeId ?? "")",
-                    "shoe_quantity" : cartItem.productQuantity,
-                    "shoe_price" : cartItem.productPrice
-                ]
-            FirebaseManager.shared.ref.child("OrderDetail/\(keyOrderDetail)").childByAutoId().setValue(json)
-        }
         
         let checkoutVC = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(identifier: "checkoutPage") as! CheckoutViewController
+        checkoutVC.cartListInput = list
         checkoutVC.dataInput = [
-            "userId" : userId,
             "totalPrice" : totalPrice,
-            "totalItem" : totalItem,
-            "keyOrderDetail" : keyOrderDetail
+            "totalItem" : totalItem
         ]
         navigationController?.pushViewController(checkoutVC, animated: true)
     }
     
-    //    func checkAvailable(cartItem : Cart) {
-    ////        print(cartItem)
-    //        guard let productId = cartItem.productId, let productColorId = cartItem.productColorId, let productSizeId = cartItem.productSizeId else {
-    //            return
-    //        }
-    //        DispatchQueue.global().sync {
-    //            FirebaseManager.shared.fetchStorageByColor(idProduct: productId, idColor: productColorId, idSize: productSizeId, completion: { (data) in
-    //                if let numberOfItem = data.value as? Int {
-    //                    print("Tồn kho [\(productColorId)-\(productSizeId)]: \(numberOfItem)")
-    //                    let index = self.cartList.firstIndex(of: cartItem)
-    //                    let quantityChange = 0
-    //                    if numberOfItem < cartItem.productQuantity {
-    //                        CoreDataManager.share.updateCart(colorId: productColorId, quantity: numberOfItem)
-    //                        DispatchQueue.main.async {
-    //                            //notify and change quantity
-    //                        }
-    //                    } else {
-    //
-    //                    }
-    //                }
-    //            })
-    //        }
-    //
-    //    }
     
     func configureTableView() {
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: CartTableViewCell.identifier)
@@ -111,7 +58,9 @@ class CartViewController: UIViewController {
     }
     
     func fetchData()  {
+        
         DispatchQueue.global().sync {
+            self.cartList.removeAll()
             self.cartList = CoreDataManager.share.fetchAllItemCart()
             self.totalItem = CoreDataManager.share.getCountItemCartSelected()
             self.totalPrice = CoreDataManager.share.getTotalPriceItemCartSelected()
