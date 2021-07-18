@@ -1,3 +1,9 @@
+//
+//  DetailProductViewController.swift
+//  shoe_shop2
+//
+//  Created by Nguyen Thanh Phuc on 5/5/21.
+//
 import UIKit
 import FSPagerView
 
